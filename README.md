@@ -6,14 +6,13 @@ A KNM (Kennis van de Nederlandse Maatschappij) practice app: short lessons, hear
 2. Werk en inkomen
 3. Interactie, normen en waarden
 
-The repo holds the lesson content, the AWS backend and (next) the SwiftUI iOS app.
+This repo (`taal-punt-be`) holds the lesson content and the AWS backend. The SwiftUI iOS app lives in its own folder, `taal-punt-ios`.
 
 ```
 content/        knm.json (all questions + vocabulary) and its JSON schema
-scripts/        validate_content.py
+scripts/        validate_content.py, create_budget.sh
 backend/        AWS CDK app (Python) + Lambda code + tests
 .github/        CI (tests, synth) and deploy (OIDC, no stored keys)
-ios/            SwiftUI app (coming next)
 ```
 
 ## Architecture

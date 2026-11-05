@@ -10,7 +10,7 @@ This repo (`taal-punt-be`) holds the lesson content and the AWS backend. The Swi
 
 ```
 content/        knm.json (all questions + vocabulary) and its JSON schema
-scripts/        validate_content.py, create_budget.sh
+scripts/        validate_content.py, create_budget.sh, mock_server.py
 backend/        AWS CDK app (Python) + Lambda code + tests
 .github/        CI (tests, synth) and deploy (OIDC, no stored keys)
 ```
@@ -78,6 +78,15 @@ Scoring (in `backend/lambdas/taalpunt_api/scoring.py`): 5 XP per finished lesson
 ### `DELETE /me`
 
 Deletes all your progress and your Cognito account (Apple requires in-app account deletion).
+
+## Run the backend locally (no AWS needed)
+
+`scripts/mock_server.py` serves the content and the API on `http://127.0.0.1:8787`, running the real Lambda code against an in-memory DynamoDB. Any bearer token is accepted. The iOS app's Debug build talks to it by default.
+
+```bash
+cd backend && python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements-dev.txt && cd ..
+python scripts/mock_server.py
+```
 
 ## First deploy (once, from your Mac)
 

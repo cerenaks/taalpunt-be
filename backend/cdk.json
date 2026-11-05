@@ -6,7 +6,7 @@
   },
   "context": {
     "region": "eu-north-1",
-    "github_repo": "cerenaks/TaalPunt",
+    "github_repo": "cerenaks/taalpunt-be",
     "github_environment": "production",
     "cognito_domain_prefix": "taalpunt-app",
     "callback_urls": ["taalpunt://auth/callback"],

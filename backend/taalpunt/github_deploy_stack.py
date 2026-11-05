@@ -16,7 +16,7 @@ class GithubDeployStack(Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
         ctx = self.node.try_get_context
-        repo: str = ctx("github_repo") or "cerenaks/TaalPunt"
+        repo: str = ctx("github_repo") or "cerenaks/taalpunt-be"
         environment: str = ctx("github_environment") or "production"
         existing_provider_arn: str | None = ctx("github_oidc_provider_arn") or None
 

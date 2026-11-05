@@ -85,7 +85,7 @@ def test_github_role_is_scoped_to_repo_environment():
         "AssumeRolePolicyDocument": {"Statement": [Match.object_like({
             "Condition": {"StringEquals": {
                 "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
-                "token.actions.githubusercontent.com:sub": "repo:cerenaks/TaalPunt:environment:production",
+                "token.actions.githubusercontent.com:sub": "repo:cerenaks/taalpunt-be:environment:production",
             }},
         })]},
     })

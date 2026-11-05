@@ -1,0 +1,21 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# CDK
+backend/cdk.out/
+backend/cdk.context.json
+backend/cdk-outputs.json
+
+# Secrets never go in the repo
+*.p8
+.env
+.env.*
+
+# macOS / Xcode
+.DS_Store
+xcuserdata/
+DerivedData/
+*.xcuserstate

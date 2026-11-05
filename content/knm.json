@@ -1,0 +1,4067 @@
+{
+  "schema_version": 1,
+  "content_version": "2026-11-05.1",
+  "language": "nl",
+  "translation": "en",
+  "sources": [
+    "KNM 1) Wonen",
+    "KNM 2) Werk en inkomen",
+    "KNM 3) Interactie, normen en waarden"
+  ],
+  "units": [
+    {
+      "id": "wonen",
+      "number": 1,
+      "title": "Wonen",
+      "title_en": "Housing",
+      "color": "blue",
+      "lessons": [
+        {
+          "id": "w1",
+          "title": "Een huis huren",
+          "title_en": "Renting a home",
+          "questions": [
+            {
+              "id": "w1-01",
+              "type": "multiple_choice",
+              "prompt": "Voor wie is een sociale huurwoning?",
+              "prompt_en": "Who is a social rental home for?",
+              "answer": "Mensen met een laag inkomen",
+              "distractors": [
+                "Mensen met een hoog inkomen",
+                "Alleen studenten",
+                "Alleen ondernemers"
+              ],
+              "explanation": {
+                "nl": "Sociale huur is voor mensen met een laag inkomen. De prijs is laag.",
+                "en": "Social rent is for people with a low income. The price is low."
+              }
+            },
+            {
+              "id": "w1-02",
+              "type": "multiple_choice",
+              "prompt": "Waar schrijf je je in voor een sociale huurwoning?",
+              "prompt_en": "Where do you register for a social rental home?",
+              "answer": "Bij een woningcorporatie",
+              "distractors": [
+                "Bij de Belastingdienst",
+                "Bij de notaris",
+                "Bij de makelaar"
+              ],
+              "explanation": {
+                "nl": "Je schrijft je in bij een woningbouwvereniging (woningcorporatie).",
+                "en": "You register with a housing association (housing corporation)."
+              }
+            },
+            {
+              "id": "w1-03",
+              "type": "multiple_choice",
+              "prompt": "Wie krijgt de volgende beschikbare huurwoning?",
+              "prompt_en": "Who gets the next available rental home?",
+              "answer": "Wie het langst op de wachtlijst staat",
+              "distractors": [
+                "Wie als eerste belt",
+                "Wie het meeste betaalt",
+                "Wie het jongst is"
+              ],
+              "explanation": {
+                "nl": "De persoon die het langst op de wachtlijst staat, krijgt de volgende woning.",
+                "en": "The person longest on the waiting list gets the next home."
+              }
+            },
+            {
+              "id": "w1-04",
+              "type": "multiple_choice",
+              "prompt": "Wat heb je nodig om sneller een sociale huurwoning te krijgen?",
+              "prompt_en": "What do you need to get a social rental home sooner?",
+              "answer": "Een urgentieverklaring",
+              "distractors": [
+                "Een hypotheek",
+                "Een KvK-nummer",
+                "Een jaaropgave"
+              ],
+              "explanation": {
+                "nl": "Met een urgentieverklaring kun je sneller een huis krijgen.",
+                "en": "With a declaration of urgency you can get a home sooner."
+              }
+            },
+            {
+              "id": "w1-05",
+              "type": "multiple_choice",
+              "prompt": "Waar vraag je een urgentieverklaring aan?",
+              "prompt_en": "Where do you apply for a declaration of urgency?",
+              "answer": "Bij de gemeente",
+              "distractors": [
+                "Bij de Huurcommissie",
+                "Bij het UWV",
+                "Bij de makelaar"
+              ],
+              "explanation": {
+                "nl": "Een urgentieverklaring vraag je aan bij de gemeente.",
+                "en": "You apply for it at the municipality."
+              }
+            },
+            {
+              "id": "w1-06",
+              "type": "multiple_choice",
+              "prompt": "Welke situatie kan een reden zijn voor urgentie?",
+              "prompt_en": "Which situation can be a reason for urgency?",
+              "answer": "Je gaat scheiden en je hebt kinderen",
+              "distractors": [
+                "Je wilt een grotere tuin",
+                "Je wilt een nieuwe keuken",
+                "Je wilt dichter bij je werk wonen"
+              ],
+              "explanation": {
+                "nl": "Vb: scheiden terwijl je kinderen hebt, problemen met gezondheid, dakloos of een sloophuis.",
+                "en": "E.g. divorce with children, health problems, homelessness or a house due for demolition."
+              }
+            },
+            {
+              "id": "w1-07",
+              "type": "multiple_choice",
+              "prompt": "Waar hangt het van af of je een sociale huurwoning kunt huren?",
+              "prompt_en": "What determines whether you can rent a social rental home?",
+              "answer": "Je inkomen en met hoeveel personen je gaat wonen",
+              "distractors": [
+                "Je diploma en je werkervaring",
+                "Je auto en je parkeerplaats",
+                "Je energiecontract"
+              ],
+              "explanation": {
+                "nl": "Het hangt af van je inkomen (niet te hoog), met hoeveel personen je gaat wonen en soms je leeftijd.",
+                "en": "It depends on your income, household size and sometimes your age."
+              }
+            },
+            {
+              "id": "w1-08",
+              "type": "true_false",
+              "prompt": "Je wachttijd begint op de dag dat je je inschrijft.",
+              "prompt_en": "Your waiting time starts on the day you register.",
+              "answer": true,
+              "explanation": {
+                "nl": "Je krijgt wachttijd vanaf je inschrijfdatum.",
+                "en": "Your waiting time counts from your registration date."
+              }
+            },
+            {
+              "id": "w1-09",
+              "type": "true_false",
+              "prompt": "Je hoeft je inschrijving bij een woningcorporatie nooit te verlengen.",
+              "prompt_en": "You never have to renew your registration with a housing corporation.",
+              "answer": false,
+              "explanation": {
+                "nl": "Je moet elk jaar je inschrijving verlengen.",
+                "en": "You must renew your registration every year."
+              }
+            },
+            {
+              "id": "w1-10",
+              "type": "fill_blank",
+              "prompt": "Hoe ___ je inschrijft, hoe meer kans.",
+              "prompt_en": "The earlier you register, the better your chances.",
+              "answer": "eerder",
+              "distractors": [
+                "later",
+                "duurder",
+                "vaker"
+              ],
+              "explanation": {
+                "nl": "Hoe eerder je inschrijft, hoe meer kans.",
+                "en": "The earlier you register, the better your chances."
+              }
+            },
+            {
+              "id": "w1-11",
+              "type": "true_false",
+              "prompt": "Grote steden zoals Amsterdam en Utrecht hebben vaak lange wachtlijsten.",
+              "prompt_en": "Large cities like Amsterdam and Utrecht often have long waiting lists.",
+              "answer": true,
+              "explanation": {
+                "nl": "Kleinere steden of dorpen hebben soms kortere wachttijden.",
+                "en": "Smaller towns or villages sometimes have shorter waiting times."
+              }
+            },
+            {
+              "id": "w1-12",
+              "type": "multiple_choice",
+              "prompt": "Je bent net in Nederland. Wie kiest meestal waar je komt te wonen?",
+              "prompt_en": "You have just arrived in the Netherlands. Who usually chooses where you will live?",
+              "answer": "De gemeente",
+              "distractors": [
+                "Jij zelf",
+                "De makelaar",
+                "Je werkgever"
+              ],
+              "explanation": {
+                "nl": "De gemeente kiest waar je komt te wonen (tenzij gezinshereniging).",
+                "en": "The municipality chooses where you live (unless it's family reunification)."
+              }
+            },
+            {
+              "id": "w1-13",
+              "type": "multiple_choice",
+              "prompt": "Wat betekent urgentie?",
+              "prompt_en": "What does urgency mean?",
+              "answer": "Tijdelijk voorrang op een sociale huurwoning",
+              "distractors": [
+                "Een korting op de huur",
+                "Een gratis huis van de gemeente",
+                "Een snellere hypotheek"
+              ],
+              "explanation": {
+                "nl": "Urgentie = tijdelijk voorrang op een sociale huurwoning.",
+                "en": "Urgency = temporary priority for a social rental home."
+              }
+            },
+            {
+              "id": "w1-14",
+              "type": "build_sentence",
+              "prompt_en": "Every municipality does it differently.",
+              "answer": "Elke gemeente doet het anders",
+              "distractors": [
+                "altijd",
+                "huur"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "w2",
+          "title": "Huurcontract en rechten",
+          "title_en": "Rental contract and rights",
+          "questions": [
+            {
+              "id": "w2-01",
+              "type": "multiple_choice",
+              "prompt": "Wie betaalt normaal het grote onderhoud, zoals een lekkage?",
+              "prompt_en": "Who normally pays for major maintenance, such as a leak?",
+              "answer": "De verhuurder",
+              "distractors": [
+                "De huurder",
+                "De gemeente",
+                "De buren"
+              ],
+              "explanation": {
+                "nl": "Normaal betaalt de verhuurder het grote onderhoud, zoals lekkage of een kapotte verwarming.",
+                "en": "The landlord normally pays for major maintenance, like a leak or a broken heater."
+              }
+            },
+            {
+              "id": "w2-02",
+              "type": "multiple_choice",
+              "prompt": "Je wasmachine is kapot. Wie betaalt de reparatie meestal?",
+              "prompt_en": "Your washing machine is broken. Who usually pays for the repair?",
+              "answer": "Jij zelf",
+              "distractors": [
+                "De verhuurder",
+                "De woningcorporatie",
+                "De gemeente"
+              ],
+              "explanation": {
+                "nl": "Klein onderhoud betaal je normaal zelf, zoals een kapotte wasmachine of lamp.",
+                "en": "You normally pay for minor maintenance yourself."
+              }
+            },
+            {
+              "id": "w2-03",
+              "type": "multiple_choice",
+              "prompt": "Wat staat er NIET in een huurcontract?",
+              "prompt_en": "What is NOT in a rental contract?",
+              "answer": "Je salaris",
+              "distractors": [
+                "De huurprijs",
+                "De servicekosten",
+                "De opzegtermijn"
+              ],
+              "explanation": {
+                "nl": "In je huurcontract staan je rechten en plichten: huurprijs, servicekosten, opzegtermijn en wie welk onderhoud betaalt.",
+                "en": "Your rental contract lists rent, service charges, notice period and who pays for which maintenance."
+              }
+            },
+            {
+              "id": "w2-04",
+              "type": "multiple_choice",
+              "prompt": "De huur is te hoog en je hebt een laag inkomen. Wat kun je aanvragen?",
+              "prompt_en": "The rent is too high and you have a low income. What can you apply for?",
+              "answer": "Huurtoeslag",
+              "distractors": [
+                "Een hypotheek",
+                "Een WW-uitkering",
+                "Een urgentieverklaring"
+              ],
+              "explanation": {
+                "nl": "Huurtoeslag = geld terugkrijgen van de Belastingdienst.",
+                "en": "Rent allowance = getting money back from the Tax Authority."
+              }
+            },
+            {
+              "id": "w2-05",
+              "type": "multiple_choice",
+              "prompt": "Waar vraag je huurtoeslag aan?",
+              "prompt_en": "Where do you apply for rent allowance?",
+              "answer": "Bij de Belastingdienst",
+              "distractors": [
+                "Bij de gemeente",
+                "Bij de woningcorporatie",
+                "Bij het UWV"
+              ],
+              "explanation": {
+                "nl": "Huurtoeslag vraag je aan bij de Belastingdienst.",
+                "en": "You apply for rent allowance at the Tax Authority."
+              }
+            },
+            {
+              "id": "w2-06",
+              "type": "multiple_choice",
+              "prompt": "De huur gaat veel omhoog en het onderhoud is slecht. Waar kun je terecht?",
+              "prompt_en": "The rent goes up a lot and maintenance is poor. Where can you go?",
+              "answer": "Bij de Huurcommissie",
+              "distractors": [
+                "Bij de Kamer van Koophandel",
+                "Bij DUO",
+                "Bij de notaris"
+              ],
+              "explanation": {
+                "nl": "De Huurcommissie helpt bij hoge huur of slecht onderhoud.",
+                "en": "The Rent Tribunal helps with high rent or poor maintenance."
+              }
+            },
+            {
+              "id": "w2-07",
+              "type": "multiple_choice",
+              "prompt": "Waar krijg je gratis advies over je rechten?",
+              "prompt_en": "Where do you get free advice about your rights?",
+              "answer": "Bij het Juridisch Loket",
+              "distractors": [
+                "Bij de Belastingdienst",
+                "Bij de makelaar",
+                "Bij het energiebedrijf"
+              ],
+              "explanation": {
+                "nl": "Het Juridisch Loket geeft gratis advies over je rechten.",
+                "en": "The Legal Help Desk gives free advice about your rights."
+              }
+            },
+            {
+              "id": "w2-08",
+              "type": "true_false",
+              "prompt": "Je hebt als huurder recht op rust en privacy.",
+              "prompt_en": "As a tenant you have the right to peace and privacy.",
+              "answer": true,
+              "explanation": {
+                "nl": "Dit staat in de huurwet. De verhuurder moet zich eraan houden.",
+                "en": "This is in the rental law. The landlord must comply."
+              }
+            },
+            {
+              "id": "w2-09",
+              "type": "true_false",
+              "prompt": "Een woning met schimmel is normaal; daar heb je als huurder geen rechten bij.",
+              "prompt_en": "A home with mold is normal; you have no rights as a tenant there.",
+              "answer": false,
+              "explanation": {
+                "nl": "Je mag veilig wonen in een woning zonder schimmel of lekkage.",
+                "en": "You have the right to live safely without mold or leaks."
+              }
+            },
+            {
+              "id": "w2-10",
+              "type": "true_false",
+              "prompt": "De verhuurder moet grote reparaties doen.",
+              "prompt_en": "The landlord must carry out major repairs.",
+              "answer": true,
+              "explanation": {
+                "nl": "De verhuurder moet grote reparaties doen.",
+                "en": "The landlord must carry out major repairs."
+              }
+            },
+            {
+              "id": "w2-11",
+              "type": "fill_blank",
+              "prompt": "In je huurcontract staan je rechten en ___.",
+              "prompt_en": "Your rental contract states your rights and obligations.",
+              "answer": "plichten",
+              "distractors": [
+                "toeslagen",
+                "boetes",
+                "wachttijden"
+              ],
+              "explanation": {
+                "nl": "In je huurcontract staat welke rechten en plichten je als huurder hebt.",
+                "en": "Your contract states your rights and obligations as a tenant."
+              }
+            },
+            {
+              "id": "w2-12",
+              "type": "multiple_choice",
+              "prompt": "Wat zijn servicekosten?",
+              "prompt_en": "What are service charges?",
+              "answer": "Kosten voor bijvoorbeeld schoonmaken van het appartementengebouw",
+              "distractors": [
+                "De rente van je hypotheek",
+                "De boete als je te laat betaalt",
+                "Je energierekening"
+              ],
+              "explanation": {
+                "nl": "Servicekosten zijn bijvoorbeeld voor schoonmaken van het appartementengebouw.",
+                "en": "Service charges are e.g. for cleaning the apartment building."
+              }
+            },
+            {
+              "id": "w2-13",
+              "type": "build_sentence",
+              "prompt_en": "You have the right to peace and privacy.",
+              "answer": "Je hebt recht op rust en privacy",
+              "distractors": [
+                "plicht",
+                "huur"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "w3",
+          "title": "Kopen en verzekeren",
+          "title_en": "Buying and insurance",
+          "questions": [
+            {
+              "id": "w3-01",
+              "type": "multiple_choice",
+              "prompt": "Wie helpt je bij het zoeken en kopen van een huis?",
+              "prompt_en": "Who helps you search for and buy a house?",
+              "answer": "De makelaar",
+              "distractors": [
+                "De notaris",
+                "De Huurcommissie",
+                "De verhuurder"
+              ],
+              "explanation": {
+                "nl": "Een makelaar kan jou helpen bij het zoeken en kopen van een huis.",
+                "en": "A real estate agent can help you search for and buy a house."
+              }
+            },
+            {
+              "id": "w3-02",
+              "type": "fill_blank",
+              "prompt": "Geld lenen bij de bank om een huis te kopen heet een ___.",
+              "prompt_en": "Borrowing money from the bank to buy a house is called a mortgage.",
+              "answer": "hypotheek",
+              "distractors": [
+                "huurtoeslag",
+                "opzegtermijn",
+                "urgentieverklaring"
+              ],
+              "explanation": {
+                "nl": "De meeste mensen lenen geld bij de bank om een huis te kopen = hypotheek.",
+                "en": "Most people borrow from the bank to buy a house = mortgage."
+              }
+            },
+            {
+              "id": "w3-03",
+              "type": "multiple_choice",
+              "prompt": "Met een laag inkomen kun je…",
+              "prompt_en": "With a low income you can…",
+              "answer": "minder of soms geen hypotheek krijgen",
+              "distractors": [
+                "meer hypotheek krijgen",
+                "geen rente betalen",
+                "altijd een hypotheek krijgen"
+              ],
+              "explanation": {
+                "nl": "Laag inkomen → minder of soms geen hypotheek. Hoog inkomen → meer hypotheek.",
+                "en": "Low income → smaller or no mortgage. High income → larger mortgage."
+              }
+            },
+            {
+              "id": "w3-04",
+              "type": "multiple_choice",
+              "prompt": "Waar teken je het contract voor het huis en voor de hypotheek?",
+              "prompt_en": "Where do you sign the contract for the house and the mortgage?",
+              "answer": "Bij de notaris",
+              "distractors": [
+                "Bij de makelaar",
+                "Bij de gemeente",
+                "Bij de Belastingdienst"
+              ],
+              "explanation": {
+                "nl": "Bij de notaris teken je het contract voor het huis en voor de hypotheek.",
+                "en": "At the notary you sign the contract for the house and the mortgage."
+              }
+            },
+            {
+              "id": "w3-05",
+              "type": "multiple_choice",
+              "prompt": "Wat moet je ook betalen als je een hypotheek hebt?",
+              "prompt_en": "What do you also have to pay if you have a mortgage?",
+              "answer": "Rente",
+              "distractors": [
+                "Huurtoeslag",
+                "Statiegeld",
+                "Servicekosten"
+              ],
+              "explanation": {
+                "nl": "Als je een hypotheek hebt, moet je ook rente betalen.",
+                "en": "With a mortgage you also pay interest."
+              }
+            },
+            {
+              "id": "w3-06",
+              "type": "true_false",
+              "prompt": "Je mag de rente van je hypotheek aftrekken van je inkomen bij de belastingaangifte.",
+              "prompt_en": "You may deduct your mortgage interest from your income on your tax return.",
+              "answer": true,
+              "explanation": {
+                "nl": "Dit heet renteaftrek (hypotheekrenteaftrek).",
+                "en": "This is called the mortgage interest deduction."
+              }
+            },
+            {
+              "id": "w3-07",
+              "type": "true_false",
+              "prompt": "Elke bank vraagt dezelfde rente.",
+              "prompt_en": "Every bank charges the same interest.",
+              "answer": false,
+              "explanation": {
+                "nl": "Hoeveel rente je betaalt, is per bank verschillend.",
+                "en": "The interest you pay differs per bank."
+              }
+            },
+            {
+              "id": "w3-08",
+              "type": "multiple_choice",
+              "prompt": "Je kind maakt de telefoon van de buurman kapot. Welke verzekering helpt?",
+              "prompt_en": "Your child breaks the neighbor's phone. Which insurance helps?",
+              "answer": "Aansprakelijkheidsverzekering",
+              "distractors": [
+                "Inboedelverzekering",
+                "Woonhuisverzekering",
+                "AOV-verzekering"
+              ],
+              "explanation": {
+                "nl": "Als jij of je kind iets van iemand anders kapotmaakt, ben je vaak verzekerd met een aansprakelijkheidsverzekering.",
+                "en": "Liability insurance covers damage you or your child cause to others."
+              }
+            },
+            {
+              "id": "w3-09",
+              "type": "multiple_choice",
+              "prompt": "Er is iets uit je huis gestolen. Bij welke verzekering vraag je geld terug?",
+              "prompt_en": "Something was stolen from your home. Which insurance do you claim from?",
+              "answer": "Inboedelverzekering",
+              "distractors": [
+                "Aansprakelijkheidsverzekering",
+                "Woonhuisverzekering",
+                "AOV-verzekering"
+              ],
+              "explanation": {
+                "nl": "Bij schade in je huis of diefstal uit je huis: inboedelverzekering.",
+                "en": "Damage in your home or theft: contents insurance."
+              }
+            },
+            {
+              "id": "w3-10",
+              "type": "multiple_choice",
+              "prompt": "Je koophuis heeft schade door brand. Welke verzekering?",
+              "prompt_en": "Your owned house is damaged by fire. Which insurance?",
+              "answer": "Woonhuisverzekering",
+              "distractors": [
+                "Inboedelverzekering",
+                "Aansprakelijkheidsverzekering",
+                "AOV-verzekering"
+              ],
+              "explanation": {
+                "nl": "Woonhuisverzekering is voor een koophuis: schade door brand, storm of water.",
+                "en": "Home insurance is for a house you own: fire, storm or water damage."
+              }
+            },
+            {
+              "id": "w3-11",
+              "type": "true_false",
+              "prompt": "Een woonhuisverzekering is een verzekering voor een koophuis.",
+              "prompt_en": "Home insurance is insurance for a house you own.",
+              "answer": true,
+              "explanation": {
+                "nl": "Dit is een verzekering voor een koophuis.",
+                "en": "This is insurance for a house you own."
+              }
+            },
+            {
+              "id": "w3-12",
+              "type": "build_sentence",
+              "prompt_en": "Contact the real estate agent.",
+              "answer": "Neem contact op met de makelaar",
+              "distractors": [
+                "notaris",
+                "bank"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "w4",
+          "title": "Energie en communicatie",
+          "title_en": "Energy and communication",
+          "questions": [
+            {
+              "id": "w4-01",
+              "type": "multiple_choice",
+              "prompt": "Wie kiest je energiebedrijf?",
+              "prompt_en": "Who chooses your energy company?",
+              "answer": "Jij zelf",
+              "distractors": [
+                "De gemeente",
+                "De verhuurder",
+                "De woningcorporatie"
+              ],
+              "explanation": {
+                "nl": "Je kunt zelf het energiebedrijf kiezen. Prijzen kun je online vinden.",
+                "en": "You choose the energy company yourself; prices are online."
+              }
+            },
+            {
+              "id": "w4-02",
+              "type": "multiple_choice",
+              "prompt": "Wat is een termijnbedrag?",
+              "prompt_en": "What is an installment amount?",
+              "answer": "Het bedrag dat je elke maand betaalt voor energie",
+              "distractors": [
+                "De boete als je niet betaalt",
+                "De rente van je hypotheek",
+                "Het bedrag voor afval ophalen"
+              ],
+              "explanation": {
+                "nl": "Je betaalt elke maand voor energie = termijnbedrag.",
+                "en": "You pay for energy every month = installment amount."
+              }
+            },
+            {
+              "id": "w4-03",
+              "type": "multiple_choice",
+              "prompt": "Je hebt weinig energie gebruikt. Wat staat er op de jaarrekening?",
+              "prompt_en": "You used little energy. What does the annual bill show?",
+              "answer": "Je krijgt soms geld terug",
+              "distractors": [
+                "Je moet extra betalen",
+                "Je energie wordt afgesloten",
+                "Je krijgt een waarschuwing"
+              ],
+              "explanation": {
+                "nl": "Weinig gebruikt → soms geld terug. Veel gebruikt → soms extra betalen.",
+                "en": "Used little → sometimes money back. Used a lot → sometimes pay extra."
+              }
+            },
+            {
+              "id": "w4-04",
+              "type": "multiple_choice",
+              "prompt": "Je betaalt je energierekening niet. Wat krijg je eerst?",
+              "prompt_en": "You don't pay your energy bill. What do you get first?",
+              "answer": "Een waarschuwing",
+              "distractors": [
+                "Direct afsluiting",
+                "Een boete van de gemeente",
+                "Een brief van de notaris"
+              ],
+              "explanation": {
+                "nl": "Eerst een waarschuwing, later wordt de energie misschien afgesloten.",
+                "en": "First a warning; later the energy may be cut off."
+              }
+            },
+            {
+              "id": "w4-05",
+              "type": "multiple_choice",
+              "prompt": "Je ruikt gas in je huis. Wat doe je eerst?",
+              "prompt_en": "You smell gas in your home. What do you do first?",
+              "answer": "De hoofdkraan van het gas dichtdraaien",
+              "distractors": [
+                "De makelaar bellen",
+                "Wachten tot morgen",
+                "Je meterstand doorgeven"
+              ],
+              "explanation": {
+                "nl": "Draai zelf de hoofdkraan van het gas dicht.",
+                "en": "Turn off the main gas valve yourself."
+              }
+            },
+            {
+              "id": "w4-06",
+              "type": "multiple_choice",
+              "prompt": "Er is geen gas meer. Wie bel je?",
+              "prompt_en": "There's no more gas. Who do you call?",
+              "answer": "Het Nationaal Storingsnummer",
+              "distractors": [
+                "De Huurcommissie",
+                "De Kamer van Koophandel",
+                "Het Juridisch Loket"
+              ],
+              "explanation": {
+                "nl": "Als er geen gas meer is, bel je het Nationaal Storingsnummer.",
+                "en": "If there's no gas, call the National Fault Number."
+              }
+            },
+            {
+              "id": "w4-07",
+              "type": "multiple_choice",
+              "prompt": "Wat betekent een vast energiecontract?",
+              "prompt_en": "What does a fixed energy contract mean?",
+              "answer": "De prijs blijft gelijk voor 1 of 3 jaar",
+              "distractors": [
+                "De prijs verandert elke maand",
+                "Je betaalt nooit extra",
+                "Je kunt elke dag overstappen"
+              ],
+              "explanation": {
+                "nl": "Vast = prijs blijft gelijk = zekerheid. Variabel = prijs verandert, soms goedkoper.",
+                "en": "Fixed = same price = certainty. Variable = changes, sometimes cheaper."
+              }
+            },
+            {
+              "id": "w4-08",
+              "type": "true_false",
+              "prompt": "Een variabel energiecontract is soms goedkoper.",
+              "prompt_en": "A variable energy contract is sometimes cheaper.",
+              "answer": true,
+              "explanation": {
+                "nl": "Variabel = soms goedkoper, maar de prijs kan stijgen of dalen.",
+                "en": "Variable = sometimes cheaper, but the price can rise or fall."
+              }
+            },
+            {
+              "id": "w4-09",
+              "type": "true_false",
+              "prompt": "Als je verhuist, regelt de gemeente je energie, water en internet.",
+              "prompt_en": "When you move, the municipality arranges your energy, water and internet.",
+              "answer": false,
+              "explanation": {
+                "nl": "Als je verhuist, regel je dit zelf. Geen aanmelding = geen levering!",
+                "en": "When you move, you arrange this yourself. No sign-up = no supply!"
+              }
+            },
+            {
+              "id": "w4-10",
+              "type": "fill_blank",
+              "prompt": "Geen aanmelding = geen ___!",
+              "prompt_en": "No registration = no supply!",
+              "answer": "levering",
+              "distractors": [
+                "boete",
+                "rente",
+                "storing"
+              ],
+              "explanation": {
+                "nl": "Kies een leverancier en meld je op tijd aan.",
+                "en": "Choose a supplier and sign up in time."
+              }
+            },
+            {
+              "id": "w4-11",
+              "type": "multiple_choice",
+              "prompt": "Welke cijfers van de meterstand geef je door?",
+              "prompt_en": "Which digits of the meter reading do you submit?",
+              "answer": "De eerste 4 of 5 cijfers",
+              "distractors": [
+                "De laatste 2 cijfers",
+                "Alleen het eerste cijfer",
+                "Geen, de leverancier weet het al"
+              ],
+              "explanation": {
+                "nl": "Maak een foto en geef de eerste 4 of 5 cijfers door aan je nieuwe leverancier.",
+                "en": "Take a photo and send the first 4 or 5 digits to your new supplier."
+              }
+            },
+            {
+              "id": "w4-12",
+              "type": "multiple_choice",
+              "prompt": "Welke energie is meestal het duurst?",
+              "prompt_en": "Which energy is usually the most expensive?",
+              "answer": "Gas",
+              "distractors": [
+                "Elektriciteit",
+                "Windenergie",
+                "Zonne-energie"
+              ],
+              "explanation": {
+                "nl": "Gas is meestal het duurst.",
+                "en": "Gas is usually the most expensive."
+              }
+            },
+            {
+              "id": "w4-13",
+              "type": "multiple_choice",
+              "prompt": "Wat is duurzame energie?",
+              "prompt_en": "What is sustainable energy?",
+              "answer": "Windenergie en zonne-energie",
+              "distractors": [
+                "Gas en elektriciteit",
+                "Kabel en internet",
+                "Gas en water"
+              ],
+              "explanation": {
+                "nl": "Duurzame energie = windenergie en zonne-energie.",
+                "en": "Sustainable energy = wind and solar energy."
+              }
+            },
+            {
+              "id": "w4-14",
+              "type": "multiple_choice",
+              "prompt": "Wat is een manier om zuinig met energie te zijn?",
+              "prompt_en": "What is a way to save energy?",
+              "answer": "A-label apparaten kopen",
+              "distractors": [
+                "De verwarming aan laten als je weg bent",
+                "De wasmachine vaker gebruiken",
+                "Lampen altijd aan laten"
+              ],
+              "explanation": {
+                "nl": "Verwarming en lampen uit als je niet thuis bent, A-label apparaten kopen.",
+                "en": "Heating and lights off when away; buy A-label appliances."
+              }
+            },
+            {
+              "id": "w4-15",
+              "type": "multiple_choice",
+              "prompt": "Welke zenders kun je kijken zonder kabel of internet?",
+              "prompt_en": "Which channels can you watch without cable or internet?",
+              "answer": "NPO 1, 2 en 3",
+              "distractors": [
+                "RTL",
+                "SBS",
+                "Veronica"
+              ],
+              "explanation": {
+                "nl": "NPO kun je kijken zonder kabel of internet. De overheid betaalt voor de NPO-kanalen.",
+                "en": "You can watch NPO without cable or internet; the government pays for it."
+              }
+            },
+            {
+              "id": "w4-16",
+              "type": "multiple_choice",
+              "prompt": "Wat heb je nodig voor tv via kabel en internet?",
+              "prompt_en": "What do you need for TV via cable and internet?",
+              "answer": "Een abonnement",
+              "distractors": [
+                "Een urgentieverklaring",
+                "Een KvK-nummer",
+                "Een vervoersbewijs"
+              ],
+              "explanation": {
+                "nl": "Voor tv via kabel en internet heb je een abonnement nodig: elke maand een vast bedrag.",
+                "en": "You need a subscription: a fixed amount every month."
+              }
+            },
+            {
+              "id": "w4-17",
+              "type": "build_sentence",
+              "prompt_en": "Turn off the main gas valve.",
+              "answer": "Draai de hoofdkraan van het gas dicht",
+              "distractors": [
+                "water",
+                "open"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "w5",
+          "title": "Afval en buren",
+          "title_en": "Waste and neighbors",
+          "questions": [
+            {
+              "id": "w5-01",
+              "type": "multiple_choice",
+              "prompt": "Waar gooi je groente- en fruitafval?",
+              "prompt_en": "Where do you throw vegetable and fruit waste?",
+              "answer": "In de GFT-container",
+              "distractors": [
+                "In de glasbak",
+                "In de papierbak",
+                "In de plasticbak"
+              ],
+              "explanation": {
+                "nl": "Groente en fruit gaan in de groene container = GFT-container.",
+                "en": "Vegetables and fruit go in the green (GFT) container."
+              }
+            },
+            {
+              "id": "w5-02",
+              "type": "multiple_choice",
+              "prompt": "Waar breng je oude verf naartoe?",
+              "prompt_en": "Where do you take old paint?",
+              "answer": "Naar klein chemisch afval",
+              "distractors": [
+                "In de plasticbak",
+                "In de GFT-container",
+                "In de glasbak"
+              ],
+              "explanation": {
+                "nl": "Chemisch afval breng je apart weg, bijv. verf naar klein chemisch afval.",
+                "en": "Chemical waste goes separately, e.g. paint to small chemical waste."
+              }
+            },
+            {
+              "id": "w5-03",
+              "type": "multiple_choice",
+              "prompt": "Wat is restafval?",
+              "prompt_en": "What is residual waste?",
+              "answer": "Alles wat je niet kunt scheiden",
+              "distractors": [
+                "Alleen glas",
+                "Alleen papier",
+                "Afval met statiegeld"
+              ],
+              "explanation": {
+                "nl": "Restafval is alles wat je niet kunt scheiden.",
+                "en": "Residual waste is everything you can't separate."
+              }
+            },
+            {
+              "id": "w5-04",
+              "type": "multiple_choice",
+              "prompt": "Je zet je afval op de verkeerde dag op straat. Wat kan er gebeuren?",
+              "prompt_en": "You put your waste out on the wrong day. What can happen?",
+              "answer": "Je kunt een boete krijgen",
+              "distractors": [
+                "Je krijgt geld terug",
+                "Niets, dat mag altijd",
+                "Je energie wordt afgesloten"
+              ],
+              "explanation": {
+                "nl": "De gemeente haalt het afval op vaste dagen op. Op een andere dag → boete.",
+                "en": "The municipality collects on fixed days; another day → fine."
+              }
+            },
+            {
+              "id": "w5-05",
+              "type": "multiple_choice",
+              "prompt": "Flessen en blikjes met statiegeld breng je naar…",
+              "prompt_en": "You take bottles and cans with a deposit to…",
+              "answer": "de supermarkt",
+              "distractors": [
+                "de gemeente",
+                "de glasbak",
+                "het buurthuis"
+              ],
+              "explanation": {
+                "nl": "Plastic/glazen flessen en blikjes kun je naar de supermarkt brengen voor statiegeld.",
+                "en": "You can return them to the supermarket for the deposit."
+              }
+            },
+            {
+              "id": "w5-06",
+              "type": "true_false",
+              "prompt": "Met een laag inkomen kun je soms een ontheffing krijgen voor de afvalbelasting.",
+              "prompt_en": "With a low income you can sometimes get an exemption from the waste tax.",
+              "answer": true,
+              "explanation": {
+                "nl": "Heb je een laag inkomen? Je kunt een ontheffing krijgen van de belasting.",
+                "en": "Low income? You can get an exemption from the tax."
+              }
+            },
+            {
+              "id": "w5-07",
+              "type": "true_false",
+              "prompt": "Afvalscheiding zorgt voor minder verbranding en minder CO₂-uitstoot.",
+              "prompt_en": "Waste separation means less incineration and less CO₂ emission.",
+              "answer": true,
+              "explanation": {
+                "nl": "Minder verbranding → minder CO₂-uitstoot, schonere lucht, bodem en water.",
+                "en": "Less incineration → less CO₂, cleaner air, soil and water."
+              }
+            },
+            {
+              "id": "w5-08",
+              "type": "multiple_choice",
+              "prompt": "Je buurman parkeert op jouw parkeerplaats. Wat doe je eerst?",
+              "prompt_en": "Your neighbor parks in your parking space. What do you do first?",
+              "answer": "Met de buurman praten",
+              "distractors": [
+                "De politie bellen",
+                "Een boete geven",
+                "Verhuizen"
+              ],
+              "explanation": {
+                "nl": "Je kunt het beste eerst proberen met de buren te praten.",
+                "en": "It's best to try talking to the neighbors first."
+              }
+            },
+            {
+              "id": "w5-09",
+              "type": "multiple_choice",
+              "prompt": "Praten met de buren helpt niet. Waar vraag je hulp?",
+              "prompt_en": "Talking to the neighbors doesn't help. Where do you ask for help?",
+              "answer": "Bij buurtbemiddeling of het wijkteam",
+              "distractors": [
+                "Bij de Kamer van Koophandel",
+                "Bij de Belastingdienst",
+                "Bij DUO"
+              ],
+              "explanation": {
+                "nl": "Geen oplossing? Vraag hulp bij buurtbemiddeling of wijkteam.",
+                "en": "No solution? Ask neighborhood mediation or the neighborhood team."
+              }
+            },
+            {
+              "id": "w5-10",
+              "type": "multiple_choice",
+              "prompt": "Je wordt bedreigd door een buurman (geen spoed). Welk nummer bel je?",
+              "prompt_en": "A neighbor threatens you (not an emergency). Which number do you call?",
+              "answer": "De politie: 0900-8844",
+              "distractors": [
+                "Het Nationaal Storingsnummer",
+                "Het Juridisch Loket",
+                "De Huurcommissie"
+              ],
+              "explanation": {
+                "nl": "Ernstige problemen (bijv. bedreiging): bel de politie (0900-8844).",
+                "en": "Serious problems such as threats: call the police (0900-8844)."
+              }
+            },
+            {
+              "id": "w5-11",
+              "type": "multiple_choice",
+              "prompt": "Wat willen veel Nederlanders met hun huis en tuin?",
+              "prompt_en": "What do many Dutch people want for their home and garden?",
+              "answer": "Dat het er goed en netjes uitziet",
+              "distractors": [
+                "Dat het er zo anders mogelijk uitziet",
+                "Dat de gemeente het onderhoudt",
+                "Dat er geen planten staan"
+              ],
+              "explanation": {
+                "nl": "Veel Nederlanders willen dat hun huis en tuin er goed en netjes uitziet. Dit verschilt per huishouden.",
+                "en": "Many want it to look good and tidy, though households differ."
+              }
+            },
+            {
+              "id": "w5-12",
+              "type": "build_sentence",
+              "prompt_en": "Paper goes in the paper bin.",
+              "answer": "Papier gaat in de papierbak",
+              "distractors": [
+                "glasbak",
+                "plastic"
+              ],
+              "explanation": null
+            }
+          ]
+        }
+      ],
+      "vocabulary": [
+        {
+          "id": "wonen-v01",
+          "nl": "sociale huur",
+          "en": "social rent"
+        },
+        {
+          "id": "wonen-v02",
+          "nl": "woningcorporatie",
+          "en": "housing corporation"
+        },
+        {
+          "id": "wonen-v03",
+          "nl": "wachtlijst",
+          "en": "waiting list"
+        },
+        {
+          "id": "wonen-v04",
+          "nl": "urgentieverklaring",
+          "en": "declaration of urgency"
+        },
+        {
+          "id": "wonen-v05",
+          "nl": "vrije sector",
+          "en": "rental homes that aren't social rent"
+        },
+        {
+          "id": "wonen-v06",
+          "nl": "huisbaas",
+          "en": "landlord"
+        },
+        {
+          "id": "wonen-v07",
+          "nl": "makelaar",
+          "en": "real estate agent"
+        },
+        {
+          "id": "wonen-v08",
+          "nl": "huurcontract",
+          "en": "rental contract"
+        },
+        {
+          "id": "wonen-v09",
+          "nl": "huurder",
+          "en": "tenant"
+        },
+        {
+          "id": "wonen-v10",
+          "nl": "servicekosten",
+          "en": "service charges"
+        },
+        {
+          "id": "wonen-v11",
+          "nl": "opzegtermijn",
+          "en": "notice period"
+        },
+        {
+          "id": "wonen-v12",
+          "nl": "Belastingdienst",
+          "en": "tax authority"
+        },
+        {
+          "id": "wonen-v13",
+          "nl": "huurtoeslag",
+          "en": "rent allowance"
+        },
+        {
+          "id": "wonen-v14",
+          "nl": "hypotheek",
+          "en": "mortgage"
+        },
+        {
+          "id": "wonen-v15",
+          "nl": "rente",
+          "en": "interest"
+        },
+        {
+          "id": "wonen-v16",
+          "nl": "belastingaangifte",
+          "en": "tax return"
+        },
+        {
+          "id": "wonen-v17",
+          "nl": "notaris",
+          "en": "notary"
+        },
+        {
+          "id": "wonen-v18",
+          "nl": "aansprakelijkheidsverzekering",
+          "en": "liability insurance"
+        },
+        {
+          "id": "wonen-v19",
+          "nl": "inboedelverzekering",
+          "en": "contents insurance"
+        },
+        {
+          "id": "wonen-v20",
+          "nl": "woonhuisverzekering",
+          "en": "home (building) insurance"
+        },
+        {
+          "id": "wonen-v21",
+          "nl": "energiebedrijf",
+          "en": "energy company"
+        },
+        {
+          "id": "wonen-v22",
+          "nl": "meterstand",
+          "en": "meter reading"
+        },
+        {
+          "id": "wonen-v23",
+          "nl": "energierekening",
+          "en": "energy bill"
+        },
+        {
+          "id": "wonen-v24",
+          "nl": "termijnbedrag",
+          "en": "monthly installment"
+        },
+        {
+          "id": "wonen-v25",
+          "nl": "jaarrekening",
+          "en": "annual bill"
+        },
+        {
+          "id": "wonen-v26",
+          "nl": "duurzame energie",
+          "en": "sustainable energy"
+        },
+        {
+          "id": "wonen-v27",
+          "nl": "overheid",
+          "en": "government"
+        },
+        {
+          "id": "wonen-v28",
+          "nl": "abonnement",
+          "en": "subscription"
+        },
+        {
+          "id": "wonen-v29",
+          "nl": "storing",
+          "en": "technical fault"
+        },
+        {
+          "id": "wonen-v30",
+          "nl": "leverancier",
+          "en": "supplier"
+        },
+        {
+          "id": "wonen-v31",
+          "nl": "glasbak",
+          "en": "glass container"
+        },
+        {
+          "id": "wonen-v32",
+          "nl": "GFT-container",
+          "en": "organic waste container"
+        },
+        {
+          "id": "wonen-v33",
+          "nl": "chemisch afval",
+          "en": "chemical waste"
+        },
+        {
+          "id": "wonen-v34",
+          "nl": "restafval",
+          "en": "residual waste"
+        },
+        {
+          "id": "wonen-v35",
+          "nl": "statiegeld",
+          "en": "deposit"
+        },
+        {
+          "id": "wonen-v36",
+          "nl": "belasting",
+          "en": "tax"
+        },
+        {
+          "id": "wonen-v37",
+          "nl": "ontheffing",
+          "en": "exemption"
+        },
+        {
+          "id": "wonen-v38",
+          "nl": "schimmel",
+          "en": "mold"
+        },
+        {
+          "id": "wonen-v39",
+          "nl": "lekkage",
+          "en": "leak"
+        },
+        {
+          "id": "wonen-v40",
+          "nl": "buurtbemiddeling",
+          "en": "neighborhood mediation"
+        }
+      ]
+    },
+    {
+      "id": "werk",
+      "number": 2,
+      "title": "Werk en inkomen",
+      "title_en": "Work and income",
+      "color": "orange",
+      "lessons": [
+        {
+          "id": "k1",
+          "title": "Werk zoeken",
+          "title_en": "Finding work",
+          "questions": [
+            {
+              "id": "k1-01",
+              "type": "multiple_choice",
+              "prompt": "Wat staat er in een vacature?",
+              "prompt_en": "What is in a vacancy?",
+              "answer": "De functie, functie-eisen en werktijden",
+              "distractors": [
+                "Je loonstrookje",
+                "Je KvK-nummer",
+                "De CAO van je vorige baan"
+              ],
+              "explanation": {
+                "nl": "In een vacature staan de functie, functie-eisen, werktijden en soms het salaris.",
+                "en": "A vacancy lists the role, requirements, working hours and sometimes salary."
+              }
+            },
+            {
+              "id": "k1-02",
+              "type": "multiple_choice",
+              "prompt": "Wat stuur je meestal op als je solliciteert?",
+              "prompt_en": "What do you usually send when you apply?",
+              "answer": "Een cv en een sollicitatiebrief",
+              "distractors": [
+                "Een loonstrookje",
+                "Een jaaropgave",
+                "Je huurcontract"
+              ],
+              "explanation": {
+                "nl": "Je stuurt een cv en een sollicitatiebrief of (online) sollicitatieformulier.",
+                "en": "You send a CV and a cover letter or (online) application form."
+              }
+            },
+            {
+              "id": "k1-03",
+              "type": "multiple_choice",
+              "prompt": "Waar kun je vacatures vinden?",
+              "prompt_en": "Where can you find vacancies?",
+              "answer": "Bij UWV WERKbedrijf (werk.nl)",
+              "distractors": [
+                "Bij de Belastingdienst",
+                "Bij de notaris",
+                "Bij de Huurcommissie"
+              ],
+              "explanation": {
+                "nl": "Vacatures vind je bij UWV WERKbedrijf, op internet en bij een uitzendbureau.",
+                "en": "Find vacancies at UWV WERKbedrijf, online and at an employment agency."
+              }
+            },
+            {
+              "id": "k1-04",
+              "type": "multiple_choice",
+              "prompt": "Een uitzendbureau heeft vooral vacatures voor…",
+              "prompt_en": "An employment agency mostly has vacancies for…",
+              "answer": "tijdelijk werk",
+              "distractors": [
+                "alleen vast werk",
+                "alleen vrijwilligerswerk",
+                "je eigen bedrijf"
+              ],
+              "explanation": {
+                "nl": "Een uitzendbureau heeft meestal vacatures voor tijdelijk werk (contract voor bepaalde tijd).",
+                "en": "Agencies mostly offer temporary work (fixed-term contract)."
+              }
+            },
+            {
+              "id": "k1-05",
+              "type": "multiple_choice",
+              "prompt": "Vast werk betekent een contract voor…",
+              "prompt_en": "Permanent work means a contract for…",
+              "answer": "onbepaalde tijd",
+              "distractors": [
+                "bepaalde tijd",
+                "één dag",
+                "de proeftijd"
+              ],
+              "explanation": {
+                "nl": "Vast werk → contract voor onbepaalde tijd. Tijdelijk werk → bepaalde tijd.",
+                "en": "Permanent = indefinite period. Temporary = fixed period."
+              }
+            },
+            {
+              "id": "k1-06",
+              "type": "multiple_choice",
+              "prompt": "Je bent ingeschreven bij een uitzendbureau. Wat gebeurt er?",
+              "prompt_en": "You are registered with an agency. What happens?",
+              "answer": "Ze nemen contact op als ze werk hebben",
+              "distractors": [
+                "Je krijgt direct een vast contract",
+                "Je krijgt een uitkering",
+                "Je moet een bedrijf starten"
+              ],
+              "explanation": {
+                "nl": "Als ze werk hebben, nemen ze contact met je op.",
+                "en": "When they have work, they contact you."
+              }
+            },
+            {
+              "id": "k1-07",
+              "type": "multiple_choice",
+              "prompt": "Wat is een goede voorbereiding op een sollicitatiegesprek?",
+              "prompt_en": "What is good preparation for a job interview?",
+              "answer": "Je antwoorden hardop oefenen",
+              "distractors": [
+                "De vacature niet lezen",
+                "Te laat komen",
+                "Geen vragen stellen"
+              ],
+              "explanation": {
+                "nl": "Lees de vacature goed, oefen hardop, kies nette kleding en kom op tijd.",
+                "en": "Read the vacancy, practice out loud, dress neatly, be on time."
+              }
+            },
+            {
+              "id": "k1-08",
+              "type": "multiple_choice",
+              "prompt": "Welke vraag hoor je vaak in een sollicitatiegesprek?",
+              "prompt_en": "Which question do you often hear in a job interview?",
+              "answer": "Wat zijn je sterke en zwakke punten?",
+              "distractors": [
+                "Hoeveel huur betaal je?",
+                "Waar staat je glasbak?",
+                "Welke energie gebruik je?"
+              ],
+              "explanation": {
+                "nl": "Veelgestelde vragen: Vertel eens iets over jezelf. Wat zijn je sterke en zwakke punten?",
+                "en": "Common: tell me about yourself; strengths and weaknesses."
+              }
+            },
+            {
+              "id": "k1-09",
+              "type": "fill_blank",
+              "prompt": "Zoek dagelijks of stel een ___ in.",
+              "prompt_en": "Search daily or set up a job alert.",
+              "answer": "vacature-alert",
+              "distractors": [
+                "urgentieverklaring",
+                "hypotheek",
+                "proeftijd"
+              ],
+              "explanation": {
+                "nl": "Maak een profiel aan, upload je cv en stel een vacature-alert in.",
+                "en": "Create a profile, upload your CV and set a job alert."
+              }
+            },
+            {
+              "id": "k1-10",
+              "type": "true_false",
+              "prompt": "Werk zoeken gaat in Nederland meestal online.",
+              "prompt_en": "Job hunting in the Netherlands usually happens online.",
+              "answer": true,
+              "explanation": {
+                "nl": "Bijv. Indeed.nl, Werk.nl, Nationalevacaturebank.nl en LinkedIn.",
+                "en": "E.g. Indeed.nl, Werk.nl, Nationalevacaturebank.nl and LinkedIn."
+              }
+            },
+            {
+              "id": "k1-11",
+              "type": "build_sentence",
+              "prompt_en": "Practice your answers out loud.",
+              "answer": "Oefen je antwoorden hardop",
+              "distractors": [
+                "vragen",
+                "stil"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "k2",
+          "title": "Diploma's en taal",
+          "title_en": "Diplomas and language",
+          "questions": [
+            {
+              "id": "k2-01",
+              "type": "multiple_choice",
+              "prompt": "Wie kan je buitenlandse diploma waarderen?",
+              "prompt_en": "Who can evaluate your foreign diploma?",
+              "answer": "Het IDW",
+              "distractors": [
+                "DUO",
+                "Het ROC",
+                "Het UWV"
+              ],
+              "explanation": {
+                "nl": "Het IDW (Internationale Diplomawaardering) laat zien wat je diploma waard is op de Nederlandse arbeidsmarkt.",
+                "en": "IDW shows what your diploma is worth on the Dutch labor market."
+              }
+            },
+            {
+              "id": "k2-02",
+              "type": "multiple_choice",
+              "prompt": "Waar vraag je een lening (studiefinanciering) voor je opleiding aan?",
+              "prompt_en": "Where do you apply for a student loan?",
+              "answer": "Bij DUO",
+              "distractors": [
+                "Bij het IDW",
+                "Bij de gemeente",
+                "Bij de KvK"
+              ],
+              "explanation": {
+                "nl": "Om te betalen voor je opleiding kun je soms studiefinanciering krijgen via DUO.",
+                "en": "You can sometimes get student finance through DUO."
+              }
+            },
+            {
+              "id": "k2-03",
+              "type": "multiple_choice",
+              "prompt": "Waar volg je een beroepsopleiding, bijvoorbeeld tot verpleegster?",
+              "prompt_en": "Where do you take vocational training, e.g. to become a nurse?",
+              "answer": "Bij het ROC",
+              "distractors": [
+                "Bij het UWV",
+                "Bij de notaris",
+                "Bij de Belastingdienst"
+              ],
+              "explanation": {
+                "nl": "Een beroepsopleiding kan bij het ROC (regionaal opleidingscentrum).",
+                "en": "Vocational training is possible at the ROC."
+              }
+            },
+            {
+              "id": "k2-04",
+              "type": "multiple_choice",
+              "prompt": "Wie maakt een officieel certificaat van je werkervaring en vaardigheden?",
+              "prompt_en": "Who issues an official certificate of your work experience and skills?",
+              "answer": "Het EVC",
+              "distractors": [
+                "Het IDW",
+                "DUO",
+                "De vakbond"
+              ],
+              "explanation": {
+                "nl": "Het EVC geeft een erkenning van jouw werkervaring en vaardigheden.",
+                "en": "EVC recognizes your work experience and skills."
+              }
+            },
+            {
+              "id": "k2-05",
+              "type": "multiple_choice",
+              "prompt": "Wat is bijscholing?",
+              "prompt_en": "What is further training (bijscholing)?",
+              "answer": "Nieuwe dingen leren om een bepaalde baan te krijgen",
+              "distractors": [
+                "Werken zonder salaris",
+                "Een uitkering aanvragen",
+                "Een bedrijf starten"
+              ],
+              "explanation": {
+                "nl": "Bijscholing: nieuwe dingen leren. Nascholing: je specialiseren.",
+                "en": "Further training: learning new things. Continuing education: specializing."
+              }
+            },
+            {
+              "id": "k2-06",
+              "type": "multiple_choice",
+              "prompt": "Wat doet een re-integratiebedrijf?",
+              "prompt_en": "What does a reintegration company do?",
+              "answer": "Mensen die lang geen werk hebben helpen werk te vinden",
+              "distractors": [
+                "Diploma's waarderen",
+                "Huurtoeslag uitbetalen",
+                "CAO's maken"
+              ],
+              "explanation": {
+                "nl": "Een re-integratiebedrijf helpt mensen die langere tijd geen werk hebben om nieuw werk te vinden.",
+                "en": "It helps long-term unemployed people find new work."
+              }
+            },
+            {
+              "id": "k2-07",
+              "type": "true_false",
+              "prompt": "Vrijwilligerswerk kan je werkervaring geven.",
+              "prompt_en": "Volunteer work can give you work experience.",
+              "answer": true,
+              "explanation": {
+                "nl": "Vrijwilligerswerk = werken zonder salaris. Je krijgt er wel werkervaring door.",
+                "en": "Volunteer work = unpaid, but it gives experience."
+              }
+            },
+            {
+              "id": "k2-08",
+              "type": "true_false",
+              "prompt": "Elk buitenlands beroep bestaat ook in Nederland.",
+              "prompt_en": "Every foreign profession also exists in the Netherlands.",
+              "answer": false,
+              "explanation": {
+                "nl": "Niet elk buitenlands beroep bestaat in Nederland. Kijk wat past bij je opleiding en ervaring.",
+                "en": "Not every foreign profession exists here; see what fits your education and experience."
+              }
+            },
+            {
+              "id": "k2-09",
+              "type": "multiple_choice",
+              "prompt": "Je was leraar Engels in je land van herkomst. Wat kan in Nederland?",
+              "prompt_en": "You were an English teacher in your home country. What is possible here?",
+              "answer": "Lesassistent, NT2-docent of opnieuw studeren",
+              "distractors": [
+                "Alleen notaris worden",
+                "Niets, je moet stoppen met werken",
+                "Direct schooldirecteur worden"
+              ],
+              "explanation": {
+                "nl": "In Nederland → lesassistent, NT2-docent of opnieuw studeren.",
+                "en": "In NL → teaching assistant, NT2 teacher or study again."
+              }
+            },
+            {
+              "id": "k2-10",
+              "type": "fill_blank",
+              "prompt": "Zonder taal is doorgroeien bijna ___.",
+              "prompt_en": "Without the language, growing in a company is almost impossible.",
+              "answer": "onmogelijk",
+              "distractors": [
+                "verplicht",
+                "gratis",
+                "makkelijk"
+              ],
+              "explanation": {
+                "nl": "Zonder taal begrijp je geen instructies en is doorgroeien bijna onmogelijk.",
+                "en": "Without Dutch you don't understand instructions and growth is almost impossible."
+              }
+            },
+            {
+              "id": "k2-11",
+              "type": "multiple_choice",
+              "prompt": "Wat is een taalmaatje?",
+              "prompt_en": "What is a language buddy?",
+              "answer": "Een Nederlands persoon in de buurt met wie je kunt oefenen",
+              "distractors": [
+                "Een app om woorden te leren",
+                "Een docent bij het ROC",
+                "Een collega van de vakbond"
+              ],
+              "explanation": {
+                "nl": "Taalmaatje = Nederlands persoon in de buurt met wie je kan oefenen.",
+                "en": "Language buddy = a Dutch person nearby to practice with."
+              }
+            },
+            {
+              "id": "k2-12",
+              "type": "multiple_choice",
+              "prompt": "Wat betekent NT2?",
+              "prompt_en": "What does NT2 mean?",
+              "answer": "Nederlands als tweede taal",
+              "distractors": [
+                "Nieuwe toeslag 2",
+                "Nationale training 2",
+                "Netto tarief 2"
+              ],
+              "explanation": {
+                "nl": "NT2-taalcursussen = Nederlands als tweede taal.",
+                "en": "NT2 = Dutch as a second language."
+              }
+            },
+            {
+              "id": "k2-13",
+              "type": "build_sentence",
+              "prompt_en": "The better your Dutch, the more opportunities.",
+              "answer": "Hoe beter je Nederlands hoe meer kansen",
+              "distractors": [
+                "minder",
+                "werk"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "k3",
+          "title": "Uitkeringen",
+          "title_en": "Benefits",
+          "questions": [
+            {
+              "id": "k3-01",
+              "type": "multiple_choice",
+              "prompt": "Je bent werkloos en hebt eerder gewerkt. Welke uitkering?",
+              "prompt_en": "You are unemployed and have worked before. Which benefit?",
+              "answer": "WW-uitkering",
+              "distractors": [
+                "AOW",
+                "Bijstand",
+                "Kinderbijslag"
+              ],
+              "explanation": {
+                "nl": "Eerder gewerkt en je baan kwijt → WW-uitkering via het UWV.",
+                "en": "Worked before and lost your job → WW via UWV."
+              }
+            },
+            {
+              "id": "k3-02",
+              "type": "multiple_choice",
+              "prompt": "Waar vraag je een WW-uitkering aan?",
+              "prompt_en": "Where do you apply for WW benefit?",
+              "answer": "Bij het UWV",
+              "distractors": [
+                "Bij de gemeente",
+                "Bij de SVB",
+                "Bij de Belastingdienst"
+              ],
+              "explanation": {
+                "nl": "WW vraag je online aan via werk.nl (inloggen met DigiD).",
+                "en": "Apply online via werk.nl (log in with DigiD)."
+              }
+            },
+            {
+              "id": "k3-03",
+              "type": "multiple_choice",
+              "prompt": "Binnen hoeveel tijd moet je WW aanvragen?",
+              "prompt_en": "Within how long must you apply for WW?",
+              "answer": "Binnen 1 week",
+              "distractors": [
+                "Binnen 1 maand",
+                "Binnen 6 maanden",
+                "Binnen 1 jaar"
+              ],
+              "explanation": {
+                "nl": "Doe dit binnen 1 week na je laatste werkdag.",
+                "en": "Do this within 1 week after your last working day."
+              }
+            },
+            {
+              "id": "k3-04",
+              "type": "multiple_choice",
+              "prompt": "Je hebt nooit gewerkt en bijna geen inkomen. Wat vraag je aan?",
+              "prompt_en": "You never worked and have almost no income. What do you apply for?",
+              "answer": "Bijstand bij de gemeente",
+              "distractors": [
+                "WW bij het UWV",
+                "WIA bij het UWV",
+                "AOW bij de SVB"
+              ],
+              "explanation": {
+                "nl": "Nooit of te weinig gewerkt → bijstand bij je gemeente.",
+                "en": "Never or barely worked → social assistance from the municipality."
+              }
+            },
+            {
+              "id": "k3-05",
+              "type": "multiple_choice",
+              "prompt": "Je bent langere tijd ziek en kunt niet werken. Welke uitkering?",
+              "prompt_en": "You have been sick for a long time and can't work. Which benefit?",
+              "answer": "WIA",
+              "distractors": [
+                "Bijstand",
+                "WW",
+                "AOW"
+              ],
+              "explanation": {
+                "nl": "Langere tijd problemen met je gezondheid en arbeidsongeschikt → WIA.",
+                "en": "Long-term health problems and unfit for work → WIA."
+              }
+            },
+            {
+              "id": "k3-06",
+              "type": "multiple_choice",
+              "prompt": "Vanaf welke leeftijd krijg je AOW (volgens je notities)?",
+              "prompt_en": "From what age do you get AOW (according to your notes)?",
+              "answer": "67 jaar",
+              "distractors": [
+                "55 jaar",
+                "60 jaar",
+                "75 jaar"
+              ],
+              "explanation": {
+                "nl": "AOW krijg je als je minimaal 67 jaar bent.",
+                "en": "You get AOW from at least 67."
+              }
+            },
+            {
+              "id": "k3-07",
+              "type": "multiple_choice",
+              "prompt": "Wat regelt de SVB?",
+              "prompt_en": "What does SVB handle?",
+              "answer": "AOW en kinderbijslag",
+              "distractors": [
+                "WW en WIA",
+                "Bijstand",
+                "Huurtoeslag"
+              ],
+              "explanation": {
+                "nl": "SVB is alleen voor AOW en kinderbijslag.",
+                "en": "SVB only handles AOW and child benefit."
+              }
+            },
+            {
+              "id": "k3-08",
+              "type": "multiple_choice",
+              "prompt": "Je bent ziek, maar je tijdelijke contract is gestopt. Welke uitkering?",
+              "prompt_en": "You're sick but your temporary contract ended. Which benefit?",
+              "answer": "Ziektewet",
+              "distractors": [
+                "AOW",
+                "Kinderbijslag",
+                "Bijstand"
+              ],
+              "explanation": {
+                "nl": "Ziek en geen werkgever (bijv. tijdelijk contract gestopt) → Ziektewet via UWV.",
+                "en": "Sick with no employer → Sickness Benefits Act via UWV."
+              }
+            },
+            {
+              "id": "k3-09",
+              "type": "true_false",
+              "prompt": "Met een WW-uitkering heb je sollicitatieplicht.",
+              "prompt_en": "With WW benefit you have a duty to apply for jobs.",
+              "answer": true,
+              "explanation": {
+                "nl": "Je moet solliciteren en dit bewijzen aan het UWV.",
+                "en": "You must apply for jobs and prove it to UWV."
+              }
+            },
+            {
+              "id": "k3-10",
+              "type": "true_false",
+              "prompt": "Met een uitkering mag je aangeboden werk weigeren als het niet je droomwerk is.",
+              "prompt_en": "With a benefit you may refuse offered work if it's not your dream job.",
+              "answer": false,
+              "explanation": {
+                "nl": "Je moet aangeboden werk accepteren, ook als het niet je droomwerk is.",
+                "en": "You must accept offered work, even if it's not your dream job."
+              }
+            },
+            {
+              "id": "k3-11",
+              "type": "multiple_choice",
+              "prompt": "Je krijgt bijstand en gaat samenwonen. Waar meld je dit?",
+              "prompt_en": "You receive social assistance and move in with someone. Where do you report it?",
+              "answer": "Bij de gemeente",
+              "distractors": [
+                "Bij het UWV",
+                "Bij de SVB",
+                "Bij de KvK"
+              ],
+              "explanation": {
+                "nl": "Bij bijstand meld je wijzigingen bij de gemeente; bij WW bij het UWV.",
+                "en": "Social assistance → municipality; WW → UWV."
+              }
+            },
+            {
+              "id": "k3-12",
+              "type": "multiple_choice",
+              "prompt": "Wat kan er gebeuren als je een wijziging niet meldt?",
+              "prompt_en": "What can happen if you don't report a change?",
+              "answer": "Een boete, of je uitkering wordt verlaagd of gestopt",
+              "distractors": [
+                "Je krijgt extra geld",
+                "Er gebeurt niets",
+                "Je krijgt een vast contract"
+              ],
+              "explanation": {
+                "nl": "Niet melden → boete, of je uitkering wordt verlaagd of stopgezet.",
+                "en": "Not reporting → fine, reduced or stopped benefit."
+              }
+            },
+            {
+              "id": "k3-13",
+              "type": "multiple_choice",
+              "prompt": "Wat is MAP?",
+              "prompt_en": "What is MAP?",
+              "answer": "Een verplichte training voor nieuwkomers die werk zoeken",
+              "distractors": [
+                "Een toeslag voor huur",
+                "Een vakbond",
+                "Een soort contract"
+              ],
+              "explanation": {
+                "nl": "MAP = Module Arbeidsmarkt en Participatie, een verplicht onderdeel van inburgering.",
+                "en": "MAP = mandatory labor market module, part of civic integration."
+              }
+            },
+            {
+              "id": "k3-14",
+              "type": "fill_blank",
+              "prompt": "Bijstand is een tijdelijk ___.",
+              "prompt_en": "Social assistance is a temporary safety net.",
+              "answer": "vangnet",
+              "distractors": [
+                "contract",
+                "pensioen",
+                "diploma"
+              ],
+              "explanation": {
+                "nl": "Bijstand is een tijdelijk vangnet. Je moet meewerken aan trajecten naar werk of scholing.",
+                "en": "It's a temporary safety net; you must cooperate with work programs."
+              }
+            },
+            {
+              "id": "k3-15",
+              "type": "multiple_choice",
+              "prompt": "Welke toeslag moet je zelf aanvragen?",
+              "prompt_en": "Which allowance must you apply for yourself?",
+              "answer": "Zorgtoeslag",
+              "distractors": [
+                "AOW",
+                "WW",
+                "Kinderbijslag via werkgever"
+              ],
+              "explanation": {
+                "nl": "Toeslagen zoals zorgtoeslag, huurtoeslag en kindgebonden budget vraag je zelf aan.",
+                "en": "You apply yourself for healthcare allowance, rent allowance and child budget."
+              }
+            }
+          ]
+        },
+        {
+          "id": "k4",
+          "title": "Contracten en regels",
+          "title_en": "Contracts and rules",
+          "questions": [
+            {
+              "id": "k4-01",
+              "type": "multiple_choice",
+              "prompt": "In de proeftijd kan de werkgever je…",
+              "prompt_en": "During probation the employer can…",
+              "answer": "op ieder moment ontslaan",
+              "distractors": [
+                "nooit ontslaan",
+                "pas na 2 jaar ontslaan",
+                "alleen met de vakbond ontslaan"
+              ],
+              "explanation": {
+                "nl": "In de proeftijd kunnen werkgever én werknemer op ieder moment stoppen.",
+                "en": "During probation both sides can stop at any moment."
+              }
+            },
+            {
+              "id": "k4-02",
+              "type": "multiple_choice",
+              "prompt": "Welk contract geeft de meeste zekerheid?",
+              "prompt_en": "Which contract gives the most security?",
+              "answer": "Een vast contract",
+              "distractors": [
+                "Een tijdelijk contract",
+                "Een contract via een uitzendbureau",
+                "Geen contract"
+              ],
+              "explanation": {
+                "nl": "Bij een vast contract mag het bedrijf je niet zomaar ontslaan.",
+                "en": "With a permanent contract the company can't just dismiss you."
+              }
+            },
+            {
+              "id": "k4-03",
+              "type": "multiple_choice",
+              "prompt": "Wat staat er in een tijdelijk contract?",
+              "prompt_en": "What does a temporary contract state?",
+              "answer": "De einddatum",
+              "distractors": [
+                "Je pensioen",
+                "Je hypotheek",
+                "Je diploma"
+              ],
+              "explanation": {
+                "nl": "In een tijdelijk contract staat de einddatum. Het kan soms verlengd worden.",
+                "en": "A temporary contract states the end date; it can sometimes be extended."
+              }
+            },
+            {
+              "id": "k4-04",
+              "type": "multiple_choice",
+              "prompt": "Hoeveel uur per week is voltijd in Nederland meestal?",
+              "prompt_en": "How many hours a week is full-time usually?",
+              "answer": "36, 38 of 40 uur",
+              "distractors": [
+                "20 uur",
+                "50 uur",
+                "60 uur"
+              ],
+              "explanation": {
+                "nl": "Voltijd is meestal 36, 38 of 40 uur per week.",
+                "en": "Full-time is usually 36, 38 or 40 hours."
+              }
+            },
+            {
+              "id": "k4-05",
+              "type": "true_false",
+              "prompt": "Deeltijdwerkers hebben dezelfde arbeidsrechten als voltijdwerkers.",
+              "prompt_en": "Part-timers have the same employment rights as full-timers.",
+              "answer": true,
+              "explanation": {
+                "nl": "Wel vaak minder loon, minder vakantiedagen en minder pensioenopbouw.",
+                "en": "But often less pay, fewer vacation days and less pension."
+              }
+            },
+            {
+              "id": "k4-06",
+              "type": "true_false",
+              "prompt": "Via een uitzendbureau heb je meestal vaste werktijden en pensioenopbouw.",
+              "prompt_en": "Through an agency you usually have fixed hours and pension build-up.",
+              "answer": false,
+              "explanation": {
+                "nl": "Meestal géén opbouw pensioen of vaste werktijden, en minder zekerheid.",
+                "en": "Usually no pension build-up or fixed hours, and less security."
+              }
+            },
+            {
+              "id": "k4-07",
+              "type": "multiple_choice",
+              "prompt": "Je bent langere tijd ziek. Bij wie meld je je ziek?",
+              "prompt_en": "You are sick for a longer time. Who do you report sick to?",
+              "answer": "Bij de bedrijfsarts (Arboarts)",
+              "distractors": [
+                "Bij de notaris",
+                "Bij de vakbond",
+                "Bij de OR"
+              ],
+              "explanation": {
+                "nl": "De Arboarts onderzoekt je en maakt met jou een re-integratieplan.",
+                "en": "The company doctor examines you and makes a reintegration plan."
+              }
+            },
+            {
+              "id": "k4-08",
+              "type": "multiple_choice",
+              "prompt": "Welke wet zorgt dat werknemers veilig en gezond kunnen werken?",
+              "prompt_en": "Which law makes sure employees can work safely and healthily?",
+              "answer": "De Arbo-wet",
+              "distractors": [
+                "De huurwet",
+                "De grondwet",
+                "De Ziektewet"
+              ],
+              "explanation": {
+                "nl": "In de Arbo-wet staan regels voor veilig en gezond werken.",
+                "en": "The Working Conditions Act has rules for safe, healthy work."
+              }
+            },
+            {
+              "id": "k4-09",
+              "type": "multiple_choice",
+              "prompt": "Wat moeten mensen in de bouw volgens de Arbo-wet doen?",
+              "prompt_en": "What must construction workers do under the Arbo Act?",
+              "answer": "Een helm dragen",
+              "distractors": [
+                "Een goede stoel kopen",
+                "Thuis werken",
+                "Een CAO tekenen"
+              ],
+              "explanation": {
+                "nl": "Mensen in de bouw moeten een helm dragen; op kantoor een goede stoel.",
+                "en": "Construction: wear a helmet; office: a good chair."
+              }
+            },
+            {
+              "id": "k4-10",
+              "type": "multiple_choice",
+              "prompt": "Je bent ziek en hebt een werkgever. Hoe lang betaalt de werkgever (minstens 70%) door?",
+              "prompt_en": "You're sick with an employer. How long does the employer keep paying (at least 70%)?",
+              "answer": "Tot 2 jaar",
+              "distractors": [
+                "1 week",
+                "1 maand",
+                "Nooit"
+              ],
+              "explanation": {
+                "nl": "Tot 2 jaar. Daarna → WIA.",
+                "en": "Up to 2 years. After that → WIA."
+              }
+            },
+            {
+              "id": "k4-11",
+              "type": "multiple_choice",
+              "prompt": "Wat betekent betrouwbaar zijn op het werk?",
+              "prompt_en": "What does being reliable at work mean?",
+              "answer": "Op tijd komen en je aan afspraken houden",
+              "distractors": [
+                "Altijd alleen werken",
+                "Nooit vragen stellen",
+                "Veel overwerken"
+              ],
+              "explanation": {
+                "nl": "Betrouwbaarheid: kom je op tijd? Houd je je aan de afspraken?",
+                "en": "Reliability: on time, keeping agreements."
+              }
+            },
+            {
+              "id": "k4-12",
+              "type": "multiple_choice",
+              "prompt": "Wat vinden werkgevers belangrijk bij werknemers?",
+              "prompt_en": "What do employers value in employees?",
+              "answer": "Zelfstandig werken en initiatief tonen",
+              "distractors": [
+                "Altijd te laat komen",
+                "Geen contact met collega's",
+                "Afspraken vergeten"
+              ],
+              "explanation": {
+                "nl": "Zelfstandig werken, samenwerken, initiatief tonen en betrouwbaarheid.",
+                "en": "Independence, teamwork, initiative and reliability."
+              }
+            },
+            {
+              "id": "k4-13",
+              "type": "build_sentence",
+              "prompt_en": "You must start on time.",
+              "answer": "Je moet op tijd beginnen",
+              "distractors": [
+                "vroeg",
+                "huis"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "k5",
+          "title": "OR, CAO en belasting",
+          "title_en": "Works council, CAO and tax",
+          "questions": [
+            {
+              "id": "k5-01",
+              "type": "multiple_choice",
+              "prompt": "Vanaf hoeveel werknemers is een ondernemingsraad (OR) verplicht?",
+              "prompt_en": "From how many employees is a works council mandatory?",
+              "answer": "50 of meer",
+              "distractors": [
+                "10 of meer",
+                "100 of meer",
+                "500 of meer"
+              ],
+              "explanation": {
+                "nl": "Een bedrijf met 50 of meer werknemers moet een OR hebben. Kleinere bedrijven hebben vaak een MR.",
+                "en": "50+ employees → OR. Smaller companies often have an MR."
+              }
+            },
+            {
+              "id": "k5-02",
+              "type": "multiple_choice",
+              "prompt": "Wat doet de personeelsvereniging (PV)?",
+              "prompt_en": "What does the staff association do?",
+              "answer": "Sociale evenementen organiseren",
+              "distractors": [
+                "Onderhandelen over de CAO",
+                "Beslissen over werktijden",
+                "Ontslag geven"
+              ],
+              "explanation": {
+                "nl": "De PV organiseert sociale activiteiten en heeft geen formele invloed.",
+                "en": "The PV organizes social activities and has no formal influence."
+              }
+            },
+            {
+              "id": "k5-03",
+              "type": "multiple_choice",
+              "prompt": "Wie onderhandelt met werkgevers over de CAO en salarissen?",
+              "prompt_en": "Who negotiates with employers on the CAO and salaries?",
+              "answer": "De vakbond",
+              "distractors": [
+                "De personeelsvereniging",
+                "De Kamer van Koophandel",
+                "De Belastingdienst"
+              ],
+              "explanation": {
+                "nl": "Vakbonden onderhandelen over de CAO, salarissen, werktijden en werkomstandigheden.",
+                "en": "Unions negotiate CAO, salaries, hours and conditions."
+              }
+            },
+            {
+              "id": "k5-04",
+              "type": "multiple_choice",
+              "prompt": "Voor wie geldt een CAO?",
+              "prompt_en": "Who does a CAO apply to?",
+              "answer": "Alle werkgevers en werknemers in dezelfde sector",
+              "distractors": [
+                "Alleen voor de directeur",
+                "Alleen voor uitzendkrachten",
+                "Alleen voor zzp'ers"
+              ],
+              "explanation": {
+                "nl": "Een CAO geldt voor alle werknemers en werkgevers in dezelfde sector.",
+                "en": "A CAO applies to everyone in the same sector."
+              }
+            },
+            {
+              "id": "k5-05",
+              "type": "true_false",
+              "prompt": "Als er een CAO is, geldt deze boven je individuele contract.",
+              "prompt_en": "If there is a CAO, it takes precedence over your individual contract.",
+              "answer": true,
+              "explanation": {
+                "nl": "Als er een CAO is, geldt deze boven je individuele contract.",
+                "en": "A CAO takes precedence over your individual contract."
+              }
+            },
+            {
+              "id": "k5-06",
+              "type": "multiple_choice",
+              "prompt": "Wat is een recht uit de CAO?",
+              "prompt_en": "What is a right from the CAO?",
+              "answer": "Vakantie en vakantiegeld",
+              "distractors": [
+                "Altijd thuiswerken",
+                "Een gratis auto",
+                "Geen belasting betalen"
+              ],
+              "explanation": {
+                "nl": "Rechten: minimumloon, salaris bij ziekte, vakantie en vakantiegeld.",
+                "en": "Rights: minimum wage, pay when sick, vacation and holiday pay."
+              }
+            },
+            {
+              "id": "k5-07",
+              "type": "multiple_choice",
+              "prompt": "Mensen met een hoog salaris betalen meer belasting. Hoe heet dit?",
+              "prompt_en": "People with a high salary pay more tax. What is this called?",
+              "answer": "Lastenverdeling",
+              "distractors": [
+                "Renteaftrek",
+                "Sollicitatieplicht",
+                "Proeftijd"
+              ],
+              "explanation": {
+                "nl": "Lastenverdeling: hoe hoger je inkomen, hoe meer belasting.",
+                "en": "Burden sharing: the higher your income, the more tax."
+              }
+            },
+            {
+              "id": "k5-08",
+              "type": "multiple_choice",
+              "prompt": "Je salaris na belasting en premies heet…",
+              "prompt_en": "Your salary after tax and contributions is…",
+              "answer": "netto salaris",
+              "distractors": [
+                "bruto salaris",
+                "termijnbedrag",
+                "vakantiegeld"
+              ],
+              "explanation": {
+                "nl": "Salaris − belasting − premie = netto. Salaris + belasting + premie = bruto.",
+                "en": "After deductions = net; before = gross."
+              }
+            },
+            {
+              "id": "k5-09",
+              "type": "multiple_choice",
+              "prompt": "Wat krijg je elke maand om je salaris te controleren?",
+              "prompt_en": "What do you get monthly to check your salary?",
+              "answer": "Een loonstrookje",
+              "distractors": [
+                "Een jaaropgave",
+                "Een energierekening",
+                "Een CAO"
+              ],
+              "explanation": {
+                "nl": "Loonstrookje = per maand. Jaaropgave = per jaar, voor je belastingaangifte.",
+                "en": "Payslip = monthly. Annual statement = yearly, for your tax return."
+              }
+            },
+            {
+              "id": "k5-10",
+              "type": "multiple_choice",
+              "prompt": "Waarvoor betaal je premies over je salaris?",
+              "prompt_en": "What do you pay contributions on your salary for?",
+              "answer": "AOW, WW en je pensioen",
+              "distractors": [
+                "Je huur",
+                "Je energie",
+                "Je afval"
+              ],
+              "explanation": {
+                "nl": "Premies zijn voor AOW, WW en jouw pensioen.",
+                "en": "Contributions are for AOW, WW and your pension."
+              }
+            },
+            {
+              "id": "k5-11",
+              "type": "multiple_choice",
+              "prompt": "Wat is een functioneringsgesprek?",
+              "prompt_en": "What is a performance interview?",
+              "answer": "Een tussentijds gesprek over hoe je werk gaat",
+              "distractors": [
+                "Een sollicitatiegesprek",
+                "Een gesprek met de notaris",
+                "Een ontslaggesprek"
+              ],
+              "explanation": {
+                "nl": "Functioneringsgesprek = tussentijds. Beoordelingsgesprek = voor loonsverhoging of verlenging.",
+                "en": "Interim review vs. assessment for a raise or extension."
+              }
+            },
+            {
+              "id": "k5-12",
+              "type": "multiple_choice",
+              "prompt": "Waarom klokken werknemers in en uit?",
+              "prompt_en": "Why do employees clock in and out?",
+              "answer": "Voor betaling van loon en registratie van verlof en overwerk",
+              "distractors": [
+                "Om de CAO te maken",
+                "Om belasting te ontwijken",
+                "Om de OR te kiezen"
+              ],
+              "explanation": {
+                "nl": "Registratie helpt bij loon, verlof- en overwerkregistratie en beoordeling.",
+                "en": "Tracking helps with pay, leave/overtime and assessment."
+              }
+            }
+          ]
+        },
+        {
+          "id": "k6",
+          "title": "Discriminatie en eigen bedrijf",
+          "title_en": "Discrimination and your own business",
+          "questions": [
+            {
+              "id": "k6-01",
+              "type": "multiple_choice",
+              "prompt": "Wat is discriminatie?",
+              "prompt_en": "What is discrimination?",
+              "answer": "Oneerlijk behandeld worden vanwege wie je bent",
+              "distractors": [
+                "Een slechte beoordeling krijgen",
+                "Een tijdelijk contract hebben",
+                "Te laat komen"
+              ],
+              "explanation": {
+                "nl": "Discriminatie: oneerlijk behandeld worden vanwege bijv. afkomst, huidskleur, leeftijd, geloof of geslacht.",
+                "en": "Unfair treatment because of who you are."
+              }
+            },
+            {
+              "id": "k6-02",
+              "type": "multiple_choice",
+              "prompt": "Je denkt dat je gediscrimineerd wordt op je werk. Wat doe je eerst?",
+              "prompt_en": "You think you're being discriminated against at work. What do you do first?",
+              "answer": "Praten met je leidinggevende of HR",
+              "distractors": [
+                "Direct ontslag nemen",
+                "Niets zeggen",
+                "Een bedrijf starten"
+              ],
+              "explanation": {
+                "nl": "Praat eerst met je collega, baas, leidinggevende of HR. Daarna eventueel de vertrouwenspersoon.",
+                "en": "Talk first to your manager or HR, then a confidential adviser."
+              }
+            },
+            {
+              "id": "k6-03",
+              "type": "multiple_choice",
+              "prompt": "Welke onafhankelijke organisatie onderzoekt klachten over discriminatie?",
+              "prompt_en": "Which independent organization investigates discrimination complaints?",
+              "answer": "College voor de Rechten van de Mens",
+              "distractors": [
+                "Kamer van Koophandel",
+                "Belastingdienst",
+                "DUO"
+              ],
+              "explanation": {
+                "nl": "Je kunt daar gratis een melding doen (online of telefonisch).",
+                "en": "You can report there for free, online or by phone."
+              }
+            },
+            {
+              "id": "k6-04",
+              "type": "true_false",
+              "prompt": "Het oordeel van het College voor de Rechten van de Mens is verplicht voor de werkgever.",
+              "prompt_en": "The Institute's judgment is binding on the employer.",
+              "answer": false,
+              "explanation": {
+                "nl": "Het oordeel is niet verplicht, maar heeft vaak invloed.",
+                "en": "It's not binding, but often has influence."
+              }
+            },
+            {
+              "id": "k6-05",
+              "type": "multiple_choice",
+              "prompt": "Wat is een vertrouwenspersoon?",
+              "prompt_en": "What is a confidential adviser?",
+              "answer": "Iemand op je werk bij wie je in vertrouwen een probleem kunt melden",
+              "distractors": [
+                "Je boekhouder",
+                "De notaris",
+                "Een collega van de PV"
+              ],
+              "explanation": {
+                "nl": "Een vertrouwenspersoon op werk kun je contacteren bij discriminatie.",
+                "en": "You can contact a confidential adviser at work."
+              }
+            },
+            {
+              "id": "k6-06",
+              "type": "multiple_choice",
+              "prompt": "Waar moeten alle bedrijven in Nederland zich registreren?",
+              "prompt_en": "Where must all companies register?",
+              "answer": "Bij de Kamer van Koophandel",
+              "distractors": [
+                "Bij het UWV",
+                "Bij de gemeente",
+                "Bij de SVB"
+              ],
+              "explanation": {
+                "nl": "Alle bedrijven registreren zich bij de KvK en krijgen een KvK-nummer.",
+                "en": "All companies register with the KvK and get a KvK number."
+              }
+            },
+            {
+              "id": "k6-07",
+              "type": "multiple_choice",
+              "prompt": "Wat moet je als zzp'er zelf regelen?",
+              "prompt_en": "What must you arrange yourself as a freelancer?",
+              "answer": "Pensioen en een AOV-verzekering",
+              "distractors": [
+                "Niets, de overheid regelt alles",
+                "Alleen je loonstrookje",
+                "Een vast contract"
+              ],
+              "explanation": {
+                "nl": "Als ondernemer ben je niet automatisch verzekerd: pensioen, AOV, aansprakelijkheid, boekhouding.",
+                "en": "Not automatically insured: pension, AOV, liability, bookkeeping."
+              }
+            },
+            {
+              "id": "k6-08",
+              "type": "multiple_choice",
+              "prompt": "Wat laat je de bank zien als je een lening wilt voor je bedrijf?",
+              "prompt_en": "What do you show the bank for a business loan?",
+              "answer": "Een ondernemersplan",
+              "distractors": [
+                "Een loonstrookje",
+                "Een huurcontract",
+                "Een diploma"
+              ],
+              "explanation": {
+                "nl": "Ondernemersplan = business plan; dit laat je zien aan de bank voor een lening.",
+                "en": "You show your business plan to the bank for a loan."
+              }
+            },
+            {
+              "id": "k6-09",
+              "type": "true_false",
+              "prompt": "Met bijstand mag je zonder melden een eigen bedrijf starten.",
+              "prompt_en": "On social assistance you may start a business without reporting it.",
+              "answer": false,
+              "explanation": {
+                "nl": "Je moet melden dat je wilt starten. Anders kan je uitkering stoppen of moet je geld terugbetalen.",
+                "en": "You must report it, or the benefit can stop or must be repaid."
+              }
+            },
+            {
+              "id": "k6-10",
+              "type": "multiple_choice",
+              "prompt": "Wanneer krijg je een AOV-uitkering?",
+              "prompt_en": "When do you get an AOV benefit?",
+              "answer": "Als je als zzp'er arbeidsongeschikt bent en een AOV-verzekering had",
+              "distractors": [
+                "Als je 67 jaar bent",
+                "Als je werkloos bent na een vast contract",
+                "Altijd automatisch via de overheid"
+              ],
+              "explanation": {
+                "nl": "Alleen als je zelf een AOV-verzekering hebt afgesloten bij een verzekeraar.",
+                "en": "Only if you took out AOV insurance yourself."
+              }
+            },
+            {
+              "id": "k6-11",
+              "type": "build_sentence",
+              "prompt_en": "You must pay taxes yourself.",
+              "answer": "Je moet zelf belasting betalen",
+              "distractors": [
+                "loon",
+                "nooit"
+              ],
+              "explanation": null
+            }
+          ]
+        }
+      ],
+      "vocabulary": [
+        {
+          "id": "werk-v01",
+          "nl": "vacature",
+          "en": "vacancy"
+        },
+        {
+          "id": "werk-v02",
+          "nl": "solliciteren",
+          "en": "to apply for a job"
+        },
+        {
+          "id": "werk-v03",
+          "nl": "uitzendbureau",
+          "en": "employment agency"
+        },
+        {
+          "id": "werk-v04",
+          "nl": "tijdelijk werk",
+          "en": "temporary work"
+        },
+        {
+          "id": "werk-v05",
+          "nl": "bepaalde tijd",
+          "en": "fixed period"
+        },
+        {
+          "id": "werk-v06",
+          "nl": "onbepaalde tijd",
+          "en": "indefinite period"
+        },
+        {
+          "id": "werk-v07",
+          "nl": "diploma waarderen",
+          "en": "evaluate a diploma"
+        },
+        {
+          "id": "werk-v08",
+          "nl": "re-integratiebedrijf",
+          "en": "reintegration company"
+        },
+        {
+          "id": "werk-v09",
+          "nl": "bijscholing",
+          "en": "further training"
+        },
+        {
+          "id": "werk-v10",
+          "nl": "vrijwilligerswerk",
+          "en": "volunteer work"
+        },
+        {
+          "id": "werk-v11",
+          "nl": "sollicitatieplicht",
+          "en": "job application duty"
+        },
+        {
+          "id": "werk-v12",
+          "nl": "WW-uitkering",
+          "en": "unemployment benefit"
+        },
+        {
+          "id": "werk-v13",
+          "nl": "WIA-uitkering",
+          "en": "disability benefit"
+        },
+        {
+          "id": "werk-v14",
+          "nl": "AOW",
+          "en": "state pension"
+        },
+        {
+          "id": "werk-v15",
+          "nl": "bijstand",
+          "en": "social assistance"
+        },
+        {
+          "id": "werk-v16",
+          "nl": "werkgever",
+          "en": "employer"
+        },
+        {
+          "id": "werk-v17",
+          "nl": "werknemer",
+          "en": "employee"
+        },
+        {
+          "id": "werk-v18",
+          "nl": "arbeidscontract",
+          "en": "employment contract"
+        },
+        {
+          "id": "werk-v19",
+          "nl": "proeftijd",
+          "en": "probation period"
+        },
+        {
+          "id": "werk-v20",
+          "nl": "vast contract",
+          "en": "permanent contract"
+        },
+        {
+          "id": "werk-v21",
+          "nl": "tijdelijk contract",
+          "en": "temporary contract"
+        },
+        {
+          "id": "werk-v22",
+          "nl": "veiligheid",
+          "en": "safety"
+        },
+        {
+          "id": "werk-v23",
+          "nl": "gezondheid",
+          "en": "health"
+        },
+        {
+          "id": "werk-v24",
+          "nl": "bedrijfsarts",
+          "en": "company doctor"
+        },
+        {
+          "id": "werk-v25",
+          "nl": "ondernemingsraad",
+          "en": "works council"
+        },
+        {
+          "id": "werk-v26",
+          "nl": "medezeggenschapsraad",
+          "en": "participation council"
+        },
+        {
+          "id": "werk-v27",
+          "nl": "personeelsvereniging",
+          "en": "staff association"
+        },
+        {
+          "id": "werk-v28",
+          "nl": "lastenverdeling",
+          "en": "burden sharing"
+        },
+        {
+          "id": "werk-v29",
+          "nl": "netto salaris",
+          "en": "net salary"
+        },
+        {
+          "id": "werk-v30",
+          "nl": "bruto salaris",
+          "en": "gross salary"
+        },
+        {
+          "id": "werk-v31",
+          "nl": "loonstrookje",
+          "en": "payslip"
+        },
+        {
+          "id": "werk-v32",
+          "nl": "jaaropgave",
+          "en": "annual income statement"
+        },
+        {
+          "id": "werk-v33",
+          "nl": "vakbond",
+          "en": "trade union"
+        },
+        {
+          "id": "werk-v34",
+          "nl": "Kamer van Koophandel",
+          "en": "chamber of commerce"
+        },
+        {
+          "id": "werk-v35",
+          "nl": "ondernemersplan",
+          "en": "business plan"
+        },
+        {
+          "id": "werk-v36",
+          "nl": "ontslaan",
+          "en": "to dismiss"
+        },
+        {
+          "id": "werk-v37",
+          "nl": "ontslag nemen",
+          "en": "to quit"
+        },
+        {
+          "id": "werk-v38",
+          "nl": "werkloos",
+          "en": "unemployed"
+        },
+        {
+          "id": "werk-v39",
+          "nl": "arbeidsongeschikt",
+          "en": "unfit for work"
+        },
+        {
+          "id": "werk-v40",
+          "nl": "boekhouder",
+          "en": "accountant"
+        }
+      ]
+    },
+    {
+      "id": "interactie",
+      "number": 3,
+      "title": "Interactie, normen en waarden",
+      "title_en": "Interaction, norms and values",
+      "color": "teal",
+      "lessons": [
+        {
+          "id": "i1",
+          "title": "Omgangsvormen",
+          "title_en": "Social conventions",
+          "questions": [
+            {
+              "id": "i1-01",
+              "type": "multiple_choice",
+              "prompt": "Wat zijn omgangsvormen?",
+              "prompt_en": "What are social conventions?",
+              "answer": "Hoe mensen met elkaar omgaan in gedrag, woorden en houding",
+              "distractors": [
+                "De regels voor afval",
+                "Een soort contract",
+                "De feestdagen van Nederland"
+              ],
+              "explanation": {
+                "nl": "Omgangsvormen = hoe mensen met elkaar omgaan in gedrag, woorden en houding.",
+                "en": "How people interact in behavior, words and attitude."
+              }
+            },
+            {
+              "id": "i1-02",
+              "type": "multiple_choice",
+              "prompt": "Iemand is jarig. Wat zeg je?",
+              "prompt_en": "It's someone's birthday. What do you say?",
+              "answer": "Gefeliciteerd",
+              "distractors": [
+                "Gecondoleerd",
+                "Beterschap",
+                "Sterkte"
+              ],
+              "explanation": {
+                "nl": "Op iemands verjaardag of als iemand geslaagd is → Gefeliciteerd.",
+                "en": "Birthday or graduation → Congratulations."
+              }
+            },
+            {
+              "id": "i1-03",
+              "type": "multiple_choice",
+              "prompt": "Iemand is overleden. Wat zeg je tegen de familie?",
+              "prompt_en": "Someone has died. What do you say to the family?",
+              "answer": "Gecondoleerd",
+              "distractors": [
+                "Gefeliciteerd",
+                "Beterschap",
+                "Goed gedaan"
+              ],
+              "explanation": {
+                "nl": "Als iemand overleden is → Gecondoleerd.",
+                "en": "When someone has died → My condolences."
+              }
+            },
+            {
+              "id": "i1-04",
+              "type": "multiple_choice",
+              "prompt": "Hoe begroeten een man en een vrouw elkaar informeel?",
+              "prompt_en": "How do a man and a woman greet each other informally?",
+              "answer": "Met 3 zoenen",
+              "distractors": [
+                "Met een buiging",
+                "Met een high five",
+                "Ze zeggen niets"
+              ],
+              "explanation": {
+                "nl": "3 zoenen: informele begroeting tussen man en vrouw, vaak ook tussen twee vrouwen.",
+                "en": "3 kisses: informal greeting between a man and a woman, often two women."
+              }
+            },
+            {
+              "id": "i1-05",
+              "type": "multiple_choice",
+              "prompt": "Je stelt je voor aan iemand. Wat doe je?",
+              "prompt_en": "You introduce yourself to someone. What do you do?",
+              "answer": "Een hand geven",
+              "distractors": [
+                "3 zoenen geven",
+                "Buigen",
+                "Een kaartje sturen"
+              ],
+              "explanation": {
+                "nl": "Een hand geven doe je als je je voorstelt aan iemand.",
+                "en": "You shake hands when introducing yourself."
+              }
+            },
+            {
+              "id": "i1-06",
+              "type": "multiple_choice",
+              "prompt": "Tegen wie zeggen Nederlanders vaak 'u'?",
+              "prompt_en": "Who do Dutch people often say 'u' to?",
+              "answer": "Tegen oudere mensen",
+              "distractors": [
+                "Tegen kinderen",
+                "Tegen vrienden",
+                "Tegen klasgenoten"
+              ],
+              "explanation": {
+                "nl": "Tegen oudere mensen en soms tegen hun baas zeggen mensen 'u'.",
+                "en": "Older people and sometimes the boss get 'u'."
+              }
+            },
+            {
+              "id": "i1-07",
+              "type": "true_false",
+              "prompt": "De meeste Nederlanders zeggen 'je/jij' tegen elkaar, ook als ze elkaar niet kennen.",
+              "prompt_en": "Most Dutch people say 'je/jij' to each other, even strangers.",
+              "answer": true,
+              "explanation": {
+                "nl": "De meeste Nederlanders zeggen 'je, jij' tegen elkaar.",
+                "en": "Most Dutch people use 'je, jij'."
+              }
+            },
+            {
+              "id": "i1-08",
+              "type": "multiple_choice",
+              "prompt": "Je wilt bij iemand op bezoek. Wat doe je meestal eerst?",
+              "prompt_en": "You want to visit someone. What do you usually do first?",
+              "answer": "Een afspraak maken",
+              "distractors": [
+                "Gewoon langsgaan",
+                "Een cadeau sturen",
+                "De buren vragen"
+              ],
+              "explanation": {
+                "nl": "Meestal maken mensen een afspraak voordat ze naar iemands huis gaan.",
+                "en": "People usually make an appointment before visiting."
+              }
+            },
+            {
+              "id": "i1-09",
+              "type": "multiple_choice",
+              "prompt": "Hoeveel later komen is bij een bezoek meestal geen probleem?",
+              "prompt_en": "How late can you usually arrive for a visit?",
+              "answer": "Maximaal 10-15 minuten",
+              "distractors": [
+                "1 uur",
+                "2 uur",
+                "Je mag nooit later komen"
+              ],
+              "explanation": {
+                "nl": "De meeste Nederlanders komen op tijd. Je kan een beetje later komen (max 10-15 minuten).",
+                "en": "You can be a little late, max 10-15 minutes."
+              }
+            },
+            {
+              "id": "i1-10",
+              "type": "multiple_choice",
+              "prompt": "Aan wie kun je beter geen cadeautje geven?",
+              "prompt_en": "Who should you rather not give a present to?",
+              "answer": "Een ambtenaar in functie",
+              "distractors": [
+                "Een vriend die jarig is",
+                "Iemand die een feest geeft",
+                "Je buren als je op bezoek gaat"
+              ],
+              "explanation": {
+                "nl": "Een ambtenaar in functie mag officieel geen cadeaus aannemen.",
+                "en": "An on-duty government official may not officially accept gifts."
+              }
+            },
+            {
+              "id": "i1-11",
+              "type": "multiple_choice",
+              "prompt": "Iemand geeft een feest. Wat neem je mee?",
+              "prompt_en": "Someone throws a party. What do you bring?",
+              "answer": "Bloemen, een fles wijn of iets lekkers",
+              "distractors": [
+                "Je cv",
+                "Een vervoersbewijs",
+                "Niets, dat is onbeleefd"
+              ],
+              "explanation": {
+                "nl": "Bij een feest of bezoek: bloemen, fles wijn of iets lekkers.",
+                "en": "For a party or visit: flowers, wine or something tasty."
+              }
+            },
+            {
+              "id": "i1-12",
+              "type": "multiple_choice",
+              "prompt": "Je wilt bellen in de wachtkamer bij de dokter. Wat doe je beter?",
+              "prompt_en": "You want to call in the doctor's waiting room. What's better?",
+              "answer": "Naar buiten gaan",
+              "distractors": [
+                "Hard praten",
+                "Op de luidspreker bellen",
+                "In de wachtkamer blijven bellen"
+              ],
+              "explanation": {
+                "nl": "Je kan beter niet bellen in de wachtkamer. Ga dan beter naar buiten.",
+                "en": "Better not call in the waiting room; go outside."
+              }
+            },
+            {
+              "id": "i1-13",
+              "type": "multiple_choice",
+              "prompt": "Hoe wacht je op je beurt in het gemeentehuis?",
+              "prompt_en": "How do you wait your turn at the town hall?",
+              "answer": "Je trekt een nummertje",
+              "distractors": [
+                "Je dringt voor",
+                "Je belt de balie",
+                "Je wacht buiten"
+              ],
+              "explanation": {
+                "nl": "Nummertje trekken: wacht tot je nummer op het scherm komt of je je nummer hoort.",
+                "en": "Take a number and wait until it's shown or called."
+              }
+            },
+            {
+              "id": "i1-14",
+              "type": "true_false",
+              "prompt": "In een stiltecoupé mag je zacht praten.",
+              "prompt_en": "In a quiet compartment you may talk quietly.",
+              "answer": false,
+              "explanation": {
+                "nl": "In stiltecoupés mag je niet praten.",
+                "en": "You may not talk in quiet compartments."
+              }
+            },
+            {
+              "id": "i1-15",
+              "type": "true_false",
+              "prompt": "In het openbaar vervoer moet je altijd een vervoersbewijs en ID bij je hebben.",
+              "prompt_en": "On public transport you must always carry a ticket and ID.",
+              "answer": true,
+              "explanation": {
+                "nl": "Je moet altijd een vervoersbewijs (of OV-chipkaart) en ID bij je hebben.",
+                "en": "Always have a ticket (or OV-chipkaart) and ID."
+              }
+            },
+            {
+              "id": "i1-16",
+              "type": "multiple_choice",
+              "prompt": "Je kunt niet naar je afspraak bij het UWV komen. Wat moet je doen?",
+              "prompt_en": "You can't make your UWV appointment. What must you do?",
+              "answer": "Op tijd afzeggen",
+              "distractors": [
+                "Niets doen",
+                "De volgende dag langsgaan",
+                "Een cadeau sturen"
+              ],
+              "explanation": {
+                "nl": "Bij formele afspraken (dokter, gemeente, UWV): op tijd zijn of op tijd afzeggen.",
+                "en": "For formal appointments: be on time or cancel in time."
+              }
+            },
+            {
+              "id": "i1-17",
+              "type": "true_false",
+              "prompt": "Veel Nederlanders vinden het vervelend als je voordringt in de rij.",
+              "prompt_en": "Many Dutch people find it annoying when you cut the queue.",
+              "answer": true,
+              "explanation": {
+                "nl": "Bijvoorbeeld bij de kassa van de supermarkt.",
+                "en": "For example at the supermarket checkout."
+              }
+            },
+            {
+              "id": "i1-18",
+              "type": "build_sentence",
+              "prompt_en": "Most Dutch people arrive on time.",
+              "answer": "De meeste Nederlanders komen op tijd",
+              "distractors": [
+                "later",
+                "nooit"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "i2",
+          "title": "Directheid",
+          "title_en": "Directness",
+          "questions": [
+            {
+              "id": "i2-01",
+              "type": "multiple_choice",
+              "prompt": "Wat vinden Nederlanders belangrijker dan beleefdheid?",
+              "prompt_en": "What do Dutch people find more important than politeness?",
+              "answer": "Eerlijkheid",
+              "distractors": [
+                "Stilte",
+                "Cadeaus",
+                "Formele taal"
+              ],
+              "explanation": {
+                "nl": "Eerlijkheid is belangrijker dan beleefdheid.",
+                "en": "Honesty is more important than politeness."
+              }
+            },
+            {
+              "id": "i2-02",
+              "type": "true_false",
+              "prompt": "Directe communicatie is in Nederland een vorm van onbeleefdheid.",
+              "prompt_en": "Direct communication is a form of rudeness in the Netherlands.",
+              "answer": false,
+              "explanation": {
+                "nl": "Dit is geen onbeleefdheid, maar een culturele gewoonte.",
+                "en": "It's not rudeness, but a cultural custom."
+              }
+            },
+            {
+              "id": "i2-03",
+              "type": "multiple_choice",
+              "prompt": "De buren spelen harde muziek. Wat is normaal om eerst te doen?",
+              "prompt_en": "The neighbors play loud music. What's normal to do first?",
+              "answer": "Naar de buren gaan en het direct zeggen",
+              "distractors": [
+                "Meteen de politie bellen",
+                "Een brief naar de gemeente sturen",
+                "Niets zeggen"
+              ],
+              "explanation": {
+                "nl": "Ga eerst naar de buren en zeg het direct. Helpt dat niet, dan kun je de politie bellen.",
+                "en": "Tell the neighbors directly first; police only if that fails."
+              }
+            },
+            {
+              "id": "i2-04",
+              "type": "multiple_choice",
+              "prompt": "Iemand is direct en je begrijpt het niet. Wat zeg je?",
+              "prompt_en": "Someone is direct and you don't understand. What do you say?",
+              "answer": "Hoe bedoel je dat precies?",
+              "distractors": [
+                "Dat is onbeleefd!",
+                "Ik ga weg.",
+                "Gefeliciteerd."
+              ],
+              "explanation": {
+                "nl": "Als je iets niet begrijpt: vraag door. 'Hoe bedoel je dat precies?' 'Kun je dat uitleggen?'",
+                "en": "Ask further: 'What exactly do you mean?'"
+              }
+            },
+            {
+              "id": "i2-05",
+              "type": "fill_blank",
+              "prompt": "Probeer te luisteren naar de ___, niet naar de toon.",
+              "prompt_en": "Try to listen to the message, not to the tone.",
+              "answer": "boodschap",
+              "distractors": [
+                "muziek",
+                "buren",
+                "regels"
+              ],
+              "explanation": {
+                "nl": "Probeer directheid te begrijpen, niet persoonlijk te nemen.",
+                "en": "Try to understand directness, not take it personally."
+              }
+            },
+            {
+              "id": "i2-06",
+              "type": "multiple_choice",
+              "prompt": "Wat betekent 'zeggen waar het op staat'?",
+              "prompt_en": "What does 'zeggen waar het op staat' mean?",
+              "answer": "Zeggen wat je denkt",
+              "distractors": [
+                "Niets zeggen",
+                "Heel beleefd zijn",
+                "Een omweg nemen"
+              ],
+              "explanation": {
+                "nl": "'Zeggen waar het op staat' is een teken van respect en vertrouwen.",
+                "en": "Saying it like it is shows respect and trust."
+              }
+            },
+            {
+              "id": "i2-07",
+              "type": "true_false",
+              "prompt": "Directheid bespaart tijd en voorkomt misverstanden.",
+              "prompt_en": "Directness saves time and prevents misunderstandings.",
+              "answer": true,
+              "explanation": {
+                "nl": "In werk en school is duidelijkheid vaak belangrijker dan beleefd taalgebruik.",
+                "en": "At work and school clarity often matters more than polite language."
+              }
+            },
+            {
+              "id": "i2-08",
+              "type": "multiple_choice",
+              "prompt": "Hoe herken je directe communicatie?",
+              "prompt_en": "How do you recognize direct communication?",
+              "answer": "Korte, duidelijke zinnen zonder veel beleefde vormen",
+              "distractors": [
+                "Veel lange omwegen",
+                "Alleen non-verbale signalen",
+                "Mensen zeggen nooit 'nee'"
+              ],
+              "explanation": {
+                "nl": "Je hoort vaker 'nee', 'ik wil dat niet' of 'dat klopt niet'.",
+                "en": "You hear 'no' and 'that's not right' more often."
+              }
+            },
+            {
+              "id": "i2-09",
+              "type": "multiple_choice",
+              "prompt": "Hoe kun je verschillen in omgangsvormen herkennen?",
+              "prompt_en": "How can you recognize differences in social conventions?",
+              "answer": "Goed luisteren en kijken hoe anderen het doen",
+              "distractors": [
+                "Altijd hetzelfde doen als thuis",
+                "Nooit vragen stellen",
+                "Alleen online lezen"
+              ],
+              "explanation": {
+                "nl": "Luister, kijk, stel vragen en let op non-verbale signalen. Observeer eerst.",
+                "en": "Listen, watch, ask questions, notice body language."
+              }
+            },
+            {
+              "id": "i2-10",
+              "type": "true_false",
+              "prompt": "Je moet jezelf helemaal veranderen om in Nederland te passen.",
+              "prompt_en": "You must completely change yourself to fit in.",
+              "answer": false,
+              "explanation": {
+                "nl": "Je hoeft jezelf niet te veranderen, maar het helpt om de stijl te herkennen. Pas je aan waar nodig, maar blijf jezelf.",
+                "en": "You don't need to change yourself; adapt where needed."
+              }
+            },
+            {
+              "id": "i2-11",
+              "type": "build_sentence",
+              "prompt_en": "I don't agree with you.",
+              "answer": "Ik ben het niet met je eens",
+              "distractors": [
+                "wel",
+                "jij"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "i3",
+          "title": "Samenwonen, waarden en normen",
+          "title_en": "Living together, values and norms",
+          "questions": [
+            {
+              "id": "i3-01",
+              "type": "multiple_choice",
+              "prompt": "Twee mensen wonen samen zonder huwelijk. Waar leggen ze afspraken vaak vast?",
+              "prompt_en": "Two people live together unmarried. Where do they often record agreements?",
+              "answer": "In een samenlevingscontract bij de notaris",
+              "distractors": [
+                "Bij de Belastingdienst",
+                "In een CAO",
+                "In een huurcontract bij de buren"
+              ],
+              "explanation": {
+                "nl": "Ongehuwd samenwonen: vaak een samenlevingscontract bij de notaris.",
+                "en": "Unmarried cohabitation: often a contract at the notary."
+              }
+            },
+            {
+              "id": "i3-02",
+              "type": "true_false",
+              "prompt": "Ongehuwd samenwonen geeft automatisch wettelijke rechten bij erfenis en pensioen.",
+              "prompt_en": "Unmarried cohabitation automatically gives legal rights for inheritance and pension.",
+              "answer": false,
+              "explanation": {
+                "nl": "Geen automatische wettelijke rechten (zoals bij erfenis of pensioen).",
+                "en": "No automatic legal rights."
+              }
+            },
+            {
+              "id": "i3-03",
+              "type": "multiple_choice",
+              "prompt": "Wat lijkt op het huwelijk, maar zonder ceremonie of kerk?",
+              "prompt_en": "What is like marriage, but without ceremony or church?",
+              "answer": "Geregistreerd partnerschap",
+              "distractors": [
+                "Een samenlevingscontract",
+                "Een eenoudergezin",
+                "Een receptie"
+              ],
+              "explanation": {
+                "nl": "Geregistreerd partnerschap: juridisch erkend, rechten en plichten bijna hetzelfde als bij huwelijk.",
+                "en": "Legally recognized, almost the same rights as marriage."
+              }
+            },
+            {
+              "id": "i3-04",
+              "type": "multiple_choice",
+              "prompt": "Sinds wanneer kunnen homo's en lesbiennes in Nederland trouwen?",
+              "prompt_en": "Since when can gay men and lesbians marry in the Netherlands?",
+              "answer": "2001",
+              "distractors": [
+                "1945",
+                "1863",
+                "2015"
+              ],
+              "explanation": {
+                "nl": "Homo's en lesbiennes kunnen sinds 2001 met elkaar trouwen.",
+                "en": "Since 2001."
+              }
+            },
+            {
+              "id": "i3-05",
+              "type": "multiple_choice",
+              "prompt": "Wat is een eenoudergezin?",
+              "prompt_en": "What is a single-parent family?",
+              "answer": "Een gezin met één vader of moeder en kinderen",
+              "distractors": [
+                "Een gezin zonder kinderen",
+                "Twee ouders en één kind",
+                "Een stel dat samenwoont"
+              ],
+              "explanation": {
+                "nl": "Eenoudergezin = één vader of moeder met kinderen.",
+                "en": "One father or mother with children."
+              }
+            },
+            {
+              "id": "i3-06",
+              "type": "multiple_choice",
+              "prompt": "Ongeveer hoeveel procent van de mensen in Nederland woont in een gezin?",
+              "prompt_en": "About what percentage of people in the Netherlands live in a family?",
+              "answer": "57%",
+              "distractors": [
+                "25%",
+                "75%",
+                "90%"
+              ],
+              "explanation": {
+                "nl": "Ongeveer 57% van de mensen woont in een gezin.",
+                "en": "About 57%."
+              }
+            },
+            {
+              "id": "i3-07",
+              "type": "multiple_choice",
+              "prompt": "Wat zijn waarden?",
+              "prompt_en": "What are values?",
+              "answer": "Dingen die we in een groep belangrijk vinden",
+              "distractors": [
+                "Regels die voortkomen uit de normen",
+                "Boetes van de gemeente",
+                "Feestdagen"
+              ],
+              "explanation": {
+                "nl": "Waarden = dingen die we belangrijk vinden. Normen = regels die voortkomen uit de waarden.",
+                "en": "Values = what we find important. Norms = rules from values."
+              }
+            },
+            {
+              "id": "i3-08",
+              "type": "multiple_choice",
+              "prompt": "'Discrimineren is verboden' is een voorbeeld van een…",
+              "prompt_en": "'Discrimination is forbidden' is an example of a…",
+              "answer": "norm",
+              "distractors": [
+                "waarde",
+                "feestdag",
+                "toeslag"
+              ],
+              "explanation": {
+                "nl": "Normen zijn regels, bijv. discrimineren en geweld zijn verboden.",
+                "en": "Norms are rules, e.g. discrimination and violence are forbidden."
+              }
+            },
+            {
+              "id": "i3-09",
+              "type": "multiple_choice",
+              "prompt": "Iedereen mag zeggen wat hij of zij wil. Hoe heet dit?",
+              "prompt_en": "Everyone may say what they want. What is this called?",
+              "answer": "Vrijheid van meningsuiting",
+              "distractors": [
+                "Vrijheid van godsdienst",
+                "Lastenverdeling",
+                "Sollicitatieplicht"
+              ],
+              "explanation": {
+                "nl": "Vrijheid van meningsuiting. Geloven wat je wilt = vrijheid van godsdienst.",
+                "en": "Freedom of expression; believing what you want = freedom of religion."
+              }
+            },
+            {
+              "id": "i3-10",
+              "type": "multiple_choice",
+              "prompt": "Waar staat dat alle mensen gelijk zijn en discrimineren verboden is?",
+              "prompt_en": "Where is it stated that everyone is equal and discrimination is forbidden?",
+              "answer": "In de grondwet",
+              "distractors": [
+                "In de CAO",
+                "In het huurcontract",
+                "In de Arbo-wet"
+              ],
+              "explanation": {
+                "nl": "In de grondwet staat: discrimineren is verboden en alle mensen zijn gelijk.",
+                "en": "The constitution."
+              }
+            },
+            {
+              "id": "i3-11",
+              "type": "multiple_choice",
+              "prompt": "Waar kun je geweld melden?",
+              "prompt_en": "Where can you report violence?",
+              "answer": "Bij Slachtofferhulp Nederland of de politie",
+              "distractors": [
+                "Bij de Kamer van Koophandel",
+                "Bij het UWV",
+                "Bij DUO"
+              ],
+              "explanation": {
+                "nl": "Geweld is strafbaar: boete en/of gevangenis.",
+                "en": "Violence is punishable: fine and/or prison."
+              }
+            },
+            {
+              "id": "i3-12",
+              "type": "true_false",
+              "prompt": "Het is in Nederland toegestaan om wapens te dragen.",
+              "prompt_en": "Carrying weapons is allowed in the Netherlands.",
+              "answer": false,
+              "explanation": {
+                "nl": "Het is verboden om wapens te dragen.",
+                "en": "Carrying weapons is forbidden."
+              }
+            },
+            {
+              "id": "i3-13",
+              "type": "true_false",
+              "prompt": "De meeste vrouwen in Nederland blijven werken na de geboorte van een kind.",
+              "prompt_en": "Most women keep working after having a child.",
+              "answer": true,
+              "explanation": {
+                "nl": "Mannen en vrouwen krijgen dezelfde kansen en doen samen het huishouden.",
+                "en": "Men and women get equal chances and share chores."
+              }
+            },
+            {
+              "id": "i3-14",
+              "type": "true_false",
+              "prompt": "Shirts met blote armen zijn in Nederland verboden.",
+              "prompt_en": "Shirts with bare arms are forbidden in the Netherlands.",
+              "answer": false,
+              "explanation": {
+                "nl": "Mensen mogen zelf kiezen welke kleding ze dragen.",
+                "en": "People may choose their own clothes."
+              }
+            }
+          ]
+        },
+        {
+          "id": "i4",
+          "title": "Sociale netwerken",
+          "title_en": "Social networks",
+          "questions": [
+            {
+              "id": "i4-01",
+              "type": "multiple_choice",
+              "prompt": "Wat is vrijwilligerswerk?",
+              "prompt_en": "What is volunteer work?",
+              "answer": "Onbetaald werk voor een organisatie of andere mensen",
+              "distractors": [
+                "Werk via een uitzendbureau",
+                "Werk met een vast contract",
+                "Werk als zzp'er"
+              ],
+              "explanation": {
+                "nl": "Vrijwilligerswerk = onbetaald werk.",
+                "en": "Volunteer work = unpaid work."
+              }
+            },
+            {
+              "id": "i4-02",
+              "type": "multiple_choice",
+              "prompt": "Koffie schenken in het buurthuis is een voorbeeld van…",
+              "prompt_en": "Pouring coffee at the community center is an example of…",
+              "answer": "vrijwilligerswerk",
+              "distractors": [
+                "een vast contract",
+                "trakteren",
+                "een vereniging"
+              ],
+              "explanation": {
+                "nl": "Ook helpen bij sportclub of school, taalmaatje zijn, wandelen met ouderen.",
+                "en": "Also helping at a club or school, language buddy, walking with the elderly."
+              }
+            },
+            {
+              "id": "i4-03",
+              "type": "multiple_choice",
+              "prompt": "Wat doen leden vaak voor een vereniging?",
+              "prompt_en": "What do members often do for a club?",
+              "answer": "Helpen, bijvoorbeeld achter de bar staan",
+              "distractors": [
+                "Belasting betalen aan de club",
+                "Een CAO maken",
+                "Huurtoeslag aanvragen"
+              ],
+              "explanation": {
+                "nl": "Meestal helpen leden de vereniging, bijv. achter de bar of met het nieuwe clubhuis.",
+                "en": "Members usually help, e.g. at the bar or with the clubhouse."
+              }
+            },
+            {
+              "id": "i4-04",
+              "type": "true_false",
+              "prompt": "Vrijwilligerswerk kan soms leiden tot betaald werk.",
+              "prompt_en": "Volunteer work can sometimes lead to paid work.",
+              "answer": true,
+              "explanation": {
+                "nl": "Je oefent ook Nederlands en krijgt nieuwe contacten.",
+                "en": "You also practice Dutch and make contacts."
+              }
+            },
+            {
+              "id": "i4-05",
+              "type": "multiple_choice",
+              "prompt": "Op welke website vind je vrijwilligerswerk?",
+              "prompt_en": "On which website do you find volunteer work?",
+              "answer": "vrijwilligerswerk.nl",
+              "distractors": [
+                "idw.nl",
+                "belastingdienst.nl",
+                "werk.nl/WW"
+              ],
+              "explanation": {
+                "nl": "Kijk op vrijwilligerswerk.nl, nov.nl of de website van je gemeente.",
+                "en": "Try vrijwilligerswerk.nl, nov.nl or your municipality's site."
+              }
+            },
+            {
+              "id": "i4-06",
+              "type": "multiple_choice",
+              "prompt": "Wat leer je door vrijwilligerswerk?",
+              "prompt_en": "What do you learn through volunteer work?",
+              "answer": "De regels en gewoontes van het land",
+              "distractors": [
+                "Hoe je belasting ontwijkt",
+                "Hoe je een hypotheek krijgt",
+                "Niets"
+              ],
+              "explanation": {
+                "nl": "Je oefent de taal, leert regels en gewoontes kennen en laat zien dat je wilt meedoen.",
+                "en": "Practice the language, learn customs, show you want to take part."
+              }
+            },
+            {
+              "id": "i4-07",
+              "type": "multiple_choice",
+              "prompt": "Waarom vinden Nederlanders een sociaal netwerk belangrijk?",
+              "prompt_en": "Why do Dutch people find a social network important?",
+              "answer": "Om mensen uit de buurt te leren kennen en nieuwe vrienden te maken",
+              "distractors": [
+                "Om meer belasting te betalen",
+                "Om minder te werken",
+                "Om geen afspraken te maken"
+              ],
+              "explanation": {
+                "nl": "Ze willen mensen uit hun buurt leren kennen en nieuwe vrienden of connecties maken.",
+                "en": "To meet neighbors and make friends and connections."
+              }
+            },
+            {
+              "id": "i4-08",
+              "type": "multiple_choice",
+              "prompt": "Waar vraag je naar vrijwilligersplekken?",
+              "prompt_en": "Where do you ask about volunteer positions?",
+              "answer": "Bij je gemeente of wijkcentrum",
+              "distractors": [
+                "Bij de notaris",
+                "Bij het IDW",
+                "Bij de SVB"
+              ],
+              "explanation": {
+                "nl": "Vraag bij je gemeente of wijkcentrum, of bij een sportclub of buurthuis.",
+                "en": "Ask your municipality, community center, club or community house."
+              }
+            },
+            {
+              "id": "i4-09",
+              "type": "build_sentence",
+              "prompt_en": "You do something good for others.",
+              "answer": "Je doet iets goeds voor anderen",
+              "distractors": [
+                "slecht",
+                "jezelf"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "i5",
+          "title": "Feestdagen",
+          "title_en": "Public holidays",
+          "questions": [
+            {
+              "id": "i5-01",
+              "type": "multiple_choice",
+              "prompt": "Wanneer is Kerst in Nederland?",
+              "prompt_en": "When is Christmas in the Netherlands?",
+              "answer": "25 en 26 december",
+              "distractors": [
+                "24 en 25 december",
+                "5 december",
+                "31 december"
+              ],
+              "explanation": {
+                "nl": "Kerst: 25 en 26 december, de geboorte van Jezus Christus.",
+                "en": "Christmas: 25 and 26 December."
+              }
+            },
+            {
+              "id": "i5-02",
+              "type": "multiple_choice",
+              "prompt": "Wat vieren mensen met Pasen?",
+              "prompt_en": "What do people celebrate at Easter?",
+              "answer": "De wederopstanding van Jezus Christus",
+              "distractors": [
+                "De geboorte van Jezus Christus",
+                "De bevrijding in 1945",
+                "De verjaardag van de koning"
+              ],
+              "explanation": {
+                "nl": "Pasen: zondag en maandag in maart of april. Maandag is een vrije dag.",
+                "en": "Easter: Sunday and Monday in March/April; Monday off."
+              }
+            },
+            {
+              "id": "i5-03",
+              "type": "multiple_choice",
+              "prompt": "Wanneer is Sinterklaas?",
+              "prompt_en": "When is Sinterklaas?",
+              "answer": "5 december",
+              "distractors": [
+                "25 december",
+                "27 april",
+                "1 juli"
+              ],
+              "explanation": {
+                "nl": "Sinterklaas: 5 december. Het is geen vrije dag.",
+                "en": "5 December; not a day off."
+              }
+            },
+            {
+              "id": "i5-04",
+              "type": "multiple_choice",
+              "prompt": "Hoe komt Sinterklaas naar Nederland?",
+              "prompt_en": "How does Sinterklaas come to the Netherlands?",
+              "answer": "Met de boot uit Spanje",
+              "distractors": [
+                "Met het vliegtuig uit Turkije",
+                "Met de trein uit Duitsland",
+                "Met de fiets uit België"
+              ],
+              "explanation": {
+                "nl": "Sinterklaas komt elk jaar met de boot uit Spanje.",
+                "en": "Every year by boat from Spain."
+              }
+            },
+            {
+              "id": "i5-05",
+              "type": "multiple_choice",
+              "prompt": "Wat is 'schoentje zetten'?",
+              "prompt_en": "What is 'schoentje zetten'?",
+              "answer": "Kinderen zetten hun schoen neer en krijgen snoep of een cadeautje",
+              "distractors": [
+                "Je schoenen uitdoen bij de deur",
+                "Nieuwe schoenen kopen",
+                "Je schoenen poetsen voor Kerst"
+              ],
+              "explanation": {
+                "nl": "In de periode vóór 5 december laten kinderen hun schoen staan; de volgende dag zit er snoep in.",
+                "en": "Children leave a shoe out and find candy in it."
+              }
+            },
+            {
+              "id": "i5-06",
+              "type": "multiple_choice",
+              "prompt": "Wanneer is Koningsdag?",
+              "prompt_en": "When is King's Day?",
+              "answer": "27 april",
+              "distractors": [
+                "5 mei",
+                "4 mei",
+                "1 juli"
+              ],
+              "explanation": {
+                "nl": "Koningsdag: 27 april, de verjaardag van koning Willem-Alexander. Vrije dag.",
+                "en": "27 April, the king's birthday. Day off."
+              }
+            },
+            {
+              "id": "i5-07",
+              "type": "multiple_choice",
+              "prompt": "Wat is een vrijmarkt op Koningsdag?",
+              "prompt_en": "What is a free market on King's Day?",
+              "answer": "Mensen verkopen oude spullen op straat",
+              "distractors": [
+                "Alles is gratis in de winkels",
+                "Een markt van de gemeente",
+                "Een markt alleen voor bloemen"
+              ],
+              "explanation": {
+                "nl": "Veel oranje versiering en vrijmarkt: mensen verkopen oude spullen op straat.",
+                "en": "Orange decorations and people selling old things on the street."
+              }
+            },
+            {
+              "id": "i5-08",
+              "type": "multiple_choice",
+              "prompt": "Wat gebeurt er op 4 mei?",
+              "prompt_en": "What happens on 4 May?",
+              "answer": "Dodenherdenking",
+              "distractors": [
+                "Bevrijdingsdag",
+                "Koningsdag",
+                "Keti Koti"
+              ],
+              "explanation": {
+                "nl": "4 mei: Dodenherdenking. Mensen herdenken de doden van de 2e Wereldoorlog.",
+                "en": "4 May: Remembrance of the WWII dead."
+              }
+            },
+            {
+              "id": "i5-09",
+              "type": "multiple_choice",
+              "prompt": "Hoe vaak is Bevrijdingsdag (5 mei) een vrije dag?",
+              "prompt_en": "How often is Liberation Day a day off?",
+              "answer": "1x per 5 jaar",
+              "distractors": [
+                "Elk jaar",
+                "1x per 10 jaar",
+                "Nooit"
+              ],
+              "explanation": {
+                "nl": "Bevrijdingsdag is 1x per 5 jaar een vrije dag.",
+                "en": "Once every 5 years."
+              }
+            },
+            {
+              "id": "i5-10",
+              "type": "multiple_choice",
+              "prompt": "Wat eten mensen met oud en nieuw?",
+              "prompt_en": "What do people eat on New Year's Eve?",
+              "answer": "Oliebollen",
+              "distractors": [
+                "Beschuit met muisjes",
+                "Taart",
+                "Snoep uit de schoen"
+              ],
+              "explanation": {
+                "nl": "Met oud en nieuw eten mensen oliebollen en steken ze vuurwerk af.",
+                "en": "Oliebollen and fireworks."
+              }
+            },
+            {
+              "id": "i5-11",
+              "type": "multiple_choice",
+              "prompt": "Wat herdenken mensen met Keti Koti (1 juli)?",
+              "prompt_en": "What do people commemorate on Keti Koti (1 July)?",
+              "answer": "De afschaffing van slavernij (1863)",
+              "distractors": [
+                "De bevrijding in 1945",
+                "De geboorte van Jezus",
+                "Het einde van de ramadan"
+              ],
+              "explanation": {
+                "nl": "Keti Koti: afschaffing van slavernij in Suriname en het Caribisch gebied (1863).",
+                "en": "Abolition of slavery in Suriname and the Caribbean (1863)."
+              }
+            },
+            {
+              "id": "i5-12",
+              "type": "multiple_choice",
+              "prompt": "Waar wordt carnaval vooral gevierd?",
+              "prompt_en": "Where is carnival mainly celebrated?",
+              "answer": "In Limburg, Brabant en delen van Gelderland",
+              "distractors": [
+                "In Amsterdam en Rotterdam",
+                "In Friesland",
+                "Op de Waddeneilanden"
+              ],
+              "explanation": {
+                "nl": "Carnaval: februari of maart, katholieke oorsprong, 3 dagen verkleden en optochten.",
+                "en": "Feb/March, Catholic origin, 3 days of costumes and parades."
+              }
+            },
+            {
+              "id": "i5-13",
+              "type": "multiple_choice",
+              "prompt": "Wanneer is het Suikerfeest?",
+              "prompt_en": "When is the Sugar Feast?",
+              "answer": "Na de ramadan",
+              "distractors": [
+                "Op 5 december",
+                "Op Koningsdag",
+                "Met Pasen"
+              ],
+              "explanation": {
+                "nl": "Suikerfeest (Eid al-Fitr): islamitisch feest na de ramadan. Geen officiële feestdag.",
+                "en": "Islamic celebration after Ramadan; not an official holiday."
+              }
+            },
+            {
+              "id": "i5-14",
+              "type": "true_false",
+              "prompt": "Sinterklaas is een officiële vrije dag.",
+              "prompt_en": "Sinterklaas is an official day off.",
+              "answer": false,
+              "explanation": {
+                "nl": "Het is geen vrije dag; veel mensen vieren het in het weekend.",
+                "en": "Not a day off; many celebrate at the weekend."
+              }
+            },
+            {
+              "id": "i5-15",
+              "type": "true_false",
+              "prompt": "Pinksteren en Hemelvaart zijn meestal in mei.",
+              "prompt_en": "Pentecost and Ascension Day are usually in May.",
+              "answer": true,
+              "explanation": {
+                "nl": "De meeste mensen hebben vrij op deze dagen.",
+                "en": "Most people have these days off."
+              }
+            }
+          ]
+        },
+        {
+          "id": "i6",
+          "title": "Familiedagen",
+          "title_en": "Family occasions",
+          "questions": [
+            {
+              "id": "i6-01",
+              "type": "multiple_choice",
+              "prompt": "Wat is trakteren?",
+              "prompt_en": "What is 'trakteren'?",
+              "answer": "Iets lekkers meenemen naar school of werk als je jarig bent",
+              "distractors": [
+                "Een cadeau krijgen",
+                "Een kaartje sturen",
+                "Een afspraak afzeggen"
+              ],
+              "explanation": {
+                "nl": "De jarige brengt vaak taart naar werk; kinderen brengen iets lekkers naar school.",
+                "en": "The birthday person brings cake or treats."
+              }
+            },
+            {
+              "id": "i6-02",
+              "type": "multiple_choice",
+              "prompt": "Wat krijgen gasten bij de kraamvisite?",
+              "prompt_en": "What do guests get at the maternity visit?",
+              "answer": "Beschuit met muisjes",
+              "distractors": [
+                "Oliebollen",
+                "Taart en wijn",
+                "Snoep uit de schoen"
+              ],
+              "explanation": {
+                "nl": "Bij de kraamvisite krijgen gasten beschuit met muisjes.",
+                "en": "Guests get rusks with aniseed sprinkles."
+              }
+            },
+            {
+              "id": "i6-03",
+              "type": "multiple_choice",
+              "prompt": "Roze muisjes betekent…",
+              "prompt_en": "Pink sprinkles mean…",
+              "answer": "een meisje",
+              "distractors": [
+                "een jongen",
+                "een tweeling",
+                "een bruiloft"
+              ],
+              "explanation": {
+                "nl": "Meisje → roze muisjes. Jongen → blauwe muisjes.",
+                "en": "Girl → pink. Boy → blue."
+              }
+            },
+            {
+              "id": "i6-04",
+              "type": "multiple_choice",
+              "prompt": "Wat sturen ouders als hun baby is geboren?",
+              "prompt_en": "What do parents send when their baby is born?",
+              "answer": "Kaartjes met de naam en geboortedatum",
+              "distractors": [
+                "Een uitnodiging voor de bruiloft",
+                "Een rouwkaart",
+                "Een loonstrookje"
+              ],
+              "explanation": {
+                "nl": "Ouders sturen kaartjes naar vrienden en familie (naam + geboortedatum).",
+                "en": "Parents send cards with the name and date of birth."
+              }
+            },
+            {
+              "id": "i6-05",
+              "type": "multiple_choice",
+              "prompt": "Waar trouwen mensen in Nederland formeel?",
+              "prompt_en": "Where do people formally marry in the Netherlands?",
+              "answer": "In het gemeentehuis",
+              "distractors": [
+                "In de kerk",
+                "Bij de notaris",
+                "Bij de KvK"
+              ],
+              "explanation": {
+                "nl": "Formeel in het gemeentehuis; sommigen trouwen daarna ook in de kerk.",
+                "en": "Formally at the town hall; some also in church."
+              }
+            },
+            {
+              "id": "i6-06",
+              "type": "multiple_choice",
+              "prompt": "Wanneer kun je het bruidspaar feliciteren?",
+              "prompt_en": "When can you congratulate the couple?",
+              "answer": "Tijdens de receptie",
+              "distractors": [
+                "Tijdens de huwelijksreis",
+                "Bij de notaris",
+                "Alleen per brief"
+              ],
+              "explanation": {
+                "nl": "Na het trouwen kunnen mensen ze meestal feliciteren tijdens een receptie.",
+                "en": "Usually during a reception."
+              }
+            },
+            {
+              "id": "i6-07",
+              "type": "multiple_choice",
+              "prompt": "Hoe heet de vakantie na de bruiloft?",
+              "prompt_en": "What is the holiday after the wedding called?",
+              "answer": "Huwelijksreis",
+              "distractors": [
+                "Kraamvisite",
+                "Receptie",
+                "Vrijmarkt"
+              ],
+              "explanation": {
+                "nl": "Na de bruiloft gaan ze vaak op huwelijksreis.",
+                "en": "Honeymoon."
+              }
+            },
+            {
+              "id": "i6-08",
+              "type": "multiple_choice",
+              "prompt": "Iemand is geslaagd voor de middelbare school. Wat hangt aan de vlaggenstok?",
+              "prompt_en": "Someone passed high school. What hangs on the flagpole?",
+              "answer": "Een schooltas",
+              "distractors": [
+                "Een oranje vlag met schoen",
+                "Een kerstbal",
+                "Een fles wijn"
+              ],
+              "explanation": {
+                "nl": "Mensen hangen de vlag uit met de schooltas aan de vlaggenstok → traditie.",
+                "en": "The flag with the school bag on the pole."
+              }
+            },
+            {
+              "id": "i6-09",
+              "type": "multiple_choice",
+              "prompt": "Wat draag je meestal bij een uitvaart?",
+              "prompt_en": "What do you usually wear to a funeral?",
+              "answer": "Donkere kleding",
+              "distractors": [
+                "Oranje kleding",
+                "Feestkleding",
+                "Sportkleding"
+              ],
+              "explanation": {
+                "nl": "Mensen dragen meestal donkere kleding.",
+                "en": "People usually wear dark clothes."
+              }
+            },
+            {
+              "id": "i6-10",
+              "type": "multiple_choice",
+              "prompt": "Wie sturen een kaart met informatie over de begrafenis of crematie?",
+              "prompt_en": "Who sends a card about the funeral or cremation?",
+              "answer": "De nabestaanden",
+              "distractors": [
+                "De gemeente",
+                "De buren",
+                "De notaris"
+              ],
+              "explanation": {
+                "nl": "Meestal sturen de nabestaanden een kaart naar vrienden en familie.",
+                "en": "The surviving relatives send it."
+              }
+            },
+            {
+              "id": "i6-11",
+              "type": "multiple_choice",
+              "prompt": "Iemand is ziek. Wat stuur je?",
+              "prompt_en": "Someone is ill. What do you send?",
+              "answer": "Een kaartje om beterschap te wensen",
+              "distractors": [
+                "Beschuit met muisjes",
+                "Een vacature",
+                "Oliebollen"
+              ],
+              "explanation": {
+                "nl": "Een kaartje sturen kan om beterschap te wensen, voor een verjaardag of als iemand overleden is.",
+                "en": "A get-well card."
+              }
+            },
+            {
+              "id": "i6-12",
+              "type": "build_sentence",
+              "prompt_en": "The birthday person often has cake at home.",
+              "answer": "De jarige heeft vaak taart thuis",
+              "distractors": [
+                "nooit",
+                "snoep"
+              ],
+              "explanation": null
+            }
+          ]
+        }
+      ],
+      "vocabulary": [
+        {
+          "id": "interactie-v01",
+          "nl": "gefeliciteerd",
+          "en": "congratulations"
+        },
+        {
+          "id": "interactie-v02",
+          "nl": "gecondoleerd",
+          "en": "my condolences"
+        },
+        {
+          "id": "interactie-v03",
+          "nl": "wachtkamer",
+          "en": "waiting room"
+        },
+        {
+          "id": "interactie-v04",
+          "nl": "openbaar vervoer",
+          "en": "public transport"
+        },
+        {
+          "id": "interactie-v05",
+          "nl": "vervoersbewijs",
+          "en": "ticket"
+        },
+        {
+          "id": "interactie-v06",
+          "nl": "stiltecoupé",
+          "en": "quiet compartment"
+        },
+        {
+          "id": "interactie-v07",
+          "nl": "gemeente",
+          "en": "municipality"
+        },
+        {
+          "id": "interactie-v08",
+          "nl": "samenlevingscontract",
+          "en": "cohabitation contract"
+        },
+        {
+          "id": "interactie-v09",
+          "nl": "gezin",
+          "en": "family (household)"
+        },
+        {
+          "id": "interactie-v10",
+          "nl": "eenoudergezin",
+          "en": "single-parent family"
+        },
+        {
+          "id": "interactie-v11",
+          "nl": "waarden",
+          "en": "values"
+        },
+        {
+          "id": "interactie-v12",
+          "nl": "normen",
+          "en": "norms (rules)"
+        },
+        {
+          "id": "interactie-v13",
+          "nl": "vrijheid van meningsuiting",
+          "en": "freedom of expression"
+        },
+        {
+          "id": "interactie-v14",
+          "nl": "grondwet",
+          "en": "constitution"
+        },
+        {
+          "id": "interactie-v15",
+          "nl": "geweld",
+          "en": "violence"
+        },
+        {
+          "id": "interactie-v16",
+          "nl": "huiselijk geweld",
+          "en": "domestic violence"
+        },
+        {
+          "id": "interactie-v17",
+          "nl": "buurt",
+          "en": "neighborhood"
+        },
+        {
+          "id": "interactie-v18",
+          "nl": "vereniging",
+          "en": "club"
+        },
+        {
+          "id": "interactie-v19",
+          "nl": "buurthuis",
+          "en": "community center"
+        },
+        {
+          "id": "interactie-v20",
+          "nl": "Kerst",
+          "en": "Christmas"
+        },
+        {
+          "id": "interactie-v21",
+          "nl": "Pasen",
+          "en": "Easter"
+        },
+        {
+          "id": "interactie-v22",
+          "nl": "schoentje zetten",
+          "en": "leaving your shoe out"
+        },
+        {
+          "id": "interactie-v23",
+          "nl": "Koningsdag",
+          "en": "King's Day"
+        },
+        {
+          "id": "interactie-v24",
+          "nl": "Bevrijdingsdag",
+          "en": "Liberation Day"
+        },
+        {
+          "id": "interactie-v25",
+          "nl": "Pinksteren",
+          "en": "Pentecost"
+        },
+        {
+          "id": "interactie-v26",
+          "nl": "Hemelvaart",
+          "en": "Ascension Day"
+        },
+        {
+          "id": "interactie-v27",
+          "nl": "oud en nieuw",
+          "en": "New Year's Eve"
+        },
+        {
+          "id": "interactie-v28",
+          "nl": "trakteren",
+          "en": "to treat (on your birthday)"
+        },
+        {
+          "id": "interactie-v29",
+          "nl": "geboorte",
+          "en": "birth"
+        },
+        {
+          "id": "interactie-v30",
+          "nl": "kraamvisite",
+          "en": "maternity visit"
+        },
+        {
+          "id": "interactie-v31",
+          "nl": "beschuit met muisjes",
+          "en": "rusks with aniseed sprinkles"
+        },
+        {
+          "id": "interactie-v32",
+          "nl": "bruiloft",
+          "en": "wedding celebration"
+        },
+        {
+          "id": "interactie-v33",
+          "nl": "receptie",
+          "en": "reception"
+        },
+        {
+          "id": "interactie-v34",
+          "nl": "geslaagd",
+          "en": "passed (exams)"
+        },
+        {
+          "id": "interactie-v35",
+          "nl": "afzeggen",
+          "en": "to cancel"
+        },
+        {
+          "id": "interactie-v36",
+          "nl": "voordringen",
+          "en": "to cut the queue"
+        },
+        {
+          "id": "interactie-v37",
+          "nl": "omgangsvormen",
+          "en": "social conventions"
+        },
+        {
+          "id": "interactie-v38",
+          "nl": "eerlijkheid",
+          "en": "honesty"
+        },
+        {
+          "id": "interactie-v39",
+          "nl": "beleefdheid",
+          "en": "politeness"
+        },
+        {
+          "id": "interactie-v40",
+          "nl": "nabestaanden",
+          "en": "surviving relatives"
+        }
+      ]
+    }
+  ]
+}

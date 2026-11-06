@@ -1,16 +1,30 @@
 {
   "app": "python3 app.py",
   "watch": {
-    "include": ["**"],
-    "exclude": ["README.md", "cdk*.json", "requirements*.txt", "**/__pycache__", "tests", ".venv"]
+    "include": [
+      "**"
+    ],
+    "exclude": [
+      "README.md",
+      "cdk*.json",
+      "requirements*.txt",
+      "**/__pycache__",
+      "tests",
+      ".venv"
+    ]
   },
   "context": {
     "region": "eu-north-1",
     "github_repo": "cerenaks/taalpunt-be",
     "github_environment": "production",
     "cognito_domain_prefix": "taalpunt-app",
-    "callback_urls": ["taalpunt://auth/callback"],
-    "logout_urls": ["taalpunt://auth/signout"],
+    "content_cdn": false,
+    "callback_urls": [
+      "taalpunt://auth/callback"
+    ],
+    "logout_urls": [
+      "taalpunt://auth/signout"
+    ],
     "alert_email": "",
     "apple_signin": {
       "enabled": false,
@@ -20,7 +34,9 @@
       "private_key_secret": "taalpunt/apple-signin-key"
     },
     "@aws-cdk/aws-iam:minimizePolicies": true,
-    "@aws-cdk/core:target-partitions": ["aws"],
+    "@aws-cdk/core:target-partitions": [
+      "aws"
+    ],
     "@aws-cdk/aws-lambda:recognizeLayerVersion": true,
     "@aws-cdk/aws-s3:createDefaultLoggingPolicy": true,
     "@aws-cdk/aws-apigateway:disableCloudWatchRole": true,

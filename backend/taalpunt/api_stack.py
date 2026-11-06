@@ -63,8 +63,11 @@ class TaalPuntStack(Stack):
         logout_urls: list[str] = ctx("logout_urls") or ["taalpunt://auth/signout"]
         apple: dict = ctx("apple_signin") or {}
         apple_enabled = bool(apple.get("enabled"))
+        # New AWS accounts can't create CloudFront distributions until AWS Support verifies them.
+        # With content_cdn off, the API serves the content straight from the private bucket instead.
+        use_cdn = str(ctx("content_cdn") if ctx("content_cdn") is not None else True).lower() not in ("false", "0", "no")
 
-        # ---------- Content: private S3 bucket behind CloudFront ----------
+        # ---------- Content: private S3 bucket, behind CloudFront when content_cdn is on ----------
         content_bucket = s3.Bucket(
             self, "ContentBucket",
             block_public_access=s3.BlockPublicAccess.BLOCK_ALL,
@@ -74,7 +77,7 @@ class TaalPuntStack(Stack):
             object_ownership=s3.ObjectOwnership.BUCKET_OWNER_ENFORCED,
             removal_policy=RemovalPolicy.RETAIN,
         )
-        cdn = cloudfront.Distribution(
+        cdn = None if not use_cdn else cloudfront.Distribution(
             self, "ContentCdn",
             comment="TaalPunt lesson content",
             default_behavior=cloudfront.BehaviorOptions(
@@ -106,7 +109,7 @@ class TaalPuntStack(Stack):
             content_type="application/json; charset=utf-8",
             cache_control=[s3deploy.CacheControl.from_string("public, max-age=60")],
             distribution=cdn,
-            distribution_paths=["/content/manifest.json"],
+            distribution_paths=["/content/manifest.json"] if cdn else None,
         )
         manifest_deploy.node.add_dependency(bundle_deploy)
 
@@ -247,6 +250,15 @@ class TaalPuntStack(Stack):
             api.add_routes(path=path, methods=[method], integration=api_int, authorizer=jwt_auth)
         api.add_routes(path="/me", methods=[apigw.HttpMethod.DELETE], integration=delete_int, authorizer=jwt_auth)
 
+        if not use_cdn:
+            content_fn = fn("ContentFunction", "taalpunt_api.content.handler",
+                            {"CONTENT_BUCKET": content_bucket.bucket_name})
+            content_fn.add_to_role_policy(iam.PolicyStatement(
+                actions=["s3:GetObject"], resources=[content_bucket.arn_for_objects("content/*")]))
+            # Public like the CDN would be: the app downloads the questions before sign-in.
+            api.add_routes(path="/content/{file}", methods=[apigw.HttpMethod.GET],
+                           integration=integrations.HttpLambdaIntegration("ContentIntegration", content_fn))
+
         # ---------- Alerts and cost guard ----------
         if alert_email:
             topic = sns.Topic(self, "Alerts", display_name="TaalPunt alerts", enforce_ssl=True)
@@ -273,7 +285,8 @@ class TaalPuntStack(Stack):
         # ---------- Outputs the iOS app needs ----------
         CfnOutput(self, "Region", value=self.region)
         CfnOutput(self, "ApiUrl", value=api.api_endpoint)
-        CfnOutput(self, "ContentManifestUrl", value=f"https://{cdn.distribution_domain_name}/content/manifest.json")
+        content_base = f"https://{cdn.distribution_domain_name}" if cdn else api.api_endpoint
+        CfnOutput(self, "ContentManifestUrl", value=f"{content_base}/content/manifest.json")
         CfnOutput(self, "ContentVersion", value=manifest["content_version"])
         CfnOutput(self, "UserPoolId", value=user_pool.user_pool_id)
         CfnOutput(self, "UserPoolClientId", value=ios_client.user_pool_client_id)

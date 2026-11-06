@@ -117,6 +117,10 @@ cd .. && bash scripts/create_budget.sh you@example.com 5
 
 Then confirm the "AWS Notification - Subscription Confirmation" email so alarms reach you.
 
+**New AWS accounts:** CloudFront stays blocked until AWS Support verifies the account ("Your account must be verified before you can add new CloudFront resources"). Until then `content_cdn` is `false` in `backend/cdk.json`: the API serves the manifest and bundle at `GET /content/{file}` (public, read-only, straight from the private bucket), and `ContentManifestUrl` points at the API. After verification, set `content_cdn` to `true`, deploy, and put the new CloudFront host in the app's `CONTENT_HOST`.
+
+The new **Free plan** also blocks creating IAM identity providers, so `TaalPuntGithubDeploy` (GitHub OIDC) only works after upgrading to the Paid plan. Until then, deploy from your Mac.
+
 If step 4 fails because the Cognito domain prefix `taalpunt-app` is taken, change `cognito_domain_prefix` in `backend/cdk.json` and deploy again.
 
 ### Hand deploys over to GitHub

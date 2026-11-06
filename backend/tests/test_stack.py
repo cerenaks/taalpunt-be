@@ -14,11 +14,24 @@ def synth(context=None):
 
 
 def test_every_route_requires_jwt():
-    t = synth()
+    t = synth({"content_cdn": True})
     routes = t.find_resources("AWS::ApiGatewayV2::Route")
     assert len(routes) == 4
     for r in routes.values():
         assert r["Properties"]["AuthorizationType"] == "JWT"
+
+
+def test_without_cdn_only_the_content_route_is_public():
+    t = synth({"content_cdn": "false"})
+    t.resource_count_is("AWS::CloudFront::Distribution", 0)
+    routes = {r["Properties"]["RouteKey"]: r["Properties"].get("AuthorizationType", "NONE")
+              for r in t.find_resources("AWS::ApiGatewayV2::Route").values()}
+    assert routes.pop("GET /content/{file}") == "NONE"
+    assert len(routes) == 4 and set(routes.values()) == {"JWT"}
+
+
+def test_with_cdn_there_is_one_distribution():
+    synth({"content_cdn": True}).resource_count_is("AWS::CloudFront::Distribution", 1)
 
 
 def test_table_is_protected():

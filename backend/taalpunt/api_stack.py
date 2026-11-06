@@ -9,7 +9,6 @@ from aws_cdk import (
     CfnOutput,
     Duration,
     RemovalPolicy,
-    SecretValue,
     Stack,
     aws_apigatewayv2 as apigw,
     aws_apigatewayv2_authorizers as authorizers,
@@ -61,8 +60,11 @@ class TaalPuntStack(Stack):
         domain_prefix: str = ctx("cognito_domain_prefix") or "taalpunt-app"
         callback_urls: list[str] = ctx("callback_urls") or ["taalpunt://auth/callback"]
         logout_urls: list[str] = ctx("logout_urls") or ["taalpunt://auth/signout"]
-        apple: dict = ctx("apple_signin") or {}
-        apple_enabled = bool(apple.get("enabled"))
+        # Apple and Google are set up by hand in the Cognito console (Social providers), so their
+        # private key and client secret live only inside Cognito: free, never in git or CloudFormation.
+        # These flags only add the providers to the app client; the providers must exist first.
+        apple_enabled = bool((ctx("apple_signin") or {}).get("enabled"))
+        google_enabled = bool((ctx("google_signin") or {}).get("enabled"))
         # New AWS accounts can't create CloudFront distributions until AWS Support verifies them.
         # With content_cdn off, the API serves the content straight from the private bucket instead.
         use_cdn = str(ctx("content_cdn") if ctx("content_cdn") is not None else True).lower() not in ("false", "0", "no")
@@ -113,7 +115,7 @@ class TaalPuntStack(Stack):
         )
         manifest_deploy.node.add_dependency(bundle_deploy)
 
-        # ---------- Sign-in: Cognito user pool (+ Sign in with Apple when configured) ----------
+        # ---------- Sign-in: Cognito user pool (+ Apple and Google when configured) ----------
         user_pool = cognito.UserPool(
             self, "Users",
             self_sign_up_enabled=True,
@@ -132,20 +134,10 @@ class TaalPuntStack(Stack):
         domain = user_pool.add_domain("HostedDomain", cognito_domain=cognito.CognitoDomainOptions(domain_prefix=domain_prefix))
 
         providers = [cognito.UserPoolClientIdentityProvider.COGNITO]
-        apple_idp = None
         if apple_enabled:
-            apple_idp = cognito.UserPoolIdentityProviderApple(
-                self, "AppleIdP",
-                user_pool=user_pool,
-                client_id=apple["services_id"],
-                team_id=apple["team_id"],
-                key_id=apple["key_id"],
-                # The .p8 key text lives only in Secrets Manager; you put it there yourself.
-                private_key_value=SecretValue.secrets_manager(apple.get("private_key_secret", "taalpunt/apple-signin-key")),
-                scopes=["email", "name"],
-                attribute_mapping=cognito.AttributeMapping(email=cognito.ProviderAttribute.APPLE_EMAIL),
-            )
-            providers.append(cognito.UserPoolClientIdentityProvider.APPLE)
+            providers.append(cognito.UserPoolClientIdentityProvider.APPLE)  # "SignInWithApple"
+        if google_enabled:
+            providers.append(cognito.UserPoolClientIdentityProvider.GOOGLE)  # "Google"
 
         ios_client = user_pool.add_client(
             "IosClient",
@@ -164,8 +156,6 @@ class TaalPuntStack(Stack):
             id_token_validity=Duration.hours(1),
             refresh_token_validity=Duration.days(30),
         )
-        if apple_idp:
-            ios_client.node.add_dependency(apple_idp)
 
         # ---------- User data: one DynamoDB table ----------
         table = dynamodb.Table(

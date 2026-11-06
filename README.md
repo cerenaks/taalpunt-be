@@ -20,7 +20,7 @@ backend/        AWS CDK app (Python) + Lambda code + tests
 | Part | AWS service | Notes |
 |---|---|---|
 | Lesson content | S3 (private) + CloudFront | `content/manifest.json` (60 s cache) points at `content/knm-<version>.json` (immutable). The app downloads the bundle once and works offline. |
-| Sign-in | Cognito user pool | Email sign-in now; Sign in with Apple is switched on in `cdk.json` once the Apple key exists. Public client with PKCE, no client secret. |
+| Sign-in | Cognito user pool | Email, plus Sign in with Apple and Google once switched on in `cdk.json` (see below). Public client with PKCE, no client secret. |
 | API | API Gateway HTTP API + Lambda (Python 3.12, arm64) | Every route needs a Cognito access token. Throttled at 10 req/s, burst 20. JSON access logs. |
 | User data | DynamoDB (on-demand) | One partition per user. Point-in-time recovery, deletion protection, encryption at rest. Session history expires after a year. |
 | Alerts | CloudWatch alarms + SNS email | Only created when `alert_email` is set. |
@@ -108,8 +108,10 @@ export AWS_PROFILE=taalpunt
 npx aws-cdk@2.1146.0 bootstrap aws://$(aws sts get-caller-identity --query Account --output text)/eu-north-1
 npx aws-cdk@2.1146.0 deploy TaalPuntGithubDeploy      # prints DeployRoleArn
 
-# 4. Deploy the backend (replace the email)
-npx aws-cdk@2.1146.0 deploy TaalPunt -c alert_email=you@example.com
+# 4. Deploy the backend. The alert email stays out of this public repo: keep it in ~/.cdk.json
+#    so every local deploy includes it. Without it, a deploy removes the alarms.
+echo '{ "context": { "alert_email": "you@example.com" } }' > ~/.cdk.json
+npx aws-cdk@2.1146.0 deploy TaalPunt
 
 # 5. Cost alert: 5 USD/month budget, emails at 80% actual and 100% forecasted
 cd .. && bash scripts/create_budget.sh you@example.com 5
@@ -139,8 +141,44 @@ From then on every push to `main` that touches `backend/` or `content/` runs tes
 3. `python scripts/validate_content.py`
 4. Push. The deploy uploads the new bundle and refreshes the manifest; the app picks it up on next launch.
 
-## Turning on Sign in with Apple (later)
+## Turning on Sign in with Apple and Google
 
-1. In the Apple Developer portal: create a **Services ID** and a **Sign in with Apple key** (.p8). Add `https://<cognito-domain>/oauth2/idpresponse` as the return URL.
-2. Store the key text yourself: `aws secretsmanager create-secret --name taalpunt/apple-signin-key --secret-string file://AuthKey_XXXX.p8 --region eu-north-1`. Never commit the .p8 file.
-3. In `backend/cdk.json` set `apple_signin.enabled` to `true` and fill `services_id`, `team_id`, `key_id`. Deploy.
+Both go through Cognito managed login, so the app never sees Apple or Google tokens and the API keeps checking the same Cognito JWT. Below, `<cognito-domain>` is `taalpunt-app.auth.eu-north-1.amazoncognito.com`.
+
+**Apple** (needs the paid Apple Developer account, nothing extra to pay):
+
+1. In Certificates, Identifiers & Profiles, open the app's App ID (`nl.taalpunt.app`) and turn on **Sign in with Apple**.
+2. Create a **Services ID** (for example `nl.taalpunt.app.signin`). Turn on Sign in with Apple, then under Configure add the domain `<cognito-domain>` and the return URL `https://<cognito-domain>/oauth2/idpresponse`.
+3. Create a **Key** with Sign in with Apple turned on and download the `.p8`. Write down the Key ID. Apple lets you download it only once.
+
+**Google** (free):
+
+1. In the [Google Cloud console](https://console.cloud.google.com), create a project called `TaalPunt`.
+2. Set up the **OAuth consent screen**: External, app name TaalPunt, support email `taalpunt.support@gmail.com`, privacy policy `https://cerenaks.github.io/taalpunt-be/privacy.html`, scopes `openid`, `email` and `profile` only. Then **Publish app**. With only these scopes Google doesn't require a review. Don't upload a logo, because a logo starts Google's branding check.
+3. Under Credentials, create an **OAuth client ID** of type **Web application** (Cognito is the web client here, not the iOS app). Add the authorized JavaScript origin `https://<cognito-domain>` and the redirect URI `https://<cognito-domain>/oauth2/idpresponse`. Write down the client ID and the client secret.
+
+**Add the providers in the Cognito console** (free). The Apple key and the Google client secret are stored only inside Cognito, never in git, in CloudFormation or in Secrets Manager. Do this before switching them on in `cdk.json`, because the deploy fails if a provider doesn't exist yet.
+
+1. Sign in to the AWS console in region **eu-north-1** and open Amazon Cognito, then the user pool, then **Authentication → Social and external providers → Add identity provider**.
+2. **Sign in with Apple:**
+   - Services ID: `nl.taalpunt.app.signin`
+   - Team ID: `87Y8KSLP2V`
+   - Key ID: `S4AUM7M7Y6`
+   - Private key: open the `.p8` in TextEdit and paste the whole text, including the BEGIN and END lines.
+   - Authorized scopes: `email`
+   - Attribute mapping: user pool attribute `email` ← Apple attribute `email`.
+3. **Google:**
+   - Client ID: `268082522132-tj9c78cod7j0eha5l9kja5h42ukpgkcd.apps.googleusercontent.com`
+   - Client secret: paste it from the Google console.
+   - Authorized scopes: `openid email`
+   - Attribute mapping: `email` ← `email` and `email_verified` ← `email_verified`.
+4. Keep the `.p8` in your password manager, then delete it from Downloads.
+
+If you ever rebuild the user pool, add the providers again. If you lose the key or the secret, create a new one in Apple's or Google's console and paste it into the same screen.
+
+**Switch it on:**
+
+1. In `backend/cdk.json`, set `apple_signin.enabled` and `google_signin.enabled` to `true`, then deploy. This only adds the two providers to the iOS app client.
+2. In the iOS app's `Config/Backend.local.xcconfig`, set `SIGNIN_PROVIDERS = apple,google`. The sign-in screen then shows Apple, Google and email.
+
+A person who signs in with Apple or Google gets a separate Cognito user from an email account with the same address. Progress isn't merged.

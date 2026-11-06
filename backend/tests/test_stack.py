@@ -1,4 +1,6 @@
 """Infrastructure assertions: the security properties we rely on stay in the template."""
+import json
+
 import aws_cdk as cdk
 from aws_cdk.assertions import Match, Template
 
@@ -84,11 +86,18 @@ def test_alerts_only_with_email():
     t.resource_count_is("AWS::Budgets::Budget", 0)
 
 
-def test_apple_sign_in_is_optional():
-    t = synth({"apple_signin": {"enabled": True, "services_id": "nl.example.taalpunt.signin",
-                                 "team_id": "ABCDE12345", "key_id": "KEY1234567"}})
-    t.resource_count_is("AWS::Cognito::UserPoolIdentityProvider", 1)
-    t.has_resource_properties("AWS::Cognito::UserPoolClient", {"SupportedIdentityProviders": ["COGNITO", "SignInWithApple"]})
+def test_email_only_by_default():
+    t = synth()
+    t.has_resource_properties("AWS::Cognito::UserPoolClient", {"SupportedIdentityProviders": ["COGNITO"]})
+
+
+def test_social_providers_are_switched_on_without_secrets_in_the_template():
+    t = synth({"apple_signin": {"enabled": True}, "google_signin": {"enabled": True}})
+    t.has_resource_properties("AWS::Cognito::UserPoolClient",
+                              {"SupportedIdentityProviders": ["COGNITO", "SignInWithApple", "Google"]})
+    # The providers (and their secrets) are created in the Cognito console, never by CloudFormation.
+    t.resource_count_is("AWS::Cognito::UserPoolIdentityProvider", 0)
+    assert "secretsmanager" not in json.dumps(t.to_json())
 
 
 def test_github_role_is_scoped_to_repo_environment():

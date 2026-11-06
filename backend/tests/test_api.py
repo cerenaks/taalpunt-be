@@ -49,10 +49,7 @@ def test_xp_and_stars():
     assert scoring.lesson_xp(10, 5, True) == 5 + 20 + 5
     assert scoring.lesson_xp(8, 3, True) == 5 + 16
     assert scoring.lesson_xp(8, 0, False) == 0
-    assert scoring.lesson_stars(10, 10, True) == 3
-    assert scoring.lesson_stars(8, 10, True) == 2
-    assert scoring.lesson_stars(5, 10, True) == 1
-    assert scoring.lesson_stars(5, 10, False) == 0
+    assert [scoring.lesson_stars(n) for n in range(5)] == [0, 1, 2, 3, 3]
 
 
 def test_streak_rules():
@@ -106,7 +103,7 @@ def test_auth_required(table):
 def test_session_updates_progress_and_mistakes(table):
     status, res = call("POST /me/sessions", body=session())
     assert status == 201
-    # 2 first-try correct, 4 hearts left -> 5 + 2*2 = 9 XP; 2/3 first try -> 1 star
+    # 2 first-try correct, 4 hearts left -> 5 + 2*2 = 9 XP; first finished run -> 1 star
     assert res == {"xp_gained": 9, "stars": 1, "streak": 1, "xp_total": 9, "duplicate": False}
 
     status, prog = call("GET /me/progress")
@@ -145,13 +142,21 @@ def test_failed_session_records_mistakes_but_no_xp(table):
     assert prog["xp_total"] == 0 and prog["mistakes_count"] == 5 and "w1" not in prog["lessons"]
 
 
-def test_best_stars_never_go_down(table):
-    perfect = [{"item_id": f"w1-0{i}", "correct": True} for i in range(1, 6)]
-    call("POST /me/sessions", body=session(hearts_left=5, answers=perfect))
-    call("POST /me/sessions", body=session())
+def test_one_star_per_finished_run_up_to_three(table):
+    stars = [call("POST /me/sessions", body=session())[1]["stars"] for _ in range(4)]
+    assert stars == [1, 2, 3, 3]
     _, prog = call("GET /me/progress")
     assert prog["lessons"]["w1"]["best_stars"] == 3
-    assert prog["lessons"]["w1"]["completions"] == 2
+    assert prog["lessons"]["w1"]["completions"] == 4
+
+
+def test_failed_run_earns_no_star(table):
+    call("POST /me/sessions", body=session())
+    answers = [{"item_id": f"w1-0{i}", "correct": False} for i in range(1, 6)]
+    _, res = call("POST /me/sessions", body=session(hearts_left=0, completed=False, answers=answers))
+    assert res["stars"] == 0
+    _, prog = call("GET /me/progress")
+    assert prog["lessons"]["w1"]["best_stars"] == 1
 
 
 def test_users_are_isolated(table):
@@ -161,7 +166,8 @@ def test_users_are_isolated(table):
 
 
 def test_mix_sessions_do_not_get_stars(table):
-    call("POST /me/sessions", body=session(kind="mix", lesson_id="mix"))
+    _, res = call("POST /me/sessions", body=session(kind="mix", lesson_id="mix"))
+    assert res["stars"] == 0
     _, prog = call("GET /me/progress")
     assert prog["lessons"] == {} and prog["xp_total"] == 9
 

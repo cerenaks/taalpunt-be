@@ -76,7 +76,8 @@ def get_progress(sub: str, today: date) -> dict:
     last_day = date.fromisoformat(profile["last_day"]) if profile.get("last_day") else None
     lessons = {
         i["SK"].split("#", 1)[1]: {
-            "best_stars": i.get("best_stars", 0),
+            # Derived from completions so older rows (accuracy-based stars) follow the same rule.
+            "best_stars": lesson_stars(int(i.get("completions", 0))),
             "completions": i.get("completions", 0),
             "last_completed": i.get("last_completed"),
         }
@@ -129,7 +130,8 @@ def record_session(sub: str, s: Session, now: datetime | None = None) -> dict:
     lesson_item = table.get_item(Key={"PK": pk, "SK": f"LESSON#{s.lesson_id}"}).get("Item") or {}
 
     xp = lesson_xp(s.first_try_correct, s.hearts_left, s.passed)
-    stars = lesson_stars(s.first_try_correct, s.unique_items, s.passed)
+    rated_pass = s.kind in RATED_KINDS and s.passed
+    stars = lesson_stars(int(lesson_item.get("completions", 0)) + 1) if rated_pass else 0
     earned = xp > 0
     streak = next_streak(prev_streak, date.fromisoformat(prev_last) if prev_last else None, s.local_date) if earned else prev_streak
     last_day = s.local_date.isoformat() if earned else prev_last
@@ -174,10 +176,9 @@ def record_session(sub: str, s: Session, now: datetime | None = None) -> dict:
                           vals, condition=guard))
         ops.append(update(f"DAY#{s.local_date.isoformat()}", "ADD xp :xp", {":xp": xp}))
 
-    if s.kind in RATED_KINDS and s.passed:
-        best = max(int(lesson_item.get("best_stars", 0)), stars)
+    if rated_pass:
         ops.append(update(f"LESSON#{s.lesson_id}", "SET best_stars = :b, last_completed = :ts ADD completions :one",
-                          {":b": best, ":ts": ts, ":one": 1}))
+                          {":b": stars, ":ts": ts, ":one": 1}))
 
     # Mistakes: a first-try miss adds or bumps the item; a first-try hit clears it.
     touched: set[str] = set()

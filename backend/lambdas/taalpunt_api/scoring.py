@@ -10,6 +10,7 @@ MAX_HEARTS = 5
 LESSON_BONUS_XP = 5
 XP_PER_FIRST_TRY = 2
 PERFECT_HEARTS_BONUS_XP = 5
+MAX_STARS = 3
 
 
 def lesson_xp(first_try_correct: int, hearts_left: int, passed: bool) -> int:
@@ -20,16 +21,9 @@ def lesson_xp(first_try_correct: int, hearts_left: int, passed: bool) -> int:
     return LESSON_BONUS_XP + XP_PER_FIRST_TRY * first_try_correct + bonus
 
 
-def lesson_stars(first_try_correct: int, unique_items: int, passed: bool) -> int:
-    """0-3 stars from first-try accuracy."""
-    if not passed or unique_items <= 0:
-        return 0
-    acc = first_try_correct / unique_items
-    if acc >= 0.95:
-        return 3
-    if acc >= 0.75:
-        return 2
-    return 1
+def lesson_stars(completions: int) -> int:
+    """Stars for a lesson: one for every passed run, up to 3 (the Duolingo way)."""
+    return max(0, min(MAX_STARS, completions))
 
 
 def next_streak(current: int, last_day: date | None, today: date) -> int:

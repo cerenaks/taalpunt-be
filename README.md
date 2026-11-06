@@ -38,7 +38,7 @@ Base URL: the `ApiUrl` stack output. Send `Authorization: Bearer <Cognito access
 ```json
 {
   "xp_total": 120, "streak": 4, "last_day": "2026-11-05", "today_xp": 30, "daily_goal_xp": 50,
-  "lessons": { "w1": { "best_stars": 3, "completions": 2, "last_completed": "2026-11-05T21:10:00+00:00" } },
+  "lessons": { "w1": { "best_stars": 2, "completions": 2, "last_completed": "2026-11-05T21:10:00+00:00" } },
   "days": [ { "date": "2026-11-05", "xp": 30 } ],
   "mistakes_count": 7
 }
@@ -73,7 +73,7 @@ Send once per finished (or failed) lesson. Safe to retry: the same `session_id` 
 - `hearts_left` must equal `5 − wrong answers` (matching rounds don't cost hearts); the server rejects anything else.
 - Response `201`: `{ "xp_gained": 9, "stars": 1, "streak": 1, "xp_total": 9, "duplicate": false }`.
 
-Scoring (in `backend/lambdas/taalpunt_api/scoring.py`): 5 XP per finished lesson, +2 per first-try correct answer, +5 if no hearts were lost. Stars from first-try accuracy: ≥95 % → 3, ≥75 % → 2, otherwise 1. A first-try miss adds the item to your mistakes; a first-try hit removes it.
+Scoring (in `backend/lambdas/taalpunt_api/scoring.py`): 5 XP per finished lesson, +2 per first-try correct answer, +5 if no hearts were lost. Stars: one for every passed run of a lesson, vocabulary round or practice test, up to 3 (mix and mistakes rounds get none). `stars` in the response is the lesson's star count after this run. A first-try miss adds the item to your mistakes; a first-try hit removes it.
 
 ### `DELETE /me`
 

@@ -1,12 +1,13 @@
 {
   "schema_version": 1,
-  "content_version": "2026-11-05.1",
+  "content_version": "2026-11-07.1",
   "language": "nl",
   "translation": "en",
   "sources": [
     "KNM 1) Wonen",
     "KNM 2) Werk en inkomen",
-    "KNM 3) Interactie, normen en waarden"
+    "KNM 3) Interactie, normen en waarden",
+    "KNM 4) Onderwijs en opvoeding"
   ],
   "units": [
     {
@@ -4060,6 +4061,1437 @@
           "id": "interactie-v40",
           "nl": "nabestaanden",
           "en": "surviving relatives"
+        }
+      ]
+    },
+    {
+      "id": "onderwijs",
+      "number": 4,
+      "title": "Onderwijs en opvoeding",
+      "title_en": "Education and upbringing",
+      "color": "blue",
+      "lessons": [
+        {
+          "id": "o1",
+          "title": "Zwanger en een baby",
+          "title_en": "Pregnant and a baby",
+          "questions": [
+            {
+              "id": "o1-01",
+              "type": "multiple_choice",
+              "prompt": "Je bent zwanger. Met wie kun je direct contact opnemen?",
+              "prompt_en": "You are pregnant. Who can you contact directly?",
+              "answer": "De verloskundige",
+              "distractors": [
+                "De tandarts",
+                "Het consultatiebureau",
+                "De apotheek"
+              ],
+              "explanation": {
+                "nl": "Je kunt de huisarts bellen, maar ook direct de verloskundige.",
+                "en": "You can call the GP, but you can also contact the midwife directly."
+              }
+            },
+            {
+              "id": "o1-02",
+              "type": "multiple_choice",
+              "prompt": "Wat doet de verloskundige NIET?",
+              "prompt_en": "What does the midwife NOT do?",
+              "answer": "Vaccinaties geven aan je baby",
+              "distractors": [
+                "Controles tijdens de zwangerschap",
+                "Advies geven",
+                "Helpen bij de bevalling"
+              ],
+              "explanation": {
+                "nl": "De verloskundige doet controles, geeft advies en helpt bij de bevalling. Vaccinaties geeft het consultatiebureau.",
+                "en": "The midwife does check-ups, gives advice and helps with the birth. The child health clinic gives vaccinations."
+              }
+            },
+            {
+              "id": "o1-03",
+              "type": "multiple_choice",
+              "prompt": "Er zijn problemen tijdens je zwangerschap. Naar wie ga je?",
+              "prompt_en": "There are problems during your pregnancy. Who do you go to?",
+              "answer": "De gynaecoloog",
+              "distractors": [
+                "De oppas",
+                "De gastouder",
+                "De leraar"
+              ],
+              "explanation": {
+                "nl": "Bij problemen tijdens de zwangerschap ga je naar de gynaecoloog.",
+                "en": "With problems during pregnancy you go to the gynaecologist."
+              }
+            },
+            {
+              "id": "o1-04",
+              "type": "true_false",
+              "prompt": "Als je baby thuis wordt geboren, moet je dingen voor de bevalling in huis hebben.",
+              "prompt_en": "If your baby is born at home, you must have things for the childbirth in the house.",
+              "answer": true,
+              "explanation": {
+                "nl": "Je kunt deze dingen ook lenen bij de thuiszorg. Soms betaalt de verzekering de kosten terug.",
+                "en": "You can also borrow these things from home care. Sometimes the insurance pays the costs back."
+              }
+            },
+            {
+              "id": "o1-05",
+              "type": "multiple_choice",
+              "prompt": "Waar kun je dingen voor een thuisbevalling lenen?",
+              "prompt_en": "Where can you borrow things for a home birth?",
+              "answer": "Bij de thuiszorg",
+              "distractors": [
+                "Bij de gemeente",
+                "Bij de basisschool",
+                "Bij de SVB"
+              ],
+              "explanation": {
+                "nl": "Dingen voor de bevalling kun je lenen bij de thuiszorg.",
+                "en": "You can borrow things for the childbirth from home care."
+              }
+            },
+            {
+              "id": "o1-06",
+              "type": "multiple_choice",
+              "prompt": "Na de geboorte ga je met je kind naar het…",
+              "prompt_en": "After the birth you go with your child to the…",
+              "answer": "Consultatiebureau",
+              "distractors": [
+                "Kinderdagverblijf",
+                "Gemeentehuis",
+                "Uitzendbureau"
+              ],
+              "explanation": {
+                "nl": "Na de geboorte ga je naar het consultatiebureau.",
+                "en": "After the birth you go to the child health clinic."
+              }
+            },
+            {
+              "id": "o1-07",
+              "type": "multiple_choice",
+              "prompt": "Voor welke leeftijd is het consultatiebureau?",
+              "prompt_en": "Which ages is the child health clinic for?",
+              "answer": "0–4 jaar",
+              "distractors": [
+                "4–12 jaar",
+                "0–12 jaar",
+                "12–18 jaar"
+              ],
+              "explanation": {
+                "nl": "Het consultatiebureau is voor kinderen van 0 tot 4 jaar.",
+                "en": "The child health clinic is for children aged 0 to 4."
+              }
+            },
+            {
+              "id": "o1-08",
+              "type": "true_false",
+              "prompt": "Het consultatiebureau meet en weegt je kind en geeft vaccinaties.",
+              "prompt_en": "The child health clinic measures and weighs your child and gives vaccinations.",
+              "answer": true,
+              "explanation": {
+                "nl": "Het controleert ook de gezondheid en de ontwikkeling en geeft advies over slapen en eten.",
+                "en": "It also checks health and development and gives advice about sleeping and eating."
+              }
+            },
+            {
+              "id": "o1-09",
+              "type": "fill_blank",
+              "prompt": "Het consultatiebureau volgt de ___ van het kind, bijvoorbeeld praten.",
+              "prompt_en": "The child health clinic follows the child's development, for example talking.",
+              "answer": "ontwikkeling",
+              "distractors": [
+                "vakantie",
+                "kleding",
+                "school"
+              ],
+              "explanation": {
+                "nl": "Het consultatiebureau volgt de ontwikkeling van je kind.",
+                "en": "The child health clinic follows your child's development."
+              }
+            },
+            {
+              "id": "o1-10",
+              "type": "build_sentence",
+              "prompt_en": "I am pregnant.",
+              "answer": "Ik ben zwanger",
+              "distractors": [
+                "heb",
+                "jij"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "o2",
+          "title": "Kinderopvang",
+          "title_en": "Childcare",
+          "questions": [
+            {
+              "id": "o2-01",
+              "type": "multiple_choice",
+              "prompt": "Ouders hebben geen tijd. Wat is GEEN vorm van kinderopvang?",
+              "prompt_en": "Parents have no time. What is NOT a form of childcare?",
+              "answer": "De huisarts",
+              "distractors": [
+                "Het kinderdagverblijf",
+                "Een oppas",
+                "De gastouderopvang"
+              ],
+              "explanation": {
+                "nl": "Opties zijn: het kinderdagverblijf, een oppas en de gastouderopvang.",
+                "en": "Options are: daycare, a babysitter and host parent care."
+              }
+            },
+            {
+              "id": "o2-02",
+              "type": "multiple_choice",
+              "prompt": "Voor welke leeftijd is het kinderdagverblijf?",
+              "prompt_en": "Which ages is daycare for?",
+              "answer": "0–4 jaar",
+              "distractors": [
+                "4–12 jaar",
+                "0–12 jaar",
+                "2–4 jaar"
+              ],
+              "explanation": {
+                "nl": "Het kinderdagverblijf is voor kinderen van 0 tot 4 jaar, van de ochtend tot de avond.",
+                "en": "Daycare is for children aged 0 to 4, from morning to evening."
+              }
+            },
+            {
+              "id": "o2-03",
+              "type": "true_false",
+              "prompt": "Op het kinderdagverblijf kunnen kinderen eten, spelen en slapen.",
+              "prompt_en": "At daycare children can eat, play and sleep.",
+              "answer": true,
+              "explanation": {
+                "nl": "Het kinderdagverblijf is open van de ochtend tot de avond.",
+                "en": "Daycare is open from morning to evening."
+              }
+            },
+            {
+              "id": "o2-04",
+              "type": "multiple_choice",
+              "prompt": "Wie kan een oppas zijn?",
+              "prompt_en": "Who can be a babysitter?",
+              "answer": "Familie, buren of een betaalde oppas",
+              "distractors": [
+                "Alleen een leraar",
+                "Alleen de gemeente",
+                "Alleen de verloskundige"
+              ],
+              "explanation": {
+                "nl": "Een oppas is iemand van de familie, de buren of een betaalde oppas.",
+                "en": "A babysitter is someone from the family, a neighbour or a paid babysitter."
+              }
+            },
+            {
+              "id": "o2-05",
+              "type": "multiple_choice",
+              "prompt": "Voor welke leeftijd is de gastouderopvang?",
+              "prompt_en": "Which ages is host parent care for?",
+              "answer": "0–12 jaar",
+              "distractors": [
+                "0–4 jaar",
+                "4–12 jaar",
+                "12–18 jaar"
+              ],
+              "explanation": {
+                "nl": "Gastouderopvang is voor kinderen van 0 tot 12 jaar.",
+                "en": "Host parent care is for children aged 0 to 12."
+              }
+            },
+            {
+              "id": "o2-06",
+              "type": "true_false",
+              "prompt": "Bij gastouderopvang gaat het kind altijd naar het huis van de gastouder.",
+              "prompt_en": "With host parent care, the child always goes to the host parent's home.",
+              "answer": false,
+              "explanation": {
+                "nl": "Het kind kan naar de gastouder gaan, of de gastouder komt naar het huis van het kind.",
+                "en": "The child can go to the host parent, or the host parent comes to the child's home."
+              }
+            },
+            {
+              "id": "o2-07",
+              "type": "multiple_choice",
+              "prompt": "Wat is de buitenschoolse opvang (BSO)?",
+              "prompt_en": "What is out-of-school care (BSO)?",
+              "answer": "Opvang voor en na school en in de vakanties",
+              "distractors": [
+                "Een school voor kinderen met een handicap",
+                "Opvang voor baby's",
+                "Een middelbare school"
+              ],
+              "explanation": {
+                "nl": "De BSO is voor basisschoolkinderen (4–12 jaar). Kinderen worden van school opgehaald.",
+                "en": "BSO is for primary school children (aged 4–12). Children are picked up from school."
+              }
+            },
+            {
+              "id": "o2-08",
+              "type": "multiple_choice",
+              "prompt": "Voor wie is de voorschool (VVE)?",
+              "prompt_en": "Who is pre-school education (VVE) for?",
+              "answer": "Kinderen die extra hulp nodig hebben bij taal of ontwikkeling",
+              "distractors": [
+                "Alle kinderen van 12 jaar",
+                "Kinderen die al kunnen lezen",
+                "Ouders die werk zoeken"
+              ],
+              "explanation": {
+                "nl": "VVE is voor kinderen die extra ondersteuning nodig hebben, bijvoorbeeld omdat ze thuis geen Nederlands spreken.",
+                "en": "VVE is for children who need extra support, for example because they don't speak Dutch at home."
+              }
+            },
+            {
+              "id": "o2-09",
+              "type": "multiple_choice",
+              "prompt": "Wie beslist of een kind naar de VVE mag?",
+              "prompt_en": "Who decides whether a child can go to VVE?",
+              "answer": "De gemeente",
+              "distractors": [
+                "De Belastingdienst",
+                "DUO",
+                "De SVB"
+              ],
+              "explanation": {
+                "nl": "De gemeente beslist, vaak op advies van het consultatiebureau.",
+                "en": "The municipality decides, often on the advice of the child health clinic."
+              }
+            },
+            {
+              "id": "o2-10",
+              "type": "multiple_choice",
+              "prompt": "Bij wie vraag je kinderopvangtoeslag aan?",
+              "prompt_en": "Who do you apply to for childcare benefit?",
+              "answer": "De Belastingdienst",
+              "distractors": [
+                "DUO",
+                "De SVB",
+                "Het consultatiebureau"
+              ],
+              "explanation": {
+                "nl": "Kinderopvangtoeslag vraag je aan bij de Belastingdienst, via Mijn toeslagen met DigiD.",
+                "en": "You apply for childcare benefit with the Tax Administration, via My Benefits with DigiD."
+              }
+            },
+            {
+              "id": "o2-11",
+              "type": "multiple_choice",
+              "prompt": "Wanneer kun je kinderopvangtoeslag krijgen?",
+              "prompt_en": "When can you get childcare benefit?",
+              "answer": "Als je werkt of studeert en de opvang geregistreerd is",
+              "distractors": [
+                "Altijd, voor elke oppas",
+                "Alleen als je niet werkt",
+                "Alleen voor kinderen boven 12 jaar"
+              ],
+              "explanation": {
+                "nl": "De ouders moeten werken of studeren, en de opvang moet in het Landelijk Register Kinderopvang staan.",
+                "en": "Parents must work or study, and the childcare must be in the National Childcare Register."
+              }
+            },
+            {
+              "id": "o2-12",
+              "type": "true_false",
+              "prompt": "Verandert je inkomen? Dan moet je dat snel doorgeven, anders moet je toeslag terugbetalen.",
+              "prompt_en": "Does your income change? Then you must report it quickly, otherwise you have to pay benefit back.",
+              "answer": true,
+              "explanation": {
+                "nl": "Geef veranderingen in inkomen of opvanguren snel door.",
+                "en": "Report changes in income or childcare hours quickly."
+              }
+            },
+            {
+              "id": "o2-13",
+              "type": "fill_blank",
+              "prompt": "Hoeveel kinderopvangtoeslag je krijgt, hangt af van je inkomen, het aantal kinderen en het aantal ___.",
+              "prompt_en": "How much childcare benefit you get depends on your income, the number of children and the number of childcare hours.",
+              "answer": "opvanguren",
+              "distractors": [
+                "vakanties",
+                "verjaardagen",
+                "diploma's"
+              ],
+              "explanation": {
+                "nl": "Inkomen, aantal kinderen en aantal opvanguren bepalen de toeslag.",
+                "en": "Income, number of children and number of childcare hours set the benefit."
+              }
+            }
+          ]
+        },
+        {
+          "id": "o3",
+          "title": "De basisschool",
+          "title_en": "Primary school",
+          "questions": [
+            {
+              "id": "o3-01",
+              "type": "multiple_choice",
+              "prompt": "Wat leren kinderen op de peuterspeelzaal?",
+              "prompt_en": "What do children learn at the toddler playgroup?",
+              "answer": "Spelen en Nederlands spreken",
+              "distractors": [
+                "Lezen en rekenen",
+                "Geschiedenis",
+                "Een beroep"
+              ],
+              "explanation": {
+                "nl": "Kinderen van 2 tot 4 jaar gaan meestal 2 tot 3 dagdelen per week naar de peuterspeelzaal.",
+                "en": "Children aged 2 to 4 usually go to the playgroup 2 to 3 half-days a week."
+              }
+            },
+            {
+              "id": "o3-02",
+              "type": "true_false",
+              "prompt": "De voorschool is verplicht voor alle kinderen.",
+              "prompt_en": "Pre-school is compulsory for all children.",
+              "answer": false,
+              "explanation": {
+                "nl": "De voorschool is niet verplicht. Het is voor kinderen die achterlopen of thuis geen Nederlands spreken.",
+                "en": "Pre-school is not compulsory. It's for children who are behind or don't speak Dutch at home."
+              }
+            },
+            {
+              "id": "o3-03",
+              "type": "multiple_choice",
+              "prompt": "Voor welke leeftijd is de basisschool?",
+              "prompt_en": "Which ages is primary school for?",
+              "answer": "4–12 jaar",
+              "distractors": [
+                "0–4 jaar",
+                "12–18 jaar",
+                "6–16 jaar"
+              ],
+              "explanation": {
+                "nl": "De basisschool is voor kinderen van 4 tot 12 jaar.",
+                "en": "Primary school is for children aged 4 to 12."
+              }
+            },
+            {
+              "id": "o3-04",
+              "type": "multiple_choice",
+              "prompt": "Hoe noem je groep 1 en 2 van de basisschool?",
+              "prompt_en": "What do you call groups 1 and 2 of primary school?",
+              "answer": "De kleuterschool",
+              "distractors": [
+                "De voorschool",
+                "De brugklas",
+                "De BSO"
+              ],
+              "explanation": {
+                "nl": "In groep 1 en 2 (de kleuterschool) leren kinderen spelen, beter Nederlands spreken, zingen en tekenen.",
+                "en": "In groups 1 and 2 (the infant classes) children learn to play, speak better Dutch, sing and draw."
+              }
+            },
+            {
+              "id": "o3-05",
+              "type": "multiple_choice",
+              "prompt": "In welke groep leren kinderen lezen, schrijven en rekenen?",
+              "prompt_en": "In which group do children learn to read, write and do maths?",
+              "answer": "Groep 3",
+              "distractors": [
+                "Groep 1",
+                "Groep 6",
+                "Groep 8"
+              ],
+              "explanation": {
+                "nl": "In groep 3 leren de kinderen lezen, schrijven en rekenen.",
+                "en": "In group 3 children learn to read, write and do maths."
+              }
+            },
+            {
+              "id": "o3-06",
+              "type": "true_false",
+              "prompt": "In groep 4 tot 8 krijgen kinderen ook les in aardrijkskunde en geschiedenis.",
+              "prompt_en": "In groups 4 to 8 children also get lessons in geography and history.",
+              "answer": true,
+              "explanation": {
+                "nl": "In de hogere groepen komen er vakken bij, zoals aardrijkskunde en geschiedenis.",
+                "en": "In the higher groups subjects are added, such as geography and history."
+              }
+            },
+            {
+              "id": "o3-07",
+              "type": "multiple_choice",
+              "prompt": "Welke toets maken kinderen in groep 8?",
+              "prompt_en": "Which test do children take in group 8?",
+              "answer": "De doorstroomtoets",
+              "distractors": [
+                "Het examen inburgering",
+                "Het rijexamen",
+                "De DUO-toets"
+              ],
+              "explanation": {
+                "nl": "In groep 8 maken kinderen de doorstroomtoets (vroeger: eindtoets of CITO-toets).",
+                "en": "In group 8 children take the transition test (formerly the final test or CITO test)."
+              }
+            },
+            {
+              "id": "o3-08",
+              "type": "multiple_choice",
+              "prompt": "Wat krijgen kinderen in groep 8 van de school?",
+              "prompt_en": "What do children get from the school in group 8?",
+              "answer": "Een schooladvies voor de middelbare school",
+              "distractors": [
+                "Een diploma",
+                "Kinderbijslag",
+                "Een boete"
+              ],
+              "explanation": {
+                "nl": "De leraar geeft advies welk niveau het beste past. Is de uitslag van de doorstroomtoets hoger, dan kan het advies omhoog.",
+                "en": "The teacher advises which level suits best. If the transition test result is higher, the advice can go up."
+              }
+            },
+            {
+              "id": "o3-09",
+              "type": "fill_blank",
+              "prompt": "Na school kunnen basisschoolkinderen naar de ___ opvang om te spelen of huiswerk te maken.",
+              "prompt_en": "After school, primary school children can go to out-of-school care to play or do homework.",
+              "answer": "buitenschoolse",
+              "distractors": [
+                "medische",
+                "middelbare",
+                "openbare"
+              ],
+              "explanation": {
+                "nl": "De buitenschoolse opvang is vaak voor kinderen van wie beide ouders werken.",
+                "en": "Out-of-school care is often for children whose parents both work."
+              }
+            },
+            {
+              "id": "o3-10",
+              "type": "build_sentence",
+              "prompt_en": "My son goes to primary school.",
+              "answer": "Mijn zoon gaat naar de basisschool",
+              "distractors": [
+                "middelbare",
+                "ga"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "o4",
+          "title": "Middelbare school en verder",
+          "title_en": "Secondary school and beyond",
+          "questions": [
+            {
+              "id": "o4-01",
+              "type": "multiple_choice",
+              "prompt": "Hoeveel niveaus zijn er op de middelbare school?",
+              "prompt_en": "How many levels are there at secondary school?",
+              "answer": "3",
+              "distractors": [
+                "2",
+                "4",
+                "5"
+              ],
+              "explanation": {
+                "nl": "De drie niveaus zijn VWO, HAVO en VMBO.",
+                "en": "The three levels are VWO, HAVO and VMBO."
+              }
+            },
+            {
+              "id": "o4-02",
+              "type": "multiple_choice",
+              "prompt": "Hoe lang duurt het VWO?",
+              "prompt_en": "How long does VWO take?",
+              "answer": "6 jaar",
+              "distractors": [
+                "4 jaar",
+                "5 jaar",
+                "8 jaar"
+              ],
+              "explanation": {
+                "nl": "VWO duurt 6 jaar, HAVO 5 jaar en VMBO 4 jaar.",
+                "en": "VWO takes 6 years, HAVO 5 years and VMBO 4 years."
+              }
+            },
+            {
+              "id": "o4-03",
+              "type": "multiple_choice",
+              "prompt": "Hoe lang duurt het VMBO?",
+              "prompt_en": "How long does VMBO take?",
+              "answer": "4 jaar",
+              "distractors": [
+                "3 jaar",
+                "5 jaar",
+                "6 jaar"
+              ],
+              "explanation": {
+                "nl": "Het VMBO duurt 4 jaar.",
+                "en": "VMBO takes 4 years."
+              }
+            },
+            {
+              "id": "o4-04",
+              "type": "multiple_choice",
+              "prompt": "Hoe lang duurt de HAVO?",
+              "prompt_en": "How long does HAVO take?",
+              "answer": "5 jaar",
+              "distractors": [
+                "4 jaar",
+                "6 jaar",
+                "7 jaar"
+              ],
+              "explanation": {
+                "nl": "De HAVO duurt 5 jaar.",
+                "en": "HAVO takes 5 years."
+              }
+            },
+            {
+              "id": "o4-05",
+              "type": "true_false",
+              "prompt": "Na jaar 4 van het VMBO kun je naar jaar 4 van de HAVO.",
+              "prompt_en": "After year 4 of VMBO you can go to year 4 of HAVO.",
+              "answer": true,
+              "explanation": {
+                "nl": "Je kunt doorstromen: van VMBO naar HAVO, en na jaar 5 van de HAVO naar jaar 5 van het VWO.",
+                "en": "You can move up: from VMBO to HAVO, and after year 5 of HAVO to year 5 of VWO."
+              }
+            },
+            {
+              "id": "o4-06",
+              "type": "multiple_choice",
+              "prompt": "Na het VWO kun je naar…",
+              "prompt_en": "After VWO you can go to…",
+              "answer": "De universiteit",
+              "distractors": [
+                "De peuterspeelzaal",
+                "De basisschool",
+                "De BSO"
+              ],
+              "explanation": {
+                "nl": "Na het VWO kun je naar de universiteit, bijvoorbeeld om dokter of advocaat te worden.",
+                "en": "After VWO you can go to university, for example to become a doctor or lawyer."
+              }
+            },
+            {
+              "id": "o4-07",
+              "type": "multiple_choice",
+              "prompt": "Na de HAVO kun je naar het…",
+              "prompt_en": "After HAVO you can go to…",
+              "answer": "HBO",
+              "distractors": [
+                "VMBO",
+                "Consultatiebureau",
+                "Kinderdagverblijf"
+              ],
+              "explanation": {
+                "nl": "Na de HAVO kun je naar het HBO, bijvoorbeeld om leraar te worden.",
+                "en": "After HAVO you can go to HBO, for example to become a teacher."
+              }
+            },
+            {
+              "id": "o4-08",
+              "type": "multiple_choice",
+              "prompt": "Je wilt in een winkel of op een kinderdagverblijf werken. Welke opleiding past?",
+              "prompt_en": "You want to work in a shop or at a daycare centre. Which education fits?",
+              "answer": "MBO",
+              "distractors": [
+                "Universiteit",
+                "VWO",
+                "Peuterspeelzaal"
+              ],
+              "explanation": {
+                "nl": "Na het VMBO kun je naar het MBO, bijvoorbeeld om in een winkel te werken.",
+                "en": "After VMBO you can go to MBO, for example to work in a shop."
+              }
+            },
+            {
+              "id": "o4-09",
+              "type": "fill_blank",
+              "prompt": "Een ander woord voor de middelbare school is ___ onderwijs.",
+              "prompt_en": "Another word for secondary school is 'voortgezet onderwijs'.",
+              "answer": "voortgezet",
+              "distractors": [
+                "speciaal",
+                "openbaar",
+                "hoger"
+              ],
+              "explanation": {
+                "nl": "Middelbare school = voortgezet onderwijs.",
+                "en": "Secondary school = voortgezet onderwijs."
+              }
+            },
+            {
+              "id": "o4-10",
+              "type": "multiple_choice",
+              "prompt": "Wat geeft goed onderwijs je kinderen?",
+              "prompt_en": "What does good education give your children?",
+              "answer": "Meer kansen op werk",
+              "distractors": [
+                "Geen leerplicht",
+                "Gratis huur",
+                "Minder belasting"
+              ],
+              "explanation": {
+                "nl": "Goed onderwijs geeft meer kansen op werk, een hoger inkomen en meer zelfstandigheid.",
+                "en": "Good education gives more job opportunities, a higher income and more independence."
+              }
+            },
+            {
+              "id": "o4-11",
+              "type": "true_false",
+              "prompt": "Op school leren kinderen ook hoe Nederland werkt (burgerschap).",
+              "prompt_en": "At school children also learn how the Netherlands works (citizenship).",
+              "answer": true,
+              "explanation": {
+                "nl": "Onderwijs is de basis voor meedoen in de maatschappij.",
+                "en": "Education is the basis for taking part in society."
+              }
+            },
+            {
+              "id": "o4-12",
+              "type": "build_sentence",
+              "prompt_en": "My daughter goes to university.",
+              "answer": "Mijn dochter gaat naar de universiteit",
+              "distractors": [
+                "zoon",
+                "basisschool"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "o5",
+          "title": "Leerplicht en vrijheid van onderwijs",
+          "title_en": "Compulsory education and freedom of education",
+          "questions": [
+            {
+              "id": "o5-01",
+              "type": "multiple_choice",
+              "prompt": "Wat betekent vrijheid van onderwijs?",
+              "prompt_en": "What does freedom of education mean?",
+              "answer": "Ouders kiezen zelf een school en iedereen mag een school beginnen",
+              "distractors": [
+                "School is gratis tot 30 jaar",
+                "Kinderen hoeven niet naar school",
+                "De gemeente kiest de school"
+              ],
+              "explanation": {
+                "nl": "Ouders kiezen zelf. Er zijn christelijke, islamitische, openbare en bijvoorbeeld Dalton- of Jenaplanscholen.",
+                "en": "Parents choose themselves. There are Christian, Islamic, public and, for example, Dalton or Jenaplan schools."
+              }
+            },
+            {
+              "id": "o5-02",
+              "type": "multiple_choice",
+              "prompt": "Vanaf welke leeftijd moeten kinderen naar school?",
+              "prompt_en": "From what age must children go to school?",
+              "answer": "5 jaar",
+              "distractors": [
+                "3 jaar",
+                "4 jaar",
+                "6 jaar"
+              ],
+              "explanation": {
+                "nl": "Vanaf 5 jaar is er leerplicht.",
+                "en": "Compulsory education starts at age 5."
+              }
+            },
+            {
+              "id": "o5-03",
+              "type": "multiple_choice",
+              "prompt": "Een kind van 16 heeft nog geen diploma. Tot welke leeftijd moet het naar school?",
+              "prompt_en": "A 16-year-old has no diploma yet. Until what age must they go to school?",
+              "answer": "18 jaar",
+              "distractors": [
+                "16 jaar",
+                "17 jaar",
+                "21 jaar"
+              ],
+              "explanation": {
+                "nl": "Tot 16 jaar moeten kinderen naar school. Zonder diploma op 16 of 17 jaar: naar school tot 18 jaar.",
+                "en": "Children must go to school until 16. Without a diploma at 16 or 17: school until 18."
+              }
+            },
+            {
+              "id": "o5-04",
+              "type": "true_false",
+              "prompt": "Je mag met je kind buiten de schoolvakanties op vakantie gaan.",
+              "prompt_en": "You may go on holiday with your child outside the school holidays.",
+              "answer": false,
+              "explanation": {
+                "nl": "Kinderen krijgen alleen vrij in de schoolvakanties. Anders kunnen ouders een boete krijgen.",
+                "en": "Children only get time off in the school holidays. Otherwise parents can get a fine."
+              }
+            },
+            {
+              "id": "o5-05",
+              "type": "multiple_choice",
+              "prompt": "Wanneer kun je vrij vragen voor je kind?",
+              "prompt_en": "When can you ask for time off for your child?",
+              "answer": "Bij een speciale situatie, zoals een begrafenis",
+              "distractors": [
+                "Voor een goedkope vakantie",
+                "Als het mooi weer is",
+                "Op je eigen verjaardag"
+              ],
+              "explanation": {
+                "nl": "Voor speciale situaties, zoals een begrafenis, kunnen ouders toestemming vragen.",
+                "en": "For special situations, such as a funeral, parents can ask for permission."
+              }
+            },
+            {
+              "id": "o5-06",
+              "type": "fill_blank",
+              "prompt": "Een kind is vaak te laat of afwezig. De school meldt dit bij de ___.",
+              "prompt_en": "A child is often late or absent. The school reports this to the attendance officer.",
+              "answer": "leerplichtambtenaar",
+              "distractors": [
+                "huisarts",
+                "verloskundige",
+                "oppas"
+              ],
+              "explanation": {
+                "nl": "Te laat of te veel afwezig? De school meldt dit bij de leerplichtambtenaar.",
+                "en": "Late or absent too often? The school reports it to the attendance officer."
+              }
+            },
+            {
+              "id": "o5-07",
+              "type": "multiple_choice",
+              "prompt": "Je kind is ziek. Wat moet je doen?",
+              "prompt_en": "Your child is ill. What must you do?",
+              "answer": "Je kind ziek melden bij school",
+              "distractors": [
+                "Niets doen",
+                "De politie bellen",
+                "Een boete betalen"
+              ],
+              "explanation": {
+                "nl": "Ouders moeten hun kind ziek melden als het afwezig is.",
+                "en": "Parents must report their child sick when it is absent."
+              }
+            },
+            {
+              "id": "o5-08",
+              "type": "multiple_choice",
+              "prompt": "Wanneer meld je je kind meestal aan bij een basisschool?",
+              "prompt_en": "When do you usually register your child at a primary school?",
+              "answer": "Vóór de 4e verjaardag",
+              "distractors": [
+                "Na de 6e verjaardag",
+                "Na de geboorte bij het consultatiebureau",
+                "Op de eerste schooldag"
+              ],
+              "explanation": {
+                "nl": "Meestal vóór de 4e verjaardag. In veel gemeenten al vóór 3 jaar en 10 maanden.",
+                "en": "Usually before the 4th birthday. In many municipalities even before 3 years and 10 months."
+              }
+            },
+            {
+              "id": "o5-09",
+              "type": "true_false",
+              "prompt": "In grote steden is op tijd aanmelden belangrijk, omdat er vaak een voorrangssysteem is.",
+              "prompt_en": "In big cities registering on time is important, because there is often a priority system.",
+              "answer": true,
+              "explanation": {
+                "nl": "Kies een school, vul het formulier in (met BSN, ID en vaccinaties) en meld op tijd aan.",
+                "en": "Choose a school, fill in the form (with BSN, ID and vaccinations) and register on time."
+              }
+            },
+            {
+              "id": "o5-10",
+              "type": "true_false",
+              "prompt": "Kinderen met een handicap moeten altijd naar het speciaal onderwijs.",
+              "prompt_en": "Children with a disability must always go to special education.",
+              "answer": false,
+              "explanation": {
+                "nl": "De meeste gewone scholen hebben faciliteiten voor leerlingen met een handicap. Speciaal onderwijs is er ook.",
+                "en": "Most regular schools have facilities for pupils with a disability. Special education exists too."
+              }
+            },
+            {
+              "id": "o5-11",
+              "type": "multiple_choice",
+              "prompt": "Welk onderdeel is verplicht op de basisschool en de middelbare school?",
+              "prompt_en": "Which part is compulsory in primary and secondary school?",
+              "answer": "Seksuele voorlichting",
+              "distractors": [
+                "Godsdienstles",
+                "Paardrijden",
+                "Een tweede taal naar keuze"
+              ],
+              "explanation": {
+                "nl": "Seksuele voorlichting is een verplicht onderdeel van het onderwijsprogramma.",
+                "en": "Sex education is a compulsory part of the curriculum."
+              }
+            },
+            {
+              "id": "o5-12",
+              "type": "build_sentence",
+              "prompt_en": "My child must go to school.",
+              "answer": "Mijn kind moet naar school",
+              "distractors": [
+                "mag",
+                "huis"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "o6",
+          "title": "Kosten en studiefinanciering",
+          "title_en": "Costs and student finance",
+          "questions": [
+            {
+              "id": "o6-01",
+              "type": "multiple_choice",
+              "prompt": "Van wie krijg je kinderbijslag?",
+              "prompt_en": "Who do you get child benefit from?",
+              "answer": "De SVB",
+              "distractors": [
+                "DUO",
+                "De Belastingdienst",
+                "De school"
+              ],
+              "explanation": {
+                "nl": "Kinderbijslag krijg je van de SVB (Sociale Verzekeringsbank).",
+                "en": "You get child benefit from the SVB (Social Insurance Bank)."
+              }
+            },
+            {
+              "id": "o6-02",
+              "type": "multiple_choice",
+              "prompt": "Tot welke leeftijd van je kind krijg je kinderbijslag?",
+              "prompt_en": "Until what age of your child do you get child benefit?",
+              "answer": "18 jaar",
+              "distractors": [
+                "12 jaar",
+                "16 jaar",
+                "21 jaar"
+              ],
+              "explanation": {
+                "nl": "Je krijgt kinderbijslag tot je kind 18 jaar is.",
+                "en": "You get child benefit until your child is 18."
+              }
+            },
+            {
+              "id": "o6-03",
+              "type": "true_false",
+              "prompt": "Hoeveel kinderbijslag je krijgt, hangt af van de leeftijd van je kind.",
+              "prompt_en": "How much child benefit you get depends on your child's age.",
+              "answer": true,
+              "explanation": {
+                "nl": "Het bedrag hangt af van de leeftijd van het kind.",
+                "en": "The amount depends on the child's age."
+              }
+            },
+            {
+              "id": "o6-04",
+              "type": "true_false",
+              "prompt": "In Nederland is onderwijs gratis tot 18 jaar.",
+              "prompt_en": "In the Netherlands education is free until 18.",
+              "answer": true,
+              "explanation": {
+                "nl": "Maar er zijn soms extra kosten, zoals een excursie of schriften.",
+                "en": "But there are sometimes extra costs, such as an excursion or notebooks."
+              }
+            },
+            {
+              "id": "o6-05",
+              "type": "multiple_choice",
+              "prompt": "De school vraagt geld voor een schoolreisje. Hoe heet dit?",
+              "prompt_en": "The school asks for money for a school trip. What is this called?",
+              "answer": "Vrijwillige ouderbijdrage",
+              "distractors": [
+                "Kinderbijslag",
+                "Lesgeld voor de universiteit",
+                "Een boete"
+              ],
+              "explanation": {
+                "nl": "Voor een excursie, kamp of sportdag vraagt de school een vrijwillige ouderbijdrage.",
+                "en": "For an excursion, camp or sports day the school asks for a voluntary parental contribution."
+              }
+            },
+            {
+              "id": "o6-06",
+              "type": "true_false",
+              "prompt": "Op de middelbare school moet je de schoolboeken zelf betalen.",
+              "prompt_en": "At secondary school you must pay for the schoolbooks yourself.",
+              "answer": false,
+              "explanation": {
+                "nl": "Schoolboeken zijn verplicht, maar gratis in het voortgezet onderwijs.",
+                "en": "Schoolbooks are required, but free in secondary education."
+              }
+            },
+            {
+              "id": "o6-07",
+              "type": "multiple_choice",
+              "prompt": "Welke organisatie helpt kinderen uit gezinnen met weinig geld met schoolspullen en sportclubs?",
+              "prompt_en": "Which organisation helps children from low-income families with school supplies and sports clubs?",
+              "answer": "Stichting Leergeld",
+              "distractors": [
+                "De SVB",
+                "Het UWV",
+                "Het consultatiebureau"
+              ],
+              "explanation": {
+                "nl": "Stichting Leergeld betaalt o.a. schoolspullen, sportclubs, muziekles en excursies.",
+                "en": "Stichting Leergeld pays for things like school supplies, sports clubs, music lessons and excursions."
+              }
+            },
+            {
+              "id": "o6-08",
+              "type": "multiple_choice",
+              "prompt": "Je hebt weinig geld voor een laptop voor school. Waar kun je ook hulp vragen?",
+              "prompt_en": "You have little money for a school laptop. Where else can you ask for help?",
+              "answer": "Bij de gemeente",
+              "distractors": [
+                "Bij de verloskundige",
+                "Bij de leerplichtambtenaar",
+                "Bij de gastouder"
+              ],
+              "explanation": {
+                "nl": "Veel gemeenten geven extra hulp, bijvoorbeeld voor een laptop, fiets of gymkleding.",
+                "en": "Many municipalities give extra help, for example for a laptop, bicycle or gym clothes."
+              }
+            },
+            {
+              "id": "o6-09",
+              "type": "multiple_choice",
+              "prompt": "Bij welke organisatie vraag je studiefinanciering aan?",
+              "prompt_en": "At which organisation do you apply for student finance?",
+              "answer": "DUO",
+              "distractors": [
+                "De SVB",
+                "De gemeente",
+                "Stichting Leergeld"
+              ],
+              "explanation": {
+                "nl": "Studiefinanciering vraag je aan bij DUO via www.duo.nl, inloggen met DigiD.",
+                "en": "You apply for student finance at DUO via www.duo.nl, logging in with DigiD."
+              }
+            },
+            {
+              "id": "o6-10",
+              "type": "multiple_choice",
+              "prompt": "Wat is GEEN onderdeel van studiefinanciering?",
+              "prompt_en": "What is NOT part of student finance?",
+              "answer": "Kinderbijslag",
+              "distractors": [
+                "Een lening",
+                "Een aanvullende beurs",
+                "Een OV-studentenkaart"
+              ],
+              "explanation": {
+                "nl": "Studiefinanciering: een lening, soms een aanvullende beurs, en een OV-studentenkaart.",
+                "en": "Student finance: a loan, sometimes a supplementary grant, and a public transport student card."
+              }
+            },
+            {
+              "id": "o6-11",
+              "type": "fill_blank",
+              "prompt": "Een lening van DUO moet je later ___.",
+              "prompt_en": "You must pay back a DUO loan later.",
+              "answer": "terugbetalen",
+              "distractors": [
+                "vergeten",
+                "verkopen",
+                "ophalen"
+              ],
+              "explanation": {
+                "nl": "Een lening betaal je later terug. Te veel ontvangen? Dan betaal je dat ook terug.",
+                "en": "You pay a loan back later. Received too much? You pay that back too."
+              }
+            },
+            {
+              "id": "o6-12",
+              "type": "true_false",
+              "prompt": "Je stopt met je studie. Je moet dit meteen doorgeven aan DUO.",
+              "prompt_en": "You stop your studies. You must report this to DUO right away.",
+              "answer": true,
+              "explanation": {
+                "nl": "Verandert er iets, zoals stoppen met studie? Geef het meteen door.",
+                "en": "Does something change, such as stopping your studies? Report it right away."
+              }
+            },
+            {
+              "id": "o6-13",
+              "type": "build_sentence",
+              "prompt_en": "I am applying for student finance.",
+              "answer": "Ik vraag studiefinanciering aan",
+              "distractors": [
+                "kinderbijslag",
+                "jij"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "o7",
+          "title": "Ouders en school",
+          "title_en": "Parents and school",
+          "questions": [
+            {
+              "id": "o7-01",
+              "type": "multiple_choice",
+              "prompt": "Tot welke leeftijd zijn ouders juridisch verantwoordelijk voor hun kinderen?",
+              "prompt_en": "Until what age are parents legally responsible for their children?",
+              "answer": "16 jaar",
+              "distractors": [
+                "12 jaar",
+                "14 jaar",
+                "21 jaar"
+              ],
+              "explanation": {
+                "nl": "Ouders zijn verantwoordelijk tot 16 jaar. Maakt je kind iets kapot, dan betalen de ouders.",
+                "en": "Parents are responsible until 16. If your child breaks something, the parents pay."
+              }
+            },
+            {
+              "id": "o7-02",
+              "type": "true_false",
+              "prompt": "Een kind van 18 is volwassen en mag zelf contracten tekenen.",
+              "prompt_en": "An 18-year-old is an adult and may sign contracts themselves.",
+              "answer": true,
+              "explanation": {
+                "nl": "Met 18 jaar ben je volwassen.",
+                "en": "At 18 you are an adult."
+              }
+            },
+            {
+              "id": "o7-03",
+              "type": "multiple_choice",
+              "prompt": "Je hebt grote problemen met de opvoeding van je kind. Waar kun je hulp vragen?",
+              "prompt_en": "You have big problems raising your child. Where can you ask for help?",
+              "answer": "Bij de huisarts",
+              "distractors": [
+                "Bij DUO",
+                "Bij de SVB",
+                "Bij de Belastingdienst"
+              ],
+              "explanation": {
+                "nl": "Hulp krijg je bij de huisarts, het wijkteam van de gemeente (jeugdhulp) of de GGZ.",
+                "en": "You can get help from the GP, the municipality's neighbourhood team (youth care) or mental health care (GGZ)."
+              }
+            },
+            {
+              "id": "o7-04",
+              "type": "multiple_choice",
+              "prompt": "Wat is een 10-minutengesprek?",
+              "prompt_en": "What is a 10-minute talk?",
+              "answer": "Een gesprek met de leraar over je kind",
+              "distractors": [
+                "Een korte toets",
+                "Een pauze op school",
+                "Een telefoontje met DUO"
+              ],
+              "explanation": {
+                "nl": "Op 10-minutengesprekken of rapportavonden praat je met de leraar over je kind.",
+                "en": "At 10-minute talks or report evenings you talk with the teacher about your child."
+              }
+            },
+            {
+              "id": "o7-05",
+              "type": "multiple_choice",
+              "prompt": "Wat krijg je op een ouderavond?",
+              "prompt_en": "What do you get at a parents' evening?",
+              "answer": "Informatie van de school",
+              "distractors": [
+                "Kinderbijslag",
+                "Een diploma",
+                "Een boete"
+              ],
+              "explanation": {
+                "nl": "Op een ouderavond krijg je informatie van de school.",
+                "en": "At a parents' evening you get information from the school."
+              }
+            },
+            {
+              "id": "o7-06",
+              "type": "true_false",
+              "prompt": "Soms vraagt de school of ouders als vrijwilliger willen helpen, bijvoorbeeld bij een schoolreisje.",
+              "prompt_en": "Sometimes the school asks whether parents want to help as volunteers, for example on a school trip.",
+              "answer": true,
+              "explanation": {
+                "nl": "In Nederland proberen ouders te helpen als de school dat vraagt.",
+                "en": "In the Netherlands parents try to help when the school asks."
+              }
+            },
+            {
+              "id": "o7-07",
+              "type": "multiple_choice",
+              "prompt": "Hoe kun je als ouder meepraten over de school?",
+              "prompt_en": "How can you as a parent have a say in the school?",
+              "answer": "Lid worden van de ouderraad of medezeggenschapsraad",
+              "distractors": [
+                "Een boete betalen",
+                "Je kind thuishouden",
+                "De leraar ontslaan"
+              ],
+              "explanation": {
+                "nl": "Je kunt lid worden van de ouderraad of medezeggenschapsraad.",
+                "en": "You can join the parents' council or participation council."
+              }
+            },
+            {
+              "id": "o7-08",
+              "type": "true_false",
+              "prompt": "Ouders zijn alleen verantwoordelijk voor het gedrag van hun kind thuis.",
+              "prompt_en": "Parents are only responsible for their child's behaviour at home.",
+              "answer": false,
+              "explanation": {
+                "nl": "Ouders zijn ook verantwoordelijk voor het gedrag op school, in de buurt en op sociale media.",
+                "en": "Parents are also responsible for behaviour at school, in the neighbourhood and on social media."
+              }
+            },
+            {
+              "id": "o7-09",
+              "type": "multiple_choice",
+              "prompt": "Kinderen doen het beter op school als ouders…",
+              "prompt_en": "Children do better at school when parents…",
+              "answer": "Interesse tonen en praten over school",
+              "distractors": [
+                "Nooit naar school gaan",
+                "Alleen het rapport tekenen",
+                "Het huiswerk maken voor hun kind"
+              ],
+              "explanation": {
+                "nl": "Het kind voelt zich dan veilig, serieus genomen en gemotiveerd.",
+                "en": "The child then feels safe, taken seriously and motivated."
+              }
+            },
+            {
+              "id": "o7-10",
+              "type": "fill_blank",
+              "prompt": "School en ouders zijn samen ___ voor de ontwikkeling van het kind.",
+              "prompt_en": "School and parents are jointly responsible for the child's development.",
+              "answer": "verantwoordelijk",
+              "distractors": [
+                "boos",
+                "betaald",
+                "vrij"
+              ],
+              "explanation": {
+                "nl": "Goede samenwerking tussen school en ouders geeft het kind meer kans op succes.",
+                "en": "Good cooperation between school and parents gives the child a better chance of success."
+              }
+            },
+            {
+              "id": "o7-11",
+              "type": "build_sentence",
+              "prompt_en": "I would like to talk to the teacher.",
+              "answer": "Ik wil graag met de leraar praten",
+              "distractors": [
+                "leerling",
+                "jij"
+              ],
+              "explanation": null
+            }
+          ]
+        }
+      ],
+      "vocabulary": [
+        {
+          "id": "onderwijs-v01",
+          "nl": "zwanger",
+          "en": "pregnant"
+        },
+        {
+          "id": "onderwijs-v02",
+          "nl": "verloskundige",
+          "en": "midwife"
+        },
+        {
+          "id": "onderwijs-v03",
+          "nl": "bevalling",
+          "en": "childbirth"
+        },
+        {
+          "id": "onderwijs-v04",
+          "nl": "thuiszorg",
+          "en": "home care"
+        },
+        {
+          "id": "onderwijs-v05",
+          "nl": "consultatiebureau",
+          "en": "child health clinic (0–4 years)"
+        },
+        {
+          "id": "onderwijs-v06",
+          "nl": "kinderdagverblijf",
+          "en": "daycare"
+        },
+        {
+          "id": "onderwijs-v07",
+          "nl": "oppas",
+          "en": "babysitter"
+        },
+        {
+          "id": "onderwijs-v08",
+          "nl": "gastouderopvang",
+          "en": "host parent care"
+        },
+        {
+          "id": "onderwijs-v09",
+          "nl": "gastouder",
+          "en": "host parent"
+        },
+        {
+          "id": "onderwijs-v10",
+          "nl": "peuterspeelzaal",
+          "en": "toddler playgroup (2–4 years)"
+        },
+        {
+          "id": "onderwijs-v11",
+          "nl": "voorschool",
+          "en": "pre-school (2–4 years, extra support)"
+        },
+        {
+          "id": "onderwijs-v12",
+          "nl": "basisschool",
+          "en": "primary school"
+        },
+        {
+          "id": "onderwijs-v13",
+          "nl": "buitenschoolse opvang",
+          "en": "after-school care"
+        },
+        {
+          "id": "onderwijs-v14",
+          "nl": "middelbare school",
+          "en": "secondary school"
+        },
+        {
+          "id": "onderwijs-v15",
+          "nl": "VWO",
+          "en": "pre-university secondary school (6 years)"
+        },
+        {
+          "id": "onderwijs-v16",
+          "nl": "HAVO",
+          "en": "senior general secondary school (5 years)"
+        },
+        {
+          "id": "onderwijs-v17",
+          "nl": "VMBO",
+          "en": "pre-vocational secondary school (4 years)"
+        },
+        {
+          "id": "onderwijs-v18",
+          "nl": "universiteit",
+          "en": "university"
+        },
+        {
+          "id": "onderwijs-v19",
+          "nl": "HBO",
+          "en": "university of applied sciences"
+        },
+        {
+          "id": "onderwijs-v20",
+          "nl": "MBO",
+          "en": "vocational education"
+        },
+        {
+          "id": "onderwijs-v21",
+          "nl": "leerplicht",
+          "en": "compulsory education"
+        },
+        {
+          "id": "onderwijs-v22",
+          "nl": "boete",
+          "en": "fine"
+        },
+        {
+          "id": "onderwijs-v23",
+          "nl": "vrijheid van onderwijs",
+          "en": "freedom of education"
+        },
+        {
+          "id": "onderwijs-v24",
+          "nl": "openbare school",
+          "en": "public school"
+        },
+        {
+          "id": "onderwijs-v25",
+          "nl": "kinderopvang",
+          "en": "childcare"
+        },
+        {
+          "id": "onderwijs-v26",
+          "nl": "kinderopvangtoeslag",
+          "en": "childcare benefit"
+        },
+        {
+          "id": "onderwijs-v27",
+          "nl": "kinderbijslag",
+          "en": "child benefit"
+        },
+        {
+          "id": "onderwijs-v28",
+          "nl": "Sociale Verzekeringsbank (SVB)",
+          "en": "Social Insurance Bank"
+        },
+        {
+          "id": "onderwijs-v29",
+          "nl": "ouderbijdrage",
+          "en": "parental contribution"
+        },
+        {
+          "id": "onderwijs-v30",
+          "nl": "lesgeld",
+          "en": "tuition"
+        },
+        {
+          "id": "onderwijs-v31",
+          "nl": "DUO",
+          "en": "education agency (student finance)"
+        },
+        {
+          "id": "onderwijs-v32",
+          "nl": "studiefinanciering",
+          "en": "student finance"
+        },
+        {
+          "id": "onderwijs-v33",
+          "nl": "volwassen",
+          "en": "adult"
+        },
+        {
+          "id": "onderwijs-v34",
+          "nl": "huisarts",
+          "en": "GP"
+        },
+        {
+          "id": "onderwijs-v35",
+          "nl": "wijkteam",
+          "en": "neighbourhood team (municipality)"
+        },
+        {
+          "id": "onderwijs-v36",
+          "nl": "geestelijke gezondheidszorg (GGZ)",
+          "en": "mental health care"
+        },
+        {
+          "id": "onderwijs-v37",
+          "nl": "ouderavond",
+          "en": "parents' evening"
+        },
+        {
+          "id": "onderwijs-v38",
+          "nl": "10-minutengesprek",
+          "en": "10-minute talk with the teacher"
+        },
+        {
+          "id": "onderwijs-v39",
+          "nl": "rapportavond",
+          "en": "report card evening"
+        },
+        {
+          "id": "onderwijs-v40",
+          "nl": "vrijwilliger",
+          "en": "volunteer"
         }
       ]
     }

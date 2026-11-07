@@ -23,6 +23,8 @@ from .scoring import lesson_stars, lesson_xp, next_streak, visible_streak
 from .validation import RATED_KINDS, Session
 
 SESSION_TTL_SECONDS = 365 * 24 * 3600
+# Days of XP history in /me/progress: enough for the app's streak calendar to show about four months.
+DAY_HISTORY = 120
 _ser, _de = TypeSerializer(), TypeDeserializer()
 
 
@@ -84,7 +86,7 @@ def get_progress(sub: str, today: date) -> dict:
         for i in _query_prefix(sub, "LESSON#")
     }
     days = [{"date": i["SK"].split("#", 1)[1], "xp": i.get("xp", 0)}
-            for i in _query_prefix(sub, "DAY#", newest_first=True, limit=30)]
+            for i in _query_prefix(sub, "DAY#", newest_first=True, limit=DAY_HISTORY)]
     today_xp = next((d["xp"] for d in days if d["date"] == today.isoformat()), 0)
     mistakes = _query_prefix(sub, "MISTAKE#")
     return _plain({

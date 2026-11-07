@@ -165,6 +165,16 @@ def test_users_are_isolated(table):
     assert prog["xp_total"] == 0 and prog["mistakes_count"] == 0
 
 
+def test_progress_returns_about_four_months_of_days(table):
+    from taalpunt_api import store
+    for n in range(150):
+        table.put_item(Item={"PK": "USER#user-1", "SK": f"DAY#{(TODAY - timedelta(days=n)).isoformat()}", "xp": 10})
+    _, prog = call("GET /me/progress")
+    dates = [d["date"] for d in prog["days"]]
+    assert len(dates) == store.DAY_HISTORY == 120
+    assert dates[0] == TODAY.isoformat()  # newest first, so the calendar always has the latest days
+
+
 def test_mix_sessions_do_not_get_stars(table):
     _, res = call("POST /me/sessions", body=session(kind="mix", lesson_id="mix"))
     assert res["stars"] == 0

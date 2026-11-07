@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "content_version": "2026-11-07.1",
+  "content_version": "2026-11-07.2",
   "language": "nl",
   "translation": "en",
   "sources": [
@@ -4067,8 +4067,8 @@
     {
       "id": "onderwijs",
       "number": 4,
-      "title": "Onderwijs en opvoeding",
-      "title_en": "Education and upbringing",
+      "title": "School en opvoeding",
+      "title_en": "School and parenting",
       "color": "blue",
       "lessons": [
         {

@@ -1,13 +1,14 @@
 {
   "schema_version": 1,
-  "content_version": "2026-11-07.2",
+  "content_version": "2026-11-08.1",
   "language": "nl",
   "translation": "en",
   "sources": [
     "KNM 1) Wonen",
     "KNM 2) Werk en inkomen",
     "KNM 3) Interactie, normen en waarden",
-    "KNM 4) Onderwijs en opvoeding"
+    "KNM 4) Onderwijs en opvoeding",
+    "KNM 5) Gezondheid"
   ],
   "units": [
     {
@@ -5492,6 +5493,1476 @@
           "id": "onderwijs-v40",
           "nl": "vrijwilliger",
           "en": "volunteer"
+        }
+      ]
+    },
+    {
+      "id": "gezondheid",
+      "number": 5,
+      "title": "Gezondheid",
+      "title_en": "Health",
+      "color": "orange",
+      "lessons": [
+        {
+          "id": "g1",
+          "title": "Gezond leven en de huisarts",
+          "title_en": "Healthy living and the GP",
+          "questions": [
+            {
+              "id": "g1-01",
+              "type": "multiple_choice",
+              "prompt": "Wat helpt NIET om gezond te blijven?",
+              "prompt_en": "What does NOT help you stay healthy?",
+              "answer": "Veel alcohol drinken",
+              "distractors": [
+                "Regelmatig bewegen",
+                "Gezond eten",
+                "Niet roken"
+              ],
+              "explanation": {
+                "nl": "Gezond eten, bewegen, niet roken en niet te veel alcohol helpen je gezond te blijven.",
+                "en": "Eating healthily, exercising, not smoking and not drinking too much help you stay healthy."
+              }
+            },
+            {
+              "id": "g1-02",
+              "type": "true_false",
+              "prompt": "Met een gezond leven hoef je meestal minder vaak naar de huisarts.",
+              "prompt_en": "With a healthy life you usually need to go to the GP less often.",
+              "answer": true,
+              "explanation": {
+                "nl": "Een gezonde levensstijl voorkomt veel klachten.",
+                "en": "A healthy lifestyle prevents many complaints."
+              }
+            },
+            {
+              "id": "g1-03",
+              "type": "multiple_choice",
+              "prompt": "Je bent ziek en het gaat niet vanzelf weg. Naar wie ga je eerst?",
+              "prompt_en": "You are ill and it doesn't go away by itself. Who do you go to first?",
+              "answer": "De huisarts",
+              "distractors": [
+                "De specialist",
+                "De drogist",
+                "De spoedeisende hulp"
+              ],
+              "explanation": {
+                "nl": "Bij een medisch probleem ga je eerst naar de huisarts.",
+                "en": "With a medical problem you go to the GP first."
+              }
+            },
+            {
+              "id": "g1-04",
+              "type": "true_false",
+              "prompt": "In Nederland kiest de gemeente je huisarts.",
+              "prompt_en": "In the Netherlands the municipality chooses your GP.",
+              "answer": false,
+              "explanation": {
+                "nl": "Iedereen mag zelf een huisarts kiezen. Het is handig als die dicht bij je huis is.",
+                "en": "Everyone chooses their own GP. It's handy if they are close to your home."
+              }
+            },
+            {
+              "id": "g1-05",
+              "type": "multiple_choice",
+              "prompt": "Je hebt een nieuwe huisarts gevonden. Wat heb je daarna meestal?",
+              "prompt_en": "You have found a new GP. What do you usually have next?",
+              "answer": "Een kennismakingsgesprek",
+              "distractors": [
+                "Een operatie",
+                "Een verwijsbrief",
+                "Een boete"
+              ],
+              "explanation": {
+                "nl": "Als er plaats is, heb je meestal een kennismakingsgesprek met de huisarts.",
+                "en": "If there is room, you usually have an intake meeting with the GP."
+              }
+            },
+            {
+              "id": "g1-06",
+              "type": "multiple_choice",
+              "prompt": "Je bent niet tevreden over je huisarts. Wat kun je eerst doen?",
+              "prompt_en": "You are not satisfied with your GP. What can you do first?",
+              "answer": "Praten met je huisarts",
+              "distractors": [
+                "De politie bellen",
+                "Naar het ziekenhuis gaan",
+                "Niets, je mag niet wisselen"
+              ],
+              "explanation": {
+                "nl": "Praat eerst met je huisarts. Helpt dat niet, dan kun je een andere huisarts zoeken.",
+                "en": "First talk with your GP. If that doesn't help, you can find another GP."
+              }
+            },
+            {
+              "id": "g1-07",
+              "type": "fill_blank",
+              "prompt": "Als je naar de huisarts wilt, moet je eerst bellen voor een ___.",
+              "prompt_en": "If you want to see the GP, you must first call for an appointment.",
+              "answer": "afspraak",
+              "distractors": [
+                "recept",
+                "verzekering",
+                "operatie"
+              ],
+              "explanation": {
+                "nl": "Maak eerst een afspraak en kom op tijd.",
+                "en": "Make an appointment first and arrive on time."
+              }
+            },
+            {
+              "id": "g1-08",
+              "type": "build_sentence",
+              "prompt_en": "I would like to make an appointment.",
+              "answer": "Ik wil graag een afspraak maken",
+              "distractors": [
+                "huisarts",
+                "jij"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "g2",
+          "title": "Bij de huisarts",
+          "title_en": "At the GP",
+          "questions": [
+            {
+              "id": "g2-01",
+              "type": "multiple_choice",
+              "prompt": "Wat doet de huisarts NIET?",
+              "prompt_en": "What does the GP NOT do?",
+              "answer": "Je tanden schoonmaken",
+              "distractors": [
+                "Een recept geven",
+                "Advies geven",
+                "Je doorverwijzen naar een specialist"
+              ],
+              "explanation": {
+                "nl": "De huisarts geeft advies, een recept of een verwijzing. Tanden schoonmaken doet de mondhygiënist.",
+                "en": "The GP gives advice, a prescription or a referral. A dental hygienist cleans your teeth."
+              }
+            },
+            {
+              "id": "g2-02",
+              "type": "true_false",
+              "prompt": "Nederlandse huisartsen geven snel medicijnen.",
+              "prompt_en": "Dutch GPs give medicines quickly.",
+              "answer": false,
+              "explanation": {
+                "nl": "De meeste huisartsen zijn voorzichtig met medicijnen. Ze vinden het belangrijk dat het lichaam zichzelf herstelt.",
+                "en": "Most GPs are careful with medicines. They think it's important that the body recovers by itself."
+              }
+            },
+            {
+              "id": "g2-03",
+              "type": "multiple_choice",
+              "prompt": "Je hebt een korte vraag voor de huisarts. Wat kun je doen?",
+              "prompt_en": "You have a short question for the GP. What can you do?",
+              "answer": "Bellen tijdens het telefonisch spreekuur",
+              "distractors": [
+                "Naar de spoedeisende hulp gaan",
+                "112 bellen",
+                "Naar de apotheek gaan"
+              ],
+              "explanation": {
+                "nl": "Voor een korte vraag bel je tijdens het telefonisch spreekuur.",
+                "en": "For a short question you call during the telephone consultation hours."
+              }
+            },
+            {
+              "id": "g2-04",
+              "type": "multiple_choice",
+              "prompt": "Je oma is heel ziek en kan niet naar de praktijk. Wat kan de huisarts doen?",
+              "prompt_en": "Your grandmother is very ill and can't go to the practice. What can the GP do?",
+              "answer": "Op huisbezoek komen",
+              "distractors": [
+                "Een boete geven",
+                "Een tandartsverzekering afsluiten",
+                "Niets"
+              ],
+              "explanation": {
+                "nl": "Als iemand zelf niet kan komen, kan de huisarts op huisbezoek komen.",
+                "en": "If someone can't come themselves, the GP can make a home visit."
+              }
+            },
+            {
+              "id": "g2-05",
+              "type": "multiple_choice",
+              "prompt": "Je spreekt nog niet goed Nederlands. Wie kan je helpen bij een gesprek met de arts?",
+              "prompt_en": "You don't speak Dutch well yet. Who can help you in a conversation with the doctor?",
+              "answer": "Een tolk van het tolkencentrum",
+              "distractors": [
+                "De apotheker",
+                "De buurman",
+                "De verzekeraar"
+              ],
+              "explanation": {
+                "nl": "Het tolkencentrum helpt bij gesprekken met een arts of de gemeente. Vraag het van tevoren aan.",
+                "en": "The interpreter centre helps in conversations with a doctor or the municipality. Request it in advance."
+              }
+            },
+            {
+              "id": "g2-06",
+              "type": "fill_blank",
+              "prompt": "De huisarts mag niet met anderen over jouw gezondheid praten. Dit heet ___.",
+              "prompt_en": "The GP may not talk with others about your health. This is called professional secrecy.",
+              "answer": "beroepsgeheim",
+              "distractors": [
+                "leerplicht",
+                "eigen risico",
+                "spreekuur"
+              ],
+              "explanation": {
+                "nl": "Alleen bij levensgevaar of kindermishandeling zijn er uitzonderingen.",
+                "en": "There are only exceptions with danger to life or child abuse."
+              }
+            },
+            {
+              "id": "g2-07",
+              "type": "multiple_choice",
+              "prompt": "Waarvoor kun je bij de praktijkondersteuner (POH) terecht?",
+              "prompt_en": "What can you see the practice nurse (POH) for?",
+              "answer": "Stress, diabetes of hulp bij je leefstijl",
+              "distractors": [
+                "Een gebroken arm",
+                "Een nieuwe bril",
+                "Je tandartsverzekering"
+              ],
+              "explanation": {
+                "nl": "De POH werkt in de huisartsenpraktijk en helpt bij psychische klachten, chronische ziekten en leefstijl.",
+                "en": "The POH works in the GP practice and helps with mental complaints, chronic diseases and lifestyle."
+              }
+            },
+            {
+              "id": "g2-08",
+              "type": "true_false",
+              "prompt": "Bij de POH kun je vaak sneller terecht dan bij de huisarts zelf.",
+              "prompt_en": "You can often see the POH sooner than the GP.",
+              "answer": true,
+              "explanation": {
+                "nl": "De POH heeft vaak sneller tijd voor je.",
+                "en": "The POH often has time for you sooner."
+              }
+            },
+            {
+              "id": "g2-09",
+              "type": "multiple_choice",
+              "prompt": "De huisarts kan je niet verder helpen. Wat gebeurt er dan?",
+              "prompt_en": "The GP can't help you further. What happens then?",
+              "answer": "Je krijgt een verwijzing naar een specialist",
+              "distractors": [
+                "Je moet 112 bellen",
+                "Je krijgt een boete",
+                "Je moet een andere verzekering nemen"
+              ],
+              "explanation": {
+                "nl": "De huisarts kan je doorverwijzen naar een specialist in het ziekenhuis.",
+                "en": "The GP can refer you to a specialist in the hospital."
+              }
+            },
+            {
+              "id": "g2-10",
+              "type": "build_sentence",
+              "prompt_en": "I have a headache.",
+              "answer": "Ik heb hoofdpijn",
+              "distractors": [
+                "keelpijn",
+                "hebt"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "g3",
+          "title": "Medicijnen en de tandarts",
+          "title_en": "Medicines and the dentist",
+          "questions": [
+            {
+              "id": "g3-01",
+              "type": "multiple_choice",
+              "prompt": "Waar haal je medicijnen met een recept?",
+              "prompt_en": "Where do you get medicines with a prescription?",
+              "answer": "Bij de apotheek",
+              "distractors": [
+                "Bij de drogist",
+                "Bij de supermarkt",
+                "Bij de gemeente"
+              ],
+              "explanation": {
+                "nl": "Neem het recept mee naar de apotheek. Bij de drogist krijg je geen medicijnen op recept.",
+                "en": "Take the prescription to the pharmacy. You can't get prescription medicines at the drugstore."
+              }
+            },
+            {
+              "id": "g3-02",
+              "type": "true_false",
+              "prompt": "Bij de drogist kun je medicijnen op recept krijgen.",
+              "prompt_en": "You can get prescription medicines at the drugstore.",
+              "answer": false,
+              "explanation": {
+                "nl": "Bij de drogist koop je alleen medicijnen zonder recept, zoals paracetamol of hoestdrank.",
+                "en": "At the drugstore you only buy medicines without a prescription, like paracetamol or cough syrup."
+              }
+            },
+            {
+              "id": "g3-03",
+              "type": "multiple_choice",
+              "prompt": "Welk medicijn kun je zonder recept kopen?",
+              "prompt_en": "Which medicine can you buy without a prescription?",
+              "answer": "Paracetamol",
+              "distractors": [
+                "Antibiotica",
+                "Insuline",
+                "Medicijnen van de specialist"
+              ],
+              "explanation": {
+                "nl": "Paracetamol en hoestdrank koop je zonder recept bij de apotheek, drogist of supermarkt.",
+                "en": "You buy paracetamol and cough syrup without a prescription at the pharmacy, drugstore or supermarket."
+              }
+            },
+            {
+              "id": "g3-04",
+              "type": "true_false",
+              "prompt": "Medicijnen zonder recept betaal je zelf.",
+              "prompt_en": "You pay for medicines without a prescription yourself.",
+              "answer": true,
+              "explanation": {
+                "nl": "Medicijnen op recept betaalt meestal de zorgverzekering. Zonder recept betaal je zelf.",
+                "en": "Health insurance usually pays for prescription medicines. Without a prescription you pay yourself."
+              }
+            },
+            {
+              "id": "g3-05",
+              "type": "fill_blank",
+              "prompt": "Voor sommige medicijnen moet je een deel zelf betalen. Dit heet een eigen ___.",
+              "prompt_en": "For some medicines you must pay part yourself. This is called a personal contribution.",
+              "answer": "bijdrage",
+              "distractors": [
+                "premie",
+                "recept",
+                "afspraak"
+              ],
+              "explanation": {
+                "nl": "Een eigen bijdrage is een deel van de kosten dat je zelf betaalt.",
+                "en": "A personal contribution is part of the costs you pay yourself."
+              }
+            },
+            {
+              "id": "g3-06",
+              "type": "multiple_choice",
+              "prompt": "Hoe vaak gaan de meeste mensen naar de tandarts voor controle?",
+              "prompt_en": "How often do most people go to the dentist for a check-up?",
+              "answer": "2 keer per jaar",
+              "distractors": [
+                "1 keer per maand",
+                "1 keer per 5 jaar",
+                "Alleen bij pijn"
+              ],
+              "explanation": {
+                "nl": "Ook zonder klachten gaan de meeste mensen 2 keer per jaar voor controle.",
+                "en": "Even without complaints most people go twice a year for a check-up."
+              }
+            },
+            {
+              "id": "g3-07",
+              "type": "true_false",
+              "prompt": "De tandarts voor volwassenen zit in de basisverzekering.",
+              "prompt_en": "The dentist for adults is in the basic insurance.",
+              "answer": false,
+              "explanation": {
+                "nl": "Voor volwassenen heb je een aparte tandartsverzekering nodig. Kinderen tot 18 zijn gratis verzekerd.",
+                "en": "Adults need separate dental insurance. Children under 18 are insured for free."
+              }
+            },
+            {
+              "id": "g3-08",
+              "type": "multiple_choice",
+              "prompt": "Wat doet een mondhygiënist?",
+              "prompt_en": "What does a dental hygienist do?",
+              "answer": "Het gebit schoonmaken",
+              "distractors": [
+                "Medicijnen verkopen",
+                "Baby's controleren",
+                "Een verwijsbrief schrijven"
+              ],
+              "explanation": {
+                "nl": "De mondhygiënist reinigt je gebit en voorkomt tandvleesproblemen.",
+                "en": "The dental hygienist cleans your teeth and prevents gum problems."
+              }
+            },
+            {
+              "id": "g3-09",
+              "type": "multiple_choice",
+              "prompt": "Je kunt niet naar je afspraak. Wanneer meld je je meestal af?",
+              "prompt_en": "You can't make your appointment. When do you usually cancel?",
+              "answer": "Minstens 24 uur van tevoren",
+              "distractors": [
+                "Een uur van tevoren",
+                "Achteraf",
+                "Dat hoeft niet"
+              ],
+              "explanation": {
+                "nl": "Meld je op tijd af. Vergeet je de afspraak, dan moet je hem toch betalen.",
+                "en": "Cancel in time. If you forget the appointment, you still have to pay for it."
+              }
+            },
+            {
+              "id": "g3-10",
+              "type": "true_false",
+              "prompt": "Als je een afspraak vergeet, moet je hem toch betalen.",
+              "prompt_en": "If you forget an appointment, you still have to pay for it.",
+              "answer": true,
+              "explanation": {
+                "nl": "Daarna maak je een nieuwe afspraak.",
+                "en": "Then you make a new appointment."
+              }
+            },
+            {
+              "id": "g3-11",
+              "type": "build_sentence",
+              "prompt_en": "I am going to the pharmacy.",
+              "answer": "Ik ga naar de apotheek",
+              "distractors": [
+                "drogist",
+                "gaat"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "g4",
+          "title": "Ziekenhuis en specialist",
+          "title_en": "Hospital and specialist",
+          "questions": [
+            {
+              "id": "g4-01",
+              "type": "multiple_choice",
+              "prompt": "Wat neem je mee van de huisarts naar de specialist?",
+              "prompt_en": "What do you take from the GP to the specialist?",
+              "answer": "De verwijsbrief",
+              "distractors": [
+                "Het groeiboekje",
+                "Je diploma",
+                "Je huurcontract"
+              ],
+              "explanation": {
+                "nl": "De huisarts geeft een verwijsbrief. Die laat je zien bij de balie van de polikliniek.",
+                "en": "The GP gives a referral letter. You show it at the outpatient clinic desk."
+              }
+            },
+            {
+              "id": "g4-02",
+              "type": "multiple_choice",
+              "prompt": "Hoe heet een gespecialiseerde afdeling in het ziekenhuis?",
+              "prompt_en": "What is a specialised hospital department called?",
+              "answer": "De polikliniek",
+              "distractors": [
+                "De huisartsenpost",
+                "Het consultatiebureau",
+                "De apotheek"
+              ],
+              "explanation": {
+                "nl": "Bijvoorbeeld de polikliniek voor cardiologie, urologie of longziekten.",
+                "en": "For example the outpatient clinic for cardiology, urology or lung diseases."
+              }
+            },
+            {
+              "id": "g4-03",
+              "type": "multiple_choice",
+              "prompt": "Wat laat je eerst maken bij de balie van het ziekenhuis?",
+              "prompt_en": "What do you first have made at the hospital reception?",
+              "answer": "Een patiëntenpas",
+              "distractors": [
+                "Een DigiD",
+                "Een paspoort",
+                "Een recept"
+              ],
+              "explanation": {
+                "nl": "Bij je eerste bezoek laat je een patiëntenpas maken.",
+                "en": "On your first visit you have a patient card made."
+              }
+            },
+            {
+              "id": "g4-04",
+              "type": "true_false",
+              "prompt": "Na een verwijzing maak je zelf de afspraak met de specialist.",
+              "prompt_en": "After a referral you make the appointment with the specialist yourself.",
+              "answer": true,
+              "explanation": {
+                "nl": "Bel het ziekenhuis of kijk op de website.",
+                "en": "Call the hospital or check the website."
+              }
+            },
+            {
+              "id": "g4-05",
+              "type": "multiple_choice",
+              "prompt": "Wat neem je NIET mee naar de polikliniek?",
+              "prompt_en": "What do you NOT take to the outpatient clinic?",
+              "answer": "Je huurcontract",
+              "distractors": [
+                "De verwijsbrief",
+                "Je verzekeringsbewijs",
+                "Je identiteitsbewijs"
+              ],
+              "explanation": {
+                "nl": "Neem de verwijsbrief, je verzekeringsbewijs en je identiteitsbewijs mee.",
+                "en": "Take the referral letter, your insurance certificate and your ID."
+              }
+            },
+            {
+              "id": "g4-06",
+              "type": "fill_blank",
+              "prompt": "Je blijft na een operatie één of meer dagen in het ziekenhuis. Dit heet een ___.",
+              "prompt_en": "You stay in hospital for one or more days after an operation. This is called hospitalisation.",
+              "answer": "opname",
+              "distractors": [
+                "afspraak",
+                "controle",
+                "huisbezoek"
+              ],
+              "explanation": {
+                "nl": "Een opname = je blijft in het ziekenhuis.",
+                "en": "Hospitalisation = you stay in the hospital."
+              }
+            },
+            {
+              "id": "g4-07",
+              "type": "multiple_choice",
+              "prompt": "Je hebt psychische klachten. Waar kan de huisarts je naar doorverwijzen?",
+              "prompt_en": "You have mental complaints. Where can the GP refer you?",
+              "answer": "De GGZ",
+              "distractors": [
+                "De drogist",
+                "Het consultatiebureau",
+                "De tandarts"
+              ],
+              "explanation": {
+                "nl": "De huisarts kan je doorverwijzen naar maatschappelijk werk of een psycholoog van de GGZ.",
+                "en": "The GP can refer you to social work or a psychologist from the GGZ."
+              }
+            },
+            {
+              "id": "g4-08",
+              "type": "multiple_choice",
+              "prompt": "Waar kun je direct een afspraak maken voor een SOA-test?",
+              "prompt_en": "Where can you make an appointment directly for an STD test?",
+              "answer": "Bij de GGD",
+              "distractors": [
+                "Bij de apotheek",
+                "Bij de gemeente",
+                "Bij DUO"
+              ],
+              "explanation": {
+                "nl": "Voor problemen op seksueel gebied kun je naar de huisarts of direct naar de GGD.",
+                "en": "For sexual health problems you can go to the GP or directly to the GGD."
+              }
+            },
+            {
+              "id": "g4-09",
+              "type": "true_false",
+              "prompt": "SOA betekent Seksueel Overdraagbare Aandoening.",
+              "prompt_en": "SOA means sexually transmitted disease.",
+              "answer": true,
+              "explanation": {
+                "nl": "Een SOA is een geslachtsziekte.",
+                "en": "An STD is a venereal disease."
+              }
+            },
+            {
+              "id": "g4-10",
+              "type": "build_sentence",
+              "prompt_en": "Where is the waiting room?",
+              "answer": "Waar is de wachtkamer",
+              "distractors": [
+                "wanneer",
+                "het"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "g5",
+          "title": "Spoed en buiten kantoortijden",
+          "title_en": "Emergencies and out of hours",
+          "questions": [
+            {
+              "id": "g5-01",
+              "type": "multiple_choice",
+              "prompt": "Je hebt 's avonds na 17:00 een dokter nodig. Wat doe je eerst?",
+              "prompt_en": "You need a doctor in the evening after 17:00. What do you do first?",
+              "answer": "Het nummer van je huisarts bellen",
+              "distractors": [
+                "Wachten tot maandag",
+                "Naar de drogist gaan",
+                "Een e-mail sturen"
+              ],
+              "explanation": {
+                "nl": "Je hoort dan een nummer van een andere dokter of van de huisartsenpost.",
+                "en": "You then hear a number of another doctor or of the out-of-hours GP centre."
+              }
+            },
+            {
+              "id": "g5-02",
+              "type": "multiple_choice",
+              "prompt": "Waar is de huisartsenpost meestal?",
+              "prompt_en": "Where is the out-of-hours GP centre usually?",
+              "answer": "In het ziekenhuis",
+              "distractors": [
+                "In het gemeentehuis",
+                "Bij de apotheek",
+                "In de bibliotheek"
+              ],
+              "explanation": {
+                "nl": "De huisartsenpost werkt meestal in het ziekenhuis, 's avonds, 's nachts en in het weekend.",
+                "en": "The out-of-hours GP centre is usually in the hospital, evenings, nights and weekends."
+              }
+            },
+            {
+              "id": "g5-03",
+              "type": "true_false",
+              "prompt": "Houd je verzekeringsbewijs bij de hand als je de huisartsenpost belt.",
+              "prompt_en": "Keep your insurance card at hand when you call the out-of-hours GP centre.",
+              "answer": true,
+              "explanation": {
+                "nl": "Zo kunnen ze je snel helpen.",
+                "en": "That way they can help you quickly."
+              }
+            },
+            {
+              "id": "g5-04",
+              "type": "multiple_choice",
+              "prompt": "Iemand kan niet ademen. Welk nummer bel je?",
+              "prompt_en": "Someone can't breathe. Which number do you call?",
+              "answer": "112",
+              "distractors": [
+                "911",
+                "0800",
+                "144"
+              ],
+              "explanation": {
+                "nl": "112 is het alarmnummer voor heel urgente medische hulp, politie of brandweer.",
+                "en": "112 is the emergency number for very urgent medical help, police or fire brigade."
+              }
+            },
+            {
+              "id": "g5-05",
+              "type": "true_false",
+              "prompt": "Je belt ook 112 als je snel de brandweer nodig hebt.",
+              "prompt_en": "You also call 112 if you quickly need the fire brigade.",
+              "answer": true,
+              "explanation": {
+                "nl": "112 is voor ambulance, politie en brandweer.",
+                "en": "112 is for ambulance, police and fire brigade."
+              }
+            },
+            {
+              "id": "g5-06",
+              "type": "multiple_choice",
+              "prompt": "Iemand heeft zijn arm gebroken. Waar gaat hij heen?",
+              "prompt_en": "Someone has broken their arm. Where do they go?",
+              "answer": "Naar de spoedeisende hulp",
+              "distractors": [
+                "Naar de tandarts",
+                "Naar het consultatiebureau",
+                "Naar de drogist"
+              ],
+              "explanation": {
+                "nl": "Bij een minder ernstig spoedgeval, zoals een gebroken arm, ga je naar de spoedeisende hulp.",
+                "en": "With a less serious emergency, like a broken arm, you go to the emergency department."
+              }
+            },
+            {
+              "id": "g5-07",
+              "type": "multiple_choice",
+              "prompt": "Wie wordt op de spoedeisende hulp als eerste geholpen?",
+              "prompt_en": "Who is helped first at the emergency department?",
+              "answer": "Wie de hulp het meest nodig heeft",
+              "distractors": [
+                "Wie het eerst kwam",
+                "Wie het meest betaalt",
+                "Kinderen altijd eerst"
+              ],
+              "explanation": {
+                "nl": "Mensen die hulp het meest nodig hebben, worden als eerste geholpen.",
+                "en": "People who need help most are helped first."
+              }
+            },
+            {
+              "id": "g5-08",
+              "type": "fill_blank",
+              "prompt": "Een ander woord voor spoedeisende hulp is ___ hulp.",
+              "prompt_en": "Another word for the emergency department is first aid.",
+              "answer": "eerste",
+              "distractors": [
+                "thuis",
+                "snelle",
+                "late"
+              ],
+              "explanation": {
+                "nl": "Spoedeisende hulp = eerste hulp.",
+                "en": "Emergency department = first aid (A&E)."
+              }
+            },
+            {
+              "id": "g5-09",
+              "type": "build_sentence",
+              "prompt_en": "Call 112!",
+              "answer": "Bel 112",
+              "distractors": [
+                "bellen",
+                "jij"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "g6",
+          "title": "Baby's, ouderen en zorg thuis",
+          "title_en": "Babies, the elderly and care at home",
+          "questions": [
+            {
+              "id": "g6-01",
+              "type": "multiple_choice",
+              "prompt": "Wie helpt na de geboorte een week lang in huis?",
+              "prompt_en": "Who helps at home for a week after the birth?",
+              "answer": "De kraamhulp",
+              "distractors": [
+                "De huisarts",
+                "De tandarts",
+                "De POH"
+              ],
+              "explanation": {
+                "nl": "Een kraamhulp moet je zelf regelen, bij een bureau voor kraamhulp.",
+                "en": "You must arrange a maternity assistant yourself, through a maternity care agency."
+              }
+            },
+            {
+              "id": "g6-02",
+              "type": "true_false",
+              "prompt": "De kraamhulp wordt automatisch geregeld door het ziekenhuis.",
+              "prompt_en": "The maternity assistant is arranged automatically by the hospital.",
+              "answer": false,
+              "explanation": {
+                "nl": "Je moet zelf een kraamhulp regelen.",
+                "en": "You must arrange a maternity assistant yourself."
+              }
+            },
+            {
+              "id": "g6-03",
+              "type": "multiple_choice",
+              "prompt": "Waarin wordt de ontwikkeling van je baby bijgehouden?",
+              "prompt_en": "Where is your baby's development recorded?",
+              "answer": "In het groeiboekje",
+              "distractors": [
+                "In je paspoort",
+                "In het huurcontract",
+                "In de verwijsbrief"
+              ],
+              "explanation": {
+                "nl": "Het consultatiebureau houdt de gezondheid en ontwikkeling bij in het groeiboekje.",
+                "en": "The child health clinic records health and development in the growth book."
+              }
+            },
+            {
+              "id": "g6-04",
+              "type": "multiple_choice",
+              "prompt": "Wat controleert het consultatiebureau NIET?",
+              "prompt_en": "What does the child health clinic NOT check?",
+              "answer": "Het inkomen van de ouders",
+              "distractors": [
+                "De lengte van de baby",
+                "Het gehoor",
+                "De ogen"
+              ],
+              "explanation": {
+                "nl": "Ze controleren o.a. lengte, longen, reflexen, ogen, gehoor en ontwikkeling.",
+                "en": "They check length, lungs, reflexes, eyes, hearing and development, among other things."
+              }
+            },
+            {
+              "id": "g6-05",
+              "type": "true_false",
+              "prompt": "In Nederland blijven ouderen zo lang mogelijk thuis wonen.",
+              "prompt_en": "In the Netherlands elderly people stay living at home as long as possible.",
+              "answer": true,
+              "explanation": {
+                "nl": "Wordt het te moeilijk, ga dan eerst naar de huisarts.",
+                "en": "If it gets too hard, go to the GP first."
+              }
+            },
+            {
+              "id": "g6-06",
+              "type": "fill_blank",
+              "prompt": "Zorg door familie of vrienden voor een oudere heet ___.",
+              "prompt_en": "Care by family or friends for an elderly person is called informal care.",
+              "answer": "mantelzorg",
+              "distractors": [
+                "kraamzorg",
+                "thuiszorg",
+                "spoedzorg"
+              ],
+              "explanation": {
+                "nl": "Mantelzorg = zorg door familie of vrienden.",
+                "en": "Mantelzorg = care by family or friends."
+              }
+            },
+            {
+              "id": "g6-07",
+              "type": "multiple_choice",
+              "prompt": "Welke wet regelt hulp thuis, zoals schoonmaak, via de gemeente?",
+              "prompt_en": "Which law arranges help at home, like cleaning, through the municipality?",
+              "answer": "De Wmo",
+              "distractors": [
+                "De Wlz",
+                "De leerplichtwet",
+                "De Wet op de zorgtoeslag"
+              ],
+              "explanation": {
+                "nl": "De Wmo (Wet maatschappelijke ondersteuning) regelt hulp thuis via de gemeente.",
+                "en": "The Wmo (Social Support Act) arranges help at home through the municipality."
+              }
+            },
+            {
+              "id": "g6-08",
+              "type": "multiple_choice",
+              "prompt": "Iemand heeft 24 uur per dag zorg nodig. Welke wet hoort daarbij?",
+              "prompt_en": "Someone needs care 24 hours a day. Which law applies?",
+              "answer": "De Wlz",
+              "distractors": [
+                "De Wmo",
+                "De zorgverzekering",
+                "De arbeidswet"
+              ],
+              "explanation": {
+                "nl": "De Wet langdurige zorg (Wlz) is voor mensen die 24 uur per dag zorg nodig hebben. Het CIZ beoordeelt dit.",
+                "en": "The Long-term Care Act (Wlz) is for people who need care 24 hours a day. The CIZ decides this."
+              }
+            },
+            {
+              "id": "g6-09",
+              "type": "multiple_choice",
+              "prompt": "Wat doet het CAK?",
+              "prompt_en": "What does the CAK do?",
+              "answer": "Het berekent de eigen bijdrage voor langdurige zorg",
+              "distractors": [
+                "Het geeft vaccinaties",
+                "Het maakt je patiëntenpas",
+                "Het geeft medicijnen"
+              ],
+              "explanation": {
+                "nl": "Het CAK berekent de eigen bijdrage. Het CIZ beoordeelt of je recht hebt op Wlz-zorg.",
+                "en": "The CAK calculates the personal contribution. The CIZ decides whether you are entitled to Wlz care."
+              }
+            },
+            {
+              "id": "g6-10",
+              "type": "true_false",
+              "prompt": "Mensen met een handicap wonen zoveel mogelijk zelfstandig.",
+              "prompt_en": "People with a disability live independently as much as possible.",
+              "answer": true,
+              "explanation": {
+                "nl": "Er zijn aangepaste woningen, en de thuiszorg kan helpen met het huishouden.",
+                "en": "There are adapted homes, and home care can help with housework."
+              }
+            },
+            {
+              "id": "g6-11",
+              "type": "build_sentence",
+              "prompt_en": "My grandmother lives alone.",
+              "answer": "Mijn oma woont alleen",
+              "distractors": [
+                "opa",
+                "wonen"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "g7",
+          "title": "De zorgverzekering",
+          "title_en": "Health insurance",
+          "questions": [
+            {
+              "id": "g7-01",
+              "type": "true_false",
+              "prompt": "Iedereen die in Nederland woont, moet een basisverzekering hebben.",
+              "prompt_en": "Everyone who lives in the Netherlands must have basic insurance.",
+              "answer": true,
+              "explanation": {
+                "nl": "De basisverzekering is verplicht.",
+                "en": "Basic insurance is mandatory."
+              }
+            },
+            {
+              "id": "g7-02",
+              "type": "multiple_choice",
+              "prompt": "Binnen hoeveel tijd na inschrijving bij de gemeente sluit je een zorgverzekering af?",
+              "prompt_en": "Within how long after registering with the municipality must you take out health insurance?",
+              "answer": "4 maanden",
+              "distractors": [
+                "1 week",
+                "1 jaar",
+                "2 jaar"
+              ],
+              "explanation": {
+                "nl": "Sluit binnen 4 maanden een verzekering af, anders krijg je een boete.",
+                "en": "Take out insurance within 4 months, otherwise you get a fine."
+              }
+            },
+            {
+              "id": "g7-03",
+              "type": "true_false",
+              "prompt": "Kinderen onder 18 jaar betalen zelf premie voor de zorgverzekering.",
+              "prompt_en": "Children under 18 pay their own health insurance premium.",
+              "answer": false,
+              "explanation": {
+                "nl": "Alleen mensen vanaf 18 jaar betalen elke maand premie.",
+                "en": "Only people aged 18 and over pay a monthly premium."
+              }
+            },
+            {
+              "id": "g7-04",
+              "type": "multiple_choice",
+              "prompt": "Wat zit NIET in het basispakket voor volwassenen?",
+              "prompt_en": "What is NOT in the basic package for adults?",
+              "answer": "De tandarts",
+              "distractors": [
+                "De huisarts",
+                "Het ziekenhuis",
+                "Ambulancevervoer"
+              ],
+              "explanation": {
+                "nl": "Tandarts, fysiotherapie en een bril voor volwassenen zitten niet in het basispakket.",
+                "en": "The dentist, physiotherapy and glasses for adults are not in the basic package."
+              }
+            },
+            {
+              "id": "g7-05",
+              "type": "multiple_choice",
+              "prompt": "Wie bepaalt wat in het basispakket zit?",
+              "prompt_en": "Who decides what is in the basic package?",
+              "answer": "De overheid",
+              "distractors": [
+                "Je huisarts",
+                "Je werkgever",
+                "Elke verzekeraar zelf"
+              ],
+              "explanation": {
+                "nl": "De overheid bepaalt het elk jaar. Het is voor alle verzekeraars hetzelfde.",
+                "en": "The government decides every year. It is the same for all insurers."
+              }
+            },
+            {
+              "id": "g7-06",
+              "type": "true_false",
+              "prompt": "Een aanvullende verzekering is verplicht.",
+              "prompt_en": "Additional insurance is mandatory.",
+              "answer": false,
+              "explanation": {
+                "nl": "Een aanvullende verzekering, bijvoorbeeld voor fysiotherapie of een bril, is niet verplicht.",
+                "en": "Additional insurance, for example for physiotherapy or glasses, is not mandatory."
+              }
+            },
+            {
+              "id": "g7-07",
+              "type": "multiple_choice",
+              "prompt": "Wat is het eigen risico?",
+              "prompt_en": "What is the deductible?",
+              "answer": "Het deel van de zorgkosten dat je eerst zelf betaalt",
+              "distractors": [
+                "De maandelijkse premie",
+                "Geld van de Belastingdienst",
+                "Een boete voor te laat komen"
+              ],
+              "explanation": {
+                "nl": "Het eigen risico is in Nederland €385 per jaar. Een hoger eigen risico geeft een lagere premie.",
+                "en": "The deductible in the Netherlands is €385 a year. A higher deductible gives a lower premium."
+              }
+            },
+            {
+              "id": "g7-08",
+              "type": "multiple_choice",
+              "prompt": "Je kiest een hoger eigen risico. Wat gebeurt er met je premie?",
+              "prompt_en": "You choose a higher deductible. What happens to your premium?",
+              "answer": "Die wordt lager",
+              "distractors": [
+                "Die wordt hoger",
+                "Die blijft hetzelfde",
+                "Je betaalt geen premie meer"
+              ],
+              "explanation": {
+                "nl": "Lagere premie, maar je betaalt meer ziektekosten zelf.",
+                "en": "Lower premium, but you pay more medical costs yourself."
+              }
+            },
+            {
+              "id": "g7-09",
+              "type": "fill_blank",
+              "prompt": "Je stuurt een formulier naar je verzekeraar om geld terug te krijgen. Dit heet ___.",
+              "prompt_en": "You send a form to your insurer to get money back. This is called claiming.",
+              "answer": "declareren",
+              "distractors": [
+                "verhuizen",
+                "solliciteren",
+                "verwijzen"
+              ],
+              "explanation": {
+                "nl": "Je kunt declareren via de app, de website of met DigiD.",
+                "en": "You can claim via the app, the website or with DigiD."
+              }
+            },
+            {
+              "id": "g7-10",
+              "type": "multiple_choice",
+              "prompt": "Tot wanneer kun je je zorgverzekering opzeggen om over te stappen?",
+              "prompt_en": "Until when can you cancel your health insurance to switch?",
+              "answer": "31 december",
+              "distractors": [
+                "1 juli",
+                "1 april",
+                "31 augustus"
+              ],
+              "explanation": {
+                "nl": "Zeg uiterlijk 31 december op en stap vóór 1 februari over.",
+                "en": "Cancel by 31 December at the latest and switch before 1 February."
+              }
+            },
+            {
+              "id": "g7-11",
+              "type": "multiple_choice",
+              "prompt": "Je hebt een laag inkomen. Wat kun je aanvragen voor je premie?",
+              "prompt_en": "You have a low income. What can you apply for towards your premium?",
+              "answer": "Zorgtoeslag",
+              "distractors": [
+                "Kinderbijslag",
+                "Studiefinanciering",
+                "Een aanvullende verzekering"
+              ],
+              "explanation": {
+                "nl": "Zorgtoeslag vraag je aan bij de Belastingdienst via Mijn toeslagen, met DigiD.",
+                "en": "You apply for health care allowance with the Tax Administration via My Benefits, with DigiD."
+              }
+            },
+            {
+              "id": "g7-12",
+              "type": "true_false",
+              "prompt": "Zorgtoeslag moet je elk jaar opnieuw aanvragen.",
+              "prompt_en": "You must apply for health care allowance again every year.",
+              "answer": false,
+              "explanation": {
+                "nl": "Je vraagt het één keer aan. Blijf je aan de voorwaarden voldoen, dan loopt het door.",
+                "en": "You apply once. If you still meet the conditions, it continues."
+              }
+            },
+            {
+              "id": "g7-13",
+              "type": "build_sentence",
+              "prompt_en": "I have health insurance.",
+              "answer": "Ik heb een zorgverzekering",
+              "distractors": [
+                "tandarts",
+                "heeft"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "g8",
+          "title": "DigiD en hulp van de gemeente",
+          "title_en": "DigiD and help from the municipality",
+          "questions": [
+            {
+              "id": "g8-01",
+              "type": "multiple_choice",
+              "prompt": "Wat is DigiD?",
+              "prompt_en": "What is DigiD?",
+              "answer": "Een persoonlijke inlogcode van de overheid",
+              "distractors": [
+                "Een bankpas",
+                "Een zorgverzekering",
+                "Een app van de huisarts"
+              ],
+              "explanation": {
+                "nl": "Met DigiD log je veilig in bij de overheid, je zorgverzekeraar en zorgportalen.",
+                "en": "With DigiD you log in safely to the government, your health insurer and care portals."
+              }
+            },
+            {
+              "id": "g8-02",
+              "type": "true_false",
+              "prompt": "Je mag je DigiD delen met familie.",
+              "prompt_en": "You may share your DigiD with family.",
+              "answer": false,
+              "explanation": {
+                "nl": "DigiD is persoonlijk. Deel het nooit met anderen.",
+                "en": "DigiD is personal. Never share it with others."
+              }
+            },
+            {
+              "id": "g8-03",
+              "type": "multiple_choice",
+              "prompt": "Hoe krijg je de activatiecode voor DigiD?",
+              "prompt_en": "How do you get the activation code for DigiD?",
+              "answer": "Per post",
+              "distractors": [
+                "Bij de huisarts",
+                "Op het consultatiebureau",
+                "Bij de supermarkt"
+              ],
+              "explanation": {
+                "nl": "Na je aanvraag op digid.nl krijg je binnen een paar dagen een activatiecode per post.",
+                "en": "After applying on digid.nl you receive an activation code by post within a few days."
+              }
+            },
+            {
+              "id": "g8-04",
+              "type": "multiple_choice",
+              "prompt": "Waar krijg je gratis hulp met DigiD?",
+              "prompt_en": "Where do you get free help with DigiD?",
+              "answer": "In de bibliotheek",
+              "distractors": [
+                "Bij de drogist",
+                "Bij de tandarts",
+                "In het ziekenhuis"
+              ],
+              "explanation": {
+                "nl": "De bibliotheek heeft een Informatiepunt Digitale Overheid. Ook de gemeente kan helpen.",
+                "en": "The library has a Digital Government Information Point. The municipality can help too."
+              }
+            },
+            {
+              "id": "g8-05",
+              "type": "multiple_choice",
+              "prompt": "Wat kun je NIET met DigiD regelen?",
+              "prompt_en": "What can you NOT arrange with DigiD?",
+              "answer": "Boodschappen bestellen",
+              "distractors": [
+                "Zorgkosten declareren",
+                "Herhaalrecepten aanvragen",
+                "Je medische gegevens bekijken"
+              ],
+              "explanation": {
+                "nl": "Met DigiD declareer je, vraag je herhaalrecepten aan en bekijk je je medische gegevens.",
+                "en": "With DigiD you claim costs, request repeat prescriptions and view your medical records."
+              }
+            },
+            {
+              "id": "g8-06",
+              "type": "multiple_choice",
+              "prompt": "Waar vraag je hulp thuis via de Wmo aan?",
+              "prompt_en": "Where do you apply for help at home through the Wmo?",
+              "answer": "Bij het Wmo-loket van de gemeente",
+              "distractors": [
+                "Bij de apotheek",
+                "Bij de zorgverzekeraar",
+                "Bij DUO"
+              ],
+              "explanation": {
+                "nl": "Neem contact op met het sociaal wijkteam of het Wmo-loket van de gemeente.",
+                "en": "Contact the social neighbourhood team or the municipality's Wmo desk."
+              }
+            },
+            {
+              "id": "g8-07",
+              "type": "fill_blank",
+              "prompt": "Na je aanvraag heb je een gesprek met de gemeente. Dit heet het ___.",
+              "prompt_en": "After your application you have a conversation with the municipality. This is called the kitchen table talk.",
+              "answer": "keukentafelgesprek",
+              "distractors": [
+                "sollicitatiegesprek",
+                "kennismakingsgesprek",
+                "10-minutengesprek"
+              ],
+              "explanation": {
+                "nl": "In het keukentafelgesprek vertel je waar je hulp bij nodig hebt.",
+                "en": "In the kitchen table talk you explain what you need help with."
+              }
+            },
+            {
+              "id": "g8-08",
+              "type": "multiple_choice",
+              "prompt": "Hoe heet het besluit van de gemeente over je aanvraag?",
+              "prompt_en": "What is the municipality's decision on your application called?",
+              "answer": "Een beschikking",
+              "distractors": [
+                "Een recept",
+                "Een verwijsbrief",
+                "Een premie"
+              ],
+              "explanation": {
+                "nl": "Je krijgt een beschikking. Daarna wordt de hulp geregeld.",
+                "en": "You receive a decision letter. Then the help is arranged."
+              }
+            },
+            {
+              "id": "g8-09",
+              "type": "multiple_choice",
+              "prompt": "Welke hulp geeft de gemeente NIET?",
+              "prompt_en": "Which help does the municipality NOT give?",
+              "answer": "Een operatie",
+              "distractors": [
+                "Schuldhulpverlening",
+                "Huishoudelijke hulp",
+                "Een traplift"
+              ],
+              "explanation": {
+                "nl": "De gemeente helpt o.a. met schulden, huishoudelijke hulp, woonaanpassingen en mantelzorgondersteuning.",
+                "en": "The municipality helps with debts, domestic help, home adaptations and support for informal carers."
+              }
+            },
+            {
+              "id": "g8-10",
+              "type": "true_false",
+              "prompt": "Je mag alleen Wmo-hulp aanvragen als je de Nederlandse nationaliteit hebt.",
+              "prompt_en": "You may only apply for Wmo help if you have Dutch nationality.",
+              "answer": false,
+              "explanation": {
+                "nl": "Iedereen in Nederland mag hulp aanvragen, ook zonder Nederlandse nationaliteit.",
+                "en": "Everyone in the Netherlands may apply for help, even without Dutch nationality."
+              }
+            },
+            {
+              "id": "g8-11",
+              "type": "build_sentence",
+              "prompt_en": "I need help.",
+              "answer": "Ik heb hulp nodig",
+              "distractors": [
+                "hebt",
+                "jij"
+              ],
+              "explanation": null
+            }
+          ]
+        }
+      ],
+      "vocabulary": [
+        {
+          "id": "gezondheid-v01",
+          "nl": "kennismakingsgesprek",
+          "en": "intake meeting"
+        },
+        {
+          "id": "gezondheid-v02",
+          "nl": "telefonisch spreekuur",
+          "en": "telephone consultation hour"
+        },
+        {
+          "id": "gezondheid-v03",
+          "nl": "huisbezoek",
+          "en": "home visit"
+        },
+        {
+          "id": "gezondheid-v04",
+          "nl": "tolkencentrum",
+          "en": "interpreter centre"
+        },
+        {
+          "id": "gezondheid-v05",
+          "nl": "beroepsgeheim",
+          "en": "professional secrecy"
+        },
+        {
+          "id": "gezondheid-v06",
+          "nl": "huisartsenpost",
+          "en": "out-of-hours GP centre"
+        },
+        {
+          "id": "gezondheid-v07",
+          "nl": "recept",
+          "en": "prescription"
+        },
+        {
+          "id": "gezondheid-v08",
+          "nl": "apotheek",
+          "en": "pharmacy"
+        },
+        {
+          "id": "gezondheid-v09",
+          "nl": "drogist",
+          "en": "drugstore"
+        },
+        {
+          "id": "gezondheid-v10",
+          "nl": "zorgverzekering",
+          "en": "health insurance"
+        },
+        {
+          "id": "gezondheid-v11",
+          "nl": "eigen bijdrage",
+          "en": "personal contribution"
+        },
+        {
+          "id": "gezondheid-v12",
+          "nl": "controle",
+          "en": "check-up"
+        },
+        {
+          "id": "gezondheid-v13",
+          "nl": "tandarts",
+          "en": "dentist"
+        },
+        {
+          "id": "gezondheid-v14",
+          "nl": "wachtlijst",
+          "en": "waiting list"
+        },
+        {
+          "id": "gezondheid-v15",
+          "nl": "tandartsverzekering",
+          "en": "dental insurance"
+        },
+        {
+          "id": "gezondheid-v16",
+          "nl": "basisverzekering",
+          "en": "basic insurance"
+        },
+        {
+          "id": "gezondheid-v17",
+          "nl": "verwijsbrief",
+          "en": "referral letter"
+        },
+        {
+          "id": "gezondheid-v18",
+          "nl": "polikliniek",
+          "en": "outpatient clinic"
+        },
+        {
+          "id": "gezondheid-v19",
+          "nl": "patiëntenpas",
+          "en": "patient card"
+        },
+        {
+          "id": "gezondheid-v20",
+          "nl": "verzekeringsbewijs",
+          "en": "insurance certificate"
+        },
+        {
+          "id": "gezondheid-v21",
+          "nl": "identiteitsbewijs",
+          "en": "ID"
+        },
+        {
+          "id": "gezondheid-v22",
+          "nl": "wachtkamer",
+          "en": "waiting room"
+        },
+        {
+          "id": "gezondheid-v23",
+          "nl": "opname",
+          "en": "hospitalisation"
+        },
+        {
+          "id": "gezondheid-v24",
+          "nl": "maatschappelijk werk",
+          "en": "social work"
+        },
+        {
+          "id": "gezondheid-v25",
+          "nl": "geestelijke gezondheidszorg (GGZ)",
+          "en": "mental health care"
+        },
+        {
+          "id": "gezondheid-v26",
+          "nl": "Gemeentelijke Gezondheidsdienst (GGD)",
+          "en": "municipal health service"
+        },
+        {
+          "id": "gezondheid-v27",
+          "nl": "SOA",
+          "en": "sexually transmitted disease"
+        },
+        {
+          "id": "gezondheid-v28",
+          "nl": "verzekeringsnummer",
+          "en": "insurance number"
+        },
+        {
+          "id": "gezondheid-v29",
+          "nl": "112",
+          "en": "emergency number"
+        },
+        {
+          "id": "gezondheid-v30",
+          "nl": "spoedeisende hulp",
+          "en": "emergency department"
+        },
+        {
+          "id": "gezondheid-v31",
+          "nl": "verloskundige",
+          "en": "midwife"
+        },
+        {
+          "id": "gezondheid-v32",
+          "nl": "kraamhulp",
+          "en": "maternity assistant"
+        },
+        {
+          "id": "gezondheid-v33",
+          "nl": "consultatiebureau",
+          "en": "child health clinic (0–4 years)"
+        },
+        {
+          "id": "gezondheid-v34",
+          "nl": "groeiboekje",
+          "en": "growth book (0–4 years)"
+        },
+        {
+          "id": "gezondheid-v35",
+          "nl": "thuiszorg",
+          "en": "home care"
+        },
+        {
+          "id": "gezondheid-v36",
+          "nl": "mantelzorg",
+          "en": "informal care by family or friends"
+        },
+        {
+          "id": "gezondheid-v37",
+          "nl": "verzorgingshuis",
+          "en": "care home"
+        },
+        {
+          "id": "gezondheid-v38",
+          "nl": "gezondheidszorg",
+          "en": "health care"
+        },
+        {
+          "id": "gezondheid-v39",
+          "nl": "premie",
+          "en": "premium"
+        },
+        {
+          "id": "gezondheid-v40",
+          "nl": "aanvullende verzekering",
+          "en": "additional insurance"
+        },
+        {
+          "id": "gezondheid-v41",
+          "nl": "eigen risico",
+          "en": "deductible"
+        },
+        {
+          "id": "gezondheid-v42",
+          "nl": "formulier teruggave",
+          "en": "refund form"
+        },
+        {
+          "id": "gezondheid-v43",
+          "nl": "declareren",
+          "en": "to claim costs"
+        },
+        {
+          "id": "gezondheid-v44",
+          "nl": "zorgtoeslag",
+          "en": "health care allowance"
         }
       ]
     }

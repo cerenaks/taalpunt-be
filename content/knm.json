@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "content_version": "2026-11-08.1",
+  "content_version": "2026-11-14.1",
   "language": "nl",
   "translation": "en",
   "sources": [
@@ -8,7 +8,8 @@
     "KNM 2) Werk en inkomen",
     "KNM 3) Interactie, normen en waarden",
     "KNM 4) Onderwijs en opvoeding",
-    "KNM 5) Gezondheid"
+    "KNM 5) Gezondheid",
+    "KNM 6) Instanties"
   ],
   "units": [
     {
@@ -6963,6 +6964,1330 @@
           "id": "gezondheid-v44",
           "nl": "zorgtoeslag",
           "en": "health care allowance"
+        }
+      ]
+    },
+    {
+      "id": "instanties",
+      "number": 6,
+      "title": "Instanties",
+      "title_en": "Institutions",
+      "color": "teal",
+      "lessons": [
+        {
+          "id": "n1",
+          "title": "De gemeente",
+          "title_en": "The municipality",
+          "questions": [
+            {
+              "id": "n1-01",
+              "type": "true_false",
+              "prompt": "Iedereen moet zich inschrijven bij de gemeente waar hij woont.",
+              "prompt_en": "Everyone must register with the municipality where they live.",
+              "answer": true,
+              "explanation": {
+                "nl": "Je schrijft je in in de Basisregistratie Personen (BRP), vroeger de GBA.",
+                "en": "You register in the Personal Records Database (BRP), formerly the GBA."
+              }
+            },
+            {
+              "id": "n1-02",
+              "type": "multiple_choice",
+              "prompt": "Je gaat verhuizen naar een andere stad. Bij welke gemeente meld je dit?",
+              "prompt_en": "You are moving to another city. Which municipality do you report this to?",
+              "answer": "De gemeente waar je naartoe gaat",
+              "distractors": [
+                "De gemeente waar je vandaan komt",
+                "Allebei",
+                "Geen, dat hoeft niet"
+              ],
+              "explanation": {
+                "nl": "Een verhuizing meld je bij de gemeente waar je gaat wonen.",
+                "en": "You report a move to the municipality you are moving to."
+              }
+            },
+            {
+              "id": "n1-03",
+              "type": "multiple_choice",
+              "prompt": "Welke verandering hoef je NIET aan de gemeente te melden?",
+              "prompt_en": "Which change do you NOT need to report to the municipality?",
+              "answer": "Je hebt een nieuwe baan",
+              "distractors": [
+                "Je gaat trouwen",
+                "Je hebt een kind gekregen",
+                "Je gaat verhuizen"
+              ],
+              "explanation": {
+                "nl": "Je meldt o.a. trouwen, samenwonen, scheiden, een geboorte, een verhuizing en een overlijden.",
+                "en": "You report marriage, living together, divorce, a birth, a move and a death, among other things."
+              }
+            },
+            {
+              "id": "n1-04",
+              "type": "multiple_choice",
+              "prompt": "Welk document vraag je aan bij de gemeente?",
+              "prompt_en": "Which document do you apply for at the municipality?",
+              "answer": "Een paspoort",
+              "distractors": [
+                "Een verblijfsvergunning",
+                "Een recept",
+                "Een zorgverzekering"
+              ],
+              "explanation": {
+                "nl": "Paspoort, ID-kaart, rijbewijs en een uittreksel uit de BRP vraag je aan bij de gemeente.",
+                "en": "You apply for a passport, ID card, driving licence and a BRP extract at the municipality."
+              }
+            },
+            {
+              "id": "n1-05",
+              "type": "multiple_choice",
+              "prompt": "Wat neem je NIET mee als je een nieuw paspoort aanvraagt?",
+              "prompt_en": "What do you NOT bring when you apply for a new passport?",
+              "answer": "Je huurcontract",
+              "distractors": [
+                "Je oude paspoort of ID-kaart",
+                "Een pasfoto",
+                "Geld om te betalen"
+              ],
+              "explanation": {
+                "nl": "Neem je (oude) paspoort of ID-kaart en een pasfoto mee. Meestal moet je ook betalen.",
+                "en": "Bring your (old) passport or ID card and a passport photo. You usually also have to pay."
+              }
+            },
+            {
+              "id": "n1-06",
+              "type": "multiple_choice",
+              "prompt": "Je wilt een grote boom in je tuin kappen. Wat heb je nodig?",
+              "prompt_en": "You want to cut down a big tree in your garden. What do you need?",
+              "answer": "Een vergunning van de gemeente",
+              "distractors": [
+                "Een verwijsbrief",
+                "Een verblijfsvergunning",
+                "Niets"
+              ],
+              "explanation": {
+                "nl": "Ook voor een parkeerplaats bij je huis of het verbouwen van je huis heb je soms een vergunning nodig.",
+                "en": "You sometimes also need a permit for a parking space by your house or for renovating."
+              }
+            },
+            {
+              "id": "n1-07",
+              "type": "multiple_choice",
+              "prompt": "Welke belasting is een gemeentelijke belasting?",
+              "prompt_en": "Which tax is a municipal tax?",
+              "answer": "Hondenbelasting",
+              "distractors": [
+                "Btw",
+                "Inkomstenbelasting",
+                "Wegenbelasting"
+              ],
+              "explanation": {
+                "nl": "Voorbeelden zijn milieubelasting, onroerendezaakbelasting en hondenbelasting.",
+                "en": "Examples are environmental tax, property tax and dog tax."
+              }
+            },
+            {
+              "id": "n1-08",
+              "type": "fill_blank",
+              "prompt": "Met een laag inkomen kun je ___ aanvragen voor gemeentelijke belasting.",
+              "prompt_en": "With a low income you can apply for an exemption from municipal tax.",
+              "answer": "ontheffing",
+              "distractors": [
+                "een vergunning",
+                "naturalisatie",
+                "een boete"
+              ],
+              "explanation": {
+                "nl": "Met een ontheffing hoef je de belasting niet te betalen.",
+                "en": "With an exemption you don't have to pay the tax."
+              }
+            },
+            {
+              "id": "n1-09",
+              "type": "build_sentence",
+              "prompt_en": "I am moving to Utrecht.",
+              "answer": "Ik verhuis naar Utrecht",
+              "distractors": [
+                "verhuist",
+                "van"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "title": "Verblijf en naturalisatie",
+          "title_en": "Residence and naturalisation",
+          "questions": [
+            {
+              "id": "n2-01",
+              "type": "multiple_choice",
+              "prompt": "Wat heb je nodig om in Nederland te wonen?",
+              "prompt_en": "What do you need to live in the Netherlands?",
+              "answer": "Een verblijfsvergunning",
+              "distractors": [
+                "Een rijbewijs",
+                "Een bankpas",
+                "Een vergunning voor je tuin"
+              ],
+              "explanation": {
+                "nl": "Er zijn tijdelijke (1, 3 of 5 jaar) en permanente verblijfsvergunningen.",
+                "en": "There are temporary (1, 3 or 5 years) and permanent residence permits."
+              }
+            },
+            {
+              "id": "n2-02",
+              "type": "multiple_choice",
+              "prompt": "Bij welke organisatie vraag je een verblijfsvergunning aan?",
+              "prompt_en": "At which organisation do you apply for a residence permit?",
+              "answer": "De IND",
+              "distractors": [
+                "De gemeente",
+                "De Belastingdienst",
+                "De politie"
+              ],
+              "explanation": {
+                "nl": "De IND is de Immigratie- en Naturalisatiedienst.",
+                "en": "The IND is the Immigration and Naturalisation Service."
+              }
+            },
+            {
+              "id": "n2-03",
+              "type": "fill_blank",
+              "prompt": "Een tijdelijke verblijfsvergunning is een vergunning voor ___ tijd.",
+              "prompt_en": "A temporary residence permit is a permit for a fixed period.",
+              "answer": "bepaalde",
+              "distractors": [
+                "onbepaalde",
+                "korte",
+                "vrije"
+              ],
+              "explanation": {
+                "nl": "Tijdelijk = bepaalde tijd. Permanent = onbepaalde tijd.",
+                "en": "Temporary = fixed period. Permanent = indefinite period."
+              }
+            },
+            {
+              "id": "n2-04",
+              "type": "multiple_choice",
+              "prompt": "Hoe lang moet je minstens in Nederland wonen voor een permanente verblijfsvergunning?",
+              "prompt_en": "How long must you live in the Netherlands at least for a permanent residence permit?",
+              "answer": "5 jaar",
+              "distractors": [
+                "1 jaar",
+                "3 jaar",
+                "10 jaar"
+              ],
+              "explanation": {
+                "nl": "Voor een permanente verblijfsvergunning woon je minstens 5 jaar in Nederland.",
+                "en": "For a permanent permit you must have lived in the Netherlands for at least 5 years."
+              }
+            },
+            {
+              "id": "n2-05",
+              "type": "multiple_choice",
+              "prompt": "Waar vraag je naturalisatie aan?",
+              "prompt_en": "Where do you apply for naturalisation?",
+              "answer": "Bij de gemeente",
+              "distractors": [
+                "Bij de politie",
+                "Bij de bank",
+                "Bij de Belastingdienst"
+              ],
+              "explanation": {
+                "nl": "Met een permanente verblijfsvergunning kun je naturalisatie aanvragen bij de gemeente.",
+                "en": "With a permanent residence permit you can apply for naturalisation at the municipality."
+              }
+            },
+            {
+              "id": "n2-06",
+              "type": "multiple_choice",
+              "prompt": "Wat is GEEN voordeel van naturalisatie?",
+              "prompt_en": "What is NOT an advantage of naturalisation?",
+              "answer": "Je hoeft geen belasting meer te betalen",
+              "distractors": [
+                "Je krijgt een Nederlands paspoort",
+                "Je hebt geen verblijfsvergunning meer nodig",
+                "Je hebt dezelfde rechten als een Nederlander"
+              ],
+              "explanation": {
+                "nl": "Na naturalisatie heb je alle rechten én plichten van een Nederlander, dus ook belasting betalen.",
+                "en": "After naturalisation you have all the rights and duties of a Dutch citizen, so you still pay tax."
+              }
+            },
+            {
+              "id": "n2-07",
+              "type": "true_false",
+              "prompt": "Na naturalisatie heb je dezelfde rechten en plichten als een Nederlander.",
+              "prompt_en": "After naturalisation you have the same rights and duties as a Dutch citizen.",
+              "answer": true,
+              "explanation": {
+                "nl": "Je hebt dan een Nederlands paspoort en geen verblijfsvergunning meer nodig.",
+                "en": "You then have a Dutch passport and no longer need a residence permit."
+              }
+            },
+            {
+              "id": "n2-08",
+              "type": "build_sentence",
+              "prompt_en": "I would like to apply for naturalisation.",
+              "answer": "Ik wil graag naturalisatie aanvragen",
+              "distractors": [
+                "vergunning",
+                "jij"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "title": "De politie",
+          "title_en": "The police",
+          "questions": [
+            {
+              "id": "n3-01",
+              "type": "multiple_choice",
+              "prompt": "Vanaf welke leeftijd moet je je identiteitsbewijs laten zien als de politie erom vraagt?",
+              "prompt_en": "From what age must you show your ID when the police ask?",
+              "answer": "14 jaar",
+              "distractors": [
+                "10 jaar",
+                "16 jaar",
+                "18 jaar"
+              ],
+              "explanation": {
+                "nl": "Dit heet de identificatieplicht. Zonder ID kun je een boete krijgen.",
+                "en": "This is the obligation to identify yourself. Without ID you can get a fine."
+              }
+            },
+            {
+              "id": "n3-02",
+              "type": "multiple_choice",
+              "prompt": "Wat is GEEN geldig identiteitsbewijs?",
+              "prompt_en": "What is NOT a valid proof of identity?",
+              "answer": "Een bankpas",
+              "distractors": [
+                "Een paspoort",
+                "Een ID-kaart",
+                "Een rijbewijs"
+              ],
+              "explanation": {
+                "nl": "Geldig zijn een paspoort, een ID-kaart en een rijbewijs.",
+                "en": "Valid are a passport, an ID card and a driving licence."
+              }
+            },
+            {
+              "id": "n3-03",
+              "type": "multiple_choice",
+              "prompt": "Waarmee kun je NIET naar het buitenland reizen?",
+              "prompt_en": "What can you NOT travel abroad with?",
+              "answer": "Een rijbewijs",
+              "distractors": [
+                "Een paspoort",
+                "Een ID-kaart"
+              ],
+              "explanation": {
+                "nl": "Met een paspoort reis je wereldwijd, met een ID-kaart alleen binnen Europa.",
+                "en": "With a passport you travel worldwide, with an ID card only within Europe."
+              }
+            },
+            {
+              "id": "n3-04",
+              "type": "true_false",
+              "prompt": "Als je autorijdt, moet je je rijbewijs bij je hebben.",
+              "prompt_en": "When you drive, you must have your driving licence with you.",
+              "answer": true,
+              "explanation": {
+                "nl": "De politie kan vragen om je rijbewijs te laten zien.",
+                "en": "The police can ask you to show your licence."
+              }
+            },
+            {
+              "id": "n3-05",
+              "type": "multiple_choice",
+              "prompt": "Je portemonnee is gestolen. Wat doe je bij de politie?",
+              "prompt_en": "Your wallet has been stolen. What do you do at the police?",
+              "answer": "Aangifte doen",
+              "distractors": [
+                "Bezwaar maken",
+                "Een vergunning aanvragen",
+                "Naturalisatie aanvragen"
+              ],
+              "explanation": {
+                "nl": "Aangifte doe je op het politiebureau, of meestal ook via de telefoon.",
+                "en": "You file a report at the police station, or usually also by phone."
+              }
+            },
+            {
+              "id": "n3-06",
+              "type": "multiple_choice",
+              "prompt": "Je buren draaien elke nacht harde muziek. Welk nummer bel je?",
+              "prompt_en": "Your neighbours play loud music every night. Which number do you call?",
+              "answer": "0900-8844",
+              "distractors": [
+                "112",
+                "0800-7000",
+                "0800-0123"
+              ],
+              "explanation": {
+                "nl": "0900-8844 is voor de politie als het geen spoed is. 112 is alleen voor spoed.",
+                "en": "0900-8844 is for the police when it isn't urgent. 112 is only for emergencies."
+              }
+            },
+            {
+              "id": "n3-07",
+              "type": "multiple_choice",
+              "prompt": "Je wilt anoniem een misdaad melden. Welk nummer bel je?",
+              "prompt_en": "You want to report a crime anonymously. Which number do you call?",
+              "answer": "0800-7000",
+              "distractors": [
+                "112",
+                "0900-8844",
+                "0900-0101"
+              ],
+              "explanation": {
+                "nl": "Via 0800-7000 meld je anoniem een misdaad.",
+                "en": "Via 0800-7000 you report a crime anonymously."
+              }
+            },
+            {
+              "id": "n3-08",
+              "type": "true_false",
+              "prompt": "Als de politie je controleert, hoef je niet mee te werken.",
+              "prompt_en": "If the police check you, you don't have to cooperate.",
+              "answer": false,
+              "explanation": {
+                "nl": "Je moet meewerken. Anders kun je een boete krijgen of meegenomen worden naar het bureau.",
+                "en": "You must cooperate. Otherwise you can get a fine or be taken to the station."
+              }
+            },
+            {
+              "id": "n3-09",
+              "type": "multiple_choice",
+              "prompt": "Wat doet een wijkagent?",
+              "prompt_en": "What does a community police officer do?",
+              "answer": "Hij kent de buurt en houdt contact met bewoners",
+              "distractors": [
+                "Hij geeft verblijfsvergunningen",
+                "Hij int de belasting",
+                "Hij werkt alleen op het bureau"
+              ],
+              "explanation": {
+                "nl": "Elke wijk heeft een wijkagent. Je kunt hem ontmoeten op het inloopspreekuur of bij buurtbijeenkomsten.",
+                "en": "Every neighbourhood has a community officer. You can meet them at the walk-in hour or at neighbourhood meetings."
+              }
+            },
+            {
+              "id": "n3-10",
+              "type": "build_sentence",
+              "prompt_en": "My bike has been stolen.",
+              "answer": "Mijn fiets is gestolen",
+              "distractors": [
+                "auto",
+                "zijn"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "n4",
+          "title": "Belasting en toeslagen",
+          "title_en": "Tax and allowances",
+          "questions": [
+            {
+              "id": "n4-01",
+              "type": "multiple_choice",
+              "prompt": "Wat is een BSN?",
+              "prompt_en": "What is a BSN?",
+              "answer": "Je persoonlijke nummer bij de overheid",
+              "distractors": [
+                "Je bankrekeningnummer",
+                "Je pincode",
+                "Je verzekeringsnummer"
+              ],
+              "explanation": {
+                "nl": "Iedereen die in Nederland woont, heeft een uniek burgerservicenummer. Het staat in je paspoort.",
+                "en": "Everyone who lives in the Netherlands has a unique citizen service number. It's in your passport."
+              }
+            },
+            {
+              "id": "n4-02",
+              "type": "multiple_choice",
+              "prompt": "Waar zie je elke maand hoeveel belasting je betaalt?",
+              "prompt_en": "Where do you see each month how much tax you pay?",
+              "answer": "Op je salarisstrookje",
+              "distractors": [
+                "Op je bankpas",
+                "Op je rijbewijs",
+                "In je huurcontract"
+              ],
+              "explanation": {
+                "nl": "Op je salarisstrookje zie je hoeveel geld naar de Belastingdienst gaat.",
+                "en": "Your payslip shows how much money goes to the Tax Administration."
+              }
+            },
+            {
+              "id": "n4-03",
+              "type": "fill_blank",
+              "prompt": "Op de meeste dingen die je koopt zit ___ btw.",
+              "prompt_en": "Most things you buy include 21% VAT.",
+              "answer": "21%",
+              "distractors": [
+                "5%",
+                "10%",
+                "50%"
+              ],
+              "explanation": {
+                "nl": "Ook de btw gaat naar de Belastingdienst.",
+                "en": "The VAT also goes to the Tax Administration."
+              }
+            },
+            {
+              "id": "n4-04",
+              "type": "multiple_choice",
+              "prompt": "Wanneer doe je belastingaangifte?",
+              "prompt_en": "When do you file your tax return?",
+              "answer": "Tussen 1 maart en 1 mei",
+              "distractors": [
+                "In december",
+                "Op je verjaardag",
+                "Alleen als je gaat verhuizen"
+              ],
+              "explanation": {
+                "nl": "Je doet elk jaar aangifte tussen 1 maart en 1 mei, met DigiD via belastingdienst.nl.",
+                "en": "You file every year between 1 March and 1 May, with DigiD via belastingdienst.nl."
+              }
+            },
+            {
+              "id": "n4-05",
+              "type": "true_false",
+              "prompt": "Belastingaangifte gaat automatisch, je hoeft zelf niets te doen.",
+              "prompt_en": "Filing a tax return happens automatically, you don't need to do anything.",
+              "answer": false,
+              "explanation": {
+                "nl": "Je moet het zelf doen. Vaak krijg je geld terug.",
+                "en": "You have to do it yourself. Often you get money back."
+              }
+            },
+            {
+              "id": "n4-06",
+              "type": "multiple_choice",
+              "prompt": "Hoe lang bewaar je je jaaropgave?",
+              "prompt_en": "How long do you keep your annual statement?",
+              "answer": "5 jaar",
+              "distractors": [
+                "1 maand",
+                "1 jaar",
+                "Niet nodig"
+              ],
+              "explanation": {
+                "nl": "Bewaar je jaaropgave van je werkgever of uitkeringsinstantie 5 jaar.",
+                "en": "Keep the annual statement from your employer or benefits agency for 5 years."
+              }
+            },
+            {
+              "id": "n4-07",
+              "type": "multiple_choice",
+              "prompt": "Je moet extra belasting betalen, maar je bent het er niet mee eens. Wat doe je?",
+              "prompt_en": "You must pay extra tax, but you disagree. What do you do?",
+              "answer": "Bezwaar maken",
+              "distractors": [
+                "Aangifte doen bij de politie",
+                "Niets betalen",
+                "Een nieuwe bank kiezen"
+              ],
+              "explanation": {
+                "nl": "Bezwaar maak je via een (online) formulier.",
+                "en": "You object via an (online) form."
+              }
+            },
+            {
+              "id": "n4-08",
+              "type": "multiple_choice",
+              "prompt": "Je kunt de belasting niet in één keer betalen. Wat kun je vragen?",
+              "prompt_en": "You can't pay the tax in one go. What can you ask for?",
+              "answer": "Betalen in termijnen",
+              "distractors": [
+                "Een verblijfsvergunning",
+                "Een nieuwe BSN",
+                "Een reisverzekering"
+              ],
+              "explanation": {
+                "nl": "Met een laag inkomen kun je soms ook kwijtschelding vragen.",
+                "en": "With a low income you can sometimes also ask for remission."
+              }
+            },
+            {
+              "id": "n4-09",
+              "type": "multiple_choice",
+              "prompt": "Welke toeslag bestaat NIET?",
+              "prompt_en": "Which allowance does NOT exist?",
+              "answer": "Autotoeslag",
+              "distractors": [
+                "Huurtoeslag",
+                "Zorgtoeslag",
+                "Kinderopvangtoeslag"
+              ],
+              "explanation": {
+                "nl": "De 4 toeslagen zijn huurtoeslag, zorgtoeslag, kinderopvangtoeslag en kindgebonden budget.",
+                "en": "The 4 allowances are rent allowance, health care allowance, childcare allowance and child-related budget."
+              }
+            },
+            {
+              "id": "n4-10",
+              "type": "true_false",
+              "prompt": "Toeslagen moet je zelf aanvragen bij de Belastingdienst.",
+              "prompt_en": "You must apply for allowances yourself at the Tax Administration.",
+              "answer": true,
+              "explanation": {
+                "nl": "Toeslagen zijn voor mensen met een laag inkomen.",
+                "en": "Allowances are for people with a low income."
+              }
+            },
+            {
+              "id": "n4-11",
+              "type": "build_sentence",
+              "prompt_en": "I am filing my tax return.",
+              "answer": "Ik doe belastingaangifte",
+              "distractors": [
+                "doet",
+                "politie"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "n5",
+          "title": "Juridische hulp en hulporganisaties",
+          "title_en": "Legal help and help organisations",
+          "questions": [
+            {
+              "id": "n5-01",
+              "type": "multiple_choice",
+              "prompt": "Je bent het niet eens met een besluit van de overheid. Wat kun je doen?",
+              "prompt_en": "You disagree with a government decision. What can you do?",
+              "answer": "In bezwaar gaan",
+              "distractors": [
+                "Aangifte doen",
+                "Een machtiging geven",
+                "Naturalisatie aanvragen"
+              ],
+              "explanation": {
+                "nl": "Bijvoorbeeld bij een besluit over belasting of een vergunning.",
+                "en": "For example with a decision about tax or a permit."
+              }
+            },
+            {
+              "id": "n5-02",
+              "type": "true_false",
+              "prompt": "Sociale raadslieden zijn advocaten.",
+              "prompt_en": "Social counsellors are lawyers.",
+              "answer": false,
+              "explanation": {
+                "nl": "Sociale raadslieden zijn gratis en geen advocaten. Ze helpen met brieven, formulieren en advies.",
+                "en": "Social counsellors are free and not lawyers. They help with letters, forms and advice."
+              }
+            },
+            {
+              "id": "n5-03",
+              "type": "multiple_choice",
+              "prompt": "Waar krijg je gratis juridisch advies?",
+              "prompt_en": "Where do you get free legal advice?",
+              "answer": "Bij het Juridisch Loket",
+              "distractors": [
+                "Bij de Belastingdienst",
+                "Bij de bank",
+                "Bij de IND"
+              ],
+              "explanation": {
+                "nl": "Het Juridisch Loket is gratis. Je kunt langsgaan of bellen.",
+                "en": "The Legal Advice Desk is free. You can visit or call."
+              }
+            },
+            {
+              "id": "n5-04",
+              "type": "true_false",
+              "prompt": "Voor een advocaat betaal je een deel zelf. Met een laag inkomen is dat niet veel.",
+              "prompt_en": "You pay part of a lawyer yourself. With a low income that isn't much.",
+              "answer": true,
+              "explanation": {
+                "nl": "Het Juridisch Loket kan je in contact brengen met een advocatenkantoor.",
+                "en": "The Legal Advice Desk can put you in touch with a law firm."
+              }
+            },
+            {
+              "id": "n5-05",
+              "type": "multiple_choice",
+              "prompt": "Je wordt gediscrimineerd. Waar kun je dit melden?",
+              "prompt_en": "You are being discriminated against. Where can you report this?",
+              "answer": "Bij een antidiscriminatiebureau",
+              "distractors": [
+                "Bij de tandarts",
+                "Bij de bank",
+                "Bij de IND"
+              ],
+              "explanation": {
+                "nl": "Kan het antidiscriminatiebureau je niet helpen, dan kun je aangifte doen bij de politie.",
+                "en": "If the agency can't help you, you can file a report with the police."
+              }
+            },
+            {
+              "id": "n5-06",
+              "type": "multiple_choice",
+              "prompt": "Wat is in Nederland verboden en strafbaar?",
+              "prompt_en": "What is forbidden and punishable in the Netherlands?",
+              "answer": "Seks tussen een volwassene en iemand onder 16 jaar",
+              "distractors": [
+                "Samenwonen zonder te trouwen",
+                "Een hond houden",
+                "Bezwaar maken"
+              ],
+              "explanation": {
+                "nl": "Ook verkrachting, incest, eerwraak, besnijdenis van meisjes en geweld zijn strafbaar.",
+                "en": "Rape, incest, honour killings, female circumcision and violence are also punishable."
+              }
+            },
+            {
+              "id": "n5-07",
+              "type": "multiple_choice",
+              "prompt": "Je hebt bijna geen geld voor eten. Waar kun je een gratis voedselpakket krijgen?",
+              "prompt_en": "You have almost no money for food. Where can you get a free food parcel?",
+              "answer": "Bij de voedselbank",
+              "distractors": [
+                "Bij het Nibud",
+                "Bij de IND",
+                "Bij de wijkagent"
+              ],
+              "explanation": {
+                "nl": "De voedselbank geeft gratis voedselpakketten aan mensen met weinig geld.",
+                "en": "The food bank gives free food parcels to people with little money."
+              }
+            },
+            {
+              "id": "n5-08",
+              "type": "multiple_choice",
+              "prompt": "Waar vind je informatie en tips over geld en budget?",
+              "prompt_en": "Where do you find information and tips about money and budgeting?",
+              "answer": "Bij het Nibud",
+              "distractors": [
+                "Bij de GGD",
+                "Bij de politie",
+                "Bij het antidiscriminatiebureau"
+              ],
+              "explanation": {
+                "nl": "Het Nibud geeft informatie over geld en budget.",
+                "en": "Nibud gives information about money and budgeting."
+              }
+            },
+            {
+              "id": "n5-09",
+              "type": "multiple_choice",
+              "prompt": "Je hebt schulden en weet niet hoe je ze moet betalen. Waar ga je heen?",
+              "prompt_en": "You have debts and don't know how to pay them. Where do you go?",
+              "answer": "Naar de schuldhulpverlening van de gemeente",
+              "distractors": [
+                "Naar de IND",
+                "Naar de tandarts",
+                "Naar de wijkagent"
+              ],
+              "explanation": {
+                "nl": "De gemeente helpt met schulden en betalingsproblemen.",
+                "en": "The municipality helps with debts and payment problems."
+              }
+            },
+            {
+              "id": "n5-10",
+              "type": "build_sentence",
+              "prompt_en": "I need advice.",
+              "answer": "Ik heb advies nodig",
+              "distractors": [
+                "hebt",
+                "jij"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "n6",
+          "title": "De bank",
+          "title_en": "The bank",
+          "questions": [
+            {
+              "id": "n6-01",
+              "type": "true_false",
+              "prompt": "In Nederland mag je zelf kiezen bij welke bank je een rekening opent.",
+              "prompt_en": "In the Netherlands you may choose which bank to open an account with.",
+              "answer": true,
+              "explanation": {
+                "nl": "Je kunt een rekening openen op de website van een bank.",
+                "en": "You can open an account on a bank's website."
+              }
+            },
+            {
+              "id": "n6-02",
+              "type": "multiple_choice",
+              "prompt": "Wat krijg je als je een bankrekening opent?",
+              "prompt_en": "What do you get when you open a bank account?",
+              "answer": "Een rekeningnummer, een bankpas en een pincode",
+              "distractors": [
+                "Een BSN",
+                "Een verblijfsvergunning",
+                "Een DigiD-code"
+              ],
+              "explanation": {
+                "nl": "Met je bankpas en pincode kun je internetbankieren en geld opnemen.",
+                "en": "With your bank card and PIN you can bank online and withdraw money."
+              }
+            },
+            {
+              "id": "n6-03",
+              "type": "fill_blank",
+              "prompt": "Geld opnemen met je bankpas heet ook ___.",
+              "prompt_en": "Withdrawing money with your bank card is also called 'pinnen'.",
+              "answer": "pinnen",
+              "distractors": [
+                "sparen",
+                "lenen",
+                "storten"
+              ],
+              "explanation": {
+                "nl": "Je kunt pinnen bij geldautomaten van alle banken.",
+                "en": "You can withdraw money at cash machines of all banks."
+              }
+            },
+            {
+              "id": "n6-04",
+              "type": "multiple_choice",
+              "prompt": "Je bankpas is gestolen. Wat doe je eerst?",
+              "prompt_en": "Your bank card has been stolen. What do you do first?",
+              "answer": "Je rekening snel laten blokkeren",
+              "distractors": [
+                "Een week wachten",
+                "Een nieuwe pincode kiezen",
+                "Naar de gemeente gaan"
+              ],
+              "explanation": {
+                "nl": "Laat je rekening blokkeren, doe aangifte bij de politie en vraag een nieuwe pas aan.",
+                "en": "Have your account blocked, file a report with the police and request a new card."
+              }
+            },
+            {
+              "id": "n6-05",
+              "type": "multiple_choice",
+              "prompt": "Een bedrijf schrijft elke maand automatisch je energiekosten af. Hoe heet dit?",
+              "prompt_en": "A company automatically deducts your energy costs every month. What is this called?",
+              "answer": "Een machtiging",
+              "distractors": [
+                "Een toeslag",
+                "Een vergunning",
+                "Een aangifte"
+              ],
+              "explanation": {
+                "nl": "Met een machtiging geef je een bedrijf toestemming om geld van je rekening af te schrijven.",
+                "en": "With a direct debit authorisation you allow a company to deduct money from your account."
+              }
+            },
+            {
+              "id": "n6-06",
+              "type": "multiple_choice",
+              "prompt": "Een vriend vraagt geld terug via je telefoon. Wat gebruikt hij waarschijnlijk?",
+              "prompt_en": "A friend asks for money back via your phone. What is he probably using?",
+              "answer": "Een betaalverzoek, bijvoorbeeld Tikkie",
+              "distractors": [
+                "Een machtiging",
+                "Een uittreksel",
+                "Een verwijsbrief"
+              ],
+              "explanation": {
+                "nl": "Betaalverzoeken gaan via je bank, de Tikkie-app of een QR-code.",
+                "en": "Payment requests go via your bank, the Tikkie app or a QR code."
+              }
+            },
+            {
+              "id": "n6-07",
+              "type": "true_false",
+              "prompt": "Je salaris en je huur gaan in Nederland meestal via de bank.",
+              "prompt_en": "Your salary and your rent usually go through the bank in the Netherlands.",
+              "answer": true,
+              "explanation": {
+                "nl": "Bijna iedereen in Nederland heeft een bankrekening.",
+                "en": "Almost everyone in the Netherlands has a bank account."
+              }
+            },
+            {
+              "id": "n6-08",
+              "type": "build_sentence",
+              "prompt_en": "I would like to open a bank account.",
+              "answer": "Ik wil een bankrekening openen",
+              "distractors": [
+                "bankpas",
+                "wilt"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "n7",
+          "title": "Verzekeringen",
+          "title_en": "Insurance",
+          "questions": [
+            {
+              "id": "n7-01",
+              "type": "multiple_choice",
+              "prompt": "Welke verzekering is in Nederland verplicht?",
+              "prompt_en": "Which insurance is mandatory in the Netherlands?",
+              "answer": "De zorgverzekering",
+              "distractors": [
+                "De reisverzekering",
+                "De brandverzekering",
+                "De aansprakelijkheidsverzekering"
+              ],
+              "explanation": {
+                "nl": "Verplicht zijn de zorgverzekering en, als je een auto hebt, de autoverzekering.",
+                "en": "Health insurance is mandatory and, if you have a car, car insurance."
+              }
+            },
+            {
+              "id": "n7-02",
+              "type": "true_false",
+              "prompt": "Als je een auto hebt, is een autoverzekering verplicht.",
+              "prompt_en": "If you have a car, car insurance is mandatory.",
+              "answer": true,
+              "explanation": {
+                "nl": "De zorgverzekering en de autoverzekering zijn de 2 verplichte verzekeringen.",
+                "en": "Health insurance and car insurance are the 2 mandatory insurances."
+              }
+            },
+            {
+              "id": "n7-03",
+              "type": "fill_blank",
+              "prompt": "Voor een verzekering betaal je elke maand een ___.",
+              "prompt_en": "For an insurance you pay a premium every month.",
+              "answer": "premie",
+              "distractors": [
+                "boete",
+                "toeslag",
+                "belasting"
+              ],
+              "explanation": {
+                "nl": "De premie betaal je aan het verzekeringsbedrijf.",
+                "en": "You pay the premium to the insurance company."
+              }
+            },
+            {
+              "id": "n7-04",
+              "type": "multiple_choice",
+              "prompt": "Je kind maakt per ongeluk de fiets van de buren kapot. Welke verzekering betaalt?",
+              "prompt_en": "Your child accidentally breaks the neighbours' bike. Which insurance pays?",
+              "answer": "De aansprakelijkheidsverzekering",
+              "distractors": [
+                "De zorgverzekering",
+                "De reisverzekering",
+                "De brandverzekering"
+              ],
+              "explanation": {
+                "nl": "Als jij of iemand uit je gezin iets kapot maakt, betaalt de aansprakelijkheidsverzekering.",
+                "en": "If you or someone in your family breaks something, liability insurance pays."
+              }
+            },
+            {
+              "id": "n7-05",
+              "type": "multiple_choice",
+              "prompt": "Er is brand in je huis. Welke verzekering betaalt de schade?",
+              "prompt_en": "There's a fire in your home. Which insurance pays for the damage?",
+              "answer": "De brandverzekering",
+              "distractors": [
+                "De autoverzekering",
+                "De zorgverzekering",
+                "De reisverzekering"
+              ],
+              "explanation": {
+                "nl": "Een brandverzekering betaalt de kosten als er brand is in je huis.",
+                "en": "Fire insurance pays the costs if there is a fire in your home."
+              }
+            },
+            {
+              "id": "n7-06",
+              "type": "multiple_choice",
+              "prompt": "Je koffer wordt gestolen op vakantie. Welke verzekering helpt?",
+              "prompt_en": "Your suitcase is stolen on holiday. Which insurance helps?",
+              "answer": "De reisverzekering",
+              "distractors": [
+                "De brandverzekering",
+                "De autoverzekering",
+                "De zorgverzekering"
+              ],
+              "explanation": {
+                "nl": "Bij schade op reis betaalt de reisverzekering.",
+                "en": "With damage or loss while travelling, travel insurance pays."
+              }
+            },
+            {
+              "id": "n7-07",
+              "type": "multiple_choice",
+              "prompt": "Hoe meld je schade bij je verzekering?",
+              "prompt_en": "How do you report damage to your insurer?",
+              "answer": "Met een schadeformulier",
+              "distractors": [
+                "Met een uittreksel",
+                "Bij de wijkagent",
+                "Met een machtiging"
+              ],
+              "explanation": {
+                "nl": "Geef een correcte omschrijving, bijvoorbeeld via het schadeformulier op de website.",
+                "en": "Give a correct description, for example via the claim form on the website."
+              }
+            },
+            {
+              "id": "n7-08",
+              "type": "true_false",
+              "prompt": "Je mag schade verzinnen om meer geld te krijgen.",
+              "prompt_en": "You may make up damage to get more money.",
+              "answer": false,
+              "explanation": {
+                "nl": "Schade verzinnen is strafbaar.",
+                "en": "Making up damage is punishable."
+              }
+            },
+            {
+              "id": "n7-09",
+              "type": "build_sentence",
+              "prompt_en": "I have travel insurance.",
+              "answer": "Ik heb een reisverzekering",
+              "distractors": [
+                "heeft",
+                "brand"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "n8",
+          "title": "Online met de overheid",
+          "title_en": "Online with the government",
+          "questions": [
+            {
+              "id": "n8-01",
+              "type": "multiple_choice",
+              "prompt": "Wat kun je NIET online regelen met DigiD?",
+              "prompt_en": "What can you NOT arrange online with DigiD?",
+              "answer": "Een nieuwe pasfoto maken",
+              "distractors": [
+                "Belastingaangifte doen",
+                "Zorgtoeslag aanvragen",
+                "Een verhuizing doorgeven"
+              ],
+              "explanation": {
+                "nl": "Met DigiD regel je o.a. belasting, toeslagen, je verhuizing en afspraken bij de gemeente.",
+                "en": "With DigiD you arrange tax, allowances, your move and municipal appointments, among other things."
+              }
+            },
+            {
+              "id": "n8-02",
+              "type": "multiple_choice",
+              "prompt": "Hoe krijg je een BSN?",
+              "prompt_en": "How do you get a BSN?",
+              "answer": "Bij inschrijving bij de gemeente",
+              "distractors": [
+                "Bij de bank",
+                "Bij je werkgever",
+                "Bij de politie"
+              ],
+              "explanation": {
+                "nl": "Je krijgt een BSN als je je inschrijft in Nederland, via de gemeente.",
+                "en": "You get a BSN when you register in the Netherlands, via the municipality."
+              }
+            },
+            {
+              "id": "n8-03",
+              "type": "true_false",
+              "prompt": "Je BSN is gevoelige informatie. Houd het geheim.",
+              "prompt_en": "Your BSN is sensitive information. Keep it secret.",
+              "answer": true,
+              "explanation": {
+                "nl": "Je gebruikt je BSN bij de gemeente, de Belastingdienst, de zorg en je werkgever.",
+                "en": "You use your BSN with the municipality, the Tax Administration, care providers and your employer."
+              }
+            },
+            {
+              "id": "n8-04",
+              "type": "multiple_choice",
+              "prompt": "Bij welke organisatie log je NIET in met DigiD?",
+              "prompt_en": "Which organisation do you NOT log in to with DigiD?",
+              "answer": "De supermarkt",
+              "distractors": [
+                "De Belastingdienst",
+                "DUO",
+                "Het UWV"
+              ],
+              "explanation": {
+                "nl": "DigiD gebruik je bij de gemeente, de Belastingdienst, DUO, het UWV en je zorgverzekeraar.",
+                "en": "You use DigiD with the municipality, the Tax Administration, DUO, the UWV and your health insurer."
+              }
+            },
+            {
+              "id": "n8-05",
+              "type": "multiple_choice",
+              "prompt": "Iemand belt en vraagt je sms-code van DigiD. Wat doe je?",
+              "prompt_en": "Someone calls and asks for your DigiD text-message code. What do you do?",
+              "answer": "Je geeft hem nooit",
+              "distractors": [
+                "Je geeft hem als ze aardig zijn",
+                "Je stuurt hem per e-mail",
+                "Je zet hem op Facebook"
+              ],
+              "explanation": {
+                "nl": "Geef nooit je wachtwoord of sms-code aan anderen.",
+                "en": "Never give your password or text-message code to others."
+              }
+            },
+            {
+              "id": "n8-06",
+              "type": "multiple_choice",
+              "prompt": "Waar log je veilig in?",
+              "prompt_en": "Where do you log in safely?",
+              "answer": "Alleen via officiële websites van de overheid",
+              "distractors": [
+                "Via een link in een onbekende e-mail",
+                "Via elke website",
+                "Via sociale media"
+              ],
+              "explanation": {
+                "nl": "Log alleen in via officiële websites, zoals overheid.nl.",
+                "en": "Only log in via official websites, such as overheid.nl."
+              }
+            },
+            {
+              "id": "n8-07",
+              "type": "multiple_choice",
+              "prompt": "Waar krijg je gratis hulp met DigiD en formulieren?",
+              "prompt_en": "Where do you get free help with DigiD and forms?",
+              "answer": "In de bibliotheek",
+              "distractors": [
+                "Bij de bank",
+                "Bij de wijkagent",
+                "Bij de IND"
+              ],
+              "explanation": {
+                "nl": "De bibliotheek heeft een Informatiepunt Digitale Overheid.",
+                "en": "The library has a Digital Government Information Point."
+              }
+            },
+            {
+              "id": "n8-08",
+              "type": "build_sentence",
+              "prompt_en": "I am reporting my move.",
+              "answer": "Ik geef mijn verhuizing door",
+              "distractors": [
+                "geeft",
+                "jouw"
+              ],
+              "explanation": null
+            }
+          ]
+        }
+      ],
+      "vocabulary": [
+        {
+          "id": "instanties-v01",
+          "nl": "gemeente",
+          "en": "municipality"
+        },
+        {
+          "id": "instanties-v02",
+          "nl": "Basisregistratie Personen (BRP)",
+          "en": "personal records database (formerly GBA)"
+        },
+        {
+          "id": "instanties-v03",
+          "nl": "rijbewijs",
+          "en": "driving licence"
+        },
+        {
+          "id": "instanties-v04",
+          "nl": "uittreksel BRP",
+          "en": "official extract with your name and address"
+        },
+        {
+          "id": "instanties-v05",
+          "nl": "vergunning",
+          "en": "permit"
+        },
+        {
+          "id": "instanties-v06",
+          "nl": "verblijfsvergunning",
+          "en": "residence permit"
+        },
+        {
+          "id": "instanties-v07",
+          "nl": "tijdelijke verblijfsvergunning",
+          "en": "temporary residence permit"
+        },
+        {
+          "id": "instanties-v08",
+          "nl": "bepaalde tijd",
+          "en": "fixed period"
+        },
+        {
+          "id": "instanties-v09",
+          "nl": "permanente verblijfsvergunning",
+          "en": "permanent residence permit"
+        },
+        {
+          "id": "instanties-v10",
+          "nl": "onbepaalde tijd",
+          "en": "indefinite period"
+        },
+        {
+          "id": "instanties-v11",
+          "nl": "naturalisatie",
+          "en": "naturalisation"
+        },
+        {
+          "id": "instanties-v12",
+          "nl": "identificatieplicht",
+          "en": "obligation to identify yourself"
+        },
+        {
+          "id": "instanties-v13",
+          "nl": "openbare orde",
+          "en": "public order"
+        },
+        {
+          "id": "instanties-v14",
+          "nl": "aangifte doen",
+          "en": "to file a report"
+        },
+        {
+          "id": "instanties-v15",
+          "nl": "112",
+          "en": "emergency number"
+        },
+        {
+          "id": "instanties-v16",
+          "nl": "burgerservicenummer (BSN)",
+          "en": "citizen service number"
+        },
+        {
+          "id": "instanties-v17",
+          "nl": "DigiD-code",
+          "en": "code to log in to the government"
+        },
+        {
+          "id": "instanties-v18",
+          "nl": "belastingkantoor",
+          "en": "tax office"
+        },
+        {
+          "id": "instanties-v19",
+          "nl": "bezwaar",
+          "en": "objection"
+        },
+        {
+          "id": "instanties-v20",
+          "nl": "kwijtschelding",
+          "en": "remission of a debt"
+        },
+        {
+          "id": "instanties-v21",
+          "nl": "in termijnen betalen",
+          "en": "to pay in instalments"
+        },
+        {
+          "id": "instanties-v22",
+          "nl": "toeslagen",
+          "en": "allowances"
+        },
+        {
+          "id": "instanties-v23",
+          "nl": "huurtoeslag",
+          "en": "rent allowance"
+        },
+        {
+          "id": "instanties-v24",
+          "nl": "zorgtoeslag",
+          "en": "health care allowance"
+        },
+        {
+          "id": "instanties-v25",
+          "nl": "kinderopvangtoeslag",
+          "en": "childcare allowance"
+        },
+        {
+          "id": "instanties-v26",
+          "nl": "antidiscriminatiebureau",
+          "en": "anti-discrimination agency"
+        },
+        {
+          "id": "instanties-v27",
+          "nl": "Juridisch Loket",
+          "en": "legal advice desk"
+        },
+        {
+          "id": "instanties-v28",
+          "nl": "advocatenkantoor",
+          "en": "law firm"
+        },
+        {
+          "id": "instanties-v29",
+          "nl": "bankrekening",
+          "en": "bank account"
+        },
+        {
+          "id": "instanties-v30",
+          "nl": "bankpas",
+          "en": "bank card"
+        },
+        {
+          "id": "instanties-v31",
+          "nl": "machtiging",
+          "en": "direct debit authorisation"
+        },
+        {
+          "id": "instanties-v32",
+          "nl": "internetbankieren",
+          "en": "online banking"
+        },
+        {
+          "id": "instanties-v33",
+          "nl": "zorgverzekering",
+          "en": "health insurance"
+        },
+        {
+          "id": "instanties-v34",
+          "nl": "autoverzekering",
+          "en": "car insurance"
+        },
+        {
+          "id": "instanties-v35",
+          "nl": "premie",
+          "en": "premium"
+        },
+        {
+          "id": "instanties-v36",
+          "nl": "aansprakelijkheidsverzekering",
+          "en": "liability insurance"
+        },
+        {
+          "id": "instanties-v37",
+          "nl": "brandverzekering",
+          "en": "fire insurance"
+        },
+        {
+          "id": "instanties-v38",
+          "nl": "reisverzekering",
+          "en": "travel insurance"
+        },
+        {
+          "id": "instanties-v39",
+          "nl": "schade",
+          "en": "damage"
         }
       ]
     }

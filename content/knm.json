@@ -186,22 +186,6 @@
               }
             },
             {
-              "id": "w1-12",
-              "type": "multiple_choice",
-              "prompt": "Je bent net in Nederland. Wie kiest meestal waar je komt te wonen?",
-              "prompt_en": "You have just arrived in the Netherlands. Who usually chooses where you will live?",
-              "answer": "De gemeente",
-              "distractors": [
-                "Jij zelf",
-                "De makelaar",
-                "Je werkgever"
-              ],
-              "explanation": {
-                "nl": "De gemeente kiest waar je komt te wonen (tenzij gezinshereniging).",
-                "en": "The municipality chooses where you live (unless it's family reunification)."
-              }
-            },
-            {
               "id": "w1-13",
               "type": "multiple_choice",
               "prompt": "Wat betekent urgentie?",

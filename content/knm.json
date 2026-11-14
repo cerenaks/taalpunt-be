@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "content_version": "2026-11-14.1",
+  "content_version": "2026-11-14.2",
   "language": "nl",
   "translation": "en",
   "sources": [
@@ -9,7 +9,8 @@
     "KNM 3) Interactie, normen en waarden",
     "KNM 4) Onderwijs en opvoeding",
     "KNM 5) Gezondheid",
-    "KNM 6) Instanties"
+    "KNM 6) Instanties",
+    "KNM 7) Politiek"
   ],
   "units": [
     {
@@ -8272,6 +8273,1360 @@
           "id": "instanties-v39",
           "nl": "schade",
           "en": "damage"
+        }
+      ]
+    },
+    {
+      "id": "politiek",
+      "number": 7,
+      "title": "Politiek",
+      "title_en": "Politics",
+      "color": "blue",
+      "lessons": [
+        {
+          "id": "p1",
+          "title": "De Grondwet",
+          "title_en": "The Constitution",
+          "questions": [
+            {
+              "id": "p1-01",
+              "type": "multiple_choice",
+              "prompt": "Wat is de belangrijkste wet van Nederland?",
+              "prompt_en": "What is the most important law of the Netherlands?",
+              "answer": "De Grondwet",
+              "distractors": [
+                "De Wmo",
+                "De Leerplichtwet",
+                "De Wet langdurige zorg"
+              ],
+              "explanation": {
+                "nl": "Nederland is een rechtsstaat. Iedereen moet zich aan de wet houden, en de Grondwet is de belangrijkste wet.",
+                "en": "The Netherlands is a constitutional state. Everyone must obey the law, and the Constitution is the most important law."
+              }
+            },
+            {
+              "id": "p1-02",
+              "type": "multiple_choice",
+              "prompt": "Welke vrijheid staat NIET in de Grondwet?",
+              "prompt_en": "Which freedom is NOT in the Constitution?",
+              "answer": "Vrijheid om geen belasting te betalen",
+              "distractors": [
+                "Vrijheid van meningsuiting",
+                "Vrijheid van godsdienst",
+                "Vrijheid van onderwijs"
+              ],
+              "explanation": {
+                "nl": "In de Grondwet staan o.a. vrijheid van meningsuiting, godsdienst, onderwijs en demonstreren.",
+                "en": "The Constitution includes freedom of expression, religion, education and to demonstrate."
+              }
+            },
+            {
+              "id": "p1-03",
+              "type": "fill_blank",
+              "prompt": "De vrijheid van meningsuiting in de media heet ___.",
+              "prompt_en": "Freedom of expression in the media is called freedom of the press.",
+              "answer": "persvrijheid",
+              "distractors": [
+                "godsdienstvrijheid",
+                "leerplicht",
+                "kiesrecht"
+              ],
+              "explanation": {
+                "nl": "Je mag altijd je mening geven, ook op tv, radio en in de krant.",
+                "en": "You may always give your opinion, also on TV, radio and in the newspaper."
+              }
+            },
+            {
+              "id": "p1-04",
+              "type": "true_false",
+              "prompt": "In Nederland mag je demonstreren, als je dat vreedzaam doet.",
+              "prompt_en": "In the Netherlands you may demonstrate, as long as you do it peacefully.",
+              "answer": true,
+              "explanation": {
+                "nl": "De vrijheid om te demonstreren staat in de Grondwet.",
+                "en": "The freedom to demonstrate is in the Constitution."
+              }
+            },
+            {
+              "id": "p1-05",
+              "type": "true_false",
+              "prompt": "Mannen en vrouwen hebben in Nederland dezelfde rechten.",
+              "prompt_en": "Men and women have the same rights in the Netherlands.",
+              "answer": true,
+              "explanation": {
+                "nl": "Discriminatie is verboden: ook homo's en hetero's, en religieuze en niet-religieuze mensen hebben dezelfde rechten.",
+                "en": "Discrimination is forbidden: gay and straight, religious and non-religious people also have the same rights."
+              }
+            },
+            {
+              "id": "p1-06",
+              "type": "multiple_choice",
+              "prompt": "Twee rechten botsen in een bepaalde situatie. Wie beslist welk recht voorgaat?",
+              "prompt_en": "Two rights conflict in a certain situation. Who decides which right takes precedence?",
+              "answer": "De rechter",
+              "distractors": [
+                "De koning",
+                "De burgemeester",
+                "De politie"
+              ],
+              "explanation": {
+                "nl": "Bij een conflict tussen twee rechten beslist de rechter.",
+                "en": "In a conflict between two rights, the judge decides."
+              }
+            },
+            {
+              "id": "p1-07",
+              "type": "multiple_choice",
+              "prompt": "Wat betekent vrijheid van godsdienst?",
+              "prompt_en": "What does freedom of religion mean?",
+              "answer": "Iedereen mag zijn eigen godsdienst hebben",
+              "distractors": [
+                "Iedereen moet naar de kerk",
+                "De regering kiest je godsdienst",
+                "Godsdienst is verboden"
+              ],
+              "explanation": {
+                "nl": "Je mag ook samenkomen met mensen van dezelfde godsdienst.",
+                "en": "You may also gather with people of the same religion."
+              }
+            },
+            {
+              "id": "p1-08",
+              "type": "build_sentence",
+              "prompt_en": "I may give my opinion.",
+              "answer": "Ik mag mijn mening geven",
+              "distractors": [
+                "moet",
+                "jouw"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "p2",
+          "title": "Wet en religie",
+          "title_en": "Law and religion",
+          "questions": [
+            {
+              "id": "p2-01",
+              "type": "true_false",
+              "prompt": "Als de wet en een godsdienst botsen, gaat de wet voor.",
+              "prompt_en": "If the law and a religion conflict, the law takes precedence.",
+              "answer": true,
+              "explanation": {
+                "nl": "Nederland is een neutrale rechtsstaat. De wet staat altijd boven religieuze regels.",
+                "en": "The Netherlands is a neutral constitutional state. The law always stands above religious rules."
+              }
+            },
+            {
+              "id": "p2-02",
+              "type": "multiple_choice",
+              "prompt": "Een religieuze school wil geen homoseksuele leraar. Wat zal de rechter waarschijnlijk zeggen?",
+              "prompt_en": "A religious school doesn't want a gay teacher. What will the judge probably say?",
+              "answer": "Dit is discriminatie",
+              "distractors": [
+                "Dit mag door de vrijheid van godsdienst",
+                "De school mag dit zelf kiezen",
+                "De leraar moet van school wisselen"
+              ],
+              "explanation": {
+                "nl": "Bij een conflict tussen wet en religie gaat de wet voor. Discriminatie is verboden.",
+                "en": "In a conflict between law and religion, the law wins. Discrimination is forbidden."
+              }
+            },
+            {
+              "id": "p2-03",
+              "type": "multiple_choice",
+              "prompt": "Wat is in Nederland verboden, ook als een geloof het toestaat?",
+              "prompt_en": "What is forbidden in the Netherlands, even if a religion allows it?",
+              "answer": "Een kindhuwelijk",
+              "distractors": [
+                "Religieuze kleding dragen",
+                "Bidden",
+                "Een eigen school beginnen"
+              ],
+              "explanation": {
+                "nl": "Kindhuwelijk is verboden, en meisjes geen onderwijs geven ook.",
+                "en": "Child marriage is forbidden, and so is not giving girls an education."
+              }
+            },
+            {
+              "id": "p2-04",
+              "type": "true_false",
+              "prompt": "Religieuze kleding is in Nederland verboden.",
+              "prompt_en": "Religious clothing is forbidden in the Netherlands.",
+              "answer": false,
+              "explanation": {
+                "nl": "Religieuze kleding mag, zolang het de veiligheid niet schaadt.",
+                "en": "Religious clothing is allowed as long as it doesn't harm safety."
+              }
+            },
+            {
+              "id": "p2-05",
+              "type": "multiple_choice",
+              "prompt": "Wat betekent zelfbeschikking voor vrouwen?",
+              "prompt_en": "What does self-determination mean for women?",
+              "answer": "Zelf beslissen over je lichaam en leven",
+              "distractors": [
+                "Je man beslist voor jou",
+                "De overheid kiest je baan",
+                "Je familie kiest je partner"
+              ],
+              "explanation": {
+                "nl": "Vrouwen kiezen zelf of en met wie ze trouwen, of ze kinderen willen en wat ze studeren of werken.",
+                "en": "Women choose themselves whether and whom they marry, whether they want children and what they study or work as."
+              }
+            },
+            {
+              "id": "p2-06",
+              "type": "multiple_choice",
+              "prompt": "Waar kun je geweld melden?",
+              "prompt_en": "Where can you report violence?",
+              "answer": "Bij de politie of Slachtofferhulp Nederland",
+              "distractors": [
+                "Bij de bank",
+                "Bij de Belastingdienst",
+                "Bij de waterschappen"
+              ],
+              "explanation": {
+                "nl": "Huiselijk geweld, eerwraak en verkrachting zijn verboden en strafbaar.",
+                "en": "Domestic violence, honour killings and rape are forbidden and punishable."
+              }
+            },
+            {
+              "id": "p2-07",
+              "type": "true_false",
+              "prompt": "In Nederland mag je een wapen bij je dragen voor je veiligheid.",
+              "prompt_en": "In the Netherlands you may carry a weapon for your safety.",
+              "answer": false,
+              "explanation": {
+                "nl": "Het is verboden om wapens te dragen.",
+                "en": "It is forbidden to carry weapons."
+              }
+            },
+            {
+              "id": "p2-08",
+              "type": "fill_blank",
+              "prompt": "De overheid is ___: geen godsdienst bepaalt de wetten.",
+              "prompt_en": "The government is neutral: no religion decides the laws.",
+              "answer": "neutraal",
+              "distractors": [
+                "religieus",
+                "christelijk",
+                "streng"
+              ],
+              "explanation": {
+                "nl": "Kerken en moskeeën beslissen niet wat er in de Nederlandse maatschappij gebeurt.",
+                "en": "Churches and mosques don't decide what happens in Dutch society."
+              }
+            },
+            {
+              "id": "p2-09",
+              "type": "build_sentence",
+              "prompt_en": "The law always comes first.",
+              "answer": "De wet gaat altijd voor",
+              "distractors": [
+                "godsdienst",
+                "nooit"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "p3",
+          "title": "Scheiding van de machten",
+          "title_en": "Separation of powers",
+          "questions": [
+            {
+              "id": "p3-01",
+              "type": "multiple_choice",
+              "prompt": "Hoeveel soorten macht zijn er in Nederland?",
+              "prompt_en": "How many kinds of power are there in the Netherlands?",
+              "answer": "3",
+              "distractors": [
+                "2",
+                "4",
+                "5"
+              ],
+              "explanation": {
+                "nl": "De uitvoerende, de wetgevende en de rechterlijke macht.",
+                "en": "Executive, legislative and judicial power."
+              }
+            },
+            {
+              "id": "p3-02",
+              "type": "multiple_choice",
+              "prompt": "Wie is de uitvoerende macht?",
+              "prompt_en": "Who is the executive power?",
+              "answer": "De regering",
+              "distractors": [
+                "Het parlement",
+                "De rechters",
+                "De gemeenteraad"
+              ],
+              "explanation": {
+                "nl": "De regering = de koning, de minister-president en de ministers.",
+                "en": "The government = the King, the prime minister and the ministers."
+              }
+            },
+            {
+              "id": "p3-03",
+              "type": "multiple_choice",
+              "prompt": "Wie is de wetgevende macht?",
+              "prompt_en": "Who is the legislative power?",
+              "answer": "De Eerste en de Tweede Kamer",
+              "distractors": [
+                "De rechters",
+                "De koning alleen",
+                "De politie"
+              ],
+              "explanation": {
+                "nl": "Het parlement controleert de regering. Regering en parlement maken samen nieuwe wetten.",
+                "en": "Parliament checks the government. Government and parliament make new laws together."
+              }
+            },
+            {
+              "id": "p3-04",
+              "type": "multiple_choice",
+              "prompt": "Wie is de rechterlijke macht?",
+              "prompt_en": "Who is the judicial power?",
+              "answer": "De rechters",
+              "distractors": [
+                "De ministers",
+                "De burgemeesters",
+                "De Tweede Kamer"
+              ],
+              "explanation": {
+                "nl": "Als mensen het niet eens zijn, beslissen de rechters.",
+                "en": "When people disagree, the judges decide."
+              }
+            },
+            {
+              "id": "p3-05",
+              "type": "true_false",
+              "prompt": "Het parlement mag zeggen wat de rechter moet beslissen.",
+              "prompt_en": "Parliament may tell the judge what to decide.",
+              "answer": false,
+              "explanation": {
+                "nl": "De machten werken los van elkaar. Zo kan niet één macht alle macht krijgen.",
+                "en": "The powers work separately. That way no single power can get all the power."
+              }
+            },
+            {
+              "id": "p3-06",
+              "type": "multiple_choice",
+              "prompt": "Welk recht heb je als je legaal in Nederland woont?",
+              "prompt_en": "Which right do you have if you live legally in the Netherlands?",
+              "answer": "Recht op privacy",
+              "distractors": [
+                "Recht om geen belasting te betalen",
+                "Recht om wapens te dragen",
+                "Recht om de wet te negeren"
+              ],
+              "explanation": {
+                "nl": "Ook recht op onderwijs, zorg, rechtsbijstand en een uitkering bij werkloosheid of ziekte.",
+                "en": "Also the right to education, care, legal aid and benefits when unemployed or ill."
+              }
+            },
+            {
+              "id": "p3-07",
+              "type": "multiple_choice",
+              "prompt": "Wat is een plicht als burger?",
+              "prompt_en": "What is a duty as a citizen?",
+              "answer": "Belasting betalen",
+              "distractors": [
+                "Stemmen op een bepaalde partij",
+                "Lid worden van een kerk",
+                "Een auto hebben"
+              ],
+              "explanation": {
+                "nl": "Je moet je aan de wet houden, belasting betalen en veranderingen zoals een verhuizing doorgeven.",
+                "en": "You must obey the law, pay tax and report changes such as a move."
+              }
+            },
+            {
+              "id": "p3-08",
+              "type": "fill_blank",
+              "prompt": "Dat de machten los van elkaar werken, heet de ___ van de machten.",
+              "prompt_en": "That the powers work separately is called the separation of powers.",
+              "answer": "scheiding",
+              "distractors": [
+                "verkiezing",
+                "vergadering",
+                "regering"
+              ],
+              "explanation": {
+                "nl": "Een rechter kan bijvoorbeeld niet stemmen over een nieuw wetsvoorstel.",
+                "en": "For example, a judge cannot vote on a new bill."
+              }
+            },
+            {
+              "id": "p3-09",
+              "type": "build_sentence",
+              "prompt_en": "The judge decides.",
+              "answer": "De rechter beslist",
+              "distractors": [
+                "minister",
+                "beslissen"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "p4",
+          "title": "Democratie en kiesrecht",
+          "title_en": "Democracy and voting",
+          "questions": [
+            {
+              "id": "p4-01",
+              "type": "multiple_choice",
+              "prompt": "Nederland is een democratie. Wat betekent dat?",
+              "prompt_en": "The Netherlands is a democracy. What does that mean?",
+              "answer": "De mensen kiezen het bestuur",
+              "distractors": [
+                "De koning kiest het bestuur",
+                "De rechters kiezen het bestuur",
+                "Er zijn geen verkiezingen"
+              ],
+              "explanation": {
+                "nl": "In verkiezingen kiezen mensen wie het land bestuurt.",
+                "en": "In elections people choose who governs the country."
+              }
+            },
+            {
+              "id": "p4-02",
+              "type": "multiple_choice",
+              "prompt": "Wat is actief kiesrecht?",
+              "prompt_en": "What is the active right to vote?",
+              "answer": "Het recht om te stemmen",
+              "distractors": [
+                "Het recht om kandidaat te zijn",
+                "De plicht om te stemmen",
+                "Het recht om te demonstreren"
+              ],
+              "explanation": {
+                "nl": "Passief kiesrecht is het recht om kandidaat te zijn, zodat anderen op jou kunnen stemmen.",
+                "en": "The passive right to vote is the right to be a candidate, so others can vote for you."
+              }
+            },
+            {
+              "id": "p4-03",
+              "type": "fill_blank",
+              "prompt": "Het recht om kandidaat te zijn in de verkiezingen heet ___ kiesrecht.",
+              "prompt_en": "The right to be a candidate in elections is called the passive right to vote.",
+              "answer": "passief",
+              "distractors": [
+                "actief",
+                "dubbel",
+                "landelijk"
+              ],
+              "explanation": {
+                "nl": "Actief = stemmen. Passief = gekozen worden.",
+                "en": "Active = voting. Passive = being elected."
+              }
+            },
+            {
+              "id": "p4-04",
+              "type": "multiple_choice",
+              "prompt": "Voor welke organisatie zijn er GEEN verkiezingen?",
+              "prompt_en": "For which organisation are there NO elections?",
+              "answer": "De Belastingdienst",
+              "distractors": [
+                "De gemeente",
+                "De provincie",
+                "De waterschappen"
+              ],
+              "explanation": {
+                "nl": "Er zijn verkiezingen voor de Tweede Kamer, provincies, gemeentes, waterschappen en het Europees Parlement.",
+                "en": "There are elections for the House of Representatives, provinces, municipalities, water boards and the European Parliament."
+              }
+            },
+            {
+              "id": "p4-05",
+              "type": "multiple_choice",
+              "prompt": "Wat doen de waterschappen?",
+              "prompt_en": "What do the water boards do?",
+              "answer": "Ze organiseren het water in Nederland",
+              "distractors": [
+                "Ze maken de Grondwet",
+                "Ze geven paspoorten",
+                "Ze tellen de stemmen"
+              ],
+              "explanation": {
+                "nl": "De waterschappen zijn verantwoordelijk voor het waterbeheer.",
+                "en": "The water boards are responsible for water management."
+              }
+            },
+            {
+              "id": "p4-06",
+              "type": "multiple_choice",
+              "prompt": "Wat kun je stemmen bij een referendum?",
+              "prompt_en": "What can you vote in a referendum?",
+              "answer": "Alleen ja of nee",
+              "distractors": [
+                "Op een partij",
+                "Op een persoon",
+                "Een cijfer van 1 tot 10"
+              ],
+              "explanation": {
+                "nl": "Een referendum is een speciale verkiezing en gebeurt niet vaak.",
+                "en": "A referendum is a special election and doesn't happen often."
+              }
+            },
+            {
+              "id": "p4-07",
+              "type": "true_false",
+              "prompt": "Nederland is een democratie, een koninkrijk en een rechtsstaat.",
+              "prompt_en": "The Netherlands is a democracy, a kingdom and a constitutional state.",
+              "answer": true,
+              "explanation": {
+                "nl": "Er is een koning, de mensen kiezen het bestuur, en iedereen moet zich aan de wet houden.",
+                "en": "There is a king, the people choose the government, and everyone must obey the law."
+              }
+            },
+            {
+              "id": "p4-08",
+              "type": "build_sentence",
+              "prompt_en": "I am going to vote.",
+              "answer": "Ik ga stemmen",
+              "distractors": [
+                "gaat",
+                "kiezen"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "p5",
+          "title": "Regering en parlement",
+          "title_en": "Government and parliament",
+          "questions": [
+            {
+              "id": "p5-01",
+              "type": "multiple_choice",
+              "prompt": "Wie zitten in de regering?",
+              "prompt_en": "Who is in the government?",
+              "answer": "De koning, de minister-president en de ministers",
+              "distractors": [
+                "De Eerste en de Tweede Kamer",
+                "Alle burgemeesters",
+                "De rechters"
+              ],
+              "explanation": {
+                "nl": "De regering is het bestuur van Nederland.",
+                "en": "The government governs the Netherlands."
+              }
+            },
+            {
+              "id": "p5-02",
+              "type": "multiple_choice",
+              "prompt": "Wie is de leider van de ministers?",
+              "prompt_en": "Who is the leader of the ministers?",
+              "answer": "De minister-president",
+              "distractors": [
+                "De koning",
+                "De burgemeester",
+                "De commissaris van de Koning"
+              ],
+              "explanation": {
+                "nl": "Elke minister heeft zijn eigen taak, zoals Onderwijs, Financiën of Justitie.",
+                "en": "Each minister has their own area, such as Education, Finance or Justice."
+              }
+            },
+            {
+              "id": "p5-03",
+              "type": "multiple_choice",
+              "prompt": "Met wie werkt een minister samen?",
+              "prompt_en": "Who does a minister work together with?",
+              "answer": "Een staatssecretaris",
+              "distractors": [
+                "Een lijsttrekker",
+                "Een wijkagent",
+                "Een rechter"
+              ],
+              "explanation": {
+                "nl": "Alle ministers en staatssecretarissen samen zijn het kabinet.",
+                "en": "All ministers and state secretaries together are the cabinet."
+              }
+            },
+            {
+              "id": "p5-04",
+              "type": "fill_blank",
+              "prompt": "Alle ministers en alle staatssecretarissen samen heten het ___.",
+              "prompt_en": "All ministers and all state secretaries together are called the cabinet.",
+              "answer": "kabinet",
+              "distractors": [
+                "parlement",
+                "stembureau",
+                "waterschap"
+              ],
+              "explanation": {
+                "nl": "Het kabinet is een deel van de regering.",
+                "en": "The cabinet is part of the government."
+              }
+            },
+            {
+              "id": "p5-05",
+              "type": "multiple_choice",
+              "prompt": "Hoeveel leden heeft de Tweede Kamer?",
+              "prompt_en": "How many members does the House of Representatives have?",
+              "answer": "150",
+              "distractors": [
+                "75",
+                "100",
+                "225"
+              ],
+              "explanation": {
+                "nl": "De Tweede Kamer heeft 150 leden, de Eerste Kamer 75.",
+                "en": "The House of Representatives has 150 members, the Senate 75."
+              }
+            },
+            {
+              "id": "p5-06",
+              "type": "multiple_choice",
+              "prompt": "Hoeveel leden heeft de Eerste Kamer?",
+              "prompt_en": "How many members does the Senate have?",
+              "answer": "75",
+              "distractors": [
+                "50",
+                "150",
+                "12"
+              ],
+              "explanation": {
+                "nl": "De Eerste Kamer controleert de regering en de Tweede Kamer, en stemt over nieuwe wetten.",
+                "en": "The Senate checks the government and the House of Representatives, and votes on new laws."
+              }
+            },
+            {
+              "id": "p5-07",
+              "type": "true_false",
+              "prompt": "De Tweede Kamer kan zelf wetten voorstellen.",
+              "prompt_en": "The House of Representatives can propose laws itself.",
+              "answer": true,
+              "explanation": {
+                "nl": "De Tweede Kamer praat over de plannen van de regering, geeft adviezen en kan wetten voorstellen.",
+                "en": "It discusses the government's plans, gives advice and can propose laws."
+              }
+            },
+            {
+              "id": "p5-08",
+              "type": "multiple_choice",
+              "prompt": "Hoe vaak zijn er Tweede Kamerverkiezingen?",
+              "prompt_en": "How often are there House of Representatives elections?",
+              "answer": "1 keer per 4 jaar",
+              "distractors": [
+                "Elk jaar",
+                "1 keer per 5 jaar",
+                "1 keer per 10 jaar"
+              ],
+              "explanation": {
+                "nl": "Normaal is er elke 4 jaar een verkiezing, soms eerder.",
+                "en": "Normally there are elections every 4 years, sometimes earlier."
+              }
+            },
+            {
+              "id": "p5-09",
+              "type": "multiple_choice",
+              "prompt": "Wie mag stemmen voor de Tweede Kamer?",
+              "prompt_en": "Who may vote for the House of Representatives?",
+              "answer": "Nederlanders van 18 jaar en ouder",
+              "distractors": [
+                "Iedereen die in Nederland woont",
+                "Iedereen vanaf 16 jaar",
+                "Alleen mensen met een baan"
+              ],
+              "explanation": {
+                "nl": "Je moet minimaal 18 jaar zijn en de Nederlandse nationaliteit hebben.",
+                "en": "You must be at least 18 and have Dutch nationality."
+              }
+            },
+            {
+              "id": "p5-10",
+              "type": "build_sentence",
+              "prompt_en": "Parliament checks the government.",
+              "answer": "Het parlement controleert de regering",
+              "distractors": [
+                "koning",
+                "controleren"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "p6",
+          "title": "Provincie, gemeente en Europa",
+          "title_en": "Province, municipality and Europe",
+          "questions": [
+            {
+              "id": "p6-01",
+              "type": "multiple_choice",
+              "prompt": "Hoeveel provincies heeft Nederland?",
+              "prompt_en": "How many provinces does the Netherlands have?",
+              "answer": "12",
+              "distractors": [
+                "10",
+                "15",
+                "20"
+              ],
+              "explanation": {
+                "nl": "Elke provincie heeft een provinciebestuur.",
+                "en": "Each province has a provincial government."
+              }
+            },
+            {
+              "id": "p6-02",
+              "type": "multiple_choice",
+              "prompt": "Wie is de leider van het provinciebestuur?",
+              "prompt_en": "Who leads the provincial government?",
+              "answer": "De commissaris van de Koning",
+              "distractors": [
+                "De burgemeester",
+                "De minister-president",
+                "De lijsttrekker"
+              ],
+              "explanation": {
+                "nl": "De provincie beslist waar wegen en huizen komen (planologie) en zorgt voor het milieu.",
+                "en": "The province decides where roads and houses go (spatial planning) and looks after the environment."
+              }
+            },
+            {
+              "id": "p6-03",
+              "type": "multiple_choice",
+              "prompt": "Wie is de leider van het gemeentebestuur?",
+              "prompt_en": "Who leads the municipal government?",
+              "answer": "De burgemeester",
+              "distractors": [
+                "De commissaris van de Koning",
+                "De koning",
+                "De wijkagent"
+              ],
+              "explanation": {
+                "nl": "Het gemeentebestuur beslist over belangrijke dingen in de gemeente, zoals vergunningen.",
+                "en": "The municipal government decides on important things in the municipality, such as permits."
+              }
+            },
+            {
+              "id": "p6-04",
+              "type": "multiple_choice",
+              "prompt": "Waar zorgt de gemeente voor?",
+              "prompt_en": "What does the municipality take care of?",
+              "answer": "Afval en je paspoort",
+              "distractors": [
+                "Defensie",
+                "De Grondwet",
+                "Het Europees Parlement"
+              ],
+              "explanation": {
+                "nl": "De gemeente regelt o.a. afval, woonbeleid, jeugdzorg, wijkteams, je paspoort en inschrijving.",
+                "en": "The municipality handles waste, housing policy, youth care, neighbourhood teams, your passport and registration."
+              }
+            },
+            {
+              "id": "p6-05",
+              "type": "true_false",
+              "prompt": "Je moet Nederlander zijn om voor de gemeenteraad te mogen stemmen.",
+              "prompt_en": "You must be Dutch to vote for the municipal council.",
+              "answer": false,
+              "explanation": {
+                "nl": "EU-burgers mogen meteen stemmen. Mensen van buiten de EU na minimaal 5 jaar legaal in Nederland.",
+                "en": "EU citizens may vote straight away. People from outside the EU after at least 5 years of legal residence."
+              }
+            },
+            {
+              "id": "p6-06",
+              "type": "multiple_choice",
+              "prompt": "Je komt van buiten de EU. Hoe lang moet je legaal in Nederland wonen om voor de gemeenteraad te stemmen?",
+              "prompt_en": "You come from outside the EU. How long must you live legally in the Netherlands to vote for the municipal council?",
+              "answer": "Minimaal 5 jaar",
+              "distractors": [
+                "1 jaar",
+                "3 jaar",
+                "10 jaar"
+              ],
+              "explanation": {
+                "nl": "Je moet ook 18 jaar zijn en in de gemeente wonen.",
+                "en": "You must also be 18 and live in the municipality."
+              }
+            },
+            {
+              "id": "p6-07",
+              "type": "true_false",
+              "prompt": "Grote steden zoals Amsterdam hebben nog steeds deelgemeenten.",
+              "prompt_en": "Big cities like Amsterdam still have sub-municipalities.",
+              "answer": false,
+              "explanation": {
+                "nl": "Deelgemeenten zijn in 2014 afgeschaft. Amsterdam heeft nu stadsdelen, Rotterdam gebieden.",
+                "en": "Sub-municipalities were abolished in 2014. Amsterdam now has city districts, Rotterdam has areas."
+              }
+            },
+            {
+              "id": "p6-08",
+              "type": "multiple_choice",
+              "prompt": "Wat is het dagelijks bestuur van de Europese Unie?",
+              "prompt_en": "What is the day-to-day government of the European Union?",
+              "answer": "De Europese Commissie",
+              "distractors": [
+                "De Tweede Kamer",
+                "De Eerste Kamer",
+                "Het Europees Hof"
+              ],
+              "explanation": {
+                "nl": "De EU maakt wetten voor alle EU-landen, bijvoorbeeld over economie, veiligheid en milieu.",
+                "en": "The EU makes laws for all EU countries, for example on economy, safety and environment."
+              }
+            },
+            {
+              "id": "p6-09",
+              "type": "multiple_choice",
+              "prompt": "Hoe vaak zijn er verkiezingen voor het Europees Parlement?",
+              "prompt_en": "How often are there European Parliament elections?",
+              "answer": "1 keer per 5 jaar",
+              "distractors": [
+                "1 keer per 4 jaar",
+                "Elk jaar",
+                "1 keer per 10 jaar"
+              ],
+              "explanation": {
+                "nl": "Je moet 18 jaar zijn en de nationaliteit van een EU-land hebben.",
+                "en": "You must be 18 and have the nationality of an EU country."
+              }
+            },
+            {
+              "id": "p6-10",
+              "type": "multiple_choice",
+              "prompt": "Sinds wanneer is de euro het betaalmiddel in de meeste EU-landen?",
+              "prompt_en": "Since when has the euro been the currency in most EU countries?",
+              "answer": "2002",
+              "distractors": [
+                "1990",
+                "1995",
+                "2010"
+              ],
+              "explanation": {
+                "nl": "Sinds 2002 betaal je in de meeste EU-landen met de euro.",
+                "en": "Since 2002 you pay with the euro in most EU countries."
+              }
+            },
+            {
+              "id": "p6-11",
+              "type": "build_sentence",
+              "prompt_en": "The mayor leads the municipality.",
+              "answer": "De burgemeester leidt de gemeente",
+              "distractors": [
+                "provincie",
+                "leiden"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "p7",
+          "title": "De koning",
+          "title_en": "The King",
+          "questions": [
+            {
+              "id": "p7-01",
+              "type": "multiple_choice",
+              "prompt": "Wie is de koning van Nederland?",
+              "prompt_en": "Who is the King of the Netherlands?",
+              "answer": "Willem-Alexander",
+              "distractors": [
+                "Willem-Frederik",
+                "Johan Willem",
+                "Willem de Zwijger"
+              ],
+              "explanation": {
+                "nl": "Koning Willem-Alexander is getrouwd met koningin Máxima.",
+                "en": "King Willem-Alexander is married to Queen Máxima."
+              }
+            },
+            {
+              "id": "p7-02",
+              "type": "true_false",
+              "prompt": "De koning heeft veel macht en maakt zelf de wetten.",
+              "prompt_en": "The King has a lot of power and makes the laws himself.",
+              "answer": false,
+              "explanation": {
+                "nl": "De koning heeft vooral een ceremoniële functie. Hij ondertekent wetten, maar maakt ze niet.",
+                "en": "The King has mainly a ceremonial role. He signs laws but doesn't make them."
+              }
+            },
+            {
+              "id": "p7-03",
+              "type": "fill_blank",
+              "prompt": "Nederland is een ___ monarchie: de positie van de koning staat in de Grondwet.",
+              "prompt_en": "The Netherlands is a constitutional monarchy: the King's position is in the Constitution.",
+              "answer": "constitutionele",
+              "distractors": [
+                "absolute",
+                "religieuze",
+                "Europese"
+              ],
+              "explanation": {
+                "nl": "De koning zit samen met de ministers en de minister-president in de regering.",
+                "en": "The King is part of the government together with the ministers and the prime minister."
+              }
+            },
+            {
+              "id": "p7-04",
+              "type": "multiple_choice",
+              "prompt": "Wanneer is Prinsjesdag?",
+              "prompt_en": "When is Prinsjesdag?",
+              "answer": "De 3e dinsdag van september",
+              "distractors": [
+                "1 januari",
+                "27 april",
+                "5 mei"
+              ],
+              "explanation": {
+                "nl": "Op Prinsjesdag leest de koning de troonrede voor in Den Haag.",
+                "en": "On Prinsjesdag the King reads the Speech from the Throne in The Hague."
+              }
+            },
+            {
+              "id": "p7-05",
+              "type": "multiple_choice",
+              "prompt": "Wat staat in de troonrede?",
+              "prompt_en": "What is in the Speech from the Throne?",
+              "answer": "De plannen van de regering voor het komende jaar",
+              "distractors": [
+                "De uitslag van de verkiezingen",
+                "Nieuwe namen voor de provincies",
+                "Het weerbericht"
+              ],
+              "explanation": {
+                "nl": "De koning leest de troonrede voor op Prinsjesdag.",
+                "en": "The King reads the speech on Prinsjesdag."
+              }
+            },
+            {
+              "id": "p7-06",
+              "type": "multiple_choice",
+              "prompt": "Wat doet de koning bij officiële bezoeken in het buitenland?",
+              "prompt_en": "What does the King do on official visits abroad?",
+              "answer": "Hij is het gezicht van Nederland",
+              "distractors": [
+                "Hij maakt nieuwe wetten",
+                "Hij kiest de ministers",
+                "Hij is de rechter"
+              ],
+              "explanation": {
+                "nl": "De koning heeft vooral een symbolische functie.",
+                "en": "The King has mainly a symbolic role."
+              }
+            },
+            {
+              "id": "p7-07",
+              "type": "build_sentence",
+              "prompt_en": "The King signs the law.",
+              "answer": "De koning ondertekent de wet",
+              "distractors": [
+                "koningin",
+                "maakt"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "p8",
+          "title": "Partijen en verkiezingen",
+          "title_en": "Parties and elections",
+          "questions": [
+            {
+              "id": "p8-01",
+              "type": "multiple_choice",
+              "prompt": "Waar stem je op bij de Tweede Kamerverkiezingen?",
+              "prompt_en": "What do you vote for in the House of Representatives elections?",
+              "answer": "Een politieke partij",
+              "distractors": [
+                "Een burgemeester",
+                "De koning",
+                "Een rechter"
+              ],
+              "explanation": {
+                "nl": "Mensen in een partij hebben ongeveer dezelfde ideeën over het besturen van Nederland.",
+                "en": "People in a party have roughly the same ideas about governing the Netherlands."
+              }
+            },
+            {
+              "id": "p8-02",
+              "type": "multiple_choice",
+              "prompt": "Welk idee past bij een linkse partij?",
+              "prompt_en": "Which idea fits a left-wing party?",
+              "answer": "Rijke mensen moeten meer belasting betalen",
+              "distractors": [
+                "Mensen moeten zoveel mogelijk voor zichzelf zorgen",
+                "Alles moet hetzelfde blijven",
+                "Er moeten geen verkiezingen zijn"
+              ],
+              "explanation": {
+                "nl": "Links: de regering moet voor arme mensen zorgen. Rechts: mensen zorgen zoveel mogelijk voor zichzelf.",
+                "en": "Left: the government must take care of poor people. Right: people take care of themselves as much as possible."
+              }
+            },
+            {
+              "id": "p8-03",
+              "type": "multiple_choice",
+              "prompt": "Een partij wil dat veel dingen in de maatschappij hetzelfde blijven. Hoe noem je dat?",
+              "prompt_en": "A party wants many things in society to stay the same. What do you call that?",
+              "answer": "Conservatief",
+              "distractors": [
+                "Progressief",
+                "Links",
+                "Neutraal"
+              ],
+              "explanation": {
+                "nl": "Progressieve partijen vinden het goed dat de maatschappij verandert.",
+                "en": "Progressive parties think it's good that society changes."
+              }
+            },
+            {
+              "id": "p8-04",
+              "type": "multiple_choice",
+              "prompt": "Wie is de belangrijkste persoon van een partij bij de verkiezingen?",
+              "prompt_en": "Who is a party's most important person at election time?",
+              "answer": "De lijsttrekker",
+              "distractors": [
+                "De burgemeester",
+                "De koning",
+                "De staatssecretaris"
+              ],
+              "explanation": {
+                "nl": "De lijsttrekker is veel op televisie en praat over de plannen van de partij.",
+                "en": "The party leader is often on TV talking about the party's plans."
+              }
+            },
+            {
+              "id": "p8-05",
+              "type": "multiple_choice",
+              "prompt": "Waar ga je naartoe om te stemmen?",
+              "prompt_en": "Where do you go to vote?",
+              "answer": "Naar een stembureau",
+              "distractors": [
+                "Naar de rechtbank",
+                "Naar de Belastingdienst",
+                "Naar het waterschap"
+              ],
+              "explanation": {
+                "nl": "In het stembureau vul je het stembiljet in met een rood potlood.",
+                "en": "At the polling station you fill in the ballot paper with a red pencil."
+              }
+            },
+            {
+              "id": "p8-06",
+              "type": "fill_blank",
+              "prompt": "In het stembureau kleur je het stembiljet in met een ___ potlood.",
+              "prompt_en": "At the polling station you fill in the ballot paper with a red pencil.",
+              "answer": "rood",
+              "distractors": [
+                "blauw",
+                "zwart",
+                "groen"
+              ],
+              "explanation": {
+                "nl": "Je kleurt het hokje voor de persoon op wie je stemt.",
+                "en": "You fill in the box for the person you vote for."
+              }
+            },
+            {
+              "id": "p8-07",
+              "type": "multiple_choice",
+              "prompt": "Hoe heten de partijen die samen de regering vormen?",
+              "prompt_en": "What are the parties that form the government together called?",
+              "answer": "De coalitie",
+              "distractors": [
+                "De oppositie",
+                "Het kabinet",
+                "De Eerste Kamer"
+              ],
+              "explanation": {
+                "nl": "De coalitie heeft meestal een meerderheid in de Tweede Kamer. De ministers komen uit de coalitie.",
+                "en": "The coalition usually has a majority in the House of Representatives. The ministers come from the coalition."
+              }
+            },
+            {
+              "id": "p8-08",
+              "type": "multiple_choice",
+              "prompt": "Hoe heten de partijen die niet in de regering zitten?",
+              "prompt_en": "What are the parties that are not in the government called?",
+              "answer": "De oppositie",
+              "distractors": [
+                "De coalitie",
+                "De meerderheid",
+                "Het kabinet"
+              ],
+              "explanation": {
+                "nl": "Partijen die niet in de coalitie zitten, zijn de oppositie.",
+                "en": "Parties not in the coalition are the opposition."
+              }
+            },
+            {
+              "id": "p8-09",
+              "type": "true_false",
+              "prompt": "Er kunnen eerder dan na 4 jaar nieuwe verkiezingen zijn.",
+              "prompt_en": "There can be new elections before 4 years have passed.",
+              "answer": true,
+              "explanation": {
+                "nl": "Als partijen in de regering niet meer kunnen samenwerken, komen er soms eerder verkiezingen.",
+                "en": "If parties in the government can no longer work together, elections sometimes come earlier."
+              }
+            },
+            {
+              "id": "p8-10",
+              "type": "build_sentence",
+              "prompt_en": "Voting is a right.",
+              "answer": "Stemmen is een recht",
+              "distractors": [
+                "plicht",
+                "zijn"
+              ],
+              "explanation": null
+            }
+          ]
+        }
+      ],
+      "vocabulary": [
+        {
+          "id": "politiek-v01",
+          "nl": "rechtsstaat",
+          "en": "constitutional state"
+        },
+        {
+          "id": "politiek-v02",
+          "nl": "de wet",
+          "en": "the law"
+        },
+        {
+          "id": "politiek-v03",
+          "nl": "Grondwet",
+          "en": "constitution"
+        },
+        {
+          "id": "politiek-v04",
+          "nl": "vrijheid van meningsuiting",
+          "en": "freedom of expression"
+        },
+        {
+          "id": "politiek-v05",
+          "nl": "vrijheid van godsdienst",
+          "en": "freedom of religion"
+        },
+        {
+          "id": "politiek-v06",
+          "nl": "vrijheid van onderwijs",
+          "en": "freedom of education"
+        },
+        {
+          "id": "politiek-v07",
+          "nl": "scheiding tussen wet en religie",
+          "en": "separation of law and religion"
+        },
+        {
+          "id": "politiek-v08",
+          "nl": "boete",
+          "en": "fine"
+        },
+        {
+          "id": "politiek-v09",
+          "nl": "gevangenis",
+          "en": "prison"
+        },
+        {
+          "id": "politiek-v10",
+          "nl": "Slachtofferhulp Nederland",
+          "en": "Victim Support Netherlands"
+        },
+        {
+          "id": "politiek-v11",
+          "nl": "scheiding van de machten",
+          "en": "separation of powers"
+        },
+        {
+          "id": "politiek-v12",
+          "nl": "uitvoerende macht",
+          "en": "executive power"
+        },
+        {
+          "id": "politiek-v13",
+          "nl": "wetgevende macht",
+          "en": "legislative power"
+        },
+        {
+          "id": "politiek-v14",
+          "nl": "rechterlijke macht",
+          "en": "judicial power"
+        },
+        {
+          "id": "politiek-v15",
+          "nl": "regering",
+          "en": "government"
+        },
+        {
+          "id": "politiek-v16",
+          "nl": "koning",
+          "en": "king"
+        },
+        {
+          "id": "politiek-v17",
+          "nl": "minister-president",
+          "en": "prime minister"
+        },
+        {
+          "id": "politiek-v18",
+          "nl": "rechter",
+          "en": "judge"
+        },
+        {
+          "id": "politiek-v19",
+          "nl": "Eerste Kamer",
+          "en": "Senate (75 members)"
+        },
+        {
+          "id": "politiek-v20",
+          "nl": "Tweede Kamer",
+          "en": "House of Representatives (150 members)"
+        },
+        {
+          "id": "politiek-v21",
+          "nl": "parlement",
+          "en": "parliament"
+        },
+        {
+          "id": "politiek-v22",
+          "nl": "democratie",
+          "en": "democracy"
+        },
+        {
+          "id": "politiek-v23",
+          "nl": "koninkrijk",
+          "en": "kingdom"
+        },
+        {
+          "id": "politiek-v24",
+          "nl": "verkiezingen",
+          "en": "elections"
+        },
+        {
+          "id": "politiek-v25",
+          "nl": "kiesrecht",
+          "en": "right to vote"
+        },
+        {
+          "id": "politiek-v26",
+          "nl": "actief kiesrecht",
+          "en": "the right to vote"
+        },
+        {
+          "id": "politiek-v27",
+          "nl": "passief kiesrecht",
+          "en": "the right to be elected"
+        },
+        {
+          "id": "politiek-v28",
+          "nl": "waterschap",
+          "en": "regional water authority"
+        },
+        {
+          "id": "politiek-v29",
+          "nl": "referendum",
+          "en": "yes-or-no vote"
+        },
+        {
+          "id": "politiek-v30",
+          "nl": "staatssecretaris",
+          "en": "state secretary"
+        },
+        {
+          "id": "politiek-v31",
+          "nl": "kabinet",
+          "en": "cabinet"
+        },
+        {
+          "id": "politiek-v32",
+          "nl": "commissaris van de Koning",
+          "en": "King's commissioner"
+        },
+        {
+          "id": "politiek-v33",
+          "nl": "planologie",
+          "en": "spatial planning"
+        },
+        {
+          "id": "politiek-v34",
+          "nl": "gemeenteraad",
+          "en": "municipal council"
+        },
+        {
+          "id": "politiek-v35",
+          "nl": "burgemeester",
+          "en": "mayor"
+        },
+        {
+          "id": "politiek-v36",
+          "nl": "Europese Commissie",
+          "en": "European Commission"
+        },
+        {
+          "id": "politiek-v37",
+          "nl": "troonrede",
+          "en": "Speech from the Throne"
+        },
+        {
+          "id": "politiek-v38",
+          "nl": "rechts",
+          "en": "right-wing"
+        },
+        {
+          "id": "politiek-v39",
+          "nl": "links",
+          "en": "left-wing"
+        },
+        {
+          "id": "politiek-v40",
+          "nl": "progressief",
+          "en": "progressive"
+        },
+        {
+          "id": "politiek-v41",
+          "nl": "conservatief",
+          "en": "conservative"
+        },
+        {
+          "id": "politiek-v42",
+          "nl": "lijsttrekker",
+          "en": "party leader (top of the list)"
+        },
+        {
+          "id": "politiek-v43",
+          "nl": "stembureau",
+          "en": "polling station"
+        },
+        {
+          "id": "politiek-v44",
+          "nl": "stembiljet",
+          "en": "ballot paper"
+        },
+        {
+          "id": "politiek-v45",
+          "nl": "meerderheid",
+          "en": "majority"
+        },
+        {
+          "id": "politiek-v46",
+          "nl": "coalitie",
+          "en": "coalition"
+        },
+        {
+          "id": "politiek-v47",
+          "nl": "oppositie",
+          "en": "opposition"
         }
       ]
     }

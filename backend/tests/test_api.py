@@ -104,7 +104,7 @@ def test_session_updates_progress_and_mistakes(table):
     status, res = call("POST /me/sessions", body=session())
     assert status == 201
     # 2 first-try correct, 4 hearts left -> 5 + 2*2 = 9 XP; first finished run -> 1 star
-    # w1-01 and w1-03 were first-try correct: both move from new to learning -> 2 learned
+    # w1-01 and w1-03 were first-try correct: both become known -> 2 learned
     assert res == {"xp_gained": 9, "stars": 1, "streak": 1, "xp_total": 9, "learned": 2, "duplicate": False}
 
     status, prog = call("GET /me/progress")
@@ -115,8 +115,8 @@ def test_session_updates_progress_and_mistakes(table):
     assert prog["daily_goal_xp"] == 50
     assert prog["daily_goal_questions"] == 10
     assert prog["today_learned"] == 2
-    assert prog["items"] == {"w1-01": ["learning", TODAY.isoformat()], "w1-02": ["learning", ""],
-                             "w1-03": ["learning", TODAY.isoformat()]}
+    assert prog["items"] == {"w1-01": ["known", TODAY.isoformat(), "1"], "w1-02": ["learning", "", "0"],
+                             "w1-03": ["known", TODAY.isoformat(), "1"]}
 
     status, m = call("GET /me/mistakes")
     assert [x["item_id"] for x in m["mistakes"]] == ["w1-02"]
@@ -218,30 +218,37 @@ def _item(table, qid, sub="user-1"):
     return table.get_item(Key={"PK": f"USER#{sub}", "SK": f"ITEM#{qid}"}).get("Item")
 
 
-def test_known_after_first_try_correct_on_two_days(table):
+def test_review_the_next_day_moves_up_a_box(table):
     yesterday = (TODAY - timedelta(days=1)).isoformat()
     _, res = call("POST /me/sessions", body=session(local_date=yesterday))
     assert res["learned"] == 2
     _, res = call("POST /me/sessions", body=session())
-    # w1-01 and w1-03 correct again on a new day -> known (2 learned); w1-02 missed again stays learning
-    assert res["learned"] == 2
+    # Already known: a review isn't "learned" again, but box 1 was due, so it moves to box 2.
+    assert res["learned"] == 0
     _, prog = call("GET /me/progress")
-    assert prog["items"]["w1-01"] == ["known", TODAY.isoformat()]
-    assert prog["items"]["w1-02"] == ["learning", ""]
-    assert [d["learned"] for d in prog["days"]] == [2, 2]
+    assert prog["items"]["w1-01"] == ["known", TODAY.isoformat(), "2"]
+    assert prog["items"]["w1-02"] == ["learning", "", "0"]
+    assert prog["days"][-1]["learned"] == 2 and prog["today_learned"] == 0
 
 
-def test_same_day_twice_is_not_known(table):
+def test_same_day_review_changes_nothing(table):
     call("POST /me/sessions", body=session())
     _, res = call("POST /me/sessions", body=session())
     assert res["learned"] == 0
     _, prog = call("GET /me/progress")
-    assert prog["items"]["w1-01"][0] == "learning"
+    assert prog["items"]["w1-01"] == ["known", TODAY.isoformat(), "1"]
+
+
+def test_rows_from_the_two_day_version_show_with_the_new_rule(table):
+    yesterday = (TODAY - timedelta(days=1)).isoformat()
+    table.put_item(Item={"PK": "USER#user-1", "SK": "ITEM#w2-01", "state": "learning", "last_correct": yesterday})
+    table.put_item(Item={"PK": "USER#user-1", "SK": "ITEM#w2-02", "state": "learning"})
+    _, prog = call("GET /me/progress")
+    assert prog["items"]["w2-01"] == ["known", yesterday, "1"]
+    assert prog["items"]["w2-02"] == ["learning", "", "0"]
 
 
 def test_miss_sends_known_back_to_learning(table):
-    yesterday = (TODAY - timedelta(days=1)).isoformat()
-    call("POST /me/sessions", body=session(local_date=yesterday))
     call("POST /me/sessions", body=session())
     assert _item(table, "w1-01")["state"] == "known"
     miss = session(answers=[{"item_id": "w1-01", "correct": False, "picked": "De gemeente"},
@@ -249,7 +256,7 @@ def test_miss_sends_known_back_to_learning(table):
     _, res = call("POST /me/sessions", body=miss)
     assert res["learned"] == 0
     item = _item(table, "w1-01")
-    assert item["state"] == "learning" and "last_correct" not in item
+    assert item["state"] == "learning" and "last_correct" not in item and item["box"] == 0
     assert item["wrong_picks"] == ["De gemeente"]
 
 

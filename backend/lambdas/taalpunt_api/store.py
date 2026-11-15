@@ -3,9 +3,9 @@
 Key layout (PK = USER#<cognito sub>):
   SK = PROFILE              xp_total, streak, last_day
   SK = LESSON#<lesson_id>   best_stars, completions, last_completed
-  SK = DAY#<yyyy-mm-dd>     xp, learned (questions that moved up that day)
+  SK = DAY#<yyyy-mm-dd>     xp, learned (questions that became known that day)
   SK = MISTAKE#<item_id>    wrong_count, last_wrong
-  SK = ITEM#<question_id>   state (learning|known), last_correct, last_seen, wrong_picks (FR-002 mastery)
+  SK = ITEM#<question_id>   state (learning|known), last_correct, box (spaced review), last_seen, wrong_picks (FR-002)
   SK = SESSION#<uuid>       summary of one finished or failed lesson (expires after a year)
 """
 from __future__ import annotations
@@ -20,7 +20,7 @@ from boto3.dynamodb.conditions import Key
 from boto3.dynamodb.types import TypeDeserializer, TypeSerializer
 from botocore.exceptions import ClientError
 
-from .mastery import MAX_WRONG_PICKS, is_progress, is_question, next_state
+from .mastery import MAX_WRONG_PICKS, is_progress, is_question, next_state, normalize
 from .scoring import lesson_stars, lesson_xp, next_streak, visible_streak
 from .validation import RATED_KINDS, Session
 
@@ -91,9 +91,12 @@ def get_progress(sub: str, today: date) -> dict:
             for i in _query_prefix(sub, "DAY#", newest_first=True, limit=DAY_HISTORY)]
     today_day = next((d for d in days if d["date"] == today.isoformat()), {})
     mistakes = _query_prefix(sub, "MISTAKE#")
-    # Compact on purpose: about 600 questions → a few KB. [state, last first-try-correct day or ""].
-    items = {i["SK"].split("#", 1)[1]: [i.get("state", "learning"), i.get("last_correct", "")]
-             for i in _query_prefix(sub, "ITEM#")}
+    # Compact on purpose: about 600 questions → a few KB. [state, last correct day or "", review box],
+    # all strings so clients can read every entry as a list of text.
+    items = {}
+    for i in _query_prefix(sub, "ITEM#"):
+        state, last_correct, box = normalize(i)
+        items[i["SK"].split("#", 1)[1]] = [state, last_correct or "", str(box)]
     return _plain({
         "xp_total": profile.get("xp_total", 0),
         "streak": visible_streak(int(profile.get("streak", 0)), last_day, today),
@@ -158,14 +161,15 @@ def record_session(sub: str, s: Session, now: datetime | None = None) -> dict:
     learned = 0
     for qid, a in first.items():
         prev = before.get(qid, {})
-        prev_state = prev.get("state", "new")
-        state, last_correct = next_state(prev_state, prev.get("last_correct"), a.correct, day)
+        prev_state, prev_correct, prev_box = normalize(prev)
+        state, last_correct, box = next_state(prev_state, prev_correct, prev_box, a.correct, day)
         if is_progress(prev_state, state, a.correct):
             learned += 1
         picks = list(prev.get("wrong_picks", []))
         if not a.correct and a.picked:
             picks = (picks + [a.picked])[-MAX_WRONG_PICKS:]
-        row = {"PK": pk, "SK": f"ITEM#{qid}", "state": state, "last_seen": day, "updated_at": now.isoformat(timespec="seconds")}
+        row = {"PK": pk, "SK": f"ITEM#{qid}", "state": state, "box": box, "last_seen": day,
+               "updated_at": now.isoformat(timespec="seconds")}
         if last_correct:
             row["last_correct"] = last_correct
         if picks:

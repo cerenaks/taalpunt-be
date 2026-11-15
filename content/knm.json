@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "content_version": "2026-11-15.1",
+  "content_version": "2026-11-16.1",
   "language": "nl",
   "translation": "en",
   "sources": [
@@ -61,8 +61,8 @@
             {
               "id": "w1-03",
               "type": "multiple_choice",
-              "prompt": "Wie krijgt de volgende beschikbare huurwoning?",
-              "prompt_en": "Who gets the next available rental home?",
+              "prompt": "Je staat op de wachtlijst voor een sociale huurwoning. Wie krijgt de volgende vrije woning?",
+              "prompt_en": "You're on the waiting list for a social rental home. Who gets the next available home?",
               "answer": "Wie het langst op de wachtlijst staat",
               "distractors": [
                 "Wie als eerste belt",
@@ -141,8 +141,8 @@
             {
               "id": "w1-08",
               "type": "true_false",
-              "prompt": "Je wachttijd begint op de dag dat je je inschrijft.",
-              "prompt_en": "Your waiting time starts on the day you register.",
+              "prompt": "Je schrijft je in bij een woningcorporatie voor een sociale huurwoning. Je wachttijd begint op de dag dat je je inschrijft.",
+              "prompt_en": "You register with a housing corporation for a social rental home. Your waiting time starts on the day you register.",
               "answer": true,
               "explanation": {
                 "nl": "Je krijgt wachttijd vanaf je inschrijfdatum.",
@@ -163,8 +163,8 @@
             {
               "id": "w1-10",
               "type": "fill_blank",
-              "prompt": "Hoe ___ je inschrijft, hoe meer kans.",
-              "prompt_en": "The earlier you register, the better your chances.",
+              "prompt": "Wachtlijst voor een sociale huurwoning: hoe ___ je je inschrijft, hoe meer kans je hebt.",
+              "prompt_en": "Waiting list for a social rental home: the earlier you register, the better your chances.",
               "answer": "eerder",
               "distractors": [
                 "later",
@@ -190,8 +190,8 @@
             {
               "id": "w1-13",
               "type": "multiple_choice",
-              "prompt": "Wat betekent urgentie?",
-              "prompt_en": "What does urgency mean?",
+              "prompt": "Wat betekent urgentie bij het zoeken naar een sociale huurwoning?",
+              "prompt_en": "What does urgency mean when you're looking for a social rental home?",
               "answer": "Tijdelijk voorrang op een sociale huurwoning",
               "distractors": [
                 "Een korting op de huur",
@@ -451,8 +451,8 @@
             {
               "id": "w3-03",
               "type": "multiple_choice",
-              "prompt": "Met een laag inkomen kun je…",
-              "prompt_en": "With a low income you can…",
+              "prompt": "Je wilt een huis kopen. Met een laag inkomen kun je…",
+              "prompt_en": "You want to buy a house. With a low income you can…",
               "answer": "minder of soms geen hypotheek krijgen",
               "distractors": [
                 "meer hypotheek krijgen",
@@ -510,8 +510,8 @@
             {
               "id": "w3-07",
               "type": "true_false",
-              "prompt": "Elke bank vraagt dezelfde rente.",
-              "prompt_en": "Every bank charges the same interest.",
+              "prompt": "Elke bank vraagt dezelfde rente voor een hypotheek.",
+              "prompt_en": "Every bank charges the same interest on a mortgage.",
               "answer": false,
               "explanation": {
                 "nl": "Hoeveel rente je betaalt, is per bank verschillend.",
@@ -678,8 +678,8 @@
             {
               "id": "w4-06",
               "type": "multiple_choice",
-              "prompt": "Er is geen gas meer. Wie bel je?",
-              "prompt_en": "There's no more gas. Who do you call?",
+              "prompt": "Er is een storing en je hebt geen gas meer. Wie bel je?",
+              "prompt_en": "There's an outage and you have no gas. Who do you call?",
               "answer": "Het Nationaal Storingsnummer",
               "distractors": [
                 "De Huurcommissie",
@@ -732,8 +732,8 @@
             {
               "id": "w4-10",
               "type": "fill_blank",
-              "prompt": "Geen aanmelding = geen ___!",
-              "prompt_en": "No registration = no supply!",
+              "prompt": "Je verhuist. Meld je op tijd aan bij een energiebedrijf, want geen aanmelding = geen ___!",
+              "prompt_en": "You're moving. Sign up with an energy company in time, because no registration = no supply!",
               "answer": "levering",
               "distractors": [
                 "boete",
@@ -1385,8 +1385,8 @@
             {
               "id": "k1-09",
               "type": "fill_blank",
-              "prompt": "Zoek dagelijks of stel een ___ in.",
-              "prompt_en": "Search daily or set up a job alert.",
+              "prompt": "Je zoekt werk. Zoek dagelijks naar vacatures of stel een ___ in.",
+              "prompt_en": "You're looking for work. Search for vacancies daily or set up a job alert.",
               "answer": "vacature-alert",
               "distractors": [
                 "urgentieverklaring",
@@ -1564,8 +1564,8 @@
             {
               "id": "k2-10",
               "type": "fill_blank",
-              "prompt": "Zonder taal is doorgroeien bijna ___.",
-              "prompt_en": "Without the language, growing in a company is almost impossible.",
+              "prompt": "Op je werk: zonder Nederlands is doorgroeien naar een betere baan bijna ___.",
+              "prompt_en": "At work: without Dutch, moving up to a better job is almost impossible.",
               "answer": "onmogelijk",
               "distractors": [
                 "verplicht",
@@ -1710,8 +1710,8 @@
             {
               "id": "k3-06",
               "type": "multiple_choice",
-              "prompt": "Vanaf welke leeftijd krijg je AOW (volgens je notities)?",
-              "prompt_en": "From what age do you get AOW (according to your notes)?",
+              "prompt": "Vanaf welke leeftijd krijg je AOW (het pensioen van de overheid)?",
+              "prompt_en": "From what age do you get AOW (the state pension)?",
               "answer": "67 jaar",
               "distractors": [
                 "55 jaar",
@@ -1796,8 +1796,8 @@
             {
               "id": "k3-12",
               "type": "multiple_choice",
-              "prompt": "Wat kan er gebeuren als je een wijziging niet meldt?",
-              "prompt_en": "What can happen if you don't report a change?",
+              "prompt": "Je hebt een uitkering. Wat kan er gebeuren als je een verandering, zoals nieuw werk, niet meldt?",
+              "prompt_en": "You receive a benefit. What can happen if you don't report a change, such as a new job?",
               "answer": "Een boete, of je uitkering wordt verlaagd of gestopt",
               "distractors": [
                 "Je krijgt extra geld",
@@ -1844,8 +1844,8 @@
             {
               "id": "k3-15",
               "type": "multiple_choice",
-              "prompt": "Welke toeslag moet je zelf aanvragen?",
-              "prompt_en": "Which allowance must you apply for yourself?",
+              "prompt": "Je hebt een laag inkomen. Wat vraag je zelf aan bij de Belastingdienst om je zorgverzekering te betalen?",
+              "prompt_en": "You have a low income. What do you apply for yourself at the Tax Administration to help pay your health insurance?",
               "answer": "Zorgtoeslag",
               "distractors": [
                 "AOW",
@@ -2969,8 +2969,8 @@
             {
               "id": "i2-05",
               "type": "fill_blank",
-              "prompt": "Probeer te luisteren naar de ___, niet naar de toon.",
-              "prompt_en": "Try to listen to the message, not to the tone.",
+              "prompt": "Iemand zegt iets heel direct tegen je. Probeer te luisteren naar de ___, niet naar de toon.",
+              "prompt_en": "Someone says something very directly to you. Try to listen to the message, not to the tone.",
               "answer": "boodschap",
               "distractors": [
                 "muziek",
@@ -3316,8 +3316,8 @@
             {
               "id": "i4-03",
               "type": "multiple_choice",
-              "prompt": "Wat doen leden vaak voor een vereniging?",
-              "prompt_en": "What do members often do for a club?",
+              "prompt": "Wat doen leden vaak voor een vereniging, zoals een sportclub?",
+              "prompt_en": "What do members often do for a club, such as a sports club?",
               "answer": "Helpen, bijvoorbeeld achter de bar staan",
               "distractors": [
                 "Belasting betalen aan de club",
@@ -3694,13 +3694,13 @@
             {
               "id": "i6-03",
               "type": "multiple_choice",
-              "prompt": "Roze muisjes betekent…",
-              "prompt_en": "Pink sprinkles mean…",
-              "answer": "een meisje",
+              "prompt": "Bij een kraamvisite krijg je beschuit met roze muisjes. Wat betekent dat?",
+              "prompt_en": "At a maternity visit you get rusks with pink sprinkles. What does that mean?",
+              "answer": "Het is een meisje",
               "distractors": [
-                "een jongen",
-                "een tweeling",
-                "een bruiloft"
+                "Het is een jongen",
+                "Het is een tweeling",
+                "Er is een bruiloft"
               ],
               "explanation": {
                 "nl": "Meisje → roze muisjes. Jongen → blauwe muisjes.",
@@ -4385,8 +4385,8 @@
             {
               "id": "o2-12",
               "type": "true_false",
-              "prompt": "Verandert je inkomen? Dan moet je dat snel doorgeven, anders moet je toeslag terugbetalen.",
-              "prompt_en": "Does your income change? Then you must report it quickly, otherwise you have to pay benefit back.",
+              "prompt": "Je krijgt kinderopvangtoeslag. Verandert je inkomen? Dan moet je dat snel doorgeven, anders moet je toeslag terugbetalen.",
+              "prompt_en": "You receive childcare benefit. Does your income change? Then report it quickly, otherwise you have to pay benefit back.",
               "answer": true,
               "explanation": {
                 "nl": "Geef veranderingen in inkomen of opvanguren snel door.",
@@ -5883,8 +5883,8 @@
             {
               "id": "g3-09",
               "type": "multiple_choice",
-              "prompt": "Je kunt niet naar je afspraak. Wanneer meld je je meestal af?",
-              "prompt_en": "You can't make your appointment. When do you usually cancel?",
+              "prompt": "Je kunt niet naar je afspraak bij de huisarts of tandarts. Wanneer meld je je meestal af?",
+              "prompt_en": "You can't make your GP or dentist appointment. When do you usually cancel?",
               "answer": "Minstens 24 uur van tevoren",
               "distractors": [
                 "Een uur van tevoren",
@@ -5899,8 +5899,8 @@
             {
               "id": "g3-10",
               "type": "true_false",
-              "prompt": "Als je een afspraak vergeet, moet je hem toch betalen.",
-              "prompt_en": "If you forget an appointment, you still have to pay for it.",
+              "prompt": "Je vergeet je afspraak bij de tandarts. Je moet de afspraak toch betalen.",
+              "prompt_en": "You forget your dentist appointment. You still have to pay for it.",
               "answer": true,
               "explanation": {
                 "nl": "Daarna maak je een nieuwe afspraak.",
@@ -6216,8 +6216,8 @@
             {
               "id": "g6-01",
               "type": "multiple_choice",
-              "prompt": "Wie helpt na de geboorte een week lang in huis?",
-              "prompt_en": "Who helps at home for a week after the birth?",
+              "prompt": "Wie helpt na de geboorte van je baby een week lang in huis?",
+              "prompt_en": "Who helps at home for a week after your baby is born?",
               "answer": "De kraamhulp",
               "distractors": [
                 "De huisarts",
@@ -6660,8 +6660,8 @@
             {
               "id": "g8-07",
               "type": "fill_blank",
-              "prompt": "Na je aanvraag heb je een gesprek met de gemeente. Dit heet het ___.",
-              "prompt_en": "After your application you have a conversation with the municipality. This is called the kitchen table talk.",
+              "prompt": "Je vraagt hulp thuis aan via de Wmo. Daarna heb je een gesprek met de gemeente. Dit heet het ___.",
+              "prompt_en": "You apply for help at home through the Wmo. Then you have a conversation with the municipality. This is called the kitchen table talk.",
               "answer": "keukentafelgesprek",
               "distractors": [
                 "sollicitatiegesprek",
@@ -6676,8 +6676,8 @@
             {
               "id": "g8-08",
               "type": "multiple_choice",
-              "prompt": "Hoe heet het besluit van de gemeente over je aanvraag?",
-              "prompt_en": "What is the municipality's decision on your application called?",
+              "prompt": "Hoe heet het besluit van de gemeente over je Wmo-aanvraag?",
+              "prompt_en": "What is the municipality's decision on your Wmo application called?",
               "answer": "Een beschikking",
               "distractors": [
                 "Een recept",
@@ -7460,8 +7460,8 @@
             {
               "id": "n4-06",
               "type": "multiple_choice",
-              "prompt": "Hoe lang bewaar je je jaaropgave?",
-              "prompt_en": "How long do you keep your annual statement?",
+              "prompt": "Hoe lang bewaar je je jaaropgave (het overzicht van je salaris over een heel jaar)?",
+              "prompt_en": "How long do you keep your annual statement (the overview of your salary for a whole year)?",
               "answer": "5 jaar",
               "distractors": [
                 "1 maand",
@@ -8036,8 +8036,8 @@
             {
               "id": "n8-06",
               "type": "multiple_choice",
-              "prompt": "Waar log je veilig in?",
-              "prompt_en": "Where do you log in safely?",
+              "prompt": "Waar log je veilig in met je DigiD?",
+              "prompt_en": "Where do you log in safely with your DigiD?",
               "answer": "Alleen via officiële websites van de overheid",
               "distractors": [
                 "Via een link in een onbekende e-mail",
@@ -9961,8 +9961,8 @@
             {
               "id": "h3-03",
               "type": "fill_blank",
-              "prompt": "Mensen die in de fabriek werkten, heetten ___.",
-              "prompt_en": "People who worked in the factory were called workers.",
+              "prompt": "In de industriële revolutie werkten veel mensen in fabrieken. Zij heetten ___.",
+              "prompt_en": "In the Industrial Revolution many people worked in factories. They were called workers.",
               "answer": "arbeiders",
               "distractors": [
                 "boeren",
@@ -9977,8 +9977,8 @@
             {
               "id": "h3-04",
               "type": "multiple_choice",
-              "prompt": "Wat wilden de socialisten?",
-              "prompt_en": "What did the socialists want?",
+              "prompt": "Wat wilden de socialisten in de tijd van de industriële revolutie?",
+              "prompt_en": "What did the socialists want at the time of the Industrial Revolution?",
               "answer": "Betere levens voor arbeiders en gelijke rechten",
               "distractors": [
                 "Meer macht voor de koning",
@@ -10075,8 +10075,8 @@
             {
               "id": "h4-04",
               "type": "multiple_choice",
-              "prompt": "Wat deed het verzet?",
-              "prompt_en": "What did the resistance do?",
+              "prompt": "Wat deed het verzet in de Tweede Wereldoorlog?",
+              "prompt_en": "What did the resistance do in the Second World War?",
               "answer": "Joden helpen met onderduiken",
               "distractors": [
                 "De Duitsers helpen",
@@ -10184,8 +10184,8 @@
             {
               "id": "h5-01",
               "type": "multiple_choice",
-              "prompt": "Wat deden mensen direct na de oorlog?",
-              "prompt_en": "What did people do right after the war?",
+              "prompt": "Wat deden mensen in Nederland direct na de Tweede Wereldoorlog?",
+              "prompt_en": "What did people in the Netherlands do right after the Second World War?",
               "answer": "Het land weer opbouwen",
               "distractors": [
                 "Een nieuwe oorlog beginnen",
@@ -10216,8 +10216,8 @@
             {
               "id": "h5-03",
               "type": "multiple_choice",
-              "prompt": "In welk jaar was de grote overstroming?",
-              "prompt_en": "In which year was the great flood?",
+              "prompt": "In welk jaar was de grote overstroming (watersnoodramp) in Zeeland?",
+              "prompt_en": "In which year was the great flood in Zeeland?",
               "answer": "1953",
               "distractors": [
                 "1945",
@@ -10232,8 +10232,8 @@
             {
               "id": "h5-04",
               "type": "multiple_choice",
-              "prompt": "Welk plan maakte de regering na de overstroming?",
-              "prompt_en": "Which plan did the government make after the flood?",
+              "prompt": "Welk plan maakte de regering na de grote overstroming van 1953?",
+              "prompt_en": "Which plan did the government make after the great flood of 1953?",
               "answer": "Het Deltaplan",
               "distractors": [
                 "Het Marshallplan",
@@ -10320,8 +10320,8 @@
             {
               "id": "h6-01",
               "type": "multiple_choice",
-              "prompt": "Wat gebeurde er in de jaren 1960–1970?",
-              "prompt_en": "What happened in the 1960s–1970s?",
+              "prompt": "Wat gebeurde er in Nederland in de jaren 1960–1970?",
+              "prompt_en": "What happened in the Netherlands in the 1960s–1970s?",
               "answer": "Mensen wilden meer vrijheid",
               "distractors": [
                 "De Tachtigjarige Oorlog begon",

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "content_version": "2026-11-14.2",
+  "content_version": "2026-11-15.1",
   "language": "nl",
   "translation": "en",
   "sources": [
@@ -10,7 +10,8 @@
     "KNM 4) Onderwijs en opvoeding",
     "KNM 5) Gezondheid",
     "KNM 6) Instanties",
-    "KNM 7) Politiek"
+    "KNM 7) Politiek",
+    "KNM 8) Geschiedenis en geografie"
   ],
   "units": [
     {
@@ -9627,6 +9628,1482 @@
           "id": "politiek-v47",
           "nl": "oppositie",
           "en": "opposition"
+        }
+      ]
+    },
+    {
+      "id": "geschiedenis",
+      "number": 8,
+      "title": "Geschiedenis en geografie",
+      "title_en": "History and geography",
+      "color": "orange",
+      "lessons": [
+        {
+          "id": "h1",
+          "title": "Van de Romeinen tot de Republiek",
+          "title_en": "From the Romans to the Republic",
+          "questions": [
+            {
+              "id": "h1-01",
+              "type": "multiple_choice",
+              "prompt": "Welke steden komen uit de tijd van de Romeinen?",
+              "prompt_en": "Which cities date from the time of the Romans?",
+              "answer": "Utrecht en Maastricht",
+              "distractors": [
+                "Amsterdam en Rotterdam",
+                "Lelystad en Almere",
+                "Den Haag en Haarlem"
+              ],
+              "explanation": {
+                "nl": "Rond het jaar 0 bezetten de Romeinen Nederland.",
+                "en": "Around the year 0 the Romans occupied the Netherlands."
+              }
+            },
+            {
+              "id": "h1-02",
+              "type": "true_false",
+              "prompt": "In de middeleeuwen waren de meeste mensen boeren.",
+              "prompt_en": "In the Middle Ages most people were farmers.",
+              "answer": true,
+              "explanation": {
+                "nl": "Er waren ook steden, maar de meeste mensen waren arme boeren.",
+                "en": "There were also cities, but most people were poor farmers."
+              }
+            },
+            {
+              "id": "h1-03",
+              "type": "multiple_choice",
+              "prompt": "Tegen wie vochten de protestanten in de Tachtigjarige Oorlog?",
+              "prompt_en": "Who did the Protestants fight against in the Eighty Years' War?",
+              "answer": "Koning Filips II van Spanje",
+              "distractors": [
+                "Napoleon",
+                "Duitsland",
+                "Engeland"
+              ],
+              "explanation": {
+                "nl": "Filips II was katholiek en wilde dat iedereen katholiek was.",
+                "en": "Philip II was Catholic and wanted everyone to be Catholic."
+              }
+            },
+            {
+              "id": "h1-04",
+              "type": "multiple_choice",
+              "prompt": "Wanneer begon de Tachtigjarige Oorlog?",
+              "prompt_en": "When did the Eighty Years' War begin?",
+              "answer": "1568",
+              "distractors": [
+                "1648",
+                "1815",
+                "1940"
+              ],
+              "explanation": {
+                "nl": "De oorlog duurde van 1568 tot 1648.",
+                "en": "The war lasted from 1568 to 1648."
+              }
+            },
+            {
+              "id": "h1-05",
+              "type": "multiple_choice",
+              "prompt": "Wie was de leider van het verzet tegen Filips II?",
+              "prompt_en": "Who led the resistance against Philip II?",
+              "answer": "Willem van Oranje",
+              "distractors": [
+                "Rembrandt",
+                "Willem-Alexander",
+                "Koningin Wilhelmina"
+              ],
+              "explanation": {
+                "nl": "Willem van Oranje werd in 1584 vermoord. Hij is een voorvader van koning Willem-Alexander.",
+                "en": "William of Orange was murdered in 1584. He is an ancestor of King Willem-Alexander."
+              }
+            },
+            {
+              "id": "h1-06",
+              "type": "fill_blank",
+              "prompt": "Het volkslied van Nederland heet het ___.",
+              "prompt_en": "The Dutch national anthem is called the Wilhelmus.",
+              "answer": "Wilhelmus",
+              "distractors": [
+                "Oranjelied",
+                "Koningslied",
+                "Vrijheidslied"
+              ],
+              "explanation": {
+                "nl": "Wilhelmus = Willem van Oranje. Het lied komt uit de tijd van de Tachtigjarige Oorlog.",
+                "en": "Wilhelmus = William of Orange. The song dates from the Eighty Years' War."
+              }
+            },
+            {
+              "id": "h1-07",
+              "type": "multiple_choice",
+              "prompt": "Hoe heette Nederland na de onafhankelijkheid van Spanje?",
+              "prompt_en": "What was the Netherlands called after independence from Spain?",
+              "answer": "De Republiek der Zeven Verenigde Nederlanden",
+              "distractors": [
+                "Het Koninkrijk Holland",
+                "De Bataafse Republiek",
+                "De Verenigde Staten van Europa"
+              ],
+              "explanation": {
+                "nl": "In 1648 werd de Republiek een zelfstandige staat.",
+                "en": "In 1648 the Republic became an independent state."
+              }
+            },
+            {
+              "id": "h1-08",
+              "type": "true_false",
+              "prompt": "In 1648 was de Tachtigjarige Oorlog afgelopen.",
+              "prompt_en": "In 1648 the Eighty Years' War was over.",
+              "answer": true,
+              "explanation": {
+                "nl": "Toen werd de Republiek der Zeven Verenigde Nederlanden een zelfstandige staat.",
+                "en": "Then the Republic of the Seven United Netherlands became an independent state."
+              }
+            },
+            {
+              "id": "h1-09",
+              "type": "build_sentence",
+              "prompt_en": "William of Orange was the leader.",
+              "answer": "Willem van Oranje was de leider",
+              "distractors": [
+                "koning",
+                "waren"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "h2",
+          "title": "De Gouden Eeuw en de koloniën",
+          "title_en": "The Golden Age and the colonies",
+          "questions": [
+            {
+              "id": "h2-01",
+              "type": "multiple_choice",
+              "prompt": "Wanneer was de Gouden Eeuw?",
+              "prompt_en": "When was the Golden Age?",
+              "answer": "1600–1700",
+              "distractors": [
+                "1400–1500",
+                "1800–1900",
+                "1945–1955"
+              ],
+              "explanation": {
+                "nl": "Nederland was toen heel rijk door de handel in goud en specerijen.",
+                "en": "The Netherlands was then very rich thanks to the trade in gold and spices."
+              }
+            },
+            {
+              "id": "h2-02",
+              "type": "multiple_choice",
+              "prompt": "Wat was de VOC?",
+              "prompt_en": "What was the VOC?",
+              "answer": "Een grote handelsmaatschappij",
+              "distractors": [
+                "Een politieke partij",
+                "Een leger",
+                "Een kerk"
+              ],
+              "explanation": {
+                "nl": "De VOC (Verenigde Oost-Indische Compagnie) werd in 1602 opgericht en handelde veel in Azië.",
+                "en": "The VOC (Dutch East India Company) was founded in 1602 and traded a lot in Asia."
+              }
+            },
+            {
+              "id": "h2-03",
+              "type": "multiple_choice",
+              "prompt": "Welke bekende schilder komt uit de Gouden Eeuw?",
+              "prompt_en": "Which famous painter is from the Golden Age?",
+              "answer": "Rembrandt",
+              "distractors": [
+                "Van Gogh",
+                "Mondriaan",
+                "Picasso"
+              ],
+              "explanation": {
+                "nl": "Zijn bekendste schilderij is 'De Nachtwacht'.",
+                "en": "His most famous painting is 'The Night Watch'."
+              }
+            },
+            {
+              "id": "h2-04",
+              "type": "true_false",
+              "prompt": "In de Gouden Eeuw was iedereen in Nederland rijk.",
+              "prompt_en": "In the Golden Age everyone in the Netherlands was rich.",
+              "answer": false,
+              "explanation": {
+                "nl": "Er was een groot verschil tussen arm en rijk. Rijke mensen woonden in grachtenhuizen.",
+                "en": "There was a big difference between rich and poor. Rich people lived in canal houses."
+              }
+            },
+            {
+              "id": "h2-05",
+              "type": "multiple_choice",
+              "prompt": "Wat was GEEN kolonie van Nederland?",
+              "prompt_en": "What was NOT a Dutch colony?",
+              "answer": "Mexico",
+              "distractors": [
+                "Indonesië",
+                "Suriname",
+                "De Antillen"
+              ],
+              "explanation": {
+                "nl": "Koloniën waren o.a. Indonesië, Suriname, de Antillen, Zuid-Afrika en Sri Lanka.",
+                "en": "Colonies included Indonesia, Suriname, the Antilles, South Africa and Sri Lanka."
+              }
+            },
+            {
+              "id": "h2-06",
+              "type": "true_false",
+              "prompt": "Nederlanders handelden in de Gouden Eeuw ook in slaafgemaakten.",
+              "prompt_en": "In the Golden Age the Dutch also traded in enslaved people.",
+              "answer": true,
+              "explanation": {
+                "nl": "Slaafgemaakten werkten op plantages in Suriname en op de Antillen. Het is een donkere periode in de geschiedenis.",
+                "en": "Enslaved people worked on plantations in Suriname and the Antilles. It is a dark period in history."
+              }
+            },
+            {
+              "id": "h2-07",
+              "type": "multiple_choice",
+              "prompt": "Wat herdenken we met Keti Koti op 1 juli?",
+              "prompt_en": "What do we commemorate with Keti Koti on 1 July?",
+              "answer": "Het einde van de slavernij",
+              "distractors": [
+                "De bevrijding",
+                "Het einde van de Tachtigjarige Oorlog",
+                "De watersnood"
+              ],
+              "explanation": {
+                "nl": "Op 1 juli 1863 werd de slavernij in Nederland afgeschaft.",
+                "en": "On 1 July 1863 slavery was abolished in the Netherlands."
+              }
+            },
+            {
+              "id": "h2-08",
+              "type": "multiple_choice",
+              "prompt": "Wanneer werd Suriname een vrij land?",
+              "prompt_en": "When did Suriname become a free country?",
+              "answer": "1975",
+              "distractors": [
+                "1863",
+                "1949",
+                "2001"
+              ],
+              "explanation": {
+                "nl": "Indonesië werd vrij in 1949, Suriname in 1975.",
+                "en": "Indonesia became free in 1949, Suriname in 1975."
+              }
+            },
+            {
+              "id": "h2-09",
+              "type": "multiple_choice",
+              "prompt": "Wanneer werd Indonesië een vrij land?",
+              "prompt_en": "When did Indonesia become a free country?",
+              "answer": "1949",
+              "distractors": [
+                "1945",
+                "1975",
+                "1602"
+              ],
+              "explanation": {
+                "nl": "Na de dekolonisatie kwamen veel mensen uit Indonesië en Suriname naar Nederland.",
+                "en": "After decolonisation many people from Indonesia and Suriname came to the Netherlands."
+              }
+            },
+            {
+              "id": "h2-10",
+              "type": "build_sentence",
+              "prompt_en": "Rembrandt was a painter.",
+              "answer": "Rembrandt was een schilder",
+              "distractors": [
+                "schilderij",
+                "is"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "h3",
+          "title": "De industriële revolutie",
+          "title_en": "The Industrial Revolution",
+          "questions": [
+            {
+              "id": "h3-01",
+              "type": "multiple_choice",
+              "prompt": "Wanneer was de industriële revolutie?",
+              "prompt_en": "When was the Industrial Revolution?",
+              "answer": "1800–1900",
+              "distractors": [
+                "1500–1600",
+                "1600–1700",
+                "1950–2000"
+              ],
+              "explanation": {
+                "nl": "Er kwamen meer machines, fabrieken en nieuwe uitvindingen.",
+                "en": "More machines, factories and new inventions appeared."
+              }
+            },
+            {
+              "id": "h3-02",
+              "type": "true_false",
+              "prompt": "In de industriële revolutie werkten ook kinderen in de fabrieken.",
+              "prompt_en": "In the Industrial Revolution children also worked in the factories.",
+              "answer": true,
+              "explanation": {
+                "nl": "Ook vrouwen en kinderen werkten lange dagen voor weinig geld.",
+                "en": "Women and children also worked long days for little money."
+              }
+            },
+            {
+              "id": "h3-03",
+              "type": "fill_blank",
+              "prompt": "Mensen die in de fabriek werkten, heetten ___.",
+              "prompt_en": "People who worked in the factory were called workers.",
+              "answer": "arbeiders",
+              "distractors": [
+                "boeren",
+                "kooplieden",
+                "schilders"
+              ],
+              "explanation": {
+                "nl": "Veel mensen gingen naar de stad om in de fabriek te werken.",
+                "en": "Many people went to the city to work in the factory."
+              }
+            },
+            {
+              "id": "h3-04",
+              "type": "multiple_choice",
+              "prompt": "Wat wilden de socialisten?",
+              "prompt_en": "What did the socialists want?",
+              "answer": "Betere levens voor arbeiders en gelijke rechten",
+              "distractors": [
+                "Meer macht voor de koning",
+                "Meer belasting voor arbeiders",
+                "Terug naar de middeleeuwen"
+              ],
+              "explanation": {
+                "nl": "De socialisten waren een van de eerste politieke partijen.",
+                "en": "The socialists were one of the first political parties."
+              }
+            },
+            {
+              "id": "h3-05",
+              "type": "multiple_choice",
+              "prompt": "Wanneer kwam de eerste grondwet?",
+              "prompt_en": "When did the first constitution come?",
+              "answer": "1814",
+              "distractors": [
+                "1588",
+                "1945",
+                "2002"
+              ],
+              "explanation": {
+                "nl": "De eerste grondwet kwam in de periode van de industriële revolutie.",
+                "en": "The first constitution came during the period of the Industrial Revolution."
+              }
+            },
+            {
+              "id": "h3-06",
+              "type": "build_sentence",
+              "prompt_en": "The work was very hard.",
+              "answer": "Het werk was heel zwaar",
+              "distractors": [
+                "licht",
+                "waren"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "h4",
+          "title": "De Tweede Wereldoorlog",
+          "title_en": "The Second World War",
+          "questions": [
+            {
+              "id": "h4-01",
+              "type": "multiple_choice",
+              "prompt": "Wanneer bezette Duitsland Nederland?",
+              "prompt_en": "When did Germany occupy the Netherlands?",
+              "answer": "1940",
+              "distractors": [
+                "1914",
+                "1945",
+                "1953"
+              ],
+              "explanation": {
+                "nl": "De Tweede Wereldoorlog duurde in Nederland van 1940 tot 1945.",
+                "en": "The Second World War lasted in the Netherlands from 1940 to 1945."
+              }
+            },
+            {
+              "id": "h4-02",
+              "type": "multiple_choice",
+              "prompt": "Waar ging koningin Wilhelmina tijdens de oorlog naartoe?",
+              "prompt_en": "Where did Queen Wilhelmina go during the war?",
+              "answer": "Naar Engeland",
+              "distractors": [
+                "Naar Duitsland",
+                "Naar Suriname",
+                "Naar Frankrijk"
+              ],
+              "explanation": {
+                "nl": "Het was te riskant om in Nederland te blijven.",
+                "en": "It was too risky to stay in the Netherlands."
+              }
+            },
+            {
+              "id": "h4-03",
+              "type": "multiple_choice",
+              "prompt": "Hoeveel Nederlandse Joden zijn in de kampen doodgegaan?",
+              "prompt_en": "How many Dutch Jews died in the camps?",
+              "answer": "Meer dan 75%",
+              "distractors": [
+                "Ongeveer 10%",
+                "Ongeveer 25%",
+                "Ongeveer 50%"
+              ],
+              "explanation": {
+                "nl": "Vanaf 1942 werden veel Joden opgepakt en naar concentratiekampen gestuurd.",
+                "en": "From 1942 many Jews were arrested and sent to concentration camps."
+              }
+            },
+            {
+              "id": "h4-04",
+              "type": "multiple_choice",
+              "prompt": "Wat deed het verzet?",
+              "prompt_en": "What did the resistance do?",
+              "answer": "Joden helpen met onderduiken",
+              "distractors": [
+                "De Duitsers helpen",
+                "Belasting innen",
+                "Huizen bouwen"
+              ],
+              "explanation": {
+                "nl": "Het verzet verspreidde ook nieuws over de oorlog. Het was riskant.",
+                "en": "The resistance also spread news about the war. It was risky."
+              }
+            },
+            {
+              "id": "h4-05",
+              "type": "fill_blank",
+              "prompt": "Joden verstopten zich voor de Duitsers. Dit heet ___.",
+              "prompt_en": "Jews hid from the Germans. This is called going into hiding.",
+              "answer": "onderduiken",
+              "distractors": [
+                "verhuizen",
+                "demonstreren",
+                "stemmen"
+              ],
+              "explanation": {
+                "nl": "Het verzet hielp Joden met onderduikadressen.",
+                "en": "The resistance helped Jews with hiding places."
+              }
+            },
+            {
+              "id": "h4-06",
+              "type": "multiple_choice",
+              "prompt": "Welke landen bevrijdden Nederland in 1945?",
+              "prompt_en": "Which countries liberated the Netherlands in 1945?",
+              "answer": "Engeland, de Verenigde Staten en Canada",
+              "distractors": [
+                "Duitsland en Italië",
+                "Frankrijk en Spanje",
+                "Rusland en China"
+              ],
+              "explanation": {
+                "nl": "In 1945 was de oorlog in Nederland voorbij.",
+                "en": "In 1945 the war in the Netherlands was over."
+              }
+            },
+            {
+              "id": "h4-07",
+              "type": "multiple_choice",
+              "prompt": "Wat doen we op 4 mei om 20:00?",
+              "prompt_en": "What do we do on 4 May at 20:00?",
+              "answer": "Twee minuten stilte",
+              "distractors": [
+                "Vuurwerk afsteken",
+                "Stemmen",
+                "Een feest vieren"
+              ],
+              "explanation": {
+                "nl": "Op 4 mei herdenken we de doden van de Tweede Wereldoorlog.",
+                "en": "On 4 May we commemorate the dead of the Second World War."
+              }
+            },
+            {
+              "id": "h4-08",
+              "type": "multiple_choice",
+              "prompt": "Wat vieren we op 5 mei?",
+              "prompt_en": "What do we celebrate on 5 May?",
+              "answer": "De bevrijding",
+              "distractors": [
+                "Koningsdag",
+                "Het einde van de slavernij",
+                "Prinsjesdag"
+              ],
+              "explanation": {
+                "nl": "Op 5 mei vieren Nederlanders hun vrijheid en het einde van de oorlog.",
+                "en": "On 5 May the Dutch celebrate their freedom and the end of the war."
+              }
+            },
+            {
+              "id": "h4-09",
+              "type": "true_false",
+              "prompt": "Op 4 mei herdenken we en op 5 mei vieren we.",
+              "prompt_en": "On 4 May we commemorate and on 5 May we celebrate.",
+              "answer": true,
+              "explanation": {
+                "nl": "4 mei = Dodenherdenking, 5 mei = Bevrijdingsdag.",
+                "en": "4 May = Remembrance Day, 5 May = Liberation Day."
+              }
+            },
+            {
+              "id": "h4-10",
+              "type": "build_sentence",
+              "prompt_en": "We celebrate freedom.",
+              "answer": "Wij vieren de vrijheid",
+              "distractors": [
+                "herdenken",
+                "viert"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "h5",
+          "title": "Na de oorlog",
+          "title_en": "After the war",
+          "questions": [
+            {
+              "id": "h5-01",
+              "type": "multiple_choice",
+              "prompt": "Wat deden mensen direct na de oorlog?",
+              "prompt_en": "What did people do right after the war?",
+              "answer": "Het land weer opbouwen",
+              "distractors": [
+                "Een nieuwe oorlog beginnen",
+                "Naar Spanje verhuizen",
+                "De dijken weghalen"
+              ],
+              "explanation": {
+                "nl": "Er werden veel huizen en fabrieken gebouwd en het ging weer goed met de economie.",
+                "en": "Many houses and factories were built and the economy did well again."
+              }
+            },
+            {
+              "id": "h5-02",
+              "type": "multiple_choice",
+              "prompt": "Wat is de NAVO?",
+              "prompt_en": "What is NATO?",
+              "answer": "Een militaire samenwerking tussen landen",
+              "distractors": [
+                "Een handelsmaatschappij",
+                "Een politieke partij",
+                "Een Nederlandse bank"
+              ],
+              "explanation": {
+                "nl": "In 1949 begonnen landen uit Europa met de Verenigde Staten en Canada de NAVO.",
+                "en": "In 1949 countries from Europe, the United States and Canada started NATO."
+              }
+            },
+            {
+              "id": "h5-03",
+              "type": "multiple_choice",
+              "prompt": "In welk jaar was de grote overstroming?",
+              "prompt_en": "In which year was the great flood?",
+              "answer": "1953",
+              "distractors": [
+                "1945",
+                "1963",
+                "1993"
+              ],
+              "explanation": {
+                "nl": "Grote delen van Zeeland, Zuid-Holland en West-Brabant kwamen onder water. Er waren 1836 doden.",
+                "en": "Large parts of Zeeland, South Holland and West Brabant were flooded. There were 1,836 deaths."
+              }
+            },
+            {
+              "id": "h5-04",
+              "type": "multiple_choice",
+              "prompt": "Welk plan maakte de regering na de overstroming?",
+              "prompt_en": "Which plan did the government make after the flood?",
+              "answer": "Het Deltaplan",
+              "distractors": [
+                "Het Marshallplan",
+                "Het Wilhelmusplan",
+                "Het Randstadplan"
+              ],
+              "explanation": {
+                "nl": "Door het Deltaplan kwamen goede dijken en dammen, zoals de Deltawerken in Zeeland.",
+                "en": "Through the Delta Plan good dikes and dams came, like the Delta Works in Zeeland."
+              }
+            },
+            {
+              "id": "h5-05",
+              "type": "true_false",
+              "prompt": "Een groot deel van Nederland ligt onder de zeespiegel.",
+              "prompt_en": "A large part of the Netherlands lies below sea level.",
+              "answer": true,
+              "explanation": {
+                "nl": "Daarom beschermen dijken, dammen, duinen en polders het land al eeuwen tegen water.",
+                "en": "That is why dikes, dams, dunes and polders have protected the country for centuries."
+              }
+            },
+            {
+              "id": "h5-06",
+              "type": "multiple_choice",
+              "prompt": "Hoe heette de Europese Unie in 1957?",
+              "prompt_en": "What was the European Union called in 1957?",
+              "answer": "De EEG",
+              "distractors": [
+                "De NAVO",
+                "De VN",
+                "De VOC"
+              ],
+              "explanation": {
+                "nl": "De EEG (Europese Economische Gemeenschap) heet sinds 1993 de Europese Unie.",
+                "en": "The EEC (European Economic Community) has been called the European Union since 1993."
+              }
+            },
+            {
+              "id": "h5-07",
+              "type": "true_false",
+              "prompt": "Alle landen van de Europese Unie betalen met de euro.",
+              "prompt_en": "All countries of the European Union pay with the euro.",
+              "answer": false,
+              "explanation": {
+                "nl": "De meeste wel, sinds 2002. Denemarken, Zweden en Polen bijvoorbeeld niet.",
+                "en": "Most do, since 2002. Denmark, Sweden and Poland, for example, don't."
+              }
+            },
+            {
+              "id": "h5-08",
+              "type": "multiple_choice",
+              "prompt": "Waar overleggen landen wereldwijd over vrede, mensenrechten en klimaat?",
+              "prompt_en": "Where do countries worldwide talk about peace, human rights and climate?",
+              "answer": "In de Verenigde Naties",
+              "distractors": [
+                "In de NAVO",
+                "In de VOC",
+                "In de Tweede Kamer"
+              ],
+              "explanation": {
+                "nl": "Nederland hoort bij de EU, de NAVO en de VN.",
+                "en": "The Netherlands is part of the EU, NATO and the UN."
+              }
+            },
+            {
+              "id": "h5-09",
+              "type": "build_sentence",
+              "prompt_en": "The Netherlands lies below sea level.",
+              "answer": "Nederland ligt onder de zeespiegel",
+              "distractors": [
+                "boven",
+                "liggen"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "h6",
+          "title": "Nederland verandert",
+          "title_en": "The Netherlands changes",
+          "questions": [
+            {
+              "id": "h6-01",
+              "type": "multiple_choice",
+              "prompt": "Wat gebeurde er in de jaren 1960–1970?",
+              "prompt_en": "What happened in the 1960s–1970s?",
+              "answer": "Mensen wilden meer vrijheid",
+              "distractors": [
+                "De Tachtigjarige Oorlog begon",
+                "Nederland werd bezet",
+                "De VOC werd opgericht"
+              ],
+              "explanation": {
+                "nl": "Meer vrouwen gingen werken en studeren, en de kerk kreeg minder invloed.",
+                "en": "More women went to work and study, and the church lost influence."
+              }
+            },
+            {
+              "id": "h6-02",
+              "type": "fill_blank",
+              "prompt": "Dat de kerk minder invloed kreeg op de samenleving heet ___.",
+              "prompt_en": "The church getting less influence on society is called secularisation.",
+              "answer": "ontkerkelijking",
+              "distractors": [
+                "kolonisatie",
+                "bevrijding",
+                "industrialisatie"
+              ],
+              "explanation": {
+                "nl": "Ontkerkelijking begon in de jaren 60 en 70.",
+                "en": "Secularisation began in the 1960s and 1970s."
+              }
+            },
+            {
+              "id": "h6-03",
+              "type": "multiple_choice",
+              "prompt": "Welk land was in 2001 het eerste met het homohuwelijk?",
+              "prompt_en": "Which country was first with same-sex marriage in 2001?",
+              "answer": "Nederland",
+              "distractors": [
+                "België",
+                "Spanje",
+                "Canada"
+              ],
+              "explanation": {
+                "nl": "Sinds 2001 is het homohuwelijk in Nederland wettelijk erkend.",
+                "en": "Since 2001 same-sex marriage has been legally recognised in the Netherlands."
+              }
+            },
+            {
+              "id": "h6-04",
+              "type": "true_false",
+              "prompt": "Euthanasie is in Nederland onder strenge voorwaarden toegestaan.",
+              "prompt_en": "Euthanasia is permitted in the Netherlands under strict conditions.",
+              "answer": true,
+              "explanation": {
+                "nl": "Dit is sinds 2002 zo. Ook abortus is onder voorwaarden toegestaan.",
+                "en": "This has been the case since 2002. Abortion is also permitted under conditions."
+              }
+            },
+            {
+              "id": "h6-05",
+              "type": "multiple_choice",
+              "prompt": "Waar kwamen veel gastarbeiders vandaan?",
+              "prompt_en": "Where did many guest workers come from?",
+              "answer": "Turkije en Marokko",
+              "distractors": [
+                "Canada en de Verenigde Staten",
+                "Zweden en Noorwegen",
+                "Japan en China"
+              ],
+              "explanation": {
+                "nl": "Vanaf de jaren 60 was er veel werk. Veel gastarbeiders zijn in Nederland gebleven.",
+                "en": "From the 1960s there was a lot of work. Many guest workers stayed in the Netherlands."
+              }
+            },
+            {
+              "id": "h6-06",
+              "type": "multiple_choice",
+              "prompt": "Waarom komen vluchtelingen naar Nederland?",
+              "prompt_en": "Why do refugees come to the Netherlands?",
+              "answer": "Door oorlog of vervolging",
+              "distractors": [
+                "Voor vakantie",
+                "Voor de Gouden Eeuw",
+                "Om te stemmen"
+              ],
+              "explanation": {
+                "nl": "Bijvoorbeeld uit Irak, Syrië, Afghanistan en Eritrea. Nederland heeft nu veel verschillende culturen.",
+                "en": "For example from Iraq, Syria, Afghanistan and Eritrea. The Netherlands now has many different cultures."
+              }
+            },
+            {
+              "id": "h6-07",
+              "type": "multiple_choice",
+              "prompt": "Wat is UNESCO-werelderfgoed?",
+              "prompt_en": "What is UNESCO World Heritage?",
+              "answer": "Uniek erfgoed dat belangrijk is voor de hele wereld",
+              "distractors": [
+                "Een nieuwe wet",
+                "Een Nederlandse feestdag",
+                "Een soort belasting"
+              ],
+              "explanation": {
+                "nl": "Het doel is dit erfgoed te beschermen voor toekomstige generaties.",
+                "en": "The goal is to protect this heritage for future generations."
+              }
+            },
+            {
+              "id": "h6-08",
+              "type": "true_false",
+              "prompt": "Elk land is zelf verantwoordelijk voor het werelderfgoed in dat land.",
+              "prompt_en": "Each country is itself responsible for the world heritage in that country.",
+              "answer": true,
+              "explanation": {
+                "nl": "Het Werelderfgoedverdrag is in 1972 opgesteld.",
+                "en": "The World Heritage Convention was drawn up in 1972."
+              }
+            },
+            {
+              "id": "h6-09",
+              "type": "build_sentence",
+              "prompt_en": "My grandfather was a guest worker.",
+              "answer": "Mijn opa was een gastarbeider",
+              "distractors": [
+                "oma",
+                "waren"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "h7",
+          "title": "Geografie van Nederland",
+          "title_en": "Geography of the Netherlands",
+          "questions": [
+            {
+              "id": "h7-01",
+              "type": "multiple_choice",
+              "prompt": "Wat zijn de buurlanden van Nederland?",
+              "prompt_en": "What are the neighbouring countries of the Netherlands?",
+              "answer": "België en Duitsland",
+              "distractors": [
+                "Frankrijk en België",
+                "Duitsland en Denemarken",
+                "Engeland en Frankrijk"
+              ],
+              "explanation": {
+                "nl": "België ligt in het zuiden, Duitsland in het oosten.",
+                "en": "Belgium is to the south, Germany to the east."
+              }
+            },
+            {
+              "id": "h7-02",
+              "type": "multiple_choice",
+              "prompt": "Wat is de hoofdstad van Nederland?",
+              "prompt_en": "What is the capital of the Netherlands?",
+              "answer": "Amsterdam",
+              "distractors": [
+                "Den Haag",
+                "Rotterdam",
+                "Utrecht"
+              ],
+              "explanation": {
+                "nl": "In Den Haag zitten de regering en het parlement, maar Amsterdam is de hoofdstad.",
+                "en": "The government and parliament are in The Hague, but Amsterdam is the capital."
+              }
+            },
+            {
+              "id": "h7-03",
+              "type": "multiple_choice",
+              "prompt": "Waar zitten de regering en het parlement?",
+              "prompt_en": "Where are the government and parliament?",
+              "answer": "In Den Haag",
+              "distractors": [
+                "In Amsterdam",
+                "In Rotterdam",
+                "In Utrecht"
+              ],
+              "explanation": {
+                "nl": "Den Haag is de derde stad van Nederland.",
+                "en": "The Hague is the third city of the Netherlands."
+              }
+            },
+            {
+              "id": "h7-04",
+              "type": "multiple_choice",
+              "prompt": "Welke stad heeft de grootste haven van Europa?",
+              "prompt_en": "Which city has the biggest port in Europe?",
+              "answer": "Rotterdam",
+              "distractors": [
+                "Amsterdam",
+                "Den Haag",
+                "Groningen"
+              ],
+              "explanation": {
+                "nl": "Rotterdam is de tweede stad van Nederland. De haven heet de Europoort.",
+                "en": "Rotterdam is the second city of the Netherlands. The port is called the Europoort."
+              }
+            },
+            {
+              "id": "h7-05",
+              "type": "multiple_choice",
+              "prompt": "Welke stad hoort NIET bij de Randstad?",
+              "prompt_en": "Which city is NOT part of the Randstad?",
+              "answer": "Groningen",
+              "distractors": [
+                "Amsterdam",
+                "Utrecht",
+                "Rotterdam"
+              ],
+              "explanation": {
+                "nl": "Randstad = Amsterdam, Rotterdam, Den Haag en Utrecht, in het westen. Er is veel werk.",
+                "en": "Randstad = Amsterdam, Rotterdam, The Hague and Utrecht, in the west. There is a lot of work."
+              }
+            },
+            {
+              "id": "h7-06",
+              "type": "multiple_choice",
+              "prompt": "Wat is de hoofdstad van de provincie Noord-Holland?",
+              "prompt_en": "What is the capital of the province of North Holland?",
+              "answer": "Haarlem",
+              "distractors": [
+                "Amsterdam",
+                "Alkmaar",
+                "Zaandam"
+              ],
+              "explanation": {
+                "nl": "Let op: de hoofdstad van Noord-Holland is Haarlem, niet Amsterdam.",
+                "en": "Note: the capital of North Holland is Haarlem, not Amsterdam."
+              }
+            },
+            {
+              "id": "h7-07",
+              "type": "multiple_choice",
+              "prompt": "Wat is de hoofdstad van de provincie Zuid-Holland?",
+              "prompt_en": "What is the capital of the province of South Holland?",
+              "answer": "Den Haag",
+              "distractors": [
+                "Rotterdam",
+                "Leiden",
+                "Delft"
+              ],
+              "explanation": {
+                "nl": "Den Haag is de hoofdstad van Zuid-Holland.",
+                "en": "The Hague is the capital of South Holland."
+              }
+            },
+            {
+              "id": "h7-08",
+              "type": "multiple_choice",
+              "prompt": "Wat is de hoofdstad van Friesland?",
+              "prompt_en": "What is the capital of Friesland?",
+              "answer": "Leeuwarden",
+              "distractors": [
+                "Groningen",
+                "Assen",
+                "Zwolle"
+              ],
+              "explanation": {
+                "nl": "Andere hoofdsteden: Groningen (Groningen), Assen (Drenthe), Zwolle (Overijssel).",
+                "en": "Other capitals: Groningen (Groningen), Assen (Drenthe), Zwolle (Overijssel)."
+              }
+            },
+            {
+              "id": "h7-09",
+              "type": "multiple_choice",
+              "prompt": "Wat is de hoofdstad van Noord-Brabant?",
+              "prompt_en": "What is the capital of North Brabant?",
+              "answer": "'s-Hertogenbosch",
+              "distractors": [
+                "Eindhoven",
+                "Tilburg",
+                "Breda"
+              ],
+              "explanation": {
+                "nl": "'s-Hertogenbosch heet ook Den Bosch. Limburg: Maastricht. Zeeland: Middelburg.",
+                "en": "'s-Hertogenbosch is also called Den Bosch. Limburg: Maastricht. Zeeland: Middelburg."
+              }
+            },
+            {
+              "id": "h7-10",
+              "type": "multiple_choice",
+              "prompt": "Welke provincie is bijna helemaal een polder?",
+              "prompt_en": "Which province is almost completely a polder?",
+              "answer": "Flevoland",
+              "distractors": [
+                "Limburg",
+                "Zeeland",
+                "Drenthe"
+              ],
+              "explanation": {
+                "nl": "Een polder is land dat eerst water was. De hoofdstad van Flevoland is Lelystad.",
+                "en": "A polder is land that used to be water. The capital of Flevoland is Lelystad."
+              }
+            },
+            {
+              "id": "h7-11",
+              "type": "multiple_choice",
+              "prompt": "Wat is het grootste meer van Nederland?",
+              "prompt_en": "What is the biggest lake in the Netherlands?",
+              "answer": "Het IJsselmeer",
+              "distractors": [
+                "De Waddenzee",
+                "De Noordzee",
+                "Het Markermeer"
+              ],
+              "explanation": {
+                "nl": "Het IJsselmeer was een zee. Het is dichtgemaakt met de Afsluitdijk.",
+                "en": "The IJsselmeer used to be a sea. It was closed off with the Afsluitdijk."
+              }
+            },
+            {
+              "id": "h7-12",
+              "type": "true_false",
+              "prompt": "Over de Afsluitdijk kun je van Noord-Holland naar Friesland rijden.",
+              "prompt_en": "You can drive over the Afsluitdijk from North Holland to Friesland.",
+              "answer": true,
+              "explanation": {
+                "nl": "De Afsluitdijk beschermt Nederland tegen het water uit de Waddenzee.",
+                "en": "The Afsluitdijk protects the Netherlands against water from the Wadden Sea."
+              }
+            },
+            {
+              "id": "h7-13",
+              "type": "multiple_choice",
+              "prompt": "Waar ligt de Veluwe?",
+              "prompt_en": "Where is the Veluwe?",
+              "answer": "In Gelderland",
+              "distractors": [
+                "In Zeeland",
+                "In Friesland",
+                "In Noord-Holland"
+              ],
+              "explanation": {
+                "nl": "De Veluwe is een rustig gebied met veel natuur.",
+                "en": "The Veluwe is a quiet area with a lot of nature."
+              }
+            },
+            {
+              "id": "h7-14",
+              "type": "multiple_choice",
+              "prompt": "Welk klimaat heeft Nederland?",
+              "prompt_en": "Which climate does the Netherlands have?",
+              "answer": "Een zeeklimaat",
+              "distractors": [
+                "Een woestijnklimaat",
+                "Een tropisch klimaat",
+                "Een poolklimaat"
+              ],
+              "explanation": {
+                "nl": "De winters zijn niet heel koud en de zomers niet heel warm.",
+                "en": "The winters are not very cold and the summers not very warm."
+              }
+            },
+            {
+              "id": "h7-15",
+              "type": "build_sentence",
+              "prompt_en": "Amsterdam is the capital.",
+              "answer": "Amsterdam is de hoofdstad",
+              "distractors": [
+                "provincie",
+                "zijn"
+              ],
+              "explanation": null
+            }
+          ]
+        },
+        {
+          "id": "h8",
+          "title": "Mensen, de Cariben en het ov",
+          "title_en": "People, the Caribbean and public transport",
+          "questions": [
+            {
+              "id": "h8-01",
+              "type": "multiple_choice",
+              "prompt": "Hoeveel mensen wonen er ongeveer in Nederland?",
+              "prompt_en": "About how many people live in the Netherlands?",
+              "answer": "18 miljoen",
+              "distractors": [
+                "8 miljoen",
+                "30 miljoen",
+                "80 miljoen"
+              ],
+              "explanation": {
+                "nl": "Bijna 3 miljoen mensen zijn niet in Nederland geboren.",
+                "en": "Almost 3 million people were not born in the Netherlands."
+              }
+            },
+            {
+              "id": "h8-02",
+              "type": "multiple_choice",
+              "prompt": "Welke taal spreken mensen in Friesland ook?",
+              "prompt_en": "Which language do people in Friesland also speak?",
+              "answer": "Fries",
+              "distractors": [
+                "Duits",
+                "Engels",
+                "Papiamento"
+              ],
+              "explanation": {
+                "nl": "De belangrijkste taal van Nederland is Nederlands.",
+                "en": "The main language of the Netherlands is Dutch."
+              }
+            },
+            {
+              "id": "h8-03",
+              "type": "true_false",
+              "prompt": "De meeste Nederlanders hebben een geloof.",
+              "prompt_en": "Most Dutch people have a religion.",
+              "answer": false,
+              "explanation": {
+                "nl": "Minder dan de helft (ongeveer 42%) heeft een geloof. De meesten van hen zijn christelijk.",
+                "en": "Less than half (about 42%) have a religion. Most of them are Christian."
+              }
+            },
+            {
+              "id": "h8-04",
+              "type": "multiple_choice",
+              "prompt": "Welke eilanden zijn zelfstandige landen binnen het Koninkrijk der Nederlanden?",
+              "prompt_en": "Which islands are independent countries within the Kingdom of the Netherlands?",
+              "answer": "Aruba, Curaçao en Sint Maarten",
+              "distractors": [
+                "Bonaire, Saba en Sint Eustatius",
+                "De Waddeneilanden",
+                "Texel en Vlieland"
+              ],
+              "explanation": {
+                "nl": "Bonaire, Saba en Sint Eustatius zijn bijzondere gemeenten, geen zelfstandige landen.",
+                "en": "Bonaire, Saba and Sint Eustatius are special municipalities, not independent countries."
+              }
+            },
+            {
+              "id": "h8-05",
+              "type": "fill_blank",
+              "prompt": "Bonaire, Saba en Sint Eustatius heten bijzondere ___.",
+              "prompt_en": "Bonaire, Saba and Sint Eustatius are called special municipalities.",
+              "answer": "gemeenten",
+              "distractors": [
+                "provincies",
+                "landen",
+                "steden"
+              ],
+              "explanation": {
+                "nl": "Ze horen bij het Koninkrijk, maar zijn geen zelfstandige landen.",
+                "en": "They belong to the Kingdom, but are not independent countries."
+              }
+            },
+            {
+              "id": "h8-06",
+              "type": "multiple_choice",
+              "prompt": "Waar liggen de Waddeneilanden?",
+              "prompt_en": "Where are the Wadden Islands?",
+              "answer": "In het noorden",
+              "distractors": [
+                "In het zuiden",
+                "In het oosten",
+                "In de Caribische Zee"
+              ],
+              "explanation": {
+                "nl": "De Waddeneilanden liggen in het noorden van Nederland.",
+                "en": "The Wadden Islands are in the north of the Netherlands."
+              }
+            },
+            {
+              "id": "h8-07",
+              "type": "multiple_choice",
+              "prompt": "Wat is het verschil tussen een persoonlijke en een anonieme OV-chipkaart?",
+              "prompt_en": "What is the difference between a personal and an anonymous OV-chipkaart?",
+              "answer": "Op de persoonlijke staan je naam en foto",
+              "distractors": [
+                "De anonieme is alleen voor kinderen",
+                "De persoonlijke is gratis",
+                "Met de anonieme mag je niet in de trein"
+              ],
+              "explanation": {
+                "nl": "Een anonieme kaart heeft geen naam, dus je kunt hem delen.",
+                "en": "An anonymous card has no name, so you can share it."
+              }
+            },
+            {
+              "id": "h8-08",
+              "type": "multiple_choice",
+              "prompt": "Wanneer reis je goedkoper met dalurenkorting?",
+              "prompt_en": "When do you travel cheaper with an off-peak discount?",
+              "answer": "Buiten de spits",
+              "distractors": [
+                "In de spits",
+                "Alleen op maandag",
+                "Alleen met de auto"
+              ],
+              "explanation": {
+                "nl": "Met dalurenkorting krijg je vaak 40% korting buiten de spits.",
+                "en": "With an off-peak discount you often get 40% off outside rush hour."
+              }
+            },
+            {
+              "id": "h8-09",
+              "type": "multiple_choice",
+              "prompt": "Met welke app plan je een reis met bus, tram, metro en trein?",
+              "prompt_en": "Which app do you use to plan a trip by bus, tram, metro and train?",
+              "answer": "9292",
+              "distractors": [
+                "DigiD",
+                "Tikkie",
+                "Mijn toeslagen"
+              ],
+              "explanation": {
+                "nl": "Ook de NS-app laat vertrektijden, overstappen en vertragingen zien.",
+                "en": "The NS app also shows departure times, transfers and delays."
+              }
+            },
+            {
+              "id": "h8-10",
+              "type": "true_false",
+              "prompt": "Je moet zorgen dat er genoeg saldo op je OV-chipkaart staat.",
+              "prompt_en": "You must make sure there is enough balance on your OV-chipkaart.",
+              "answer": true,
+              "explanation": {
+                "nl": "Of een geldig abonnement.",
+                "en": "Or a valid subscription."
+              }
+            },
+            {
+              "id": "h8-11",
+              "type": "build_sentence",
+              "prompt_en": "I am travelling by train.",
+              "answer": "Ik reis met de trein",
+              "distractors": [
+                "bus",
+                "reist"
+              ],
+              "explanation": null
+            }
+          ]
+        }
+      ],
+      "vocabulary": [
+        {
+          "id": "geschiedenis-v01",
+          "nl": "de middeleeuwen",
+          "en": "the Middle Ages"
+        },
+        {
+          "id": "geschiedenis-v02",
+          "nl": "de Tachtigjarige Oorlog",
+          "en": "the Eighty Years' War"
+        },
+        {
+          "id": "geschiedenis-v03",
+          "nl": "de protestant",
+          "en": "Protestant"
+        },
+        {
+          "id": "geschiedenis-v04",
+          "nl": "het verzet",
+          "en": "resistance"
+        },
+        {
+          "id": "geschiedenis-v05",
+          "nl": "de voorvader",
+          "en": "ancestor"
+        },
+        {
+          "id": "geschiedenis-v06",
+          "nl": "het volkslied",
+          "en": "national anthem"
+        },
+        {
+          "id": "geschiedenis-v07",
+          "nl": "onafhankelijk",
+          "en": "independent"
+        },
+        {
+          "id": "geschiedenis-v08",
+          "nl": "de Gouden Eeuw",
+          "en": "the Golden Age"
+        },
+        {
+          "id": "geschiedenis-v09",
+          "nl": "de handel",
+          "en": "trade"
+        },
+        {
+          "id": "geschiedenis-v10",
+          "nl": "de specerijen",
+          "en": "spices"
+        },
+        {
+          "id": "geschiedenis-v11",
+          "nl": "de handelsmaatschappij",
+          "en": "trading company"
+        },
+        {
+          "id": "geschiedenis-v12",
+          "nl": "het grachtenhuis",
+          "en": "canal house"
+        },
+        {
+          "id": "geschiedenis-v13",
+          "nl": "het schilderij",
+          "en": "painting"
+        },
+        {
+          "id": "geschiedenis-v14",
+          "nl": "de kolonie",
+          "en": "colony"
+        },
+        {
+          "id": "geschiedenis-v15",
+          "nl": "de slavernij",
+          "en": "slavery"
+        },
+        {
+          "id": "geschiedenis-v16",
+          "nl": "herdenken",
+          "en": "to commemorate"
+        },
+        {
+          "id": "geschiedenis-v17",
+          "nl": "de fabriek",
+          "en": "factory"
+        },
+        {
+          "id": "geschiedenis-v18",
+          "nl": "de arbeider",
+          "en": "worker"
+        },
+        {
+          "id": "geschiedenis-v19",
+          "nl": "de uitvinding",
+          "en": "invention"
+        },
+        {
+          "id": "geschiedenis-v20",
+          "nl": "de bezetting",
+          "en": "occupation"
+        },
+        {
+          "id": "geschiedenis-v21",
+          "nl": "het concentratiekamp",
+          "en": "concentration camp"
+        },
+        {
+          "id": "geschiedenis-v22",
+          "nl": "onderduiken",
+          "en": "to go into hiding"
+        },
+        {
+          "id": "geschiedenis-v23",
+          "nl": "de bevrijding",
+          "en": "liberation"
+        },
+        {
+          "id": "geschiedenis-v24",
+          "nl": "de stilte",
+          "en": "silence"
+        },
+        {
+          "id": "geschiedenis-v25",
+          "nl": "opbouwen",
+          "en": "to rebuild"
+        },
+        {
+          "id": "geschiedenis-v26",
+          "nl": "de NAVO",
+          "en": "NATO"
+        },
+        {
+          "id": "geschiedenis-v27",
+          "nl": "de overstroming",
+          "en": "flood"
+        },
+        {
+          "id": "geschiedenis-v28",
+          "nl": "de dijk",
+          "en": "dike"
+        },
+        {
+          "id": "geschiedenis-v29",
+          "nl": "de molen",
+          "en": "windmill"
+        },
+        {
+          "id": "geschiedenis-v30",
+          "nl": "de Verenigde Naties (VN)",
+          "en": "the United Nations"
+        },
+        {
+          "id": "geschiedenis-v31",
+          "nl": "de ontkerkelijking",
+          "en": "secularisation"
+        },
+        {
+          "id": "geschiedenis-v32",
+          "nl": "de gastarbeider",
+          "en": "guest worker"
+        },
+        {
+          "id": "geschiedenis-v33",
+          "nl": "de vluchteling",
+          "en": "refugee"
+        },
+        {
+          "id": "geschiedenis-v34",
+          "nl": "het werelderfgoed",
+          "en": "world heritage"
+        },
+        {
+          "id": "geschiedenis-v35",
+          "nl": "de hoofdstad",
+          "en": "capital city"
+        },
+        {
+          "id": "geschiedenis-v36",
+          "nl": "de haven",
+          "en": "port"
+        },
+        {
+          "id": "geschiedenis-v37",
+          "nl": "het eiland",
+          "en": "island"
+        },
+        {
+          "id": "geschiedenis-v38",
+          "nl": "onder zeeniveau",
+          "en": "below sea level"
+        },
+        {
+          "id": "geschiedenis-v39",
+          "nl": "het duin",
+          "en": "dune"
+        },
+        {
+          "id": "geschiedenis-v40",
+          "nl": "het meer",
+          "en": "lake"
+        },
+        {
+          "id": "geschiedenis-v41",
+          "nl": "de polder",
+          "en": "polder"
+        },
+        {
+          "id": "geschiedenis-v42",
+          "nl": "het zeeklimaat",
+          "en": "maritime climate"
+        },
+        {
+          "id": "geschiedenis-v43",
+          "nl": "de bijzondere gemeente",
+          "en": "special municipality"
+        },
+        {
+          "id": "geschiedenis-v44",
+          "nl": "het openbaar vervoer (ov)",
+          "en": "public transport"
+        },
+        {
+          "id": "geschiedenis-v45",
+          "nl": "het abonnement",
+          "en": "subscription"
+        },
+        {
+          "id": "geschiedenis-v46",
+          "nl": "de korting",
+          "en": "discount"
+        },
+        {
+          "id": "geschiedenis-v47",
+          "nl": "de spits",
+          "en": "rush hour"
+        },
+        {
+          "id": "geschiedenis-v48",
+          "nl": "het saldo",
+          "en": "balance"
+        },
+        {
+          "id": "geschiedenis-v49",
+          "nl": "overstappen",
+          "en": "to change trains or buses"
+        },
+        {
+          "id": "geschiedenis-v50",
+          "nl": "de vertraging",
+          "en": "delay"
         }
       ]
     }

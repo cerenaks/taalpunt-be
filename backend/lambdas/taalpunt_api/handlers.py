@@ -14,7 +14,9 @@ log = logging.getLogger()
 log.setLevel(os.environ.get("LOG_LEVEL", "INFO"))
 
 MAX_BODY_BYTES = 16 * 1024
-DAILY_GOAL_XP = 50
+DAILY_GOAL_XP = 50  # still sent for app versions before FR-002
+# FR-002: the daily goal counts questions learned (moved up to learning or known) that day.
+DAILY_GOAL_QUESTIONS = 10
 
 
 def _resp(status: int, body: Any) -> dict:
@@ -74,6 +76,7 @@ def api(event: dict, _context: Any) -> dict:
         if route == "GET /me/progress":
             progress = store.get_progress(sub, _local_today(event))
             progress["daily_goal_xp"] = DAILY_GOAL_XP
+            progress["daily_goal_questions"] = DAILY_GOAL_QUESTIONS
             return _resp(200, progress)
         if route == "GET /me/mistakes":
             return _resp(200, {"mistakes": store.get_mistakes(sub)})

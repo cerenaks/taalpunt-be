@@ -3,8 +3,9 @@
 Key layout (PK = USER#<cognito sub>):
   SK = PROFILE              xp_total, streak, last_day
   SK = LESSON#<lesson_id>   best_stars, completions, last_completed
-  SK = DAY#<yyyy-mm-dd>     xp
+  SK = DAY#<yyyy-mm-dd>     xp, learned (questions that moved up that day)
   SK = MISTAKE#<item_id>    wrong_count, last_wrong
+  SK = ITEM#<question_id>   state (learning|known), last_correct, last_seen, wrong_picks (FR-002 mastery)
   SK = SESSION#<uuid>       summary of one finished or failed lesson (expires after a year)
 """
 from __future__ import annotations
@@ -19,6 +20,7 @@ from boto3.dynamodb.conditions import Key
 from boto3.dynamodb.types import TypeDeserializer, TypeSerializer
 from botocore.exceptions import ClientError
 
+from .mastery import MAX_WRONG_PICKS, is_progress, is_question, next_state
 from .scoring import lesson_stars, lesson_xp, next_streak, visible_streak
 from .validation import RATED_KINDS, Session
 
@@ -85,16 +87,21 @@ def get_progress(sub: str, today: date) -> dict:
         }
         for i in _query_prefix(sub, "LESSON#")
     }
-    days = [{"date": i["SK"].split("#", 1)[1], "xp": i.get("xp", 0)}
+    days = [{"date": i["SK"].split("#", 1)[1], "xp": i.get("xp", 0), "learned": i.get("learned", 0)}
             for i in _query_prefix(sub, "DAY#", newest_first=True, limit=DAY_HISTORY)]
-    today_xp = next((d["xp"] for d in days if d["date"] == today.isoformat()), 0)
+    today_day = next((d for d in days if d["date"] == today.isoformat()), {})
     mistakes = _query_prefix(sub, "MISTAKE#")
+    # Compact on purpose: about 600 questions → a few KB. [state, last first-try-correct day or ""].
+    items = {i["SK"].split("#", 1)[1]: [i.get("state", "learning"), i.get("last_correct", "")]
+             for i in _query_prefix(sub, "ITEM#")}
     return _plain({
         "xp_total": profile.get("xp_total", 0),
         "streak": visible_streak(int(profile.get("streak", 0)), last_day, today),
         "last_day": profile.get("last_day"),
-        "today_xp": today_xp,
+        "today_xp": today_day.get("xp", 0),
+        "today_learned": today_day.get("learned", 0),
         "lessons": lessons,
+        "items": items,
         "days": days,
         "mistakes_count": len(mistakes),
     })
@@ -140,7 +147,32 @@ def record_session(sub: str, s: Session, now: datetime | None = None) -> dict:
     xp_total = int(profile.get("xp_total", 0)) + xp
     ts = now.isoformat(timespec="seconds")
 
-    result = {"xp_gained": xp, "stars": stars, "streak": streak, "xp_total": xp_total}
+    # Mastery (FR-002): the first non-retry answer per question decides; words and matching rounds are skipped.
+    day = s.local_date.isoformat()
+    first: dict[str, Any] = {}
+    for a in s.answers:
+        if not a.retry and is_question(a.item_id):
+            first.setdefault(a.item_id, a)
+    before = _get_items(client, table_name, pk, list(first))
+    item_writes: list[dict] = []
+    learned = 0
+    for qid, a in first.items():
+        prev = before.get(qid, {})
+        prev_state = prev.get("state", "new")
+        state, last_correct = next_state(prev_state, prev.get("last_correct"), a.correct, day)
+        if is_progress(prev_state, state, a.correct):
+            learned += 1
+        picks = list(prev.get("wrong_picks", []))
+        if not a.correct and a.picked:
+            picks = (picks + [a.picked])[-MAX_WRONG_PICKS:]
+        row = {"PK": pk, "SK": f"ITEM#{qid}", "state": state, "last_seen": day, "updated_at": now.isoformat(timespec="seconds")}
+        if last_correct:
+            row["last_correct"] = last_correct
+        if picks:
+            row["wrong_picks"] = picks
+        item_writes.append(row)
+
+    result = {"xp_gained": xp, "stars": stars, "streak": streak, "xp_total": xp_total, "learned": learned}
 
     def put(item: dict, condition: str | None = None) -> dict:
         p: dict[str, Any] = {"TableName": table_name, "Item": {k: _ser.serialize(v) for k, v in item.items()}}
@@ -176,7 +208,16 @@ def record_session(sub: str, s: Session, now: datetime | None = None) -> dict:
             vals[":prev"] = prev_last
         ops.append(update("PROFILE", "ADD xp_total :xp SET streak = :streak, last_day = :day, updated_at = :ts",
                           vals, condition=guard))
-        ops.append(update(f"DAY#{s.local_date.isoformat()}", "ADD xp :xp", {":xp": xp}))
+
+    day_adds, day_vals = [], {}
+    if earned:
+        day_adds.append("xp :xp")
+        day_vals[":xp"] = xp
+    if learned:
+        day_adds.append("learned :learned")
+        day_vals[":learned"] = learned
+    if day_adds:
+        ops.append(update(f"DAY#{day}", "ADD " + ", ".join(day_adds), day_vals))
 
     if rated_pass:
         ops.append(update(f"LESSON#{s.lesson_id}", "SET best_stars = :b, last_completed = :ts ADD completions :one",
@@ -193,6 +234,7 @@ def record_session(sub: str, s: Session, now: datetime | None = None) -> dict:
             ops.append({"Delete": {"TableName": table_name, "Key": {"PK": {"S": pk}, "SK": {"S": sk}}}})
         else:
             ops.append(update(sk, "ADD wrong_count :one SET last_wrong = :ts", {":one": 1, ":ts": ts}))
+    ops.extend(put(row) for row in item_writes)
 
     try:
         client.transact_write_items(TransactItems=ops)
@@ -211,6 +253,22 @@ def record_session(sub: str, s: Session, now: datetime | None = None) -> dict:
 
 class ConcurrentUpdate(Exception):
     pass
+
+
+def _get_items(client: Any, table_name: str, pk: str, question_ids: list[str]) -> dict[str, dict]:
+    """Current ITEM# rows for these questions (at most MAX_ANSWERS, so one batch of up to 100 keys)."""
+    if not question_ids:
+        return {}
+    keys = [{"PK": {"S": pk}, "SK": {"S": f"ITEM#{q}"}} for q in question_ids]
+    out: dict[str, dict] = {}
+    request: dict[str, Any] = {table_name: {"Keys": keys, "ConsistentRead": True}}
+    while request:
+        resp = client.batch_get_item(RequestItems=request)
+        for raw in resp.get("Responses", {}).get(table_name, []):
+            item = {k: _de.deserialize(v) for k, v in raw.items()}
+            out[item["SK"].split("#", 1)[1]] = item
+        request = resp.get("UnprocessedKeys") or {}
+    return out
 
 
 def delete_user_data(sub: str) -> int:

@@ -196,8 +196,9 @@ class TaalPuntStack(Stack):
 
         # Least privilege: only the item-level actions each function uses.
         api_fn.add_to_role_policy(iam.PolicyStatement(
-            actions=["dynamodb:GetItem", "dynamodb:Query", "dynamodb:PutItem", "dynamodb:UpdateItem",
-                     "dynamodb:DeleteItem", "dynamodb:ConditionCheckItem"],
+            # BatchGetItem: reading a session's question states in one call (FR-002 mastery).
+            actions=["dynamodb:GetItem", "dynamodb:BatchGetItem", "dynamodb:Query", "dynamodb:PutItem",
+                     "dynamodb:UpdateItem", "dynamodb:DeleteItem", "dynamodb:ConditionCheckItem"],
             resources=[table.table_arn],
         ))
         delete_fn.add_to_role_policy(iam.PolicyStatement(

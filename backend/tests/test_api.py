@@ -104,7 +104,8 @@ def test_session_updates_progress_and_mistakes(table):
     status, res = call("POST /me/sessions", body=session())
     assert status == 201
     # 2 first-try correct, 4 hearts left -> 5 + 2*2 = 9 XP; first finished run -> 1 star
-    assert res == {"xp_gained": 9, "stars": 1, "streak": 1, "xp_total": 9, "duplicate": False}
+    # w1-01 and w1-03 were first-try correct: both move from new to learning -> 2 learned
+    assert res == {"xp_gained": 9, "stars": 1, "streak": 1, "xp_total": 9, "learned": 2, "duplicate": False}
 
     status, prog = call("GET /me/progress")
     assert status == 200
@@ -112,6 +113,10 @@ def test_session_updates_progress_and_mistakes(table):
     assert prog["lessons"]["w1"]["best_stars"] == 1
     assert prog["mistakes_count"] == 1
     assert prog["daily_goal_xp"] == 50
+    assert prog["daily_goal_questions"] == 10
+    assert prog["today_learned"] == 2
+    assert prog["items"] == {"w1-01": ["learning", TODAY.isoformat()], "w1-02": ["learning", ""],
+                             "w1-03": ["learning", TODAY.isoformat()]}
 
     status, m = call("GET /me/mistakes")
     assert [x["item_id"] for x in m["mistakes"]] == ["w1-02"]
@@ -205,3 +210,69 @@ def test_delete_account_removes_all_data(table, monkeypatch):
     assert r["statusCode"] == 200
     assert calls == [{"UserPoolId": "eu-north-1_test", "Username": "user-1"}]
     assert table.scan()["Items"] == []
+
+
+# ---------- mastery (FR-002) ----------
+
+def _item(table, qid, sub="user-1"):
+    return table.get_item(Key={"PK": f"USER#{sub}", "SK": f"ITEM#{qid}"}).get("Item")
+
+
+def test_known_after_first_try_correct_on_two_days(table):
+    yesterday = (TODAY - timedelta(days=1)).isoformat()
+    _, res = call("POST /me/sessions", body=session(local_date=yesterday))
+    assert res["learned"] == 2
+    _, res = call("POST /me/sessions", body=session())
+    # w1-01 and w1-03 correct again on a new day -> known (2 learned); w1-02 missed again stays learning
+    assert res["learned"] == 2
+    _, prog = call("GET /me/progress")
+    assert prog["items"]["w1-01"] == ["known", TODAY.isoformat()]
+    assert prog["items"]["w1-02"] == ["learning", ""]
+    assert [d["learned"] for d in prog["days"]] == [2, 2]
+
+
+def test_same_day_twice_is_not_known(table):
+    call("POST /me/sessions", body=session())
+    _, res = call("POST /me/sessions", body=session())
+    assert res["learned"] == 0
+    _, prog = call("GET /me/progress")
+    assert prog["items"]["w1-01"][0] == "learning"
+
+
+def test_miss_sends_known_back_to_learning(table):
+    yesterday = (TODAY - timedelta(days=1)).isoformat()
+    call("POST /me/sessions", body=session(local_date=yesterday))
+    call("POST /me/sessions", body=session())
+    assert _item(table, "w1-01")["state"] == "known"
+    miss = session(answers=[{"item_id": "w1-01", "correct": False, "picked": "De gemeente"},
+                            {"item_id": "w1-01", "correct": True, "retry": True}], hearts_left=4)
+    _, res = call("POST /me/sessions", body=miss)
+    assert res["learned"] == 0
+    item = _item(table, "w1-01")
+    assert item["state"] == "learning" and "last_correct" not in item
+    assert item["wrong_picks"] == ["De gemeente"]
+
+
+def test_wrong_picks_keep_the_last_three(table):
+    for pick in ["A", "B", "C", "D"]:
+        body = session(answers=[{"item_id": "w1-05", "correct": False, "picked": pick},
+                                {"item_id": "w1-05", "correct": True, "retry": True}], hearts_left=4)
+        call("POST /me/sessions", body=body)
+    assert _item(table, "w1-05")["wrong_picks"] == ["B", "C", "D"]
+
+
+def test_words_and_matching_rounds_get_no_mastery(table):
+    body = session(kind="vocab", lesson_id="voc-wonen",
+                   answers=[{"item_id": "wonen-v01", "correct": True}, {"item_id": "match", "correct": True}],
+                   hearts_left=5)
+    status, res = call("POST /me/sessions", body=body)
+    assert status == 201 and res["learned"] == 0
+    _, prog = call("GET /me/progress")
+    assert prog["items"] == {}
+
+
+def test_picked_must_be_short_text():
+    with pytest.raises(ValidationError):
+        parse_session(session(answers=[{"item_id": "w1-01", "correct": False, "picked": 5}], hearts_left=4))
+    with pytest.raises(ValidationError):
+        parse_session(session(answers=[{"item_id": "w1-01", "correct": False, "picked": "x" * 201}], hearts_left=4))

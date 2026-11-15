@@ -75,6 +75,9 @@ def test_api_function_cannot_scan_or_delete_users():
     assert "dynamodb:Scan" not in actions
     assert "dynamodb:*" not in actions
     assert actions.count("cognito-idp:AdminDeleteUser") == 1
+    # The API reads a session's question states with one BatchGetItem (store._get_items). Moto doesn't check IAM,
+    # so this is the test that catches a missing permission before it fails in production.
+    assert "dynamodb:BatchGetItem" in actions
 
 
 def test_alerts_only_with_email():

@@ -12,6 +12,7 @@ KINDS = {"lesson", "vocab", "test", "mix", "mistakes"}
 # Lessons that keep a star rating on the path. Mixed and mistake rounds do not.
 RATED_KINDS = {"lesson", "vocab", "test"}
 MAX_ANSWERS = 40
+MAX_PICKED_CHARS = 200
 
 _ITEM_ID = re.compile(r"^(?:[a-z0-9]{1,12}-\d{2}|[a-z0-9]{1,20}-v\d{2}|match)$")
 _LESSON_ID = {
@@ -32,6 +33,8 @@ class Answer:
     item_id: str
     correct: bool
     retry: bool
+    # What the learner chose on a wrong answer (option text, "true"/"false", or the built sentence).
+    picked: str | None = None
 
 
 @dataclass(frozen=True)
@@ -106,7 +109,10 @@ def parse_session(body: object, now: datetime | None = None) -> Session:
         _require(isinstance(item_id, str) and bool(_ITEM_ID.match(item_id)), f"answers[{i}].item_id is not valid.")
         _require(isinstance(correct, bool), f"answers[{i}].correct must be true or false.")
         _require(isinstance(retry, bool), f"answers[{i}].retry must be true or false.")
-        answers.append(Answer(item_id, correct, retry))
+        picked = a.get("picked")
+        _require(picked is None or (isinstance(picked, str) and len(picked) <= MAX_PICKED_CHARS),
+                 f"answers[{i}].picked must be text of at most {MAX_PICKED_CHARS} characters.")
+        answers.append(Answer(item_id, correct, retry, picked.strip() or None if picked else None))
 
     # Hearts must agree with the answers: each wrong answer outside a matching round costs one.
     wrong = sum(1 for a in answers if not a.correct and a.item_id != "match")

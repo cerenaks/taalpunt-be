@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "content_version": "2026-11-16.1",
+  "content_version": "2026-11-16.2",
   "language": "nl",
   "translation": "en",
   "sources": [
@@ -25,6 +25,7 @@
           "id": "w1",
           "title": "Een huis huren",
           "title_en": "Renting a home",
+          "tier": "free",
           "questions": [
             {
               "id": "w1-01",
@@ -220,6 +221,7 @@
           "id": "w2",
           "title": "Huurcontract en rechten",
           "title_en": "Rental contract and rights",
+          "tier": "free",
           "questions": [
             {
               "id": "w2-01",
@@ -415,6 +417,7 @@
           "id": "w3",
           "title": "Kopen en verzekeren",
           "title_en": "Buying and insurance",
+          "tier": "free",
           "questions": [
             {
               "id": "w3-01",
@@ -594,6 +597,7 @@
           "id": "w4",
           "title": "Energie en communicatie",
           "title_en": "Energy and communication",
+          "tier": "free",
           "questions": [
             {
               "id": "w4-01",
@@ -858,6 +862,7 @@
           "id": "w5",
           "title": "Afval en buren",
           "title_en": "Waste and neighbors",
+          "tier": "free",
           "questions": [
             {
               "id": "w5-01",
@@ -1253,6 +1258,7 @@
           "id": "k1",
           "title": "Werk zoeken",
           "title_en": "Finding work",
+          "tier": "free",
           "questions": [
             {
               "id": "k1-01",
@@ -1426,6 +1432,7 @@
           "id": "k2",
           "title": "Diploma's en taal",
           "title_en": "Diplomas and language",
+          "tier": "premium",
           "questions": [
             {
               "id": "k2-01",
@@ -1626,6 +1633,7 @@
           "id": "k3",
           "title": "Uitkeringen",
           "title_en": "Benefits",
+          "tier": "premium",
           "questions": [
             {
               "id": "k3-01",
@@ -1863,6 +1871,7 @@
           "id": "k4",
           "title": "Contracten en regels",
           "title_en": "Contracts and rules",
+          "tier": "premium",
           "questions": [
             {
               "id": "k4-01",
@@ -2063,6 +2072,7 @@
           "id": "k5",
           "title": "OR, CAO en belasting",
           "title_en": "Works council, CAO and tax",
+          "tier": "premium",
           "questions": [
             {
               "id": "k5-01",
@@ -2257,6 +2267,7 @@
           "id": "k6",
           "title": "Discriminatie en eigen bedrijf",
           "title_en": "Discrimination and your own business",
+          "tier": "premium",
           "questions": [
             {
               "id": "k6-01",
@@ -2636,6 +2647,7 @@
           "id": "i1",
           "title": "Omgangsvormen",
           "title_en": "Social conventions",
+          "tier": "free",
           "questions": [
             {
               "id": "i1-01",
@@ -2906,6 +2918,7 @@
           "id": "i2",
           "title": "Directheid",
           "title_en": "Directness",
+          "tier": "premium",
           "questions": [
             {
               "id": "i2-01",
@@ -3069,6 +3082,7 @@
           "id": "i3",
           "title": "Samenwonen, waarden en normen",
           "title_en": "Living together, values and norms",
+          "tier": "premium",
           "questions": [
             {
               "id": "i3-01",
@@ -3280,6 +3294,7 @@
           "id": "i4",
           "title": "Sociale netwerken",
           "title_en": "Social networks",
+          "tier": "premium",
           "questions": [
             {
               "id": "i4-01",
@@ -3421,6 +3436,7 @@
           "id": "i5",
           "title": "Feestdagen",
           "title_en": "Public holidays",
+          "tier": "premium",
           "questions": [
             {
               "id": "i5-01",
@@ -3658,6 +3674,7 @@
           "id": "i6",
           "title": "Familiedagen",
           "title_en": "Family occasions",
+          "tier": "premium",
           "questions": [
             {
               "id": "i6-01",
@@ -4063,6 +4080,7 @@
           "id": "o1",
           "title": "Zwanger en een baby",
           "title_en": "Pregnant and a baby",
+          "tier": "free",
           "questions": [
             {
               "id": "o1-01",
@@ -4215,6 +4233,7 @@
           "id": "o2",
           "title": "Kinderopvang",
           "title_en": "Childcare",
+          "tier": "premium",
           "questions": [
             {
               "id": "o2-01",
@@ -4415,6 +4434,7 @@
           "id": "o3",
           "title": "De basisschool",
           "title_en": "Primary school",
+          "tier": "premium",
           "questions": [
             {
               "id": "o3-01",
@@ -4567,6 +4587,7 @@
           "id": "o4",
           "title": "Middelbare school en verder",
           "title_en": "Secondary school and beyond",
+          "tier": "premium",
           "questions": [
             {
               "id": "o4-01",
@@ -4751,6 +4772,7 @@
           "id": "o5",
           "title": "Leerplicht en vrijheid van onderwijs",
           "title_en": "Compulsory education and freedom of education",
+          "tier": "premium",
           "questions": [
             {
               "id": "o5-01",
@@ -4930,6 +4952,7 @@
           "id": "o6",
           "title": "Kosten en studiefinanciering",
           "title_en": "Costs and student finance",
+          "tier": "premium",
           "questions": [
             {
               "id": "o6-01",
@@ -5120,6 +5143,7 @@
           "id": "o7",
           "title": "Ouders en school",
           "title_en": "Parents and school",
+          "tier": "premium",
           "questions": [
             {
               "id": "o7-01",
@@ -5494,6 +5518,7 @@
           "id": "g1",
           "title": "Gezond leven en de huisarts",
           "title_en": "Healthy living and the GP",
+          "tier": "free",
           "questions": [
             {
               "id": "g1-01",
@@ -5614,6 +5639,7 @@
           "id": "g2",
           "title": "Bij de huisarts",
           "title_en": "At the GP",
+          "tier": "premium",
           "questions": [
             {
               "id": "g2-01",
@@ -5766,6 +5792,7 @@
           "id": "g3",
           "title": "Medicijnen en de tandarts",
           "title_en": "Medicines and the dentist",
+          "tier": "premium",
           "questions": [
             {
               "id": "g3-01",
@@ -5924,6 +5951,7 @@
           "id": "g4",
           "title": "Ziekenhuis en specialist",
           "title_en": "Hospital and specialist",
+          "tier": "premium",
           "questions": [
             {
               "id": "g4-01",
@@ -6076,6 +6104,7 @@
           "id": "g5",
           "title": "Spoed en buiten kantoortijden",
           "title_en": "Emergencies and out of hours",
+          "tier": "premium",
           "questions": [
             {
               "id": "g5-01",
@@ -6212,6 +6241,7 @@
           "id": "g6",
           "title": "Baby's, ouderen en zorg thuis",
           "title_en": "Babies, the elderly and care at home",
+          "tier": "premium",
           "questions": [
             {
               "id": "g6-01",
@@ -6375,6 +6405,7 @@
           "id": "g7",
           "title": "De zorgverzekering",
           "title_en": "Health insurance",
+          "tier": "premium",
           "questions": [
             {
               "id": "g7-01",
@@ -6565,6 +6596,7 @@
           "id": "g8",
           "title": "DigiD en hulp van de gemeente",
           "title_en": "DigiD and help from the municipality",
+          "tier": "premium",
           "questions": [
             {
               "id": "g8-01",
@@ -6964,6 +6996,7 @@
           "id": "n1",
           "title": "De gemeente",
           "title_en": "The municipality",
+          "tier": "free",
           "questions": [
             {
               "id": "n1-01",
@@ -7105,6 +7138,7 @@
           "id": "n2",
           "title": "Verblijf en naturalisatie",
           "title_en": "Residence and naturalisation",
+          "tier": "premium",
           "questions": [
             {
               "id": "n2-01",
@@ -7230,6 +7264,7 @@
           "id": "n3",
           "title": "De politie",
           "title_en": "The police",
+          "tier": "premium",
           "questions": [
             {
               "id": "n3-01",
@@ -7381,6 +7416,7 @@
           "id": "n4",
           "title": "Belasting en toeslagen",
           "title_en": "Tax and allowances",
+          "tier": "premium",
           "questions": [
             {
               "id": "n4-01",
@@ -7549,6 +7585,7 @@
           "id": "n5",
           "title": "Juridische hulp en hulporganisaties",
           "title_en": "Legal help and help organisations",
+          "tier": "premium",
           "questions": [
             {
               "id": "n5-01",
@@ -7701,6 +7738,7 @@
           "id": "n6",
           "title": "De bank",
           "title_en": "The bank",
+          "tier": "premium",
           "questions": [
             {
               "id": "n6-01",
@@ -7821,6 +7859,7 @@
           "id": "n7",
           "title": "Verzekeringen",
           "title_en": "Insurance",
+          "tier": "premium",
           "questions": [
             {
               "id": "n7-01",
@@ -7957,6 +7996,7 @@
           "id": "n8",
           "title": "Online met de overheid",
           "title_en": "Online with the government",
+          "tier": "premium",
           "questions": [
             {
               "id": "n8-01",
@@ -8288,6 +8328,7 @@
           "id": "p1",
           "title": "De Grondwet",
           "title_en": "The Constitution",
+          "tier": "free",
           "questions": [
             {
               "id": "p1-01",
@@ -8408,6 +8449,7 @@
           "id": "p2",
           "title": "Wet en religie",
           "title_en": "Law and religion",
+          "tier": "premium",
           "questions": [
             {
               "id": "p2-01",
@@ -8539,6 +8581,7 @@
           "id": "p3",
           "title": "Scheiding van de machten",
           "title_en": "Separation of powers",
+          "tier": "premium",
           "questions": [
             {
               "id": "p3-01",
@@ -8680,6 +8723,7 @@
           "id": "p4",
           "title": "Democratie en kiesrecht",
           "title_en": "Democracy and voting",
+          "tier": "premium",
           "questions": [
             {
               "id": "p4-01",
@@ -8805,6 +8849,7 @@
           "id": "p5",
           "title": "Regering en parlement",
           "title_en": "Government and parliament",
+          "tier": "premium",
           "questions": [
             {
               "id": "p5-01",
@@ -8962,6 +9007,7 @@
           "id": "p6",
           "title": "Provincie, gemeente en Europa",
           "title_en": "Province, municipality and Europe",
+          "tier": "premium",
           "questions": [
             {
               "id": "p6-01",
@@ -9130,6 +9176,7 @@
           "id": "p7",
           "title": "De koning",
           "title_en": "The King",
+          "tier": "premium",
           "questions": [
             {
               "id": "p7-01",
@@ -9239,6 +9286,7 @@
           "id": "p8",
           "title": "Partijen en verkiezingen",
           "title_en": "Parties and elections",
+          "tier": "premium",
           "questions": [
             {
               "id": "p8-01",
@@ -9642,6 +9690,7 @@
           "id": "h1",
           "title": "Van de Romeinen tot de Republiek",
           "title_en": "From the Romans to the Republic",
+          "tier": "free",
           "questions": [
             {
               "id": "h1-01",
@@ -9778,6 +9827,7 @@
           "id": "h2",
           "title": "De Gouden Eeuw en de koloniën",
           "title_en": "The Golden Age and the colonies",
+          "tier": "premium",
           "questions": [
             {
               "id": "h2-01",
@@ -9930,6 +9980,7 @@
           "id": "h3",
           "title": "De industriële revolutie",
           "title_en": "The Industrial Revolution",
+          "tier": "premium",
           "questions": [
             {
               "id": "h3-01",
@@ -10023,6 +10074,7 @@
           "id": "h4",
           "title": "De Tweede Wereldoorlog",
           "title_en": "The Second World War",
+          "tier": "premium",
           "questions": [
             {
               "id": "h4-01",
@@ -10180,6 +10232,7 @@
           "id": "h5",
           "title": "Na de oorlog",
           "title_en": "After the war",
+          "tier": "premium",
           "questions": [
             {
               "id": "h5-01",
@@ -10316,6 +10369,7 @@
           "id": "h6",
           "title": "Nederland verandert",
           "title_en": "The Netherlands changes",
+          "tier": "premium",
           "questions": [
             {
               "id": "h6-01",
@@ -10452,6 +10506,7 @@
           "id": "h7",
           "title": "Geografie van Nederland",
           "title_en": "Geography of the Netherlands",
+          "tier": "premium",
           "questions": [
             {
               "id": "h7-01",
@@ -10689,6 +10744,7 @@
           "id": "h8",
           "title": "Mensen, de Cariben en het ov",
           "title_en": "People, the Caribbean and public transport",
+          "tier": "premium",
           "questions": [
             {
               "id": "h8-01",

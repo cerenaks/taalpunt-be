@@ -182,3 +182,27 @@ If you ever rebuild the user pool, add the providers again. If you lose the key 
 2. In the iOS app's `Config/Backend.local.xcconfig`, set `SIGNIN_PROVIDERS = apple,google`. The sign-in screen then shows Apple, Google and email.
 
 A person who signs in with Apple or Google gets a separate Cognito user from an email account with the same address. Progress isn't merged.
+
+## Free and Premium (FR-001)
+
+Each lesson in `content/knm.json` has `"tier": "free"` or `"premium"`. Wonen and the first lesson of every theme are free; a theme's Woordjes and Oefentoets are free only when all its lessons are.
+
+**The switch:** `premium_enabled` in `backend/cdk.json`. While it's `false`, everything works as before Premium (the full bundle is public, no lesson is locked). Turn it on only once the app version with Premium support is out:
+
+- the public bundle becomes the free one (`content/knm-<version>-free.json`, 140 questions),
+- the full bundle is only served to Premium learners by `GET /me/content/premium`,
+- `POST /me/sessions` rejects Premium lessons (and Mix rounds with Premium questions) without Premium.
+
+The full bundle is always uploaded to `premium/` in the content bucket, which only the API Lambda can read. Don't turn on `content_cdn` together with Premium until the CDN is limited to `content/*` (the deploy refuses).
+
+**Manual Premium** (you, testers, partners), with your own `aws login`:
+
+```bash
+source backend/.venv/bin/activate
+python scripts/premium.py grant  --email someone@example.com                     # no end date
+python scripts/premium.py grant  --email someone@example.com --until 2027-06-30  # until that day
+python scripts/premium.py revoke --email someone@example.com
+python scripts/premium.py list
+```
+
+The learner needs to have signed in to the app once. They get Premium on their next sync.

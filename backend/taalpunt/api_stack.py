@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import sys
 from pathlib import Path
 
 from aws_cdk import (
@@ -33,23 +34,50 @@ ROOT = Path(__file__).resolve().parents[2]
 LAMBDA_DIR = ROOT / "backend" / "lambdas"
 CONTENT_FILE = ROOT / "content" / "knm.json"
 
+sys.path.insert(0, str(LAMBDA_DIR))
+from taalpunt_api import tiers  # noqa: E402  (pure module, shared with the API Lambda)
 
-def content_bundle() -> tuple[str, str, dict]:
-    """Returns (bundle key, bundle text, manifest) for the current content file."""
+
+def _digest(text: str) -> dict:
+    data = text.encode("utf-8")
+    return {"sha256": hashlib.sha256(data).hexdigest(), "bytes": len(data)}
+
+
+def content_bundle(premium_enabled: bool = False) -> dict:
+    """The content files to deploy (FR-001).
+
+    - premium_enabled off: the full bundle is public, as before Premium.
+    - premium_enabled on: the public bundle is the free one; the full bundle is only served to Premium
+      learners by GET /me/content/premium.
+    The full bundle is always uploaded to premium/ (outside content/, which is the public prefix).
+    """
     text = CONTENT_FILE.read_text(encoding="utf-8")
     doc = json.loads(text)
     version = doc["content_version"]
-    key = f"content/knm-{version}.json"
+    premium_lessons, premium_units = tiers.premium_ids(doc)
+    full_key = f"premium/knm-{version}.json"
+    if premium_enabled:
+        public_text = json.dumps(tiers.free_bundle(doc), ensure_ascii=False, indent=2) + "\n"
+        public_key = f"content/knm-{version}-free.json"
+    else:
+        public_text, public_key = text, f"content/knm-{version}.json"
+    public_doc = json.loads(public_text)
     manifest = {
         "schema_version": doc["schema_version"],
         "content_version": version,
-        "path": key,
-        "sha256": hashlib.sha256(text.encode("utf-8")).hexdigest(),
-        "bytes": len(text.encode("utf-8")),
-        "questions": sum(len(l["questions"]) for u in doc["units"] for l in u["lessons"]),
-        "words": sum(len(u["vocabulary"]) for u in doc["units"]),
+        "path": public_key,
+        **_digest(public_text),
+        "questions": sum(len(l["questions"]) for u in public_doc["units"] for l in u["lessons"]),
+        "words": sum(len(u["vocabulary"]) for u in public_doc["units"]),
     }
-    return key, text, manifest
+    if premium_enabled:
+        manifest["premium"] = {"path": "/me/content/premium", **_digest(text),
+                               "questions": sum(len(l["questions"]) for u in doc["units"] for l in u["lessons"])}
+    return {
+        "version": version, "public_key": public_key, "public_text": public_text,
+        "full_key": full_key, "full_text": text, "manifest": manifest,
+        "premium_lessons": sorted(premium_lessons), "premium_units": sorted(premium_units),
+    }
 
 
 class TaalPuntStack(Stack):
@@ -92,12 +120,21 @@ class TaalPuntStack(Stack):
             price_class=cloudfront.PriceClass.PRICE_CLASS_100,
             http_version=cloudfront.HttpVersion.HTTP2_AND_3,
         )
-        bundle_key, bundle_text, manifest = content_bundle()
+        # FR-001: Free and Premium. Off until the app version with Premium support is out.
+        premium_enabled = str(ctx("premium_enabled") or "false").lower() in ("true", "1", "yes")
+        if premium_enabled and use_cdn:
+            # CloudFront's origin access can read the whole bucket, including premium/. Before turning
+            # both on, limit the distribution to content/* (R-11), or Premium content becomes public.
+            raise ValueError("premium_enabled with content_cdn would make premium/ public; limit the CDN to content/* first")
+        bundle = content_bundle(premium_enabled)
+        bundle_key, bundle_text, manifest = bundle["public_key"], bundle["public_text"], bundle["manifest"]
         # The bundle file name carries its version, so it can be cached forever.
         bundle_deploy = s3deploy.BucketDeployment(
             self, "DeployContentBundle",
             destination_bucket=content_bucket,
-            sources=[s3deploy.Source.data(bundle_key, bundle_text)],
+            # The full bundle goes to premium/, which only the API Lambda can read.
+            sources=[s3deploy.Source.data(bundle_key, bundle_text),
+                     s3deploy.Source.data(bundle["full_key"], bundle["full_text"])],
             prune=False,
             content_type="application/json; charset=utf-8",
             cache_control=[s3deploy.CacheControl.from_string("public, max-age=31536000, immutable")],
@@ -190,7 +227,15 @@ class TaalPuntStack(Stack):
                 log_group=log_group,
             )
 
-        api_fn = fn("ApiFunction", "taalpunt_api.handlers.api", {})
+        api_fn = fn("ApiFunction", "taalpunt_api.handlers.api", {
+            "CONTENT_BUCKET": content_bucket.bucket_name,
+            "PREMIUM_BUNDLE_KEY": bundle["full_key"],
+            "PREMIUM_ENABLED": "true" if premium_enabled else "false",
+            "PREMIUM_LESSONS": ",".join(bundle["premium_lessons"]),
+            "PREMIUM_UNITS": ",".join(bundle["premium_units"]),
+        })
+        api_fn.add_to_role_policy(iam.PolicyStatement(
+            actions=["s3:GetObject"], resources=[content_bucket.arn_for_objects("premium/*")]))
         delete_fn = fn("DeleteAccountFunction", "taalpunt_api.handlers.delete_account",
                        {"USER_POOL_ID": user_pool.user_pool_id})
 
@@ -237,7 +282,8 @@ class TaalPuntStack(Stack):
         delete_int = integrations.HttpLambdaIntegration("DeleteIntegration", delete_fn)
         for path, method in (("/me/progress", apigw.HttpMethod.GET),
                              ("/me/mistakes", apigw.HttpMethod.GET),
-                             ("/me/sessions", apigw.HttpMethod.POST)):
+                             ("/me/sessions", apigw.HttpMethod.POST),
+                             ("/me/content/premium", apigw.HttpMethod.GET)):
             api.add_routes(path=path, methods=[method], integration=api_int, authorizer=jwt_auth)
         api.add_routes(path="/me", methods=[apigw.HttpMethod.DELETE], integration=delete_int, authorizer=jwt_auth)
 

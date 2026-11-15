@@ -283,3 +283,60 @@ def test_picked_must_be_short_text():
         parse_session(session(answers=[{"item_id": "w1-01", "correct": False, "picked": 5}], hearts_left=4))
     with pytest.raises(ValidationError):
         parse_session(session(answers=[{"item_id": "w1-01", "correct": False, "picked": "x" * 201}], hearts_left=4))
+
+
+# ---------- Free and Premium (FR-001) ----------
+
+from taalpunt_api import store  # noqa: E402
+
+
+def test_no_premium_by_default(table):
+    _, prog = call("GET /me/progress")
+    assert prog["premium"] == {"active": False, "until": None, "sources": []}
+
+
+def test_manual_premium_grant_and_revoke(table):
+    store.grant_premium("user-1", "manual", note="tester")
+    _, prog = call("GET /me/progress")
+    assert prog["premium"] == {"active": True, "until": None, "sources": ["manual"]}
+    store.revoke_premium("user-1", "manual")
+    _, prog = call("GET /me/progress")
+    assert prog["premium"]["active"] is False
+
+
+def test_premium_until_a_date(table):
+    store.grant_premium("user-1", "manual", until="2000-01-01T00:00:00+00:00")
+    assert store.get_premium("user-1")["active"] is False  # already ended
+    store.grant_premium("user-1", "manual", until="2999-01-01T00:00:00+00:00")
+    assert store.get_premium("user-1") == {"active": True, "until": "2999-01-01T00:00:00+00:00", "sources": ["manual"]}
+
+
+def test_premium_content_needs_premium(table, monkeypatch):
+    monkeypatch.setattr(handlers, "_premium_bundle", lambda: '{"units": []}')
+    status, body = call("GET /me/content/premium")
+    assert status == 403 and body["error"] == "premium_required"
+    store.grant_premium("user-1", "manual")
+    r = handlers.api(event("GET /me/content/premium"), None)
+    assert r["statusCode"] == 200 and r["body"] == '{"units": []}'
+    assert r["headers"]["cache-control"] == "private, no-store"
+
+
+def _premium_session():
+    return session(lesson_id="k2", answers=[{"item_id": "k2-01", "correct": True}], hearts_left=5)
+
+
+def test_premium_lessons_are_open_while_the_switch_is_off(table, monkeypatch):
+    monkeypatch.setenv("PREMIUM_ENABLED", "false")
+    assert call("POST /me/sessions", body=_premium_session())[0] == 201
+
+
+def test_premium_lessons_need_premium_when_switched_on(table, monkeypatch):
+    monkeypatch.setenv("PREMIUM_ENABLED", "true")
+    monkeypatch.setenv("PREMIUM_LESSONS", "k2,voc-werk,test-werk")
+    monkeypatch.setenv("PREMIUM_UNITS", "werk")
+    status, body = call("POST /me/sessions", body=_premium_session())
+    assert status == 403 and body["error"] == "premium_required"
+    # Free lessons still work, and a Mix with only free questions too.
+    assert call("POST /me/sessions", body=session())[0] == 201
+    store.grant_premium("user-1", "manual")
+    assert call("POST /me/sessions", body=_premium_session())[0] == 201

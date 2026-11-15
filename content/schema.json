@@ -34,6 +34,7 @@
                 "id": { "type": "string", "pattern": "^[a-z0-9]+$" },
                 "title": { "type": "string" },
                 "title_en": { "type": "string" },
+                "tier": { "enum": ["free", "premium"] },
                 "questions": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/question" } }
               }
             }

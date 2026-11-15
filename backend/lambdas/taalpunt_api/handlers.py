@@ -7,7 +7,7 @@ import os
 from datetime import date, datetime, timezone
 from typing import Any
 
-from . import store
+from . import store, tiers
 from .validation import ValidationError, parse_session
 
 log = logging.getLogger()
@@ -17,6 +17,23 @@ MAX_BODY_BYTES = 16 * 1024
 DAILY_GOAL_XP = 50  # still sent for app versions before FR-002
 # FR-002: the daily goal counts questions learned (moved up to learning or known) that day.
 DAILY_GOAL_QUESTIONS = 10
+
+
+def _premium_enabled() -> bool:
+    """FR-001 switch (cdk.json premium_enabled). Off: everything works as before Premium."""
+    return os.environ.get("PREMIUM_ENABLED", "false") == "true"
+
+
+def _premium_sets() -> tuple[set[str], set[str]]:
+    lessons = {x for x in os.environ.get("PREMIUM_LESSONS", "").split(",") if x}
+    units = {x for x in os.environ.get("PREMIUM_UNITS", "").split(",") if x}
+    return lessons, units
+
+
+def _premium_bundle() -> str:
+    import boto3
+    obj = boto3.client("s3").get_object(Bucket=os.environ["CONTENT_BUCKET"], Key=os.environ["PREMIUM_BUNDLE_KEY"])
+    return obj["Body"].read().decode("utf-8")
 
 
 def _resp(status: int, body: Any) -> dict:
@@ -80,8 +97,19 @@ def api(event: dict, _context: Any) -> dict:
             return _resp(200, progress)
         if route == "GET /me/mistakes":
             return _resp(200, {"mistakes": store.get_mistakes(sub)})
+        if route == "GET /me/content/premium":
+            if not store.get_premium(sub)["active"]:
+                return _error(403, "premium_required", "This content is part of TaalPunt Premium.")
+            return {"statusCode": 200,
+                    "headers": {"content-type": "application/json; charset=utf-8", "cache-control": "private, no-store"},
+                    "body": _premium_bundle()}
         if route == "POST /me/sessions":
             session = parse_session(_json_body(event))
+            if _premium_enabled():
+                lessons, units = _premium_sets()
+                touches = tiers.needs_premium(session.lesson_id, [a.item_id for a in session.answers], lessons, units)
+                if touches and not store.get_premium(sub)["active"]:
+                    return _error(403, "premium_required", "This lesson is part of TaalPunt Premium.")
             try:
                 result = store.record_session(sub, session)
                 return _resp(201, {**result, "duplicate": False})

@@ -18,7 +18,7 @@ def synth(context=None):
 def test_every_route_requires_jwt():
     t = synth({"content_cdn": True})
     routes = t.find_resources("AWS::ApiGatewayV2::Route")
-    assert len(routes) == 4
+    assert len(routes) == 5
     for r in routes.values():
         assert r["Properties"]["AuthorizationType"] == "JWT"
 
@@ -29,7 +29,8 @@ def test_without_cdn_only_the_content_route_is_public():
     routes = {r["Properties"]["RouteKey"]: r["Properties"].get("AuthorizationType", "NONE")
               for r in t.find_resources("AWS::ApiGatewayV2::Route").values()}
     assert routes.pop("GET /content/{file}") == "NONE"
-    assert len(routes) == 4 and set(routes.values()) == {"JWT"}
+    assert len(routes) == 5 and set(routes.values()) == {"JWT"}
+    assert "GET /me/content/premium" in routes
 
 
 def test_with_cdn_there_is_one_distribution():
@@ -114,3 +115,46 @@ def test_github_role_is_scoped_to_repo_environment():
             }},
         })]},
     })
+
+
+# ---------- Free and Premium (FR-001) ----------
+
+def test_premium_bundle_is_only_readable_by_the_api():
+    t = synth({"content_cdn": "false"})
+    policies = json.dumps(t.find_resources("AWS::IAM::Policy"))
+    # The public content function can only read content/*, never premium/*.
+    content_policy = [p for k, p in t.find_resources("AWS::IAM::Policy").items() if k.startswith("ContentFunction")]
+    assert content_policy and "premium/*" not in json.dumps(content_policy)
+    assert "premium/*" in policies
+
+
+def test_premium_and_cdn_together_are_refused():
+    import pytest
+    with pytest.raises(ValueError, match="premium/ public"):
+        synth({"content_cdn": True, "premium_enabled": True})
+
+
+def test_premium_switch_reaches_the_api():
+    off = synth({"content_cdn": "false"})
+    off.has_resource_properties("AWS::Lambda::Function", {
+        "Handler": "taalpunt_api.handlers.api",
+        "Environment": {"Variables": Match.object_like({"PREMIUM_ENABLED": "false"})}})
+    on = synth({"content_cdn": "false", "premium_enabled": True})
+    on.has_resource_properties("AWS::Lambda::Function", {
+        "Handler": "taalpunt_api.handlers.api",
+        "Environment": {"Variables": Match.object_like({"PREMIUM_ENABLED": "true"})}})
+
+
+def test_free_bundle_when_premium_is_on():
+    from taalpunt.api_stack import content_bundle
+    off, on = content_bundle(False), content_bundle(True)
+    assert off["manifest"]["path"].endswith(".json") and "premium" not in off["manifest"]
+    assert off["manifest"]["questions"] == 609
+    assert on["manifest"]["path"].endswith("-free.json")
+    assert on["manifest"]["questions"] == 140
+    assert on["manifest"]["premium"]["path"] == "/me/content/premium"
+    assert on["full_key"].startswith("premium/") and not on["public_key"].startswith("premium/")
+    free = json.loads(on["public_text"])
+    # Every theme and lesson is still listed, so the app can show locked stops.
+    assert len(free["units"]) == 8
+    assert all(l["questions"] for l in free["units"][0]["lessons"])

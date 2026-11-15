@@ -7,6 +7,7 @@ Key layout (PK = USER#<cognito sub>):
   SK = MISTAKE#<item_id>    wrong_count, last_wrong
   SK = ITEM#<question_id>   state (learning|known), last_correct, box (spaced review), last_seen, wrong_picks (FR-002)
   SK = SESSION#<uuid>       summary of one finished or failed lesson (expires after a year)
+  SK = ENTITLEMENT#<source> Premium (FR-001): source manual|apple, until (ISO time, absent = no end), note
 """
 from __future__ import annotations
 
@@ -105,9 +106,49 @@ def get_progress(sub: str, today: date) -> dict:
         "today_learned": today_day.get("learned", 0),
         "lessons": lessons,
         "items": items,
+        "premium": get_premium(sub),
         "days": days,
         "mistakes_count": len(mistakes),
     })
+
+
+PREMIUM_SOURCES = ("manual", "apple")
+
+
+def get_premium(sub: str, now: datetime | None = None) -> dict:
+    """Premium status from all sources: active if any entitlement has no end or ends in the future."""
+    now_iso = (now or datetime.now(timezone.utc)).isoformat(timespec="seconds")
+    active_until: list[str | None] = []
+    sources: list[str] = []
+    for item in _query_prefix(sub, "ENTITLEMENT#"):
+        until = item.get("until")
+        if until is None or until > now_iso:
+            active_until.append(until)
+            sources.append(item.get("source", item["SK"].split("#", 1)[1]))
+    if not active_until:
+        return {"active": False, "until": None, "sources": []}
+    forever = any(u is None for u in active_until)
+    return {"active": True, "until": None if forever else max(active_until), "sources": sorted(set(sources))}
+
+
+def grant_premium(sub: str, source: str, until: str | None = None, note: str = "",
+                  now: datetime | None = None) -> None:
+    """Gives Premium from one source. `until` is an ISO time; None means no end."""
+    if source not in PREMIUM_SOURCES:
+        raise ValueError(f"source must be one of {PREMIUM_SOURCES}")
+    item: dict[str, Any] = {
+        "PK": _pk(sub), "SK": f"ENTITLEMENT#{source}", "source": source,
+        "granted_at": (now or datetime.now(timezone.utc)).isoformat(timespec="seconds"),
+    }
+    if until:
+        item["until"] = until
+    if note:
+        item["note"] = note
+    _table().put_item(Item=item)
+
+
+def revoke_premium(sub: str, source: str) -> None:
+    _table().delete_item(Key={"PK": _pk(sub), "SK": f"ENTITLEMENT#{source}"})
 
 
 def get_mistakes(sub: str) -> list[dict]:

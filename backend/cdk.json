@@ -34,7 +34,7 @@
     "premium_enabled": false,
     "app_store": {
       "bundle_id": "nl.taalpunt.app",
-      "app_apple_id": ""
+      "app_apple_id": "6831534959"
     },
     "@aws-cdk/aws-iam:minimizePolicies": true,
     "@aws-cdk/core:target-partitions": [

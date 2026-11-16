@@ -110,6 +110,28 @@ def api(event: dict, _context: Any) -> dict:
                 return _resp(200, {"premium": appstore.claim(sub, _json_body(event, 32 * 1024))})
             except appstore.PurchaseError as err:
                 return _error(err.status, err.code, err.message)
+        if route == "POST /me/exam":
+            # FR-004: {"exam_date": "2026-12-01"} or {"exam_date": null}, or
+            # {"exam_date": "2026-11-12", "outcome": "passed" | "retake" | "skipped"} once the date has passed.
+            body = _json_body(event)
+            if not isinstance(body, dict) or "exam_date" not in body:
+                raise ValidationError('Body must have "exam_date" (YYYY-MM-DD or null).')
+            raw, outcome = body.get("exam_date"), body.get("outcome")
+            exam_day = None
+            if raw is not None:
+                try:
+                    exam_day = date.fromisoformat(raw) if isinstance(raw, str) else None
+                except ValueError:
+                    exam_day = None
+                if exam_day is None or not (date(2020, 1, 1) <= exam_day <= date(2100, 1, 1)):
+                    raise ValidationError("exam_date must be YYYY-MM-DD.")
+            if outcome is None:
+                store.set_exam_date(sub, exam_day.isoformat() if exam_day else None)
+            else:
+                if outcome not in store.EXAM_OUTCOMES or exam_day is None:
+                    raise ValidationError('outcome must be "passed", "retake" or "skipped", with the exam\'s date.')
+                store.report_exam(sub, exam_day.isoformat(), outcome)
+            return _resp(200, {"exam": store.get_progress(sub, _local_today(event))["exam"]})
         if route == "POST /me/saved":
             body = _json_body(event)
             item_id = body.get("item_id") if isinstance(body, dict) else None

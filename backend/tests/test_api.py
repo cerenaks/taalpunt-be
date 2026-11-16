@@ -418,3 +418,24 @@ def test_my_list_round_is_accepted(table):
     answers = [{"item_id": "w1-03", "correct": True}, {"item_id": "wonen-v07", "correct": True}]
     assert call("POST /me/sessions", body=session(kind="saved", lesson_id="saved", hearts_left=5,
                                                   answers=answers))[0] == 201
+
+
+def test_exam_date_and_how_it_went(table):
+    assert call("GET /me/progress")[1]["exam"] == {"date": None, "passed_on": None}
+    assert call("POST /me/exam", body={"exam_date": "2026-12-01"}) == (200, {"exam": {"date": "2026-12-01", "passed_on": None}})
+    assert call("POST /me/exam", body={"exam_date": None})[1]["exam"]["date"] is None
+    call("POST /me/exam", body={"exam_date": "2026-11-12"})
+    # Taking it again: the old exam is kept as "retake", then a new date.
+    call("POST /me/exam", body={"exam_date": "2026-11-12", "outcome": "retake"})
+    call("POST /me/exam", body={"exam_date": "2027-01-20"})
+    code, body = call("POST /me/exam", body={"exam_date": "2027-01-20", "outcome": "passed"})
+    assert code == 200 and body["exam"] == {"date": None, "passed_on": "2027-01-20"}
+    from taalpunt_api import store
+    rows = {i["SK"]: i["outcome"] for i in store._query_prefix("user-1", "EXAM#")}
+    assert rows == {"EXAM#2026-11-12": "retake", "EXAM#2027-01-20": "passed"}
+
+
+def test_exam_requests_are_checked(table):
+    for bad in ({}, {"exam_date": "12-01-2026"}, {"exam_date": 5}, {"exam_date": "2026-12-01", "outcome": "maybe"},
+                {"exam_date": None, "outcome": "passed"}, {"exam_date": "1999-01-01"}):
+        assert call("POST /me/exam", body=bad)[0] == 400, bad

@@ -10,6 +10,7 @@ Serves the same URLs the app uses in production:
   DELETE /me
   GET    /me/content/premium             (only with --premium)
   POST   /me/saved                       (My list, FR-004)
+  POST   /me/exam                        (exam date and how it went, FR-004)
   POST   /me/purchases                   (also accepts Xcode StoreKit test purchases, which aren't signed)
 
 With --premium the server works like production with the premium_enabled switch on: the public bundle
@@ -49,7 +50,7 @@ import boto3  # noqa: E402
 from moto import mock_aws  # noqa: E402
 
 API_ROUTES = {("GET", "/me/progress"), ("GET", "/me/mistakes"), ("POST", "/me/sessions"), ("DELETE", "/me"),
-              ("GET", "/me/content/premium"), ("POST", "/me/purchases"), ("POST", "/me/saved")}
+              ("GET", "/me/content/premium"), ("POST", "/me/purchases"), ("POST", "/me/saved"), ("POST", "/me/exam")}
 BUCKET = "taalpunt-local-content"
 
 

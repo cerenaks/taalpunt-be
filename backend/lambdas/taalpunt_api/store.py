@@ -1,13 +1,14 @@
 """DynamoDB access. One table, partitioned per user.
 
 Key layout (PK = USER#<cognito sub>):
-  SK = PROFILE              xp_total, streak, last_day
+  SK = PROFILE              xp_total, streak, last_day; exam_date, exam_date_set_at, exam_passed_on (FR-004)
   SK = LESSON#<lesson_id>   best_stars, completions, last_completed, best_score (best first-try %, FR-004)
   SK = DAY#<yyyy-mm-dd>     xp, learned (questions that became known that day)
   SK = MISTAKE#<item_id>    wrong_count, last_wrong
   SK = ITEM#<item_id>       state (learning|known), last_correct, box (spaced review), last_seen, wrong_picks (FR-002);
                             questions, and words since FR-004
   SK = SAVED#<item_id>      saved_at: My list (FR-004), questions and words the learner saved
+  SK = EXAM#<yyyy-mm-dd>    outcome (passed|retake|skipped), reported_at: how an exam went, for analytics (FR-004)
   SK = SESSION#<uuid>       summary of one finished or failed lesson (expires after a year)
   SK = ENTITLEMENT#<source> Premium (FR-001): source manual|apple, until (ISO time, absent = no end), note;
                             apple also: original_transaction_id, product_id, environment, signed_date (ms)
@@ -118,7 +119,39 @@ def get_progress(sub: str, today: date) -> dict:
         "days": days,
         "mistakes_count": len(mistakes),
         "saved": saved,
+        "exam": {"date": profile.get("exam_date"), "passed_on": profile.get("exam_passed_on")},
     })
+
+
+EXAM_OUTCOMES = ("passed", "retake", "skipped")
+
+
+def set_exam_date(sub: str, exam_date: str | None, now: datetime | None = None) -> None:
+    """The learner's exam date (FR-004), or None when they removed it."""
+    ts = (now or datetime.now(timezone.utc)).isoformat(timespec="seconds")
+    key = {"PK": _pk(sub), "SK": "PROFILE"}
+    if exam_date:
+        _table().update_item(Key=key, UpdateExpression="SET exam_date = :d, exam_date_set_at = :ts",
+                             ExpressionAttributeValues={":d": exam_date, ":ts": ts})
+    else:
+        _table().update_item(Key=key, UpdateExpression="REMOVE exam_date SET exam_date_set_at = :ts",
+                             ExpressionAttributeValues={":ts": ts})
+
+
+def report_exam(sub: str, exam_date: str, outcome: str, now: datetime | None = None) -> None:
+    """How the exam on `exam_date` went (FR-004): kept per exam, so retakes stay visible. "passed" is also
+    kept on the profile."""
+    if outcome not in EXAM_OUTCOMES:
+        raise ValueError(f"outcome must be one of {EXAM_OUTCOMES}")
+    ts = (now or datetime.now(timezone.utc)).isoformat(timespec="seconds")
+    table = _table()
+    table.put_item(Item={"PK": _pk(sub), "SK": f"EXAM#{exam_date}", "outcome": outcome, "reported_at": ts})
+    if outcome == "passed":
+        table.update_item(Key={"PK": _pk(sub), "SK": "PROFILE"},
+                          UpdateExpression="SET exam_passed_on = :d REMOVE exam_date",
+                          ExpressionAttributeValues={":d": exam_date})
+    elif outcome == "skipped":
+        table.update_item(Key={"PK": _pk(sub), "SK": "PROFILE"}, UpdateExpression="REMOVE exam_date")
 
 
 def set_saved(sub: str, item_id: str, saved: bool, now: datetime | None = None) -> None:

@@ -80,6 +80,13 @@ Scoring (in `backend/lambdas/taalpunt_api/scoring.py`): 5 XP per finished lesson
 
 My list (FR-004): `{ "item_id": "w1-03", "saved": true }` saves a question or word, `"saved": false` takes it off. `GET /me/progress` lists them in `saved`, oldest first.
 
+### `POST /me/exam`
+
+The exam date and how it went (FR-004), kept for the learner's other devices and for analytics:
+`{ "exam_date": "2026-12-01" }` sets it, `{ "exam_date": null }` removes it, and once the date has passed
+`{ "exam_date": "2026-11-12", "outcome": "passed" | "retake" | "skipped" }` records how it went (an `EXAM#<date>`
+row per exam, so retakes stay visible). `GET /me/progress` returns `exam: { date, passed_on }`.
+
 ### `POST /me/purchases`
 
 The app reports an App Store subscription (FR-001) after buying, on Restore purchases, and when StoreKit sends a renewal or an Ask to Buy approval.

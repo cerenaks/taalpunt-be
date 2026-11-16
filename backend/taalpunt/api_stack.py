@@ -215,8 +215,11 @@ class TaalPuntStack(Stack):
         )
 
         # ---------- User data: one DynamoDB table ----------
+        # Named so it's easy to find in the console. It replaced the first table (logical id "UserData",
+        # TaalPunt-UserData6A2E227B-…) on 16 Nov 2026; that one was kept (RETAIN) as a backup.
         table = dynamodb.Table(
-            self, "UserData",
+            self, "LearnerData",
+            table_name="taalpunt-user-data",
             partition_key=dynamodb.Attribute(name="PK", type=dynamodb.AttributeType.STRING),
             sort_key=dynamodb.Attribute(name="SK", type=dynamodb.AttributeType.STRING),
             billing_mode=dynamodb.BillingMode.PAY_PER_REQUEST,
@@ -333,7 +336,8 @@ class TaalPuntStack(Stack):
                              ("/me/sessions", apigw.HttpMethod.POST),
                              ("/me/content/premium", apigw.HttpMethod.GET),
                              ("/me/purchases", apigw.HttpMethod.POST),
-                             ("/me/saved", apigw.HttpMethod.POST)):
+                             ("/me/saved", apigw.HttpMethod.POST),
+                             ("/me/exam", apigw.HttpMethod.POST)):
             api.add_routes(path=path, methods=[method], integration=api_int, authorizer=jwt_auth)
         api.add_routes(path="/me", methods=[apigw.HttpMethod.DELETE], integration=delete_int, authorizer=jwt_auth)
         # Public: Apple calls it. Trust comes from Apple's signature on every notification.

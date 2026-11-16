@@ -25,8 +25,8 @@ def test_every_route_requires_jwt_except_apples_notifications():
     routes = _routes(synth({"content_cdn": True}))
     # Apple can't sign in; every notification carries Apple's signature, which the function checks.
     assert routes.pop("POST /appstore/notifications") == "NONE"
-    assert len(routes) == 7 and set(routes.values()) == {"JWT"}
-    assert "POST /me/purchases" in routes and "POST /me/saved" in routes
+    assert len(routes) == 8 and set(routes.values()) == {"JWT"}
+    assert {"POST /me/purchases", "POST /me/saved", "POST /me/exam"} <= set(routes)
 
 
 def test_without_cdn_only_the_content_route_is_public():
@@ -35,7 +35,7 @@ def test_without_cdn_only_the_content_route_is_public():
     routes = _routes(t)
     assert routes.pop("GET /content/{file}") == "NONE"
     assert routes.pop("POST /appstore/notifications") == "NONE"
-    assert len(routes) == 7 and set(routes.values()) == {"JWT"}
+    assert len(routes) == 8 and set(routes.values()) == {"JWT"}
     assert "GET /me/content/premium" in routes
 
 

@@ -8,9 +8,13 @@ DOC = json.loads((Path(__file__).resolve().parents[2] / "content" / "knm.json").
 
 
 def test_wonen_and_every_first_lesson_are_free():
+    """Free: all of Wonen and the first lesson of every other theme. A split first lesson (FR-004: i1 and
+    i1b) stays free in both halves; its questions keep the first lesson's id."""
     for i, unit in enumerate(DOC["units"]):
-        for j, lesson in enumerate(unit["lessons"]):
-            assert tiers.is_premium_lesson(lesson) == (i > 0 and j > 0), lesson["id"]
+        first = unit["lessons"][0]["id"]
+        for lesson in unit["lessons"]:
+            from_first = all(q["id"].rsplit("-", 1)[0] == first for q in lesson["questions"])
+            assert tiers.is_premium_lesson(lesson) == (i > 0 and not from_first), lesson["id"]
 
 
 def test_premium_ids():

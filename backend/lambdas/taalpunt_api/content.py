@@ -43,7 +43,8 @@ def handler(event: dict, _context: Any) -> dict:
         obj = _client().get_object(Bucket=os.environ["CONTENT_BUCKET"], Key=f"content/{name}")
     except Exception as exc:  # NoSuchKey and access errors look the same to the app
         code = getattr(exc, "response", {}).get("Error", {}).get("Code", "")
-        if code in ("NoSuchKey", "404"):
+        # Without s3:ListBucket, S3 answers a missing file with AccessDenied instead of NoSuchKey.
+        if code in ("NoSuchKey", "404", "AccessDenied"):
             return _response(404, '{"error":"not_found"}')
         raise
     body = obj["Body"].read().decode("utf-8")

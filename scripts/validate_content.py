@@ -20,14 +20,21 @@ def semantic_checks(doc: dict) -> list[str]:
     problems: list[str] = []
     seen_ids: set[str] = set()
     for unit in doc["units"]:
+        tiers = {l["id"]: l.get("tier", "free") for l in unit["lessons"]}
         for lesson in unit["lessons"]:
             for q in lesson["questions"]:
                 qid = q["id"]
                 if qid in seen_ids:
                     problems.append(f"{qid}: duplicate question id")
                 seen_ids.add(qid)
-                if not qid.startswith(lesson["id"] + "-"):
-                    problems.append(f"{qid}: id must start with lesson id '{lesson['id']}-'")
+                # A question keeps its id when its lesson is split (FR-004: "w4-12" moved to lesson "w4b"),
+                # so learners keep their progress. The server finds a question's tier from the lesson in its
+                # id, so that lesson must exist in the same theme with the same tier.
+                prefix = qid.rsplit("-", 1)[0]
+                if prefix not in tiers:
+                    problems.append(f"{qid}: id must start with the id of a lesson in theme '{unit['id']}'")
+                elif tiers[prefix] != lesson.get("tier", "free"):
+                    problems.append(f"{qid}: lesson '{lesson['id']}' and lesson '{prefix}' (from the id) have different tiers")
                 t = q["type"]
                 if t in ("multiple_choice", "fill_blank"):
                     if not isinstance(q["answer"], str):
@@ -41,6 +48,9 @@ def semantic_checks(doc: dict) -> list[str]:
                         problems.append(f"{qid}: missing prompt")
                 if t == "fill_blank" and "___" not in q.get("prompt", ""):
                     problems.append(f"{qid}: fill_blank prompt needs ___")
+                # The English is shown while answering, so it must not give the answer away (FR-004 F).
+                if t == "fill_blank" and (q.get("prompt_en") or "").count("___") != 1:
+                    problems.append(f"{qid}: fill_blank prompt_en needs exactly one ___ in place of the answer")
                 if t == "true_false" and not isinstance(q["answer"], bool):
                     problems.append(f"{qid}: true_false answer must be true/false")
                 if t == "build_sentence":

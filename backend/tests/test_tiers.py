@@ -29,6 +29,13 @@ def test_free_bundle_has_140_questions_and_no_premium_words():
     assert sum(len(l["questions"]) for u in DOC["units"] for l in u["lessons"]) == 609
 
 
+def test_free_bundle_keeps_the_counts():
+    free = tiers.free_bundle(DOC)
+    assert sum(l["question_count"] for u in free["units"] for l in u["lessons"]) == 609
+    assert sum(u["word_count"] for u in free["units"]) == sum(len(u["vocabulary"]) for u in DOC["units"])
+    assert "question_count" not in DOC["units"][0]["lessons"][0]
+
+
 def test_needs_premium():
     lessons, units = tiers.premium_ids(DOC)
     assert not tiers.needs_premium("w1", ["w1-01"], lessons, units)

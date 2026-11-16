@@ -33,11 +33,15 @@ def premium_ids(doc: dict) -> tuple[set[str], set[str]]:
 
 
 def free_bundle(doc: dict) -> dict:
-    """The public bundle: Premium questions and words taken out, everything else as it is."""
+    """The public bundle: Premium questions and words taken out, everything else as it is.
+    Every lesson keeps its "question_count" and every theme its "word_count", so the app can still
+    work out readiness over all questions and show how much Premium adds."""
     out = copy.deepcopy(doc)
     _, premium_units = premium_ids(doc)
     for unit in out["units"]:
+        unit["word_count"] = len(unit["vocabulary"])
         for lesson in unit["lessons"]:
+            lesson["question_count"] = len(lesson["questions"])
             if is_premium_lesson(lesson):
                 lesson["questions"] = []
         if unit["id"] in premium_units:

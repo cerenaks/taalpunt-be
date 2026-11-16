@@ -8,6 +8,12 @@ Serves the same URLs the app uses in production:
   GET    /me/mistakes
   POST   /me/sessions
   DELETE /me
+  GET    /me/content/premium             (only with --premium)
+
+With --premium the server works like production with the premium_enabled switch on: the public bundle
+is the free one, and the full bundle only comes from /me/content/premium. Give or take away Premium for
+the local user with POST /mock/premium/grant and POST /mock/premium/revoke (no body), for example
+  curl -X POST http://127.0.0.1:8787/mock/premium/grant
 
 The API routes run the real Lambda handler code against an in-memory DynamoDB (moto),
 so scoring, streaks, mistakes and validation behave exactly like the deployed backend.
@@ -16,6 +22,7 @@ Any `Authorization: Bearer <anything>` is accepted; data is lost when you stop t
 Usage (from taal-punt-be):
   source backend/.venv/bin/activate      # needs requirements-dev.txt
   python scripts/mock_server.py          # http://127.0.0.1:8787
+  python scripts/mock_server.py --premium [--grant]   # Free/Premium (FR-001); --grant starts with Premium
 """
 from __future__ import annotations
 
@@ -38,23 +45,42 @@ os.environ["TABLE_NAME"] = "taalpunt-local"
 import boto3  # noqa: E402
 from moto import mock_aws  # noqa: E402
 
-API_ROUTES = {("GET", "/me/progress"), ("GET", "/me/mistakes"), ("POST", "/me/sessions"), ("DELETE", "/me")}
+API_ROUTES = {("GET", "/me/progress"), ("GET", "/me/mistakes"), ("POST", "/me/sessions"), ("DELETE", "/me"),
+              ("GET", "/me/content/premium")}
+BUCKET = "taalpunt-local-content"
 
 
-def load_content() -> tuple[str, bytes, bytes]:
+def load_content(premium: bool) -> tuple[str, bytes, bytes, bytes]:
+    """(public bundle path, public bundle, manifest, full bundle). Same files as the CDK deploy builds."""
+    from taalpunt_api import tiers
+
     text = (ROOT / "content" / "knm.json").read_bytes()
     doc = json.loads(text)
-    path = f"content/knm-{doc['content_version']}.json"
+    version = doc["content_version"]
+    if premium:
+        public = (json.dumps(tiers.free_bundle(doc), ensure_ascii=False, indent=2) + "\n").encode("utf-8")
+        path = f"content/knm-{version}-free.json"
+    else:
+        public, path = text, f"content/knm-{version}.json"
+    public_doc = json.loads(public)
     manifest = {
         "schema_version": doc["schema_version"],
-        "content_version": doc["content_version"],
+        "content_version": version,
         "path": path,
-        "sha256": hashlib.sha256(text).hexdigest(),
-        "bytes": len(text),
-        "questions": sum(len(l["questions"]) for u in doc["units"] for l in u["lessons"]),
-        "words": sum(len(u["vocabulary"]) for u in doc["units"]),
+        "sha256": hashlib.sha256(public).hexdigest(),
+        "bytes": len(public),
+        "questions": sum(len(l["questions"]) for u in public_doc["units"] for l in u["lessons"]),
+        "words": sum(len(u["vocabulary"]) for u in public_doc["units"]),
     }
-    return "/" + path, text, json.dumps(manifest, indent=2).encode()
+    if premium:
+        manifest["premium"] = {"path": "/me/content/premium", "sha256": hashlib.sha256(text).hexdigest(),
+                               "bytes": len(text),
+                               "questions": sum(len(l["questions"]) for u in doc["units"] for l in u["lessons"])}
+        lessons, units = tiers.premium_ids(doc)
+        os.environ.update({"PREMIUM_ENABLED": "true", "PREMIUM_LESSONS": ",".join(sorted(lessons)),
+                           "PREMIUM_UNITS": ",".join(sorted(units)), "CONTENT_BUCKET": BUCKET,
+                           "PREMIUM_BUNDLE_KEY": f"premium/knm-{version}.json"})
+    return "/" + path, public, json.dumps(manifest, indent=2).encode(), text
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -79,6 +105,15 @@ class Handler(BaseHTTPRequestHandler):
             return self._send(200, self.manifest, extra={"Cache-Control": "public, max-age=60"})
         if self.command in ("GET", "HEAD") and path == self.bundle_path:
             return self._send(200, self.bundle, extra={"Cache-Control": "public, max-age=31536000, immutable"})
+        if self.command == "POST" and path in ("/mock/premium/grant", "/mock/premium/revoke"):
+            from taalpunt_api import store
+
+            sub = self.headers.get("X-Mock-User", "local-user")
+            if path.endswith("grant"):
+                store.grant_premium(sub, "manual", note="mock")
+            else:
+                store.revoke_premium(sub, "manual")
+            return self._send(200, json.dumps(store.get_premium(sub)).encode())
         if (self.command, path) not in API_ROUTES:
             return self._send(404, b'{"message":"Not Found"}')
 
@@ -116,20 +151,33 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--port", type=int, default=8787)
     parser.add_argument("--host", default="127.0.0.1")
+    parser.add_argument("--premium", action="store_true", help="free bundle in public, full bundle for Premium (FR-001)")
+    parser.add_argument("--grant", action="store_true", help="with --premium: the local user starts with Premium")
     args = parser.parse_args()
 
-    Handler.bundle_path, Handler.bundle, Handler.manifest = load_content()
     with mock_aws():
+        Handler.bundle_path, Handler.bundle, Handler.manifest, full = load_content(args.premium)
+        if args.premium:
+            s3 = boto3.client("s3")
+            s3.create_bucket(Bucket=BUCKET, CreateBucketConfiguration={"LocationConstraint": os.environ["AWS_DEFAULT_REGION"]})
+            s3.put_object(Bucket=BUCKET, Key=os.environ["PREMIUM_BUNDLE_KEY"], Body=full)
         boto3.resource("dynamodb").create_table(
             TableName=os.environ["TABLE_NAME"],
             KeySchema=[{"AttributeName": "PK", "KeyType": "HASH"}, {"AttributeName": "SK", "KeyType": "RANGE"}],
             AttributeDefinitions=[{"AttributeName": "PK", "AttributeType": "S"}, {"AttributeName": "SK", "AttributeType": "S"}],
             BillingMode="PAY_PER_REQUEST",
         )
+        if args.premium and args.grant:
+            from taalpunt_api import store
+
+            store.grant_premium("local-user", "manual", note="mock")
         server = HTTPServer((args.host, args.port), Handler)
         print(f"TaalPunt mock backend on http://{args.host}:{args.port}")
         print(f"  content: http://{args.host}:{args.port}/content/manifest.json")
         print("  api:     GET /me/progress, GET /me/mistakes, POST /me/sessions, DELETE /me")
+        if args.premium:
+            print(f"  premium: on, local user {'has' if args.grant else 'has no'} Premium. "
+                  "POST /mock/premium/grant or /mock/premium/revoke to change it.")
         print("Stop with Ctrl+C. Data is kept in memory only.")
         try:
             server.serve_forever()

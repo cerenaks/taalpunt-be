@@ -7,7 +7,10 @@ Key layout (PK = USER#<cognito sub>):
   SK = MISTAKE#<item_id>    wrong_count, last_wrong
   SK = ITEM#<question_id>   state (learning|known), last_correct, box (spaced review), last_seen, wrong_picks (FR-002)
   SK = SESSION#<uuid>       summary of one finished or failed lesson (expires after a year)
-  SK = ENTITLEMENT#<source> Premium (FR-001): source manual|apple, until (ISO time, absent = no end), note
+  SK = ENTITLEMENT#<source> Premium (FR-001): source manual|apple, until (ISO time, absent = no end), note;
+                            apple also: original_transaction_id, product_id, environment, signed_date (ms)
+
+PK = APPLE#<original transaction id>, SK = OWNER: which learner an App Store subscription belongs to (sub)
 """
 from __future__ import annotations
 
@@ -149,6 +152,62 @@ def grant_premium(sub: str, source: str, until: str | None = None, note: str = "
 
 def revoke_premium(sub: str, source: str) -> None:
     _table().delete_item(Key={"PK": _pk(sub), "SK": f"ENTITLEMENT#{source}"})
+
+
+# ---------- App Store subscriptions (FR-001 step 2) ----------
+
+def _apple_pk(original_transaction_id: str) -> str:
+    return f"APPLE#{original_transaction_id}"
+
+
+def apple_owner(original_transaction_id: str) -> str | None:
+    """The learner an App Store subscription is linked to, or None before the first purchase report."""
+    item = _table().get_item(Key={"PK": _apple_pk(original_transaction_id), "SK": "OWNER"}).get("Item")
+    return item["sub"] if item else None
+
+
+def set_apple_owner(original_transaction_id: str, sub: str, now: datetime | None = None) -> None:
+    _table().put_item(Item={
+        "PK": _apple_pk(original_transaction_id), "SK": "OWNER", "sub": sub,
+        "updated_at": (now or datetime.now(timezone.utc)).isoformat(timespec="seconds"),
+    })
+
+
+def put_apple_entitlement(sub: str, *, until: str, original_transaction_id: str, transaction_id: str,
+                          product_id: str, environment: str, signed_date: int,
+                          now: datetime | None = None) -> bool:
+    """Stores the state of the learner's App Store subscription. Apple's notifications can arrive out of
+    order, so an update signed before the stored one is ignored. Returns False when it was ignored."""
+    item = {
+        "PK": _pk(sub), "SK": "ENTITLEMENT#apple", "source": "apple", "until": until,
+        "original_transaction_id": original_transaction_id, "transaction_id": transaction_id,
+        "product_id": product_id, "environment": environment, "signed_date": signed_date,
+        "granted_at": (now or datetime.now(timezone.utc)).isoformat(timespec="seconds"),
+    }
+    try:
+        _table().put_item(Item=item, ConditionExpression="attribute_not_exists(signed_date) OR signed_date <= :sd",
+                          ExpressionAttributeValues={":sd": signed_date})
+        return True
+    except ClientError as err:
+        if err.response["Error"]["Code"] == "ConditionalCheckFailedException":
+            return False
+        raise
+
+
+def end_apple_entitlement(sub: str, original_transaction_id: str, now: datetime | None = None) -> None:
+    """Ends Premium from this subscription for a learner it moved away from (restored on another account)."""
+    try:
+        _table().update_item(
+            Key={"PK": _pk(sub), "SK": "ENTITLEMENT#apple"},
+            UpdateExpression="SET #u = :now",
+            ConditionExpression="original_transaction_id = :otid",
+            ExpressionAttributeNames={"#u": "until"},
+            ExpressionAttributeValues={":now": (now or datetime.now(timezone.utc)).isoformat(timespec="seconds"),
+                                       ":otid": original_transaction_id},
+        )
+    except ClientError as err:
+        if err.response["Error"]["Code"] != "ConditionalCheckFailedException":
+            raise
 
 
 def get_mistakes(sub: str) -> list[dict]:
@@ -317,8 +376,12 @@ def _get_items(client: Any, table_name: str, pk: str, question_ids: list[str]) -
 
 
 def delete_user_data(sub: str) -> int:
-    """Delete every item under the user's partition. Returns the number deleted."""
+    """Delete every item under the user's partition, and the link to their App Store subscription.
+    Returns the number deleted."""
     table = _table()
+    apple = table.get_item(Key={"PK": _pk(sub), "SK": "ENTITLEMENT#apple"}).get("Item")
+    if apple and apple.get("original_transaction_id") and apple_owner(apple["original_transaction_id"]) == sub:
+        table.delete_item(Key={"PK": _apple_pk(apple["original_transaction_id"]), "SK": "OWNER"})
     kwargs: dict[str, Any] = {"KeyConditionExpression": Key("PK").eq(_pk(sub)), "ProjectionExpression": "PK, SK"}
     deleted = 0
     with table.batch_writer() as batch:

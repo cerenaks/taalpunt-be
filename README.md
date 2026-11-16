@@ -75,6 +75,22 @@ Send once per finished (or failed) lesson. Safe to retry: the same `session_id` 
 
 Scoring (in `backend/lambdas/taalpunt_api/scoring.py`): 5 XP per finished lesson, +2 per first-try correct answer, +5 if no hearts were lost. Stars: one for every passed run of a lesson, vocabulary round or practice test, up to 3 (mix and mistakes rounds get none). `stars` in the response is the lesson's star count after this run. A first-try miss adds the item to your mistakes; a first-try hit removes it.
 
+### `POST /me/purchases`
+
+The app reports an App Store subscription (FR-001) after buying, on Restore purchases, and when StoreKit sends a renewal or an Ask to Buy approval.
+
+```json
+{ "signed_transaction": "<StoreKit 2 jwsRepresentation>", "transfer": false }
+```
+
+- The server checks Apple's signature with Apple's [App Store Server Library](https://github.com/apple/app-store-server-library-python): the chain up to `certs/AppleRootCA-G3.cer`, Apple's revocation check, the bundle id and, for real purchases, the app's Apple ID. Sandbox purchases (TestFlight, App Review) count too.
+- Response `200`: `{ "premium": { "active": true, "until": "...", "sources": ["apple"] } }`. Premium lasts until the end of the paid period; a refund ends it.
+- A subscription belongs to the account whose user id the app put in the purchase (`appAccountToken`). Another account gets `409 other_account`, unless it sends `"transfer": true` (Restore purchases), which moves the subscription there.
+
+### `POST /appstore/notifications`
+
+App Store Server Notifications V2: renewals, expiry, billing problems, refunds. Public (Apple can't sign in); every notification is checked against Apple's signature. The URL is the stack output `AppStoreNotificationsUrl`.
+
 ### `DELETE /me`
 
 Deletes all your progress and your Cognito account (Apple requires in-app account deletion).
@@ -206,3 +222,12 @@ python scripts/premium.py list
 ```
 
 The learner needs to have signed in to the app once. They get Premium on their next sync.
+
+**App Store subscriptions** (FR-001 step 2). Once, in App Store Connect:
+
+1. Copy the app's **Apple ID** (a number, under *App Information*) into `backend/cdk.json` → `app_store.app_apple_id`. Until it's there, real purchases are refused with `503 not_ready`; sandbox purchases work without it.
+2. After deploying, paste the stack output `AppStoreNotificationsUrl` into *App Information → App Store Server Notifications*, for both **Production** and **Sandbox**, Version 2. "Request a Test Notification" should then show `App Store notification: test` in the notifications function's log.
+
+The App Store Server Library and its dependencies go into a Lambda layer (`backend/layer/requirements.txt`, pinned). The deploy builds it with pip for Python 3.12 on arm64, without Docker.
+
+**Locally:** the mock server also accepts purchases from Xcode's StoreKit testing (they aren't signed by Apple; the deployed backend refuses them). In Xcode, choose `TaalPuntTests/Premium.storekit` under *Scheme → Run → Options → StoreKit Configuration*, run against `python scripts/mock_server.py --premium`, and buy.

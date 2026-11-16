@@ -1,0 +1,18 @@
+# Packages for the API Lambdas' layer (FR-001 step 2: checking App Store purchases).
+# Pinned with their dependencies; built for Python 3.12 on arm64 by taalpunt/api_stack.py.
+app-store-server-library==3.1.2
+asn1==3.2.0
+attrs==26.1.0
+cattrs==26.2.1
+certifi==2026.10.23
+cffi==2.1.1
+charset-normalizer==3.5.2
+cryptography==50.0.2
+enum-compat==0.0.3
+idna==3.20
+pycparser==3.12
+pyjwt==2.15.1
+pyopenssl==26.4.0
+requests==2.34.2
+typing-extensions==4.16.0
+urllib3==2.8.0

@@ -9,6 +9,7 @@ Serves the same URLs the app uses in production:
   POST   /me/sessions
   DELETE /me
   GET    /me/content/premium             (only with --premium)
+  POST   /me/purchases                   (also accepts Xcode StoreKit test purchases, which aren't signed)
 
 With --premium the server works like production with the premium_enabled switch on: the public bundle
 is the free one, and the full bundle only comes from /me/content/premium. Give or take away Premium for
@@ -41,12 +42,13 @@ os.environ.setdefault("AWS_DEFAULT_REGION", "eu-north-1")
 os.environ.setdefault("AWS_ACCESS_KEY_ID", "mock")
 os.environ.setdefault("AWS_SECRET_ACCESS_KEY", "mock")
 os.environ["TABLE_NAME"] = "taalpunt-local"
+os.environ["APPSTORE_ACCEPT_XCODE"] = "true"  # never set in production
 
 import boto3  # noqa: E402
 from moto import mock_aws  # noqa: E402
 
 API_ROUTES = {("GET", "/me/progress"), ("GET", "/me/mistakes"), ("POST", "/me/sessions"), ("DELETE", "/me"),
-              ("GET", "/me/content/premium")}
+              ("GET", "/me/content/premium"), ("POST", "/me/purchases")}
 BUCKET = "taalpunt-local-content"
 
 

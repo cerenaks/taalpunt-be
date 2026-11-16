@@ -11,25 +11,31 @@ ENV = cdk.Environment(account="111111111111", region="eu-north-1")
 
 
 def synth(context=None):
-    app = cdk.App(context=context or {})
+    # Skip building the Lambda layer (pip downloads); the deploy builds it.
+    app = cdk.App(context={"aws:cdk:bundling-stacks": [], **(context or {})})
     return Template.from_stack(TaalPuntStack(app, "T", env=ENV))
 
 
-def test_every_route_requires_jwt():
-    t = synth({"content_cdn": True})
-    routes = t.find_resources("AWS::ApiGatewayV2::Route")
-    assert len(routes) == 5
-    for r in routes.values():
-        assert r["Properties"]["AuthorizationType"] == "JWT"
+def _routes(t):
+    return {r["Properties"]["RouteKey"]: r["Properties"].get("AuthorizationType", "NONE")
+            for r in t.find_resources("AWS::ApiGatewayV2::Route").values()}
+
+
+def test_every_route_requires_jwt_except_apples_notifications():
+    routes = _routes(synth({"content_cdn": True}))
+    # Apple can't sign in; every notification carries Apple's signature, which the function checks.
+    assert routes.pop("POST /appstore/notifications") == "NONE"
+    assert len(routes) == 6 and set(routes.values()) == {"JWT"}
+    assert "POST /me/purchases" in routes
 
 
 def test_without_cdn_only_the_content_route_is_public():
     t = synth({"content_cdn": "false"})
     t.resource_count_is("AWS::CloudFront::Distribution", 0)
-    routes = {r["Properties"]["RouteKey"]: r["Properties"].get("AuthorizationType", "NONE")
-              for r in t.find_resources("AWS::ApiGatewayV2::Route").values()}
+    routes = _routes(t)
     assert routes.pop("GET /content/{file}") == "NONE"
-    assert len(routes) == 5 and set(routes.values()) == {"JWT"}
+    assert routes.pop("POST /appstore/notifications") == "NONE"
+    assert len(routes) == 6 and set(routes.values()) == {"JWT"}
     assert "GET /me/content/premium" in routes
 
 
@@ -158,3 +164,24 @@ def test_free_bundle_when_premium_is_on():
     # Every theme and lesson is still listed, so the app can show locked stops.
     assert len(free["units"]) == 8
     assert all(l["questions"] for l in free["units"][0]["lessons"])
+
+
+def test_purchase_functions_get_apples_library_and_app_ids():
+    t = synth({"app_store": {"bundle_id": "nl.taalpunt.app", "app_apple_id": "1234567890"}})
+    assert len(t.find_resources("AWS::Lambda::LayerVersion", {"Properties": {
+        "Description": "App Store Server Library for checking purchases",
+        "CompatibleArchitectures": ["arm64"], "CompatibleRuntimes": ["python3.12"]}})) == 1
+    for handler in ("taalpunt_api.handlers.api", "taalpunt_api.handlers.appstore_notifications"):
+        t.has_resource_properties("AWS::Lambda::Function", {
+            "Handler": handler, "Layers": Match.any_value(),
+            "Environment": {"Variables": Match.object_like({"BUNDLE_ID": "nl.taalpunt.app",
+                                                            "APP_APPLE_ID": "1234567890"})}})
+
+
+def test_notifications_function_only_reads_and_writes_items():
+    t = synth()
+    policies = [p for k, p in t.find_resources("AWS::IAM::Policy").items() if k.startswith("AppStoreNotifications")]
+    actions = json.dumps(policies)
+    assert "dynamodb:GetItem" in actions and "dynamodb:PutItem" in actions
+    for forbidden in ("dynamodb:Query", "dynamodb:DeleteItem", "s3:", "cognito-idp:"):
+        assert forbidden not in actions

@@ -71,12 +71,12 @@ def _local_today(event: dict) -> date:
     return utc_today
 
 
-def _json_body(event: dict) -> Any:
+def _json_body(event: dict, max_bytes: int = MAX_BODY_BYTES) -> Any:
     body = event.get("body") or ""
     if event.get("isBase64Encoded"):
         import base64
         body = base64.b64decode(body).decode("utf-8")
-    if len(body.encode("utf-8")) > MAX_BODY_BYTES:
+    if len(body.encode("utf-8")) > max_bytes:
         raise ValidationError("Request body is too large.")
     try:
         return json.loads(body)
@@ -103,6 +103,13 @@ def api(event: dict, _context: Any) -> dict:
             return {"statusCode": 200,
                     "headers": {"content-type": "application/json; charset=utf-8", "cache-control": "private, no-store"},
                     "body": _premium_bundle()}
+        if route == "POST /me/purchases":
+            from . import appstore
+            try:
+                # A signed transaction with its three certificates is about 8 KB.
+                return _resp(200, {"premium": appstore.claim(sub, _json_body(event, 32 * 1024))})
+            except appstore.PurchaseError as err:
+                return _error(err.status, err.code, err.message)
         if route == "POST /me/sessions":
             session = parse_session(_json_body(event))
             if _premium_enabled():
@@ -123,6 +130,29 @@ def api(event: dict, _context: Any) -> dict:
     except Exception:  # noqa: BLE001 - never leak internals to the client
         log.exception("unhandled error on %s", route)
         return _error(500, "internal", "Something went wrong. Try again later.")
+
+
+# Apple's notifications carry three signed objects with their certificates.
+MAX_NOTIFICATION_BYTES = 128 * 1024
+
+
+def appstore_notifications(event: dict, _context: Any) -> dict:
+    """POST /appstore/notifications: App Store Server Notifications V2. Public; trust comes from Apple's
+    signature, not from the caller. Anything but 200 makes Apple send the notification again later."""
+    from . import appstore
+
+    try:
+        result = appstore.notification(_json_body(event, MAX_NOTIFICATION_BYTES))
+        log.info("App Store notification: %s", result)
+        return _resp(200, {"ok": True})
+    except ValidationError as err:
+        return _error(400, "invalid_request", str(err))
+    except appstore.PurchaseError as err:
+        log.warning("App Store notification refused: %s", err.code)
+        return _error(err.status, err.code, err.message)
+    except Exception:  # noqa: BLE001
+        log.exception("App Store notification failed")
+        return _error(500, "internal", "Something went wrong.")
 
 
 def delete_account(event: dict, _context: Any) -> dict:

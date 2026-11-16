@@ -3,12 +3,16 @@ from __future__ import annotations
 
 import hashlib
 import json
+import subprocess
 import sys
 from pathlib import Path
 
+import jsii
 from aws_cdk import (
+    BundlingOptions,
     CfnOutput,
     Duration,
+    ILocalBundling,
     RemovalPolicy,
     Stack,
     aws_apigatewayv2 as apigw,
@@ -32,6 +36,7 @@ from constructs import Construct
 
 ROOT = Path(__file__).resolve().parents[2]
 LAMBDA_DIR = ROOT / "backend" / "lambdas"
+LAYER_DIR = ROOT / "backend" / "layer"
 CONTENT_FILE = ROOT / "content" / "knm.json"
 
 sys.path.insert(0, str(LAMBDA_DIR))
@@ -78,6 +83,21 @@ def content_bundle(premium_enabled: bool = False) -> dict:
         "full_key": full_key, "full_text": text, "manifest": manifest,
         "premium_lessons": sorted(premium_lessons), "premium_units": sorted(premium_units),
     }
+
+
+@jsii.implements(ILocalBundling)
+class _PipForLambda:
+    """Builds the Lambda layer with this machine's pip instead of Docker: it downloads the ready-made
+    wheels for Python 3.12 on arm64 (the Lambda runtime), so nothing is compiled here."""
+
+    def try_bundle(self, output_dir: str, *_args, **_kwargs) -> bool:
+        subprocess.run([
+            sys.executable, "-m", "pip", "install", "--quiet", "--disable-pip-version-check",
+            "-r", str(LAYER_DIR / "requirements.txt"), "--target", f"{output_dir}/python",
+            "--platform", "manylinux2014_aarch64", "--platform", "manylinux_2_28_aarch64",
+            "--implementation", "cp", "--python-version", "3.12", "--only-binary=:all:", "--no-compile",
+        ], check=True)
+        return True
 
 
 class TaalPuntStack(Stack):
@@ -210,8 +230,27 @@ class TaalPuntStack(Stack):
 
         # ---------- Functions ----------
         code = lambda_.Code.from_asset(str(LAMBDA_DIR), exclude=["**/__pycache__", "**/*.pyc"])
+        # Apple's App Store Server Library and its dependencies, for checking purchases (FR-001).
+        purchase_libs = lambda_.LayerVersion(
+            self, "PurchaseLibs",
+            code=lambda_.Code.from_asset(str(LAYER_DIR), bundling=BundlingOptions(
+                image=lambda_.Runtime.PYTHON_3_12.bundling_image,
+                platform="linux/arm64",
+                command=["bash", "-c", "pip install -r requirements.txt -t /asset-output/python --no-compile"],
+                local=_PipForLambda(),
+            )),
+            compatible_runtimes=[lambda_.Runtime.PYTHON_3_12],
+            compatible_architectures=[lambda_.Architecture.ARM_64],
+            description="App Store Server Library for checking purchases",
+        )
+        # The app's numeric Apple ID (App Store Connect > App Information). Real purchases are refused
+        # until it is set; sandbox purchases (TestFlight, App Review) work without it.
+        app_store = ctx("app_store") or {}
+        app_store_env = {"BUNDLE_ID": str(app_store.get("bundle_id") or "nl.taalpunt.app"),
+                         "APP_APPLE_ID": str(app_store.get("app_apple_id") or "")}
 
-        def fn(name: str, handler: str, env: dict) -> lambda_.Function:
+        def fn(name: str, handler: str, env: dict, layers: list | None = None,
+               timeout: int = 10) -> lambda_.Function:
             log_group = logs.LogGroup(self, f"{name}Logs", retention=logs.RetentionDays.ONE_MONTH,
                                       removal_policy=RemovalPolicy.DESTROY)
             return lambda_.Function(
@@ -221,7 +260,8 @@ class TaalPuntStack(Stack):
                 handler=handler,
                 code=code,
                 memory_size=256,
-                timeout=Duration.seconds(10),
+                timeout=Duration.seconds(timeout),
+                layers=layers,
                 environment={"TABLE_NAME": table.table_name, "LOG_LEVEL": "INFO", **env},
                 tracing=lambda_.Tracing.ACTIVE,
                 log_group=log_group,
@@ -233,11 +273,14 @@ class TaalPuntStack(Stack):
             "PREMIUM_ENABLED": "true" if premium_enabled else "false",
             "PREMIUM_LESSONS": ",".join(bundle["premium_lessons"]),
             "PREMIUM_UNITS": ",".join(bundle["premium_units"]),
-        })
+            **app_store_env,
+        }, layers=[purchase_libs], timeout=20)  # checking a purchase asks Apple whether its certificates are revoked
         api_fn.add_to_role_policy(iam.PolicyStatement(
             actions=["s3:GetObject"], resources=[content_bucket.arn_for_objects("premium/*")]))
         delete_fn = fn("DeleteAccountFunction", "taalpunt_api.handlers.delete_account",
                        {"USER_POOL_ID": user_pool.user_pool_id})
+        notify_fn = fn("AppStoreNotificationsFunction", "taalpunt_api.handlers.appstore_notifications",
+                       app_store_env, layers=[purchase_libs], timeout=25)
 
         # Least privilege: only the item-level actions each function uses.
         api_fn.add_to_role_policy(iam.PolicyStatement(
@@ -247,7 +290,12 @@ class TaalPuntStack(Stack):
             resources=[table.table_arn],
         ))
         delete_fn.add_to_role_policy(iam.PolicyStatement(
-            actions=["dynamodb:Query", "dynamodb:DeleteItem", "dynamodb:BatchWriteItem"],
+            # GetItem: finding the link to the learner's App Store subscription, to remove it too.
+            actions=["dynamodb:GetItem", "dynamodb:Query", "dynamodb:DeleteItem", "dynamodb:BatchWriteItem"],
+            resources=[table.table_arn],
+        ))
+        notify_fn.add_to_role_policy(iam.PolicyStatement(
+            actions=["dynamodb:GetItem", "dynamodb:PutItem"],
             resources=[table.table_arn],
         ))
         delete_fn.add_to_role_policy(iam.PolicyStatement(
@@ -283,9 +331,13 @@ class TaalPuntStack(Stack):
         for path, method in (("/me/progress", apigw.HttpMethod.GET),
                              ("/me/mistakes", apigw.HttpMethod.GET),
                              ("/me/sessions", apigw.HttpMethod.POST),
-                             ("/me/content/premium", apigw.HttpMethod.GET)):
+                             ("/me/content/premium", apigw.HttpMethod.GET),
+                             ("/me/purchases", apigw.HttpMethod.POST)):
             api.add_routes(path=path, methods=[method], integration=api_int, authorizer=jwt_auth)
         api.add_routes(path="/me", methods=[apigw.HttpMethod.DELETE], integration=delete_int, authorizer=jwt_auth)
+        # Public: Apple calls it. Trust comes from Apple's signature on every notification.
+        api.add_routes(path="/appstore/notifications", methods=[apigw.HttpMethod.POST],
+                       integration=integrations.HttpLambdaIntegration("AppStoreNotificationsIntegration", notify_fn))
 
         if not use_cdn:
             content_fn = fn("ContentFunction", "taalpunt_api.content.handler",
@@ -322,6 +374,8 @@ class TaalPuntStack(Stack):
         # ---------- Outputs the iOS app needs ----------
         CfnOutput(self, "Region", value=self.region)
         CfnOutput(self, "ApiUrl", value=api.api_endpoint)
+        # Paste into App Store Connect > App Information > App Store Server Notifications (Version 2).
+        CfnOutput(self, "AppStoreNotificationsUrl", value=f"{api.api_endpoint}/appstore/notifications")
         content_base = f"https://{cdn.distribution_domain_name}" if cdn else api.api_endpoint
         CfnOutput(self, "ContentManifestUrl", value=f"{content_base}/content/manifest.json")
         CfnOutput(self, "ContentVersion", value=manifest["content_version"])

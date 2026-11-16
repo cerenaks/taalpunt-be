@@ -332,7 +332,8 @@ class TaalPuntStack(Stack):
                              ("/me/mistakes", apigw.HttpMethod.GET),
                              ("/me/sessions", apigw.HttpMethod.POST),
                              ("/me/content/premium", apigw.HttpMethod.GET),
-                             ("/me/purchases", apigw.HttpMethod.POST)):
+                             ("/me/purchases", apigw.HttpMethod.POST),
+                             ("/me/saved", apigw.HttpMethod.POST)):
             api.add_routes(path=path, methods=[method], integration=api_int, authorizer=jwt_auth)
         api.add_routes(path="/me", methods=[apigw.HttpMethod.DELETE], integration=delete_int, authorizer=jwt_auth)
         # Public: Apple calls it. Trust comes from Apple's signature on every notification.

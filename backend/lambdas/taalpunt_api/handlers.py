@@ -8,7 +8,7 @@ from datetime import date, datetime, timezone
 from typing import Any
 
 from . import store, tiers
-from .validation import ValidationError, parse_session
+from .validation import SAVABLE_ID, ValidationError, parse_session
 
 log = logging.getLogger()
 log.setLevel(os.environ.get("LOG_LEVEL", "INFO"))
@@ -110,8 +110,19 @@ def api(event: dict, _context: Any) -> dict:
                 return _resp(200, {"premium": appstore.claim(sub, _json_body(event, 32 * 1024))})
             except appstore.PurchaseError as err:
                 return _error(err.status, err.code, err.message)
+        if route == "POST /me/saved":
+            body = _json_body(event)
+            item_id = body.get("item_id") if isinstance(body, dict) else None
+            saved = body.get("saved") if isinstance(body, dict) else None
+            if not isinstance(item_id, str) or not SAVABLE_ID.match(item_id) or not isinstance(saved, bool):
+                raise ValidationError('Body must be {"item_id": "<question or word id>", "saved": true|false}.')
+            store.set_saved(sub, item_id, saved)
+            return _resp(200, {"item_id": item_id, "saved": saved})
         if route == "POST /me/sessions":
             session = parse_session(_json_body(event))
+            if session.kind == "exam" and _premium_enabled() and not store.get_premium(sub)["active"]:
+                # FR-004: exam practice is Premium only.
+                return _error(403, "premium_required", "Exam practice is part of TaalPunt Premium.")
             if _premium_enabled():
                 lessons, units = _premium_sets()
                 touches = tiers.needs_premium(session.lesson_id, [a.item_id for a in session.answers], lessons, units)

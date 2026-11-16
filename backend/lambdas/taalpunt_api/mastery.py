@@ -12,8 +12,10 @@ from __future__ import annotations
 import re
 from datetime import date
 
-# Lesson questions ("w1-03"). Vocabulary words ("wonen-v07") and matching rounds don't get mastery yet.
+# Lesson questions ("w1-03") and, since FR-004, vocabulary words ("wonen-v07") get mastery. Only questions
+# count towards readiness and the daily number; matching rounds get none.
 QUESTION_ID = re.compile(r"^[a-z0-9]{1,12}-\d{2}$")
+WORD_ID = re.compile(r"^[a-z0-9]{1,20}-v\d{2}$")
 RANK = {"new": 0, "learning": 1, "known": 2}
 MAX_WRONG_PICKS = 3
 # Days until the next review, by box (index 0 = not known).
@@ -23,6 +25,11 @@ MAX_BOX = len(INTERVALS) - 1
 
 def is_question(item_id: str) -> bool:
     return bool(QUESTION_ID.match(item_id))
+
+
+def is_tracked(item_id: str) -> bool:
+    """Questions and words keep a mastery row."""
+    return bool(QUESTION_ID.match(item_id) or WORD_ID.match(item_id))
 
 
 def normalize(item: dict) -> tuple[str, str | None, int]:

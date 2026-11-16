@@ -69,11 +69,16 @@ Send once per finished (or failed) lesson. Safe to retry: the same `session_id` 
 }
 ```
 
-- `kind` / `lesson_id`: `lesson` + `w1` … · `vocab` + `voc-<unit>` · `test` + `test-<unit>` · `mix` + `mix` · `mistakes` + `mistakes`.
-- `hearts_left` must equal `5 − wrong answers` (matching rounds don't cost hearts); the server rejects anything else.
+- `kind` / `lesson_id`: `lesson` + `w1` … · `vocab` + `voc-<unit>` · `test` + `test-<unit>` · `mix` + `mix` (the plan's review round) · `mistakes` + `mistakes` · `exam` + `exam` (exam practice, Premium only) · `saved` + `saved` (My list).
+- `hearts_left` must equal `5 − wrong answers` (matching rounds don't cost hearts); the server rejects anything else. An `exam` has no hearts: `hearts_left` is 5, `completed` is true and there are no retries.
+- Questions and words get mastery (`items` in `GET /me/progress`); only questions count as `learned`. A passed practice test keeps its best first-try score (`best_score`, %, in `lessons`).
 - Response `201`: `{ "xp_gained": 9, "stars": 1, "streak": 1, "xp_total": 9, "duplicate": false }`.
 
 Scoring (in `backend/lambdas/taalpunt_api/scoring.py`): 5 XP per finished lesson, +2 per first-try correct answer, +5 if no hearts were lost. Stars: one for every passed run of a lesson, vocabulary round or practice test, up to 3 (mix and mistakes rounds get none). `stars` in the response is the lesson's star count after this run. A first-try miss adds the item to your mistakes; a first-try hit removes it.
+
+### `POST /me/saved`
+
+My list (FR-004): `{ "item_id": "w1-03", "saved": true }` saves a question or word, `"saved": false` takes it off. `GET /me/progress` lists them in `saved`, oldest first.
 
 ### `POST /me/purchases`
 

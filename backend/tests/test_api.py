@@ -268,14 +268,14 @@ def test_wrong_picks_keep_the_last_three(table):
     assert _item(table, "w1-05")["wrong_picks"] == ["B", "C", "D"]
 
 
-def test_words_and_matching_rounds_get_no_mastery(table):
+def test_matching_rounds_get_no_mastery(table):
     body = session(kind="vocab", lesson_id="voc-wonen",
                    answers=[{"item_id": "wonen-v01", "correct": True}, {"item_id": "match", "correct": True}],
                    hearts_left=5)
     status, res = call("POST /me/sessions", body=body)
     assert status == 201 and res["learned"] == 0
     _, prog = call("GET /me/progress")
-    assert prog["items"] == {}
+    assert set(prog["items"]) == {"wonen-v01"}  # words get mastery since FR-004
 
 
 def test_picked_must_be_short_text():
@@ -340,3 +340,81 @@ def test_premium_lessons_need_premium_when_switched_on(table, monkeypatch):
     assert call("POST /me/sessions", body=session())[0] == 201
     store.grant_premium("user-1", "manual")
     assert call("POST /me/sessions", body=_premium_session())[0] == 201
+
+
+# ---------- FR-004: exam practice, My list, word mastery, best score ----------
+
+def exam_answers(n=40, wrong=0):
+    ids = [f"w{1 + i // 10}-{1 + i % 10:02d}" for i in range(n)]
+    return [{"item_id": q, "correct": i >= wrong} for i, q in enumerate(ids)]
+
+
+def test_exam_has_no_hearts_and_no_retries():
+    s = parse_session(session(kind="exam", lesson_id="exam", hearts_left=5, answers=exam_answers(40, wrong=12)))
+    assert s.passed and s.unique_items == 40
+    with pytest.raises(ValidationError, match="hearts"):
+        parse_session(session(kind="exam", lesson_id="exam", hearts_left=0, answers=exam_answers(40, wrong=12)))
+    with pytest.raises(ValidationError, match="retries"):
+        parse_session(session(kind="exam", lesson_id="exam", hearts_left=5,
+                              answers=exam_answers(3) + [{"item_id": "w1-01", "correct": True, "retry": True}]))
+    with pytest.raises(ValidationError, match="ended"):
+        parse_session(session(kind="exam", lesson_id="exam", hearts_left=5, completed=False, answers=exam_answers(3)))
+
+
+def test_exam_counts_for_mastery(table):
+    code, body = call("POST /me/sessions", body=session(kind="exam", lesson_id="exam", hearts_left=5,
+                                                        answers=exam_answers(40, wrong=10)))
+    assert code == 201 and body["learned"] == 30
+    _, progress = call("GET /me/progress")
+    assert progress["items"]["w1-01"][0] == "learning" and progress["items"]["w4-10"][0] == "known"
+    assert "exam" not in progress["lessons"]
+
+
+def test_exam_needs_premium_when_switched_on(table, monkeypatch):
+    monkeypatch.setenv("PREMIUM_ENABLED", "true")
+    body = session(kind="exam", lesson_id="exam", hearts_left=5, answers=exam_answers(5))
+    code, err = call("POST /me/sessions", body=body)
+    assert code == 403 and err["error"] == "premium_required"
+    from taalpunt_api import store
+    store.grant_premium("user-1", "manual")
+    assert call("POST /me/sessions", body=body)[0] == 201
+
+
+def test_words_get_mastery_but_dont_count_as_learned(table):
+    answers = [{"item_id": "wonen-v01", "correct": True}, {"item_id": "wonen-v02", "correct": False},
+               {"item_id": "match", "correct": True}]
+    code, body = call("POST /me/sessions", body=session(kind="vocab", lesson_id="voc-wonen", hearts_left=4,
+                                                        answers=answers))
+    assert code == 201 and body["learned"] == 0
+    _, progress = call("GET /me/progress")
+    assert progress["items"]["wonen-v01"][0] == "known" and progress["items"]["wonen-v02"][0] == "learning"
+    assert "match" not in progress["items"] and progress["today_learned"] == 0
+
+
+def test_practice_test_keeps_its_best_score(table):
+    def run(wrong):
+        answers = [{"item_id": f"w1-{i:02d}", "correct": i > wrong} for i in range(1, 11)]
+        call("POST /me/sessions", body=session(kind="test", lesson_id="test-wonen", hearts_left=5 - wrong,
+                                               answers=answers))
+        return call("GET /me/progress")[1]["lessons"]["test-wonen"]["best_score"]
+    assert run(3) == 70
+    assert run(1) == 90
+    assert run(4) == 90  # a worse run doesn't lower it
+
+
+def test_my_list(table):
+    assert call("GET /me/progress")[1]["saved"] == []
+    assert call("POST /me/saved", body={"item_id": "w1-03", "saved": True}) == (200, {"item_id": "w1-03", "saved": True})
+    call("POST /me/saved", body={"item_id": "wonen-v07", "saved": True})
+    call("POST /me/saved", body={"item_id": "w1-03", "saved": True})  # saving again keeps the first time
+    assert call("GET /me/progress")[1]["saved"] == ["w1-03", "wonen-v07"]
+    call("POST /me/saved", body={"item_id": "w1-03", "saved": False})
+    assert call("GET /me/progress")[1]["saved"] == ["wonen-v07"]
+    for bad in ({"item_id": "match", "saved": True}, {"item_id": "w1-03"}, {"item_id": "../x", "saved": False}, []):
+        assert call("POST /me/saved", body=bad)[0] == 400
+
+
+def test_my_list_round_is_accepted(table):
+    answers = [{"item_id": "w1-03", "correct": True}, {"item_id": "wonen-v07", "correct": True}]
+    assert call("POST /me/sessions", body=session(kind="saved", lesson_id="saved", hearts_left=5,
+                                                  answers=answers))[0] == 201

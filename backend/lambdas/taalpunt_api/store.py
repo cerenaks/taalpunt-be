@@ -2,10 +2,12 @@
 
 Key layout (PK = USER#<cognito sub>):
   SK = PROFILE              xp_total, streak, last_day
-  SK = LESSON#<lesson_id>   best_stars, completions, last_completed
+  SK = LESSON#<lesson_id>   best_stars, completions, last_completed, best_score (best first-try %, FR-004)
   SK = DAY#<yyyy-mm-dd>     xp, learned (questions that became known that day)
   SK = MISTAKE#<item_id>    wrong_count, last_wrong
-  SK = ITEM#<question_id>   state (learning|known), last_correct, box (spaced review), last_seen, wrong_picks (FR-002)
+  SK = ITEM#<item_id>       state (learning|known), last_correct, box (spaced review), last_seen, wrong_picks (FR-002);
+                            questions, and words since FR-004
+  SK = SAVED#<item_id>      saved_at: My list (FR-004), questions and words the learner saved
   SK = SESSION#<uuid>       summary of one finished or failed lesson (expires after a year)
   SK = ENTITLEMENT#<source> Premium (FR-001): source manual|apple, until (ISO time, absent = no end), note;
                             apple also: original_transaction_id, product_id, environment, signed_date (ms)
@@ -24,7 +26,7 @@ from boto3.dynamodb.conditions import Key
 from boto3.dynamodb.types import TypeDeserializer, TypeSerializer
 from botocore.exceptions import ClientError
 
-from .mastery import MAX_WRONG_PICKS, is_progress, is_question, next_state, normalize
+from .mastery import MAX_WRONG_PICKS, is_progress, is_question, is_tracked, next_state, normalize
 from .scoring import lesson_stars, lesson_xp, next_streak, visible_streak
 from .validation import RATED_KINDS, Session
 
@@ -88,9 +90,12 @@ def get_progress(sub: str, today: date) -> dict:
             "best_stars": lesson_stars(int(i.get("completions", 0))),
             "completions": i.get("completions", 0),
             "last_completed": i.get("last_completed"),
+            "best_score": i.get("best_score", 0),
         }
         for i in _query_prefix(sub, "LESSON#")
     }
+    # My list (FR-004): the questions and words the learner saved, oldest first.
+    saved = [i["SK"].split("#", 1)[1] for i in sorted(_query_prefix(sub, "SAVED#"), key=lambda i: i.get("saved_at", ""))]
     days = [{"date": i["SK"].split("#", 1)[1], "xp": i.get("xp", 0), "learned": i.get("learned", 0)}
             for i in _query_prefix(sub, "DAY#", newest_first=True, limit=DAY_HISTORY)]
     today_day = next((d for d in days if d["date"] == today.isoformat()), {})
@@ -112,7 +117,23 @@ def get_progress(sub: str, today: date) -> dict:
         "premium": get_premium(sub),
         "days": days,
         "mistakes_count": len(mistakes),
+        "saved": saved,
     })
+
+
+def set_saved(sub: str, item_id: str, saved: bool, now: datetime | None = None) -> None:
+    """Adds an item to My list (FR-004) or takes it off. Saving twice keeps the first time."""
+    table = _table()
+    key = {"PK": _pk(sub), "SK": f"SAVED#{item_id}"}
+    if not saved:
+        table.delete_item(Key=key)
+        return
+    ts = (now or datetime.now(timezone.utc)).isoformat(timespec="seconds")
+    try:
+        table.put_item(Item={**key, "saved_at": ts}, ConditionExpression="attribute_not_exists(SK)")
+    except ClientError as err:
+        if err.response["Error"]["Code"] != "ConditionalCheckFailedException":
+            raise
 
 
 PREMIUM_SOURCES = ("manual", "apple")
@@ -250,11 +271,12 @@ def record_session(sub: str, s: Session, now: datetime | None = None) -> dict:
     xp_total = int(profile.get("xp_total", 0)) + xp
     ts = now.isoformat(timespec="seconds")
 
-    # Mastery (FR-002): the first non-retry answer per question decides; words and matching rounds are skipped.
+    # Mastery (FR-002): the first non-retry answer per question or word decides; matching rounds are skipped.
+    # Only questions count as learned (words have their own progress on the Woordjes stop, FR-004).
     day = s.local_date.isoformat()
     first: dict[str, Any] = {}
     for a in s.answers:
-        if not a.retry and is_question(a.item_id):
+        if not a.retry and is_tracked(a.item_id):
             first.setdefault(a.item_id, a)
     before = _get_items(client, table_name, pk, list(first))
     item_writes: list[dict] = []
@@ -263,7 +285,7 @@ def record_session(sub: str, s: Session, now: datetime | None = None) -> dict:
         prev = before.get(qid, {})
         prev_state, prev_correct, prev_box = normalize(prev)
         state, last_correct, box = next_state(prev_state, prev_correct, prev_box, a.correct, day)
-        if is_progress(prev_state, state, a.correct):
+        if is_question(qid) and is_progress(prev_state, state, a.correct):
             learned += 1
         picks = list(prev.get("wrong_picks", []))
         if not a.correct and a.picked:
@@ -324,8 +346,12 @@ def record_session(sub: str, s: Session, now: datetime | None = None) -> dict:
         ops.append(update(f"DAY#{day}", "ADD " + ", ".join(day_adds), day_vals))
 
     if rated_pass:
-        ops.append(update(f"LESSON#{s.lesson_id}", "SET best_stars = :b, last_completed = :ts ADD completions :one",
-                          {":b": stars, ":ts": ts, ":one": 1}))
+        # Best first-try score in percent (FR-004: the practice test shows its best score).
+        score = round(100 * s.first_try_correct / s.unique_items) if s.unique_items else 0
+        best_score = max(score, int(lesson_item.get("best_score", 0)))
+        ops.append(update(f"LESSON#{s.lesson_id}",
+                          "SET best_stars = :b, best_score = :bs, last_completed = :ts ADD completions :one",
+                          {":b": stars, ":bs": best_score, ":ts": ts, ":one": 1}))
 
     # Mistakes: a first-try miss adds or bumps the item; a first-try hit clears it.
     touched: set[str] = set()

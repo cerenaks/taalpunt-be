@@ -31,7 +31,7 @@
     "google_signin": {
       "enabled": true
     },
-    "premium_enabled": false,
+    "premium_enabled": true,
     "app_store": {
       "bundle_id": "nl.taalpunt.app",
       "app_apple_id": "6831534959"
